@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '@common/Layout';
-import { Container } from '@components/global';
-
 import Footer from '@sections/Footer';
 import Navbar from '@common/Navbar';
 
@@ -17,7 +15,7 @@ const NotFoundPage = () => (
       <p>Sad face.</p>
       <Link to="/">Go back to the homepage</Link>
     </MainMatter>
-    <Footer />
+    <Footer bottomImage={true} />
   </Layout>
 );
 

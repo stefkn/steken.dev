@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
 
 const headerstyle = {
   'fontSize': '114px',
@@ -93,16 +92,8 @@ const ArtBackground = styled.div`
 
   height: 600px;
   bottom: 285px;
-  left: 20vw;
+  left: 10vw;
   width: 66vw;
-
-  @media (max-width: 380px) {
-    display: none;
-  }
-
-  @media (min-width: 420px) {
-
-  }
 
   @media (min-width: ${props => props.theme.screen.xs}) {
     max-width: 540px;
@@ -116,10 +107,6 @@ const ArtBackground = styled.div`
     max-width: 960px;
   }
 
-  @media (max-width: 1200px) {
-    bottom: 714px;
-  }
-
   @media (min-width: ${props => props.theme.screen.lg}) {
     max-width: 1200px;
   }
@@ -131,9 +118,13 @@ const HeaderWrapper = styled.header`
   width: 100%;
   top: 3vh;
   padding-top: 96px;
-  height: 70.5vh;
+  height: 60em;
   display: block;
   background: #2f39ae;
+
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
@@ -208,15 +199,6 @@ const Text = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
-  }
-`;
-
-const StyledExternalLink = styled(ExternalLink)`
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    color: ${props => props.theme.color.black.regular};
   }
 `;
 

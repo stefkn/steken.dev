@@ -4,12 +4,15 @@ import { Container } from '@components/global';
 
 export const Nav = styled.nav`
   padding: 16px 0;
-  // background-color: ${props => props.theme.color.primary};
+  background-color: ${props => props.theme.color.primary};
   position: fixed;
   width: 100%;
-  height: 1vh;
+  height: 5em;
   top: 0;
   z-index: 1000;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 `;
 
 export const StyledContainer = styled(Container)`
@@ -60,118 +63,19 @@ export const NavItem = styled.li`
 `;
 
 export const MobileMenu = styled.div`
-  width: 100%;
-
-  width: 100%;
-  height: 18vh;
-  /* background: ${props => props.theme.color.primary}; */
-  /* background-color: white; */
-  /* background: -moz-linear-gradient(top, rgba(0,20,255,1) 0%, rgba(229,229,229,0.02) 98%, rgba(229,229,229,0) 100%); */
-  /* background: -webkit-linear-gradient(top, rgba(0,20,255,1) 0%,rgba(229,229,229,0.02) 98%,rgba(229,229,229,0) 100%); */
-  background: linear-gradient(to bottom,rgba(0, 20, 255, 0.93) 0%,rgb(254,47,132) 98%,rgb(254,47,132) 100%);
-
-  animation: fadeIn ease 1s;
-  -webkit-animation: fadeIn ease 1s;
-  -moz-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
-
-  animation: fadeOut ease 1s;
-  -webkit-animation: fadeOut ease 1s;
-  -moz-animation: fadeOut ease 1s;
-  -o-animation: fadeOut ease 1s;
-  -ms-animation: fadeOut ease 1s;
-
-
-  @keyframes fadeIn{
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-
-  @-ms-keyframes fadeOut {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  @keyframes fadeOut{
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-
-  @-moz-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-
-  @-webkit-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-
-  @-o-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-
-  @-ms-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-`;
+  width: 15em;
+  float: right;
+  height: 26vh;
+  position: relative;
+  bottom: 0em;
+  border-radius: 12px;
+  padding: 20px;
+  text-align-last: end;
+  margin: 10px 70px 10px 10px;
+  z-index: 3;
+  background: -webkit-linear-gradient(top,#1e2386 50%,rgba(229,229,229,0) 100%);
+}
+  `;
 
 export const Brand = styled.div`
   font-family: ${props => props.theme.font.primary};

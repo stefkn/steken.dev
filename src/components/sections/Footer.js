@@ -7,26 +7,17 @@ import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 import GithubIcon from '@static/icons/github.svg';
-import InstagramIcon from '@static/icons/instagram.svg';
-import TwitterIcon from '@static/icons/twitter.svg';
 
 const SOCIAL = [
   {
     icon: GithubIcon,
     link: 'https://github.com/stefkn',
   }
-  // {
-  //   icon: InstagramIcon,
-  //   link: 'https://instagram.com/ajay_ns',
-  // },
-  // {
-  //   icon: TwitterIcon,
-  //   link: 'https://twitter.com/ajayns08',
-  // },
 ];
 
-const Footer = () => (
+const Footer = (props) => (
   <StaticQuery
+    image={props.bottomImage}
     query={graphql`
       query {
         art_deer: file(
@@ -43,22 +34,24 @@ const Footer = () => (
     `}
     render={data => (
       <React.Fragment>
-        <Art>
-          <Img
-            fluid={data.art_deer.childImageSharp.fluid}
-            style={{ width: 480, maxWidth: '100%', marginBottom: -16 }}
-          />
-        </Art>
+        {props.bottomImage ?
+          <Art>
+            <Img
+              fluid={data.art_deer.childImageSharp.fluid}
+              style={{ width: 480, maxWidth: '100%', marginBottom: -16 }}
+            />
+          </Art>
+          :
+          <div style={{'marginTop': '20em'}}></div>}
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
-              <h2>ste.ken.now</h2>
+              <h2>steken.dev</h2>
               <span>
                 code & illustrations by stefan
               </span>
               <br />
               <SmallText>
-                <p style={{'fontWeight': '500'}}>〄 ♻︎ ☯︎</p>
                 <p> MIT License | Hand-distilled in small batches with <a href="https://www.gatsbyjs.org/">Gatsby</a> and <a href="https://reactjs.org/">React</a>.</p>
                 <p>Header animation using <a href="https://threejs.org/">three.js</a>. Absurd Gatsby starter by <a href="https://github.com/ajayns">@ajayns</a>. Queries by <a href="https://graphql.org/">GraphQL</a>.</p>
               </SmallText>

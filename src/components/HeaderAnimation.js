@@ -12,35 +12,50 @@ class HeaderAnimation extends React.Component {
     const camera = new $.PerspectiveCamera(75, 2, .1, 100);
     const composer = new EffectComposer(renderer);
 
-    // fit canvas to header block
-    window.addEventListener('resize', () => {
+    // Returns a function, that, as long as it continues to be invoked, will not
+    // be triggered. The function will be called after it stops being called for
+    // N milliseconds. If `immediate` is passed, trigger the function on the
+    // leading edge, instead of the trailing.
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    function respondToViewportResize() {
         if (window.location.pathname === '/') {
-            const { clientWidth, clientHeight } = renderer.domElement;
-            renderer.setPixelRatio(window.devicePixelRatio/4); // TODO: ---> Make this conditional on xtra wide high def screens
+            const clientHeight = document.getElementById('header-wrapper').clientHeight;
+            const clientWidth = document.getElementById('header-wrapper').clientWidth;
+            if (window.devicePixelRatio < 2) {
+                renderer.setPixelRatio(window.devicePixelRatio/2);
+            } else {
+                renderer.setPixelRatio(window.devicePixelRatio/4);
+            }
             renderer.setSize(clientWidth, clientHeight, false);
             camera.aspect = clientWidth / clientHeight;
             camera.updateProjectionMatrix();
-            composer.setSize(document.getElementById('header-wrapper').clientWidth, document.getElementById('header-wrapper').clientHeight);
-            // Sticky navbar responsiveness
-            switch (true) {
-                case clientWidth > 1199:
-                    document.getElementById('header-animation-container').style.top = '-811px';
-                break;
-                case clientWidth > 991:
-                    document.getElementById('header-animation-container').style.top = '-641px';
-                break;
-                case clientWidth > 767:
-                    document.getElementById('header-animation-container').style.top = '-1111px';
-                break;
-                case clientWidth > 575:
-                    document.getElementById('header-animation-container').style.top = '-894px';
-                break;
-                default:
-                    document.getElementById('header-animation-container').style.top = '-781px';
-            }
-            // Make the wrapper transparent
+            composer.setSize(clientWidth, clientHeight);
+            // Make the wrapper and nav transparent -- they are occluding the HeaderAnim while it loads
             document.getElementById('header-wrapper').style.backgroundColor = '#ffffff00';
+            document.getElementsByTagName('nav')[0].style.backgroundColor = '#ffffff00';
         }
+    }
+
+    function timedResize() { setTimeout(respondToViewportResize, 100); };
+    const debouncedTimeout = debounce(timedResize, 100, false);
+
+    // fit canvas to header block
+    window.addEventListener('resize', () => {
+        debouncedTimeout();
     });
 
     // let's set this thing up
@@ -55,7 +70,8 @@ class HeaderAnimation extends React.Component {
     // Main
     // ----
 
-    window.dispatchEvent(new Event('resize'));
+    respondToViewportResize();
+
     renderer.setAnimationLoop(t => {
         composer.render();
     });
@@ -100,11 +116,21 @@ class HeaderAnimation extends React.Component {
     const HeaderAnimContainer = styled.div`
         canvas {
             width: 98vw;
-            height: 70.5vh;
+            height: 60em;
             display: block;
             position: absolute;
-            background: #0014ff;
+            background-color: #2f39ae;
             z-index: 1;
+        }
+
+        @media (max-width: 1420px) {
+            top: -880px;
+        }
+        @media (max-width: 320px) {
+            top: -890px;
+        }
+        @media (min-width: 1420px) {
+            top: -880px;
         }
     `
     return (

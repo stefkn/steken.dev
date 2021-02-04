@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
-import About from '@sections/About';
 import Footer from '@sections/Footer';
 
 import styled from 'styled-components';
@@ -27,7 +26,7 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
             />
         </Article>
-        <Footer />
+        <Footer bottomImage={false} />
     </Layout>
   )
 }

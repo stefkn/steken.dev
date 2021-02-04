@@ -26,7 +26,7 @@ const Articles = ({
       <div>{Posts}</div>
       <Link to="/">Go back to the homepage</Link>
     </MainMatter>
-    <Footer />
+    <Footer bottomImage={false}/>
   </Layout>
 }
 

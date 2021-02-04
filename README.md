@@ -33,3 +33,14 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 ## Styling
 
 This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
+
+## Deployment
+
+Deployment via Netlify. Pushes to master will trigger CD pipeline.
+
+## TODOS
+
+- [ ] Fix ArtBackground's positioning on various screen sizes
+- [ ] Fix landing page copy resizing, add some dynamic columns
+- [ ] Implement some standardised classes for text
+- [ ] Finish articles page
