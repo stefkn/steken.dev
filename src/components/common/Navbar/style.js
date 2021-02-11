@@ -111,4 +111,14 @@ export const Mobile = styled.div`
       display: none;
     }
   `}
+
+  button {
+    background-color: #ff0067;
+    filter: drop-shadow(7px -13px 32px #ff0067);
+    padding: 10px;
+    color: white;
+    box-shadow: black;
+    box-shadow: 40px black;
+    border-radius: 100px;
+  }
 `;
