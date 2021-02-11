@@ -33,21 +33,21 @@ class Navbar extends Component {
   };
 
   getNavAnchorLink = item => (
-    <a href={`/${item.toLowerCase().replace(/\s/g, '')}`} onClick={this.closeMobileMenu}>
-      {item}
+    <a href={`/${item[0].toLowerCase().replace(/\s/g, '')}`} onClick={this.closeMobileMenu}>
+      {item[1]}
     </a>
   );
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
-        items={NAV_ITEMS.map(item => item.toLowerCase())}
+        items={NAV_ITEMS.map(item => item[0].toLowerCase())}
         currentClassName="active"
         mobile={mobile}
         offset={-64}
       >
         {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem key={navItem[0]}>{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
