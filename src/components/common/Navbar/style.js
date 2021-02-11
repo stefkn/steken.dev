@@ -76,8 +76,9 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 15em;
+  transform: skewY(-13deg);
   float: right;
-  height: 26vh;
+  height: 66vh;
   position: relative;
   bottom: 0em;
   border-radius: 12px;
