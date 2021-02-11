@@ -59,7 +59,7 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand><Link to="/" style={{'color': 'white', 'textDecoration': 'none'}}>steken.dev</Link></Brand>
+          <Brand><Link to="/" style={{'color': 'white', 'textDecoration': 'none'}} id="navbar-title">steken.dev</Link></Brand>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'white' }}>
               <MenuIcon />
