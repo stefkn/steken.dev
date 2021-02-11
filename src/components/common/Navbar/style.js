@@ -86,8 +86,7 @@ export const MobileMenu = styled.div`
   text-align-last: end;
   margin: 10px 70px 10px 10px;
   z-index: 3;
-  background: -webkit-linear-gradient(top,#1e2386 50%,rgba(229,229,229,0) 100%);
-}
+  background: -webkit-linear-gradient(top,#1e2386 20%,rgba(229,229,229,0) 100%);
   `;
 
 export const Brand = styled.div`
