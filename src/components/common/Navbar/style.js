@@ -63,8 +63,8 @@ export const NavItem = styled.li`
 
   a {
     text-decoration: none;
-    opacity: 0.7;
     color: white;
+    filter: drop-shadow(7px -13px 22px #000000);
   }
 
   &.active {
