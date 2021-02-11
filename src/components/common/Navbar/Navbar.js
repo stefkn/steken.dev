@@ -69,11 +69,15 @@ class Navbar extends Component {
           <Mobile hide>{this.getNavList({})}</Mobile>
         </StyledContainer>
         <Mobile>
-          {mobileMenuOpen && (
+          {mobileMenuOpen ? (
             <MobileMenu className="fade-in">
               <Container>{this.getNavList({ mobile: true })}</Container>
             </MobileMenu>
-          )}
+          ) :
+          (<MobileMenu className="fade-out">
+              <Container>{this.getNavList({ mobile: true })}</Container>
+            </MobileMenu>)
+          }
         </Mobile>
       </Nav>
     );
