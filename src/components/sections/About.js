@@ -14,9 +14,9 @@ class About extends Component {
               <StyledSmaller>
                 I like working with small and medium-sized teams on projects that <i>actually do something</i>, and enjoy the challenge of learning to leverage new technologies and best practices. <br />I have over 5 years of experience programming with languages like Python, JavaScript and Java—and I still learn new things every day.
               </StyledSmaller>
-              <StyledSmaller>
+              <StyledSmallest>
                 here is a small deer:
-              </StyledSmaller>
+              </StyledSmallest>
         </Frontmatter>
       </Section>
     )
