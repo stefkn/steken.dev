@@ -59,6 +59,24 @@ const StyledSmaller = styled.div`
   margin-top: 4em;
 `
 
+const StyledSmallest = styled.div`
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  font-family: Inter, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -.02em;
+  text-transform: none;
+  line-height: 1.3328;
+  font-size: calc(1.4 * 1rem);
+  margin: 1rem 0;
+  color: #2f39ae;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  margin-top: 4em;
+`
+
 const Frontmatter = styled.div`
   padding-left: 16px;
   padding-right: 16px;
