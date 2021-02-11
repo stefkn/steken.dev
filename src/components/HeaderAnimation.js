@@ -33,6 +33,7 @@ class HeaderAnimation extends React.Component {
 
     function respondToViewportResize() {
         if (window.location.pathname === '/') {
+            document.getElementById('navbar-title').style.pointerEvents = 'none';
             const clientHeight = document.getElementById('header-wrapper').clientHeight;
             const clientWidth = document.getElementById('header-wrapper').clientWidth;
             if (window.devicePixelRatio < 2) {
