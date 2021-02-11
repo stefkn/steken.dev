@@ -32,6 +32,7 @@ const MainMatter = styled.div`
     font-size: 5em;
     letter-spacing: -.01em;
     margin: 1em auto;
+    line-height: 1;
   }
 
   h2 {
@@ -41,6 +42,7 @@ const MainMatter = styled.div`
     line-height: 1.1;
     font-weight: 200;
     margin: 1em auto;
+    font-size: 3em;
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
