@@ -8,6 +8,13 @@ import ExternalLink from '@common/ExternalLink';
 
 import GithubIcon from '@static/icons/github.svg';
 
+import GQLIcon from '../../images/stack/graphql.svg';
+import GatsbyIcon from '../../images/stack/gatsby.svg';
+import ReactIcon from '../../images/stack/react.svg';
+import JSIcon from '../../images/stack/javascript.svg';
+import CSSIcon from '../../images/stack/css-3.svg';
+import HTMLIcon from '../../images/stack/html-5.svg';
+
 const SOCIAL = [
   {
     icon: GithubIcon,
