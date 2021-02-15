@@ -1,11 +1,9 @@
 const theme = {
   font: {
-    // primary: `'Prata', serif`,
-    // primary: `'Roboto'`,
-    // secondary: `'Average', serif`,
-    primary: `'IBM Plex Mono'`,
+    primary: `'Inter'`,
     secondary: `'Inter'`,
     herotext: `'Inter'`,
+    monospace: `'IBM Plex Mono'`,
   },
   font_size: {
     small: 'font-size: 20px;',
