@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`average`, `prata\:400,700`, `IBM Plex Mono\:100,200,300,400,500,600,700`, `Rubik\:300,400,500,700,900`, `Inter\:300,400,500,700,900`],
+        fonts: [`IBM Plex Mono\:100,200,300,400,500,600,700`, `Inter\:300,400,500,700,900`],
       },
     },
     {
