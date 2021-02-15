@@ -114,9 +114,12 @@ const SocialIcons = styled.div`
 `;
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.color.primary};
-  padding: 32px 0;
+  background-color: #080b2c;
+  padding: 90px 0;
   color: white;
+  background: linear-gradient(
+    154deg
+    ,#0099ff -12%,#080b2c 1%,rgb(2 0 98) 70%);
 `;
 
 const Copyright = styled.div`
