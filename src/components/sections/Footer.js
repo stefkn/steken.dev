@@ -78,11 +78,18 @@ const Footer = (props) => (
   />
 );
 
+const SmallIcon = styled.img`
+  top: 6px;
+  position: relative;
+  height: 16px;
+  margin: 2px;
+`
+
 const SmallText = styled.div`
   p {
     font-size: 12px;
     font-weight: 200;
-    line-height: 14px !important;
+    line-height: 7px;
     margin-top: 10px;
     color: white;
 
