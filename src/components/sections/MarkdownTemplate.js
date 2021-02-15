@@ -43,12 +43,10 @@ const Article = styled.div`
     font-size: 5rem;
     line-height: 5rem;
     padding-bottom: 1em;
-    font-family: Rubik;
   }
 
   h2 {
     margin-bottom: 16px;
-    font-family: Rubik;
   }
 
   ul, ol, table {

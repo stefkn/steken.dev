@@ -43,45 +43,6 @@ const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.color.black.light};
   }
 
-  .dark-mode {
-    html {
-      background-color: #181a1b !important;
-    }
-    html, body, input, textarea, select, button {
-        background-color: #181a1b;
-    }
-    html, body, input, textarea, select, button {
-        border-color: #736b5e;
-        color: #e8e6e3;
-    }
-    a {
-        color: #3391ff;
-    }
-    table {
-        border-color: #545b5e;
-    }
-    ::placeholder {
-        color: #b2aba1;
-    }
-    input:-webkit-autofill,
-    textarea:-webkit-autofill,
-    select:-webkit-autofill {
-        background-color: #555b00 !important;
-        color: #e8e6e3 !important;
-    }
-    ::selection {
-        background-color: #004daa !important;
-        color: #e8e6e3 !important;
-    }
-    ::-moz-selection {
-        background-color: #004daa !important;
-        color: #e8e6e3 !important;
-    }
-    p {
-      color: rgb(176, 169, 159);
-    }
-  }
-
   @media (max-width: ${props => props.theme.screen.sm}) {
     h1 {
       ${props => props.theme.font_size.larger};
