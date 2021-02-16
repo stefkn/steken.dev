@@ -21,10 +21,10 @@ const Articles = ({
   return <Layout>
     <Navbar />
     <MainMatter>
-      <h1>Articles</h1>
-      <p>Here are some articles:</p>
+      <h1 className="title-main">articles</h1>
+      <h2 className="subtitle-main">Here are some of my collections of words and other things:</h2>
       <div>{Posts}</div>
-      <Link to="/">Go back to the homepage</Link>
+      <Link className="home-link" to="/">Go back to the homepage</Link>
     </MainMatter>
     <Footer bottomImage={false}/>
   </Layout>
