@@ -17,6 +17,28 @@ const PostLink = ({ post }) => (
 export default PostLink
 
 const PostEntry = styled.div`
-  margin-top: 1em;
-  margin-bottom: 1em;
-`;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  h3 {
+    color: #2f39ae !important;
+  }
+
+  a:-webkit-any-link {
+    color: #2f39ae;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  p.excerpt {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 2em;
+  }
+
+  width: 100%;
+  background-color: rgb(236 235 255);
+  border-radius: 9px;
+  padding: 22px;
+  cursor: pointer;
+  `;
