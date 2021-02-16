@@ -33,21 +33,28 @@ export default function Template({
 }
 
 const Article = styled.div`
-  padding-top: 22vh;
-  margin-bottom: 12vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  h1 {
-    font-size: 5rem;
-    line-height: 5rem;
-    padding-bottom: 1em;
-  }
+  padding-top: 12em;
 
   h2 {
-    margin-bottom: 16px;
+    margin-top: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -.02em;
+
+  }
+
+  p {
+    margin-top: 1.8em;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -.02em;
+    line-height: 1.42;
+    color: #080d22;
+    font-size: calc(1.5 * 1rem);
   }
 
   ul, ol, table {
