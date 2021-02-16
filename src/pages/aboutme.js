@@ -22,28 +22,6 @@ const AboutMe = () => (
 
 const MainMatter = styled.div`
   padding-top: 22vh;
-  max-width: 1200px;
-  margin: 0em auto;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  h1 {
-    font-family: Inter, Helvetica;
-    font-size: 5em;
-    letter-spacing: -.01em;
-    margin: 1em auto;
-    line-height: 1;
-  }
-
-  h2 {
-    font-family: Inter, Helvetica;
-    font-size: 4em;
-    letter-spacing: -.05em;
-    line-height: 1.1;
-    font-weight: 200;
-    margin: 1em auto;
-    font-size: 3em;
-  }
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
