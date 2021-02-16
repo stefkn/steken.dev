@@ -11,9 +11,6 @@ import GithubIcon from '@static/icons/github.svg';
 import GQLIcon from '../../images/stack/graphql.svg';
 import GatsbyIcon from '../../images/stack/gatsby.svg';
 import ReactIcon from '../../images/stack/react.svg';
-import JSIcon from '../../images/stack/javascript.svg';
-import CSSIcon from '../../images/stack/css-3.svg';
-import HTMLIcon from '../../images/stack/html-5.svg';
 
 const SOCIAL = [
   {
@@ -61,7 +58,6 @@ const Footer = (props) => (
               <SmallText>
                 <p>Hand-distilled in small batches with <SmallIcon src={GatsbyIcon} /> <a href="https://www.gatsbyjs.org/">Gatsby</a> and <SmallIcon src={ReactIcon} /> <a href="https://reactjs.org/">React</a>.</p>
                 <p>Header animation using <a href="https://threejs.org/">three.js</a>. Absurd Gatsby starter by <a href="https://github.com/ajayns">@ajayns</a>. Queries by <SmallIcon src={GQLIcon} /> <a href="https://graphql.org/">GraphQL</a>.</p>
-                <p><SmallIcon src={HTMLIcon} /> <SmallIcon src={CSSIcon} /> <SmallIcon src={JSIcon} /> </p>
               </SmallText>
             </Copyright>
             <SocialIcons>
