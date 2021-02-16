@@ -76,6 +76,63 @@ const GlobalStyles = createGlobalStyle`
   a {
     cursor: pointer;
   }
+
+
+  .page-main {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 816px;
+    display: block;
+    margin: 16px auto;
+  }
+
+  .title-main {
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.04em;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.232;
+    font-size: calc(4 * 1rem);
+    margin: 1rem 0;
+    color: #2f39ae;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+  }
+
+  .subtitle-main {
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -.02em;
+    text-transform: none;
+    line-height: 1.3328;
+    font-size: calc(2.2 * 1rem);
+    margin: 1rem 0;
+    color: #2f39ae;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+  }
+
+  deckgo-highlight-code {
+    box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .home-link {
+    position: relative;
+    top: 2em;
+    color: #2f39ae;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `;
 
 export default GlobalStyles;
