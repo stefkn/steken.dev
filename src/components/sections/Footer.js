@@ -85,7 +85,7 @@ const SmallText = styled.div`
   p {
     font-size: 12px;
     font-weight: 200;
-    line-height: 7px;
+    line-height: 16px;
     margin-top: 10px;
     color: white;
 
