@@ -11,10 +11,10 @@ import styled from 'styled-components';
 const AboutMe = () => (
   <Layout>
     <Navbar />
-    <MainMatter>
-      <h1>about stefan</h1>
-      <h2>Stefan Nowak is a (he/him) from London, England. He is &#189; Japanese, &#188; Latvian, &#188; Polish and 100% <a href="https://www.youtube.com/watch?v=8Dd_qiuWxPs">meat popsicle.</a></h2>
-      <Link to="/">Go back to the homepage</Link>
+    <MainMatter className="page-main">
+      <h1 className="title-main">about </h1>
+      <p className="subtitle-main">Stefan Nowak is a (he/him) from London, England. He is &#189; Japanese, &#188; Latvian, &#188; Polish and 100% <a href="https://www.youtube.com/watch?v=8Dd_qiuWxPs">meat popsicle.</a></p>
+      <Link className="home-link" to="/">Go back to the homepage</Link>
     </MainMatter>
     <Footer bottomImage={false} />
   </Layout>
