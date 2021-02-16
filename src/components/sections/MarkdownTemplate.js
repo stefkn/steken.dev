@@ -18,9 +18,10 @@ export default function Template({
   return (
     <Layout>
         <Navbar />
-        <Article>
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.date}</h2>
+        <Article className="page-main">
+            <h1 className="title-main">{frontmatter.title}</h1>
+            <h2 className="subtitle-main">{frontmatter.date}</h2>
+            <hr />
             <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
