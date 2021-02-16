@@ -7,6 +7,10 @@ const normalize = `
 const GlobalStyles = createGlobalStyle`
   ${normalize};
 
+  * {
+    transition: all .3s ease;
+  }
+
   ::selection {
     background: #ff418d7a;
     opacity: 0.85;
