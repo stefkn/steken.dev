@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 const PostLink = ({ post }) => (
   <PostEntry>
-    <h3>
+    <h3 className="subtitle-main">
         <Link to={post.frontmatter.slug}>
-        {post.frontmatter.title} ({post.frontmatter.date})
+        {post.frontmatter.title}
         </Link>
     </h3>
+        <p>{post.frontmatter.date}</p>
+        <p class="excerpt">{post.excerpt}</p>
   </PostEntry>
 )
 
