@@ -27,9 +27,13 @@ class About extends Component {
     };
 
     const deboncedHandleScroll = debounce(timedResize, 100, false);
-    function timedResize() { setTimeout(respondToScroll(), 10) };
+    function timedResize() { setTimeout(respondToScroll(deboncedHandleScroll), 10) };
 
-    function respondToScroll (debouncedHandleScroll) {
+    function removeListener(handlerFunc) {
+      window.removeEventListener('scroll', handlerFunc, true);
+    }
+
+    function respondToScroll (handlerToRemove) {
       console.log('scrollllled');
       [...elements].forEach(function (element) {
         const domRect = element.getBoundingClientRect();
@@ -45,7 +49,7 @@ class About extends Component {
         }
         if (count === 3) {
           console.log("DONE!!!!!!!!!!!!!!!!!!!");
-          window.removeEventListener('scroll', debouncedHandleScroll, true);
+          removeListener(handlerToRemove);
         }
       });
     }
