@@ -39,6 +39,9 @@ const StyledText = styled.div`
   margin-bottom: 0;
   white-space: pre-wrap;
   margin-top: 2em;
+
+  opacity: 0%;
+  transition: all 2s ease !important;
 `;
 
 const StyledSmaller = styled.div`
@@ -57,6 +60,9 @@ const StyledSmaller = styled.div`
   margin-bottom: 0;
   white-space: pre-wrap;
   margin-top: 4em;
+
+  opacity: 0%;
+  transition: all 2s ease !important;
 `
 
 const StyledSmallest = styled.div`
@@ -75,6 +81,9 @@ const StyledSmallest = styled.div`
   margin-bottom: 0;
   white-space: pre-wrap;
   margin-top: 4em;
+
+  opacity: 0%;
+  transition: all 2s ease !important;
 `
 
 const Frontmatter = styled.div`
