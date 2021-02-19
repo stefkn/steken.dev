@@ -133,6 +133,10 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     text-decoration: underline;
   }
+
+  .visible {
+    opacity: 100% !important;
+  }
 `;
 
 export default GlobalStyles;
