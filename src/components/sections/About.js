@@ -4,6 +4,55 @@ import styled from 'styled-components';
 import { Section } from '@components/global';
 
 class About extends Component {
+  componentDidMount(){
+    const elements = document.getElementsByClassName('fade-in-on-view');
+
+    // Returns a function, that, as long as it continues to be invoked, will not
+    // be triggered. The function will be called after it stops being called for
+    // N milliseconds. If `immediate` is passed, trigger the function on the
+    // leading edge, instead of the trailing.
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function() {
+          var context = this, args = arguments;
+          var later = function() {
+              timeout = null;
+              if (!immediate) func.apply(context, args);
+          }
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+      };
+    };
+
+    const deboncedHandleScroll = debounce(timedResize, 100, false);
+    function timedResize() { setTimeout(respondToScroll(), 10) };
+
+    function respondToScroll (debouncedHandleScroll) {
+      console.log('scrollllled');
+      [...elements].forEach(function (element) {
+        const domRect = element.getBoundingClientRect();
+        const position = domRect.y - window.innerHeight;
+        if (position < 0) {
+          element.classList.add('visible');
+        }
+      });
+      var count = 0;
+      [...elements].forEach((elem) => {
+        if (elem.classList.contains('visible')) {
+          count++;
+        }
+        if (count === 3) {
+          console.log("DONE!!!!!!!!!!!!!!!!!!!");
+          window.removeEventListener('scroll', debouncedHandleScroll, true);
+        }
+      });
+    }
+
+    window.addEventListener('scroll', deboncedHandleScroll, true);
+
+  }
   render() {
     return (
       <Section id="about">
