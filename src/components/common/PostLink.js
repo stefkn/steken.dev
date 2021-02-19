@@ -10,7 +10,7 @@ const PostLink = ({ post }) => (
         </Link>
     </h3>
         <p>{post.frontmatter.date}</p>
-        <p class="excerpt">{post.excerpt}</p>
+        <p className="excerpt">{post.excerpt}</p>
   </PostEntry>
 )
 
