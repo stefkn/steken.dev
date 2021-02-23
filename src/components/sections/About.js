@@ -34,7 +34,6 @@ class About extends Component {
     }
 
     function respondToScroll (handlerToRemove) {
-      console.log('scrollllled');
       [...elements].forEach(function (element) {
         const domRect = element.getBoundingClientRect();
         const position = domRect.y - window.innerHeight;
@@ -48,7 +47,6 @@ class About extends Component {
           count++;
         }
         if (count === 3) {
-          console.log("DONE!!!!!!!!!!!!!!!!!!!");
           removeListener(handlerToRemove);
         }
       });
