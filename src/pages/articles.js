@@ -12,10 +12,16 @@ import PostLink from "../components/common/PostLink"
 import PostTag from "../components/common/PostTag"
 
 
-export default function Articles() {
-  let state = {
-    selectedTag: '',
-  };
+class Articles extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {selectedTag: 'default',};
+  }
+
+  // selectTag = (tag) => {
+  //   console.log(tag)
+  //   this.setState({selectedTag: tag});
+  // };
 
   const selectTag = (tag) => {
     this.setState({selectedTag: tag});
