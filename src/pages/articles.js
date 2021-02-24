@@ -52,35 +52,38 @@ class Articles extends Component {
               }
             }
           }
-        }
-      `}
-      render={data => {
-        const response = data.allMarkdownRemark.edges
-        let Posts = <div>nothing yet</div>;
-        let Tags = <div>nothing here</div>;
-        if (!!response) {
-          Posts = response
-            .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-            .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-          Tags = response
-            .map(edge => <PostTag key={edge.node.id} post={edge.node} />)
-        }
-        return (
-        <Layout>
-        <Navbar />
-        <MainMatter>
-          <h1 className="title-main">articles</h1>
-          <h2 className="subtitle-main">Here are some of my collections of words and other things:</h2>
-          <div>{Tags}</div>
-          <div>{Posts}</div>
-          <Link className="home-link" to="/">Go back to the homepage</Link>
-        </MainMatter>
-        <Footer bottomImage={false}/>
-        </Layout>
-        )
-      }}
-    />
-  )
+        `}
+        render={data => {
+          const response = data.allMarkdownRemark.edges
+          let Posts = <div>No posts. 👽</div>;
+          let Tags = <div>No tags. 💁‍♀️</div>;
+
+          if (!!response) {
+            Posts = response
+              .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+              .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+            Tags = response
+              .map(edge => <button key={edge.node.id} onClick={(edge) => this.selectTag(edge)}>tag</button>)
+          }
+
+          return (
+          <Layout>
+          <Navbar />
+          <MainMatter>
+            <h3>{this.state.selectedTag}</h3>
+            <h1 className="title-main">articles</h1>
+            <h2 className="subtitle-main">Here are some of my collections of words and other things:</h2>
+            <div>{Tags}</div>
+            <div>{Posts}</div>
+            <Link className="home-link" to="/">Go back to the homepage</Link>
+          </MainMatter>
+          <Footer bottomImage={false}/>
+          </Layout>
+          )
+        }}
+      />
+    )
+  }
 }
 
 const MainMatter = styled.div`
@@ -102,4 +105,4 @@ const MainMatter = styled.div`
   }
 `;
 
-// export default Articles;
+export default Articles;
