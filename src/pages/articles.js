@@ -23,28 +23,31 @@ class Articles extends Component {
   //   this.setState({selectedTag: tag});
   // };
 
-  const selectTag = (tag) => {
-    this.setState({selectedTag: tag});
+  selectTag(tag) {
+    console.log(tag)
+    // this.setState({selectedTag: tag});
   }
 
-  const selectNoTags = () => {
+  selectNoTags = () => {
     this.setState({selectedTag: ''})
-  }
+  };
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-            edges {
-              node {
-                id
-                excerpt(pruneLength: 250)
-                frontmatter {
-                  date(formatString: "MMMM DD, YYYY")
-                  slug
-                  title
-                  tags
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+              edges {
+                node {
+                  id
+                  excerpt(pruneLength: 250)
+                  frontmatter {
+                    date(formatString: "MMMM DD, YYYY")
+                    slug
+                    title
+                    tags
+                  }
                 }
               }
             }
