@@ -120,12 +120,12 @@ const MainMatter = styled.div`
 `;
 
 const TagButton = styled.button`
-  background-color: blue;
+  background-color: #2f39ae;
   border-radius: 100px;
   padding: 11px;
   color: white;
   margin: 3px;
-  box-shadow: -3px 3px 14px 2px #646eff;
+  box-shadow: -3px 3px 14px 2px #2f39ae;
 `
 
 
