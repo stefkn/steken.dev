@@ -25,6 +25,20 @@ class Articles extends Component {
     this.setState({selectedTag: ''})
   };
 
+  articleIsTagged(tag, article) {
+    if (tag === '') {
+      return true;
+    } else {
+      return article.node.frontmatter.tags.split(' ').indexOf(tag) === -1 ? false : true;
+    }
+  }
+
+  addToTagList(tag, accumulator) {
+    if (accumulator) {
+      accumulator.indexOf(tag) === -1 ? accumulator.push(tag) : console.log("This item already exists: " + tag);
+    }
+  }
+
   render() {
     return (
       <StaticQuery
