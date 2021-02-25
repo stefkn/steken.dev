@@ -14,17 +14,11 @@ import PostLink from "../components/common/PostLink"
 class Articles extends Component {
   constructor(props) {
     super(props);
-    this.state = {selectedTag: 'default',};
+    this.state = {selectedTag: ''};
   }
 
-  // selectTag = (tag) => {
-  //   console.log(tag)
-  //   this.setState({selectedTag: tag});
-  // };
-
   selectTag(tag) {
-    console.log(tag)
-    // this.setState({selectedTag: tag});
+    this.setState({selectedTag: tag});
   }
 
   selectNoTags = () => {
