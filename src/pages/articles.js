@@ -62,6 +62,12 @@ class Articles extends Component {
         `}
         render={data => {
           const response = data.allMarkdownRemark.edges
+
+          const reducer = (accumulator, currentValue) => {
+            currentValue.forEach((tag) => this.addToTagList(tag, accumulator));
+            return accumulator
+          }
+
           let Posts = <div>No posts. 👽</div>;
           let Tags = <div>No tags. 💁‍♀️</div>;
 
