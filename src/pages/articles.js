@@ -73,7 +73,7 @@ class Articles extends Component {
 
           if (!!response) {
             Posts = response
-              .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+              .filter(edge => this.articleIsTagged(this.state.selectedTag, edge))
               .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
             Tags = response
               .map(edge => <button key={edge.node.id} onClick={(edge) => this.selectTag(edge)}>tag</button>)
