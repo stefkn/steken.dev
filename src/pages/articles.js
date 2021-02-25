@@ -76,7 +76,9 @@ class Articles extends Component {
               .filter(edge => this.articleIsTagged(this.state.selectedTag, edge))
               .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
             Tags = response
-              .map(edge => <button key={edge.node.id} onClick={(edge) => this.selectTag(edge)}>tag</button>)
+              .map(edge => edge.node.frontmatter.tags.split(' '))
+              .reduce(reducer)
+              .map(tag => <TagButton className={this.state.selectedTag === tag ? 'selelcted-tag-button': null} key={tag} onClick={(e) => this.selectTag(tag)}>{tag}</TagButton>)
           }
 
           return (
