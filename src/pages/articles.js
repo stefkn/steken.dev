@@ -85,7 +85,6 @@ class Articles extends Component {
           <Layout>
           <Navbar />
           <MainMatter>
-            <h3>{this.state.selectedTag}</h3>
             <h1 className="title-main">articles</h1>
             <h2 className="subtitle-main">Here are some of my collections of words and other things:</h2>
             <div>{Tags}</div>
