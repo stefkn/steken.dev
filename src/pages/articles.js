@@ -9,7 +9,6 @@ import Navbar from '@common/Navbar';
 
 import styled from 'styled-components';
 import PostLink from "../components/common/PostLink"
-import PostTag from "../components/common/PostTag"
 
 
 class Articles extends Component {
