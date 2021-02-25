@@ -75,19 +75,6 @@ class About extends Component {
 }
 
 
-const breatheAnimation = keyframes`
-  0% { transform: translate(0px,  0px); }
-  50%  { transform: translate(0px, 7px); }
-  100%   { transform: translate(0px, -0px); }
-`
-
-const Floating = styled.div`
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-name: ${breatheAnimation};
-`
-
 const StyledText = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
