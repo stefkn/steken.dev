@@ -119,4 +119,14 @@ const MainMatter = styled.div`
   }
 `;
 
+const TagButton = styled.button`
+  background-color: blue;
+  border-radius: 100px;
+  padding: 11px;
+  color: white;
+  margin: 3px;
+  box-shadow: -3px 3px 14px 2px #646eff;
+`
+
+
 export default Articles;
