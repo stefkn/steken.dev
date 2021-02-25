@@ -137,6 +137,27 @@ const GlobalStyles = createGlobalStyle`
   .visible {
     opacity: 100% !important;
   }
+
+  .selelcted-tag-button {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-name: breathing;
+    background-color: #ff0066 !important;
+    box-shadow: -3px 3px 14px 2px #ff0066 !important;
+  }
+
+  @keyframes breathing {
+    0% { transform: translate(0px,  0px); }
+    50%  { transform: translate(0px, -6px); }
+    100%   { transform: translate(0px, 0px); }
+  }
+
+  @-webkit-keyframes breathing {
+    0% { transform: translate(0px,  0px); }
+    50%  { transform: translate(0px, -6px); }
+    100%   { transform: translate(0px, 0px); }
+  }
 `;
 
 export default GlobalStyles;
