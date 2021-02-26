@@ -86,7 +86,7 @@ class Articles extends Component {
           <Navbar />
           <MainMatter>
             <h1 className="title-main">articles</h1>
-            <h2 className="subtitle-main">Here are some of my collections of words and other things:</h2>
+            <h2 className="subtitle-main">here are some topics i have written about:</h2>
             <div>{Tags}</div>
             <div>{Posts}</div>
             <Link className="home-link" to="/">Go back to the homepage</Link>
