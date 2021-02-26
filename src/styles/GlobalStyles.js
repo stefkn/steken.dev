@@ -144,18 +144,18 @@ const GlobalStyles = createGlobalStyle`
     animation-timing-function: ease-in-out;
     animation-name: breathing;
     background-color: #ff0066 !important;
-    box-shadow: -3px 3px 14px 2px #ff0066 !important;
+    box-shadow: -2px 2px 7px 0px #ff0066 !important;
   }
 
   @keyframes breathing {
     0% { transform: translate(0px,  0px); }
-    50%  { transform: translate(0px, -6px); }
+    50%  { transform: translate(0px, -3px); }
     100%   { transform: translate(0px, 0px); }
   }
 
   @-webkit-keyframes breathing {
     0% { transform: translate(0px,  0px); }
-    50%  { transform: translate(0px, -6px); }
+    50%  { transform: translate(0px, -3px); }
     100%   { transform: translate(0px, 0px); }
   }
 `;
