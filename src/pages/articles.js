@@ -125,7 +125,7 @@ const TagButton = styled.button`
   padding: 11px;
   color: white;
   margin: 3px;
-  box-shadow: -3px 3px 14px 2px #2f39ae;
+  box-shadow: -2px 2px 7px 0px #2f39ae;
 `
 
 
