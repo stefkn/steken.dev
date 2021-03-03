@@ -78,6 +78,12 @@ const Article = styled.div`
 
   code {
     element::-webkit-scrollbar { width: 0 !important }
+    font-family: SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;
+    font-size: 1em;
+    background-color: #090d2e;
+    border-radius: 5px;
+    padding: 3px;
+    color: #ffffff;
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
