@@ -83,4 +83,50 @@ const MainMatter = styled.div`
   }
 `;
 
+const Art = styled.figure`
+  width: 14em;
+  margin: 0;
+  top: 16px;
+  z-index: 0;
+
+  Img {
+    border-radius: 20px;
+  }
+
+  > div {
+    width: 120%;
+    margin-bottom: -4.5%;
+  }
+
+  div picture img {
+    top: 20px;
+  }
+`;
+
+const Grid = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+`
+
+const Card = styled.div`
+  margin: 1rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  background-color: rgb(236 235 255);
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    flex-basis: 100%;
+  }
+`
+
 export default AboutMe;
