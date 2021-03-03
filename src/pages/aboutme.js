@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '@common/Layout';
 
