@@ -69,6 +69,18 @@ const MainMatter = styled.div`
     text-align: left;
     // margin-bottom: 96px;
   }
+
+  .subtitle-main {
+    margin-top: 12px;
+  }
+
+  .title-main {
+    margin-top: 22px;
+  }
+
+  .text {
+    margin-top: 16px;
+  }
 `;
 
 export default AboutMe;
