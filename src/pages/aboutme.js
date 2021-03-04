@@ -31,25 +31,26 @@ const AboutMe = () => (
       <MainMatter className="page-main">
         <Art><Img fluid={data.stefan_img.childImageSharp.fluid} /></Art>
         <h1 className="title-main">about this guy</h1>
-        <p className="subtitle-main">Stefan Nowak is a (he/him) from 🇬🇧 London, England.</p>
-        <p className="text">He is &#189; 🇯🇵 Japanese, &#188; 🇱🇻 Latvian, &#188; 🇵🇱 Polish.</p>
+        <hr />
+        <p className="subtitle-main">Stefan Nowak is a (he/him) from {"\n"}🇬🇧 London, England.</p>
+        <p className="text-first">He is &#189; 🇯🇵 Japanese, &#188; 🇱🇻 Latvian, &#188; 🇵🇱 Polish.</p>
         <p className="text">He grew up in south London, and went to school in Sutton.</p>
         <p className="text">He is a master procrastinator, and it's a wonder that he really gets anything done at all.</p>
         <Grid>
           <Card>
-            <h3 className="title-main">resumé &rarr;</h3>
+            <h3 className="title-main card-title">resumé &rarr;</h3>
             <p>view my CV</p>
           </Card>
           <Card>
-            <h3 className="title-main">tech &rarr;</h3>
+            <h3 className="title-main card-title">tech &rarr;</h3>
             <p>technologies I've used</p>
           </Card>
           <Card>
-            <h3 className="title-main">projects &rarr;</h3>
+            <h3 className="title-main card-title">projects &rarr;</h3>
             <p>some of my work</p>
           </Card>
           <Card>
-            <h3 className="title-main">photos &rarr;</h3>
+            <h3 className="title-main card-title">photos &rarr;</h3>
             <p>pictures I've taken</p>
           </Card>
         </Grid>
