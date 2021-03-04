@@ -72,15 +72,22 @@ const MainMatter = styled.div`
   }
 
   .subtitle-main {
-    margin-top: 12px;
+    margin-top: 46px;
   }
 
   .title-main {
     margin-top: 22px;
+    font-size: 56px;
+    @media (max-width: ${props => props.theme.screen.md}) {
+      font-size: 48px;
+    }
   }
 
   .text {
-    margin-top: 16px;
+    margin-top: 32px;
+  }
+  .text-first {
+    margin-top: 62px;
   }
 `;
 
