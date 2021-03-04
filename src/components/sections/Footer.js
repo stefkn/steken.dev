@@ -7,6 +7,7 @@ import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 import GithubIcon from '@static/icons/github.svg';
+import TwitterIcon from '@static/icons/twitter.svg';
 
 import GQLIcon from '../../images/stack/graphql.svg';
 import GatsbyIcon from '../../images/stack/gatsby.svg';
@@ -16,6 +17,10 @@ const SOCIAL = [
   {
     icon: GithubIcon,
     link: 'https://github.com/stefkn',
+  },
+  {
+    icon: TwitterIcon,
+    link: 'https://twitter.com/stekendev',
   }
 ];
 
