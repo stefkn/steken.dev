@@ -117,7 +117,7 @@ const Grid = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-  margin-top: 3rem;
+  margin-top: 64px;
 `
 
 const Card = styled.div`
