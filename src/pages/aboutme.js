@@ -135,6 +135,11 @@ const Card = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     flex-basis: 100%;
   }
+
+  .card-title {
+    font-size: 38px;
+    margin-top: 18px;
+  }
 `
 
 export default AboutMe;
