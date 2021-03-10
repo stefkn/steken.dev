@@ -51,13 +51,17 @@ const Article = styled.div`
   p {
     margin-top: 1.8em;
     -webkit-font-smoothing: antialiased;
-    font-family: Inter, Helvetica, sans-serif;
+    font-family: Shippori Mincho, serif;
     font-weight: 300;
     font-style: normal;
     letter-spacing: -.02em;
-    line-height: 1.42;
+    line-height: 1.62;
     color: #080d22;
     font-size: calc(1.5 * 1rem);
+  }
+
+  a {
+    color: #ff146f;
   }
 
   ul, ol, table {
