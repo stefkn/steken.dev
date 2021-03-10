@@ -76,11 +76,42 @@ const MainMatter = styled.div`
   }
 
   .title-main {
-    margin-top: 22px;
-    font-size: 56px;
-    @media (max-width: ${props => props.theme.screen.md}) {
-      font-size: 48px;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.04em;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.232;
+    font-size: calc(4 * 1rem);
+    margin: 1rem 0;
+    color: #2f39ae;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+    margin-top: 1em;
+
+    u {
+      -webkit-text-fill-color: #2f39ae;
     }
+  }
+
+  p {
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -.02em;
+    text-transform: none;
+    line-height: 1.3328;
+    font-size: calc(2.2 * 1rem);
+    color: #2f39ae;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+    margin-top: 2em;
   }
 
   .text {
