@@ -21,7 +21,6 @@ export default function Template({
         <Article className="page-main">
             <h1 className="title-main">{frontmatter.title}</h1>
             <h2 className="subtitle-main">{frontmatter.date}</h2>
-            <hr />
             <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -34,6 +33,10 @@ export default function Template({
 
 const Article = styled.div`
   padding-top: 12em;
+
+  .blog-post-content {
+    padding-top: 4em;
+  }
 
   h2 {
     margin-top: 1em;
