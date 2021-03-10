@@ -96,6 +96,35 @@ const StyledText = styled.div`
   transition: all 2s ease !important;
 `;
 
+const StyledOutlineText = styled.div`
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -.04em;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.232;
+  font-size: calc(4 * 1rem);
+  margin: 1rem 0;
+  color: #2f39ae;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  margin-top: 2em;
+
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #2f39ae;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+
+  u {
+    -webkit-text-fill-color: #2f39ae;
+  }
+
+  opacity: 0%;
+  transition: all 2s ease !important;
+`;
+
 const StyledSmaller = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
