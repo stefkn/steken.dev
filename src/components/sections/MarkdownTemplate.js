@@ -39,7 +39,7 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 1em;
+    margin-top: 3em;
     -webkit-font-smoothing: antialiased;
     font-family: Inter, Helvetica, sans-serif;
     font-weight: 400;
@@ -97,6 +97,10 @@ const Article = styled.div`
     grid-template-columns: 1fr;
     text-align: left;
     // margin-bottom: 96px;
+  }
+
+  .footnotes {
+    margin-top: 8em;
   }
 `;
 
