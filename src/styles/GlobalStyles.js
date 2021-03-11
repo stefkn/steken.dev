@@ -122,7 +122,7 @@ const GlobalStyles = createGlobalStyle`
 
   deckgo-highlight-code {
     box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
-    margin-top: 2em;
+    margin-top: 2.2em;
     margin-bottom: 2em;
   }
 
