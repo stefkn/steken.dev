@@ -87,7 +87,7 @@ const Article = styled.div`
     element::-webkit-scrollbar { width: 0 !important }
     font-family: SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;
     font-size: 1em;
-    background-color: #323fdb;
+    background-color: #ff66a4;
     border-radius: 5px;
     padding: 3px;
     color: #ffffff;
