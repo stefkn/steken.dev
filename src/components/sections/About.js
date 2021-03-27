@@ -125,18 +125,25 @@ const StyledOutlineText = styled.div`
   line-height: 1.232;
   font-size: calc(4 * 1rem);
   margin: 1rem 0;
-  color: #2f39ae;
+  color: rgb(2 0 98);
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
   margin-top: 2em;
 
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: #2f39ae;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: rgb(2 0 98);
+  -webkit-text-fill-color: #ffffff;
 
   u {
-    -webkit-text-fill-color: #2f39ae;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: rgb(2 0 98);
+  }
+
+  u:hover {
+    -webkit-text-fill-color: rgb(2 0 98);
   }
 
   opacity: 0%;
