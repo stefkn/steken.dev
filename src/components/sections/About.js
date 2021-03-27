@@ -79,6 +79,20 @@ class About extends Component {
 }
 
 
+const BlobSVG = styled.div`
+  position: relative;
+  width: 85em;
+  z-index: -1;
+  opacity: 0.6;
+  svg {
+    position: absolute;
+    height: 80em;
+    z-index: 10;
+    left: -25em;
+    bottom: -20em;
+  }
+`;
+
 const StyledText = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
