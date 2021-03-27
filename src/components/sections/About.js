@@ -161,7 +161,7 @@ const StyledSmaller = styled.div`
   line-height: 1.3328;
   font-size: calc(2.2 * 1rem);
   margin: 1rem 0;
-  color: #2f39ae;
+  color: rgb(2 0 98);
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
@@ -182,7 +182,7 @@ const StyledSmallest = styled.div`
   line-height: 1.3328;
   font-size: calc(1.4 * 1rem);
   margin: 1rem 0;
-  color: #2f39ae;
+  color: rgb(2 0 98);
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
