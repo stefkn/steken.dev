@@ -32,13 +32,37 @@ const BlobSVG = styled.div`
   position: relative;
   width: 85em;
   z-index: -1;
-  opacity: 0.6;
+
   svg {
     position: absolute;
     height: 80em;
     z-index: 10;
     left: -25em;
     bottom: -20em;
+    filter: opacity(0.47);
+
+    -webkit-animation: moving-blob 20s linear infinite;
+    -moz-animation: moving-blob 20s linear infinite;
+    animation: moving-blob 20s linear infinite;
+  }
+`;
+const BlobSVG2 = styled.div`
+  position: relative;
+  width: 85em;
+  z-index: -1;
+  transform: scale(1.72) rotate(-19deg);
+
+  svg {
+    position: absolute;
+    height: 80em;
+    z-index: 10;
+    left: -25em;
+    bottom: -20em;
+    filter: opacity(0.47);
+
+    -webkit-animation: moving-blob 20s linear infinite;
+    -moz-animation: moving-blob 20s linear infinite;
+    animation: moving-blob 20s linear infinite;
   }
 `;
 
