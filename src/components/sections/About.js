@@ -83,7 +83,6 @@ const StyledText = styled.div`
   white-space: pre-wrap;
   margin-top: 2em;
 
-  opacity: 0%;
   transition: all 2s ease !important;
 `;
 
@@ -119,7 +118,6 @@ const StyledOutlineText = styled.div`
     -webkit-text-fill-color: rgb(2 0 98);
   }
 
-  opacity: 0%;
   transition: all 2s ease !important;
 `;
 
@@ -140,7 +138,6 @@ const StyledSmaller = styled.div`
   white-space: pre-wrap;
   margin-top: 4em;
 
-  opacity: 0%;
   transition: all 2s ease !important;
 `
 
@@ -161,7 +158,6 @@ const StyledSmallest = styled.div`
   white-space: pre-wrap;
   margin-top: 4em;
 
-  opacity: 0%;
   transition: all 2s ease !important;
 `
 
