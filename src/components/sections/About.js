@@ -16,11 +16,11 @@ class About extends Component {
                   <Blob1SVG />
               </BlobSVG>
               <StyledSmaller className="fade-in-on-view">
-                I like working with small and medium-sized teams on projects that <i>actually do something</i>, and enjoy the challenge of learning to leverage new technologies and best practices. <br />I have over 5 years of experience programming with languages like Python, JavaScript and Java—and I still learn new things every day.
+                Lorem ipsum dolor sit amet.
               </StyledSmaller>
-              <StyledSmallest className="fade-in-on-view">
-                here is a small deer:
-              </StyledSmallest>
+              <BlobSVG2>
+                  <Blob1SVG />
+              </BlobSVG2>
         </Frontmatter>
       </Section>
     )
