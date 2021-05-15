@@ -26,7 +26,7 @@ const IndexPage = () => (
     <Navbar />
     <Header />
     <About />
-    <Footer bottomImage={true} />
+    <Footer bottomImage={false} />
   </Layout>
 );
 
