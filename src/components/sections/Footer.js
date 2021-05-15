@@ -51,7 +51,7 @@ const Footer = (props) => (
             />
           </Art>
           :
-          <div style={{'marginTop': '20em'}}></div>}
+          <div></div>}
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
