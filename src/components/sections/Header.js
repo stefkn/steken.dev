@@ -7,7 +7,6 @@ import { Container } from '@components/global';
 
 const headerstyle = {
   'fontSize': '114px',
-  'color': 'rgb(230, 200, 200)',
   'marginLeft': '-9px',
   'zIndex': '5',
   'marginBottom': '21px',
@@ -18,6 +17,7 @@ const headerstyle = {
   'display': 'inline-block',
   'textDecoration': 'none',
   'lineHeight': '86px',
+  'color': 'white'
 }
 const headersecondarystyle = {
   'fontFamily': 'IBM Plex Mono',
