@@ -86,7 +86,13 @@ export const MobileMenu = styled.div`
   text-align-last: end;
   margin: 10px 70px 10px 10px;
   z-index: 3;
-  background: -webkit-linear-gradient(top,#1e2386 20%,rgba(229,229,229,0) 100%);
+
+  background: #d20e4d1a;
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   `;
 
 export const Brand = styled.div`
