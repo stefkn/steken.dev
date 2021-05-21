@@ -54,6 +54,7 @@ const BlobSVG = styled.div`
     animation: moving-blob 20s linear infinite;
   }
 `;
+
 const BlobSVG2 = styled.div`
   position: relative;
   width: 85em;
@@ -118,7 +119,7 @@ const StyledOutlineText = styled.div`
   -webkit-text-stroke-color: rgb(2 0 98);
   -webkit-text-fill-color: #ffffff;
 
-  u {
+  a {
     -webkit-text-fill-color: #ffffff;
     -webkit-text-stroke-width: 1.2px;
     -webkit-text-stroke-color: rgb(2 0 98);
@@ -129,7 +130,7 @@ const StyledOutlineText = styled.div`
     text-decoration: none;
   }
 
-  u:hover {
+  a:hover {
     -webkit-text-fill-color: rgb(2 0 98);
     background-image: linear-gradient(to bottom, rgb(2 0 98) 28%, rgb(2 0 98) 28%, rgb(2 0 98) 72%, rgb(2 0 98) 72%, rgb(2 0 98));
     background-position: 0 1.03em;
