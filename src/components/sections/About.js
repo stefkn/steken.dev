@@ -122,10 +122,20 @@ const StyledOutlineText = styled.div`
     -webkit-text-fill-color: #ffffff;
     -webkit-text-stroke-width: 1.2px;
     -webkit-text-stroke-color: rgb(2 0 98);
+    background-image: linear-gradient(to bottom, rgb(2 0 98) 28%, white 28%, #ffffff00 72%, rgb(2 0 98) 72%, rgb(2 0 98));
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 2px 6px;
+    text-decoration: none;
   }
 
   u:hover {
     -webkit-text-fill-color: rgb(2 0 98);
+    background-image: linear-gradient(to bottom, rgb(2 0 98) 28%, rgb(2 0 98) 28%, rgb(2 0 98) 72%, rgb(2 0 98) 72%, rgb(2 0 98));
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 2px 6px;
+    text-decoration: none;
   }
 
   transition: all 2s ease !important;
