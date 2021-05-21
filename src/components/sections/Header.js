@@ -240,4 +240,18 @@ const Text = styled.div`
   }
 `;
 
+const HeaderText = styled.div`
+  background-color: #0d1bdcd6;
+  border-radius: 20px;
+  padding: 30px;
+  z-index: 2;
+  background: rgb(0 168 206 / 15%);
+  box-shadow: 0 8px 32px 0 rgb(16 25 144 / 37%);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  transform: skewY(6deg);
+`;
+
 export default Header;
