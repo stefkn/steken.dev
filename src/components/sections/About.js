@@ -10,7 +10,7 @@ class About extends Component {
       <Section id="about">
         <Frontmatter>
               <StyledOutlineText className="fade-in-on-view">
-                Stefan Kenichiro Nowak is a <u>Software Engineer</u> at tails.com. Before that, he was a student of <u>Computer Science</u> at King's College London.
+                Stefan Kenichiro Nowak is a <a href="https://lifeat.tails.com/tag/engineering/">Software Engineer</a> at <a href="https://tails.com/gb/">tails.com</a>. Before that, he was a student of <a href="https://www.kcl.ac.uk/study/undergraduate/courses/computer-science-msci">Computer Science</a> at <a href="https://en.wikipedia.org/wiki/King%27s_College_London">King's College London</a>.
               </StyledOutlineText>
               <BlobSVG>
                   <Blob1SVG />
