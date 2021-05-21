@@ -33,6 +33,14 @@ const BlobSVG = styled.div`
   width: 85em;
   z-index: -1;
 
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    bottom: 40em;
+  }
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    bottom: 40em;
+  }
+
   svg {
     position: absolute;
     height: 80em;
