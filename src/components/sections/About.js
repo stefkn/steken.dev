@@ -150,7 +150,6 @@ const StyledSmaller = styled.div`
   letter-spacing: -.02em;
   text-transform: none;
   line-height: 1.3328;
-  font-size: calc(2.2 * 1rem);
   margin: 1rem 0;
   color: rgb(2 0 98);
   margin-top: 0;
@@ -158,25 +157,7 @@ const StyledSmaller = styled.div`
   white-space: pre-wrap;
   margin-top: 4em;
 
-  transition: all 2s ease !important;
-`
-
-const StyledSmallest = styled.div`
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  font-family: Inter, Helvetica, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: -.02em;
-  text-transform: none;
-  line-height: 1.3328;
-  font-size: calc(1.4 * 1rem);
-  margin: 1rem 0;
-  color: rgb(2 0 98);
-  margin-top: 0;
-  margin-bottom: 0;
-  white-space: pre-wrap;
-  margin-top: 4em;
+  font-size: clamp(2.1rem, 12vw - 1.5rem, 2.3rem);
 
   transition: all 2s ease !important;
 `
