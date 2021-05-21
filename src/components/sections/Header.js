@@ -119,18 +119,33 @@ const ArtBackground = styled.div`
 
   @media (min-width: ${props => props.theme.screen.xs}) {
     max-width: 540px;
+    width: 80vw;
   }
 
   @media (min-width: ${props => props.theme.screen.sm}) {
     max-width: 720px;
+    width: 60vw;
   }
 
   @media (min-width: ${props => props.theme.screen.md}) {
     max-width: 960px;
+    width: 600px;
   }
 
   @media (min-width: ${props => props.theme.screen.lg}) {
     max-width: 1200px;
+    width: 730px;
+  }
+
+  .fake-code {
+    padding: 20px;
+  }
+
+  .fake-code > p {
+    font-family: "IBM Plex Mono";
+    color: #ffffff30;
+    line-height: 30px;
+    overflow: hidden;
   }
 `
 
