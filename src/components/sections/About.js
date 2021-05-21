@@ -103,13 +103,15 @@ const StyledOutlineText = styled.div`
   font-style: normal;
   text-transform: none;
   line-height: 1.232;
-  font-size: calc(4 * 1rem);
+
   margin: 1rem 0;
   color: rgb(2 0 98);
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
   margin-top: 2em;
+
+  font-size: clamp(3.2rem, 12vw - 1.5rem, 4.5rem);
 
 
   -webkit-text-stroke-width: 1.2px;
