@@ -16,7 +16,7 @@ class About extends Component {
                   <Blob1SVG />
               </BlobSVG>
               <StyledSmaller className="fade-in-on-view">
-                When not staring at one of my many screens, you might catch me reading a book or ten, going on a journey somewhere, lifting heavy things, or cooking something tasty. 🍛
+                When not staring at one of my many screens, you might catch me reading a book or ten, going on a journey somewhere, lifting heavy things, or cooking something tasty.
               </StyledSmaller>
               <BlobSVG2>
                   <Blob1SVG />
@@ -112,7 +112,7 @@ const StyledOutlineText = styled.div`
   white-space: pre-wrap;
   margin-top: 2em;
 
-  font-size: clamp(3.2rem, 12vw - 1.5rem, 4.5rem);
+  font-size: clamp(2.8rem, 12vw - 1.5rem, 4.5rem);
 
 
   -webkit-text-stroke-width: 1.2px;
@@ -158,7 +158,7 @@ const StyledSmaller = styled.div`
   white-space: pre-wrap;
   margin-top: 4em;
 
-  font-size: clamp(2.1rem, 12vw - 1.5rem, 2.3rem);
+  font-size: clamp(1.8rem, 12vw - 1.5rem, 2.3rem);
 
   transition: all 2s ease !important;
 `
