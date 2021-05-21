@@ -39,7 +39,7 @@ class HeaderAnimation extends React.Component {
             if (window.devicePixelRatio < 2) {
                 renderer.setPixelRatio(window.devicePixelRatio/2);
             } else {
-                renderer.setPixelRatio(window.devicePixelRatio/4);
+                renderer.setPixelRatio(window.devicePixelRatio/5);
             }
             renderer.setSize(clientWidth, clientHeight, false);
             camera.aspect = clientWidth / clientHeight;
@@ -84,7 +84,8 @@ class HeaderAnimation extends React.Component {
     let geom;
     {
         // const geom_ = new $.TorusKnotBufferGeometry( 10, 3, 50, 4 );
-        const geom_ = new $.TorusKnotBufferGeometry( 12, 3, 30, 3 );
+        // const geom_ = new $.TorusKnotBufferGeometry( 12, 3, 30, 3 );
+        const geom_ = new $.TorusKnotBufferGeometry( 4, 3, 12, 2 );
         geom = geom_.toNonIndexed();
         geom_.dispose();
     }
