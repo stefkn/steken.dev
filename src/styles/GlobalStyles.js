@@ -158,6 +158,23 @@ const GlobalStyles = createGlobalStyle`
     50%  { transform: translate(0px, -3px); }
     100%   { transform: translate(0px, 0px); }
   }
+
+  body::-webkit-scrollbar-track
+  {
+    background-color: #2f39ae;
+  }
+
+  body::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+
+  body::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    background-color: #b19ccf;
+  }
 `;
 
 export default GlobalStyles;
