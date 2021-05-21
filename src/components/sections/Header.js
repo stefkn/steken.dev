@@ -52,17 +52,38 @@ const Header = () => (
       <HeaderWrapper id="header-wrapper">
         <Container>
           <Grid>
-            <ArtBackground></ArtBackground>
+            <ArtBackground>
+              <div class="fake-code">
+                <p>
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                  {`public static void main(string[] args)`}
+                  <br />
+                </p>
+              </div>
+            </ArtBackground>
             <Art><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
-            <Text>
+            <HeaderText>
               <h1 style={headerstyle} >
-                Hi there.
+                Hello.
               </h1>
               <br />
               <p className="subtext" style={headersecondarystyle}>
-                Stefan Kenichiro Nowak is <br /> a full-stack software engineer <br /> in 🇬🇧 London, U.K.
+                Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧 London, England.
               </p>
-            </Text>
+            </HeaderText>
           </Grid>
         </Container>
       </HeaderWrapper>
