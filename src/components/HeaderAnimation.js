@@ -97,7 +97,7 @@ class HeaderAnimation extends React.Component {
     geom_.setAttribute('position', new $.BufferAttribute(positions0, 6));
 
     // Make Mesh{}
-    const mat = new $.MeshBasicMaterial( { color: '#fc2980', wireframe: true } );
+    const mat = new $.MeshBasicMaterial( { color: '#796ab6', wireframe: true } );
     const mesh = new $.Mesh(geom, mat);
     mesh.morphTargetInfluences = [1, 1];
     scene.add(mesh);
