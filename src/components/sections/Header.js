@@ -91,19 +91,17 @@ const Header = () => (
   />
 );
 
-// TODO: Fix for multi screen sizes!
+
 const ArtBackground = styled.div`
   @keyframes animatebgs {
-    0% { transform: skewY(-13deg) translate3d(0, 50%, 0); opacity: 0%;}
+    0% { transform: skewY(-13deg) translate3d(0, 20%, 0); opacity: 0%;}
     100% { transform: skewY(-13deg) translate3d(0, 0, 0); opacity: 90%;}
   }
 
   transform: skewY(-13deg);
-  opacity: 0%;
   animation: animatebgs 2s;
-  animation-delay: 0.5s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
-  background: linear-gradient(107deg,#004daa00 -12%,#ff00e0b8 1%,rgba(79,255,72,0) 70%);
 
   position: absolute;
   z-index: 0;
