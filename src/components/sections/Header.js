@@ -81,7 +81,7 @@ const Header = () => (
               </h1>
               <br />
               <p className="subtext" style={headersecondarystyle}>
-                Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧 London, England.
+                Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧London, England.
               </p>
             </HeaderText>
           </Grid>
