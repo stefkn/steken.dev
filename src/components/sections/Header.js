@@ -158,6 +158,7 @@ const HeaderWrapper = styled.header`
   height: 60em;
   display: block;
   background: #2f39ae;
+  overflow: hidden;
 
   -webkit-transition: background-color 500ms linear;
   -ms-transition: background-color 500ms linear;
@@ -168,7 +169,7 @@ const HeaderWrapper = styled.header`
   }
 
   @keyframes showTopText {
-    0% { transform: translate3d(0, 100%, 0); opacity: 0%; }
+    0% { transform: translate3d(0, 50%, 0); opacity: 0%; }
     100% { transform: translate3d(0, 0, 0); opacity: 100%; }
   }
 
