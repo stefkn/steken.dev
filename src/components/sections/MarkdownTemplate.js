@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 import Footer from '@sections/Footer';
+import { Container } from '@components/global';
 
 import styled from 'styled-components';
 
@@ -18,14 +19,17 @@ export default function Template({
   return (
     <Layout>
         <Navbar />
-        <Article className="page-main">
-            <h1 className="title-main">{frontmatter.title}</h1>
-            <h2 className="subtitle-main">{frontmatter.date}</h2>
-            <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-            />
-        </Article>
+        <Container>
+          <Article className="page-main">
+              <h1 className="title-main">{frontmatter.title}</h1>
+              <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
+              <h2 className="subtitle-date">{frontmatter.date}</h2>
+              <div
+              className="blog-post-content"
+              dangerouslySetInnerHTML={{ __html: html }}
+              />
+          </Article>
+        </Container>
         <Footer bottomImage={false} />
     </Layout>
   )
@@ -39,13 +43,19 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 3em;
+    margin-top: 1em;
     -webkit-font-smoothing: antialiased;
     font-family: Inter, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: -.02em;
+  }
 
+  .subtitle-main {
+    color: #ff146f;
+  }
+  .subtitle-date {
+    color: #564F62;
   }
 
   p {
@@ -112,6 +122,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        subtitle
       }
     }
   }
