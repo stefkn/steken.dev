@@ -77,15 +77,6 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-
-  .page-main {
-    padding-left: 16px;
-    padding-right: 16px;
-    max-width: 816px;
-    display: block;
-    margin: 16px auto;
-  }
-
   .title-main {
     overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
