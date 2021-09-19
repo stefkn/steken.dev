@@ -22,23 +22,43 @@ const PostEntry = styled.div`
 
   h3 {
     color: #2f39ae !important;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 600;
   }
 
   a:-webkit-any-link {
     color: #2f39ae;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   p.excerpt {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.3328;
+  }
+
+  .post-date {
     font-size: 16px;
-    line-height: 1.2;
-    margin-top: 2em;
+    color: #2f39ae;
+  }
+
+  .read-more {
+    font-size: 16px;
+    color: #2f39ae;
   }
 
   width: 100%;
   background-color: rgb(236 235 255);
+  box-shadow: -1px 4px 14px 3px #aeb4ff75;
   border-radius: 9px;
   padding: 22px;
   cursor: pointer;
+
+  animation-delay: 0s;
+  animation: animatetext 1s;
+  animation-fill-mode: forwards;
+
+  @keyframes animatetext {
+    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
+    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   `;
