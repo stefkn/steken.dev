@@ -45,6 +45,7 @@ class HeaderAnimation extends React.Component {
             camera.aspect = clientWidth / clientHeight;
             camera.updateProjectionMatrix();
             composer.setSize(clientWidth, clientHeight);
+
             // Make the wrapper and nav transparent -- they are occluding the HeaderAnim while it loads
             document.getElementById('header-wrapper').style.backgroundColor = '#ffffff00';
             document.getElementsByTagName('nav')[0].style.backgroundColor = '#ffffff00';
@@ -52,7 +53,7 @@ class HeaderAnimation extends React.Component {
     }
 
     function timedResize() { setTimeout(respondToViewportResize, 100); };
-    const debouncedTimeout = debounce(timedResize, 100, false);
+    const debouncedTimeout = debounce(timedResize, 200, false);
 
     // fit canvas to header block
     window.addEventListener('resize', () => {
