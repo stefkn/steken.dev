@@ -116,6 +116,9 @@ class HeaderAnimation extends React.Component {
 
   render() {
     const HeaderAnimContainer = styled.div`
+        -webkit-transition: all 0s ease;
+        transition: all 0s ease;
+
         canvas {
             width: 98vw;
             height: 60em;
@@ -123,6 +126,9 @@ class HeaderAnimation extends React.Component {
             position: absolute;
             background-color: #2f39ae;
             z-index: 1;
+
+            -webkit-transition: all 0s ease;
+            transition: all 0s ease;
         }
 
         @media (max-width: 1420px) {
