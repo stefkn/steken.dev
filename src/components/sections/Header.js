@@ -160,9 +160,9 @@ const HeaderWrapper = styled.header`
   background: #2f39ae;
   overflow: hidden;
 
-  -webkit-transition: background-color 500ms linear;
-  -ms-transition: background-color 500ms linear;
-  transition: background-color 500ms linear;
+  -webkit-transition: background-color 0ms linear;
+  -ms-transition: background-color 0ms linear;
+  transition: background-color 0ms linear;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
