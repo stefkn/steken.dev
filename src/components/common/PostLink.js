@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 const PostLink = ({ post }) => (
   <PostEntry>
+    <div className="post-date">{post.frontmatter.date}</div>
     <h3 className="subtitle-main">
         <Link to={post.frontmatter.slug}>
-        {post.frontmatter.title}
+          {post.frontmatter.title}
         </Link>
     </h3>
-        <p>{post.frontmatter.date}</p>
-        <p className="excerpt">{post.excerpt}</p>
+    <p className="excerpt">{post.frontmatter.excerpt}</p>
+    <p className="read-more">Read more... ({post.frontmatter.reading_time} min read)</p>
   </PostEntry>
 )
 
