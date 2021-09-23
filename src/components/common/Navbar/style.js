@@ -76,9 +76,12 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 15em;
-  transform: skewY(-13deg);
+  -webkit-transform: skewY(
+  -13deg);
+  -ms-transform: skewY(8deg);
+  transform: skewY(8deg);
   float: right;
-  height: 66vh;
+  height: 12em;
   position: relative;
   bottom: 0em;
   border-radius: 12px;
@@ -86,13 +89,13 @@ export const MobileMenu = styled.div`
   text-align-last: end;
   margin: 10px 70px 10px 10px;
   z-index: 3;
-
-  background: #d20e4d1a;
+  background: #4150ff94;
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  -webkit-backdrop-filter: blur( 6px );
   backdrop-filter: blur( 6px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 255,255,255,0.18 );
   `;
 
 export const Brand = styled.div`
