@@ -123,6 +123,7 @@ export const pageQuery = graphql`
         slug
         title
         subtitle
+        cover_image
       }
     }
   }
