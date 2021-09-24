@@ -28,6 +28,13 @@ module.exports = {
         path: `${__dirname}/src/images/stack`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `article_cover_images`,
+        path: `${__dirname}/src/images/article_cover_images`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
