@@ -1,9 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
-const PostLink = ({ post }) => (
+const PostLink = ({ post, coverImage }) => (
   <PostEntry>
+    {(coverImage) &&
+      <Link to={post.frontmatter.slug}>
+        <Img className="cover-image" fluid={coverImage.childImageSharp.fluid} />
+      </Link>
+    }
     <div className="post-date">{post.frontmatter.date}</div>
     <h3 className="subtitle-main">
         <Link to={post.frontmatter.slug}>
