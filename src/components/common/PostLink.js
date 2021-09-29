@@ -17,7 +17,7 @@ const PostLink = ({ post, coverImage }) => (
         </Link>
     </h3>
     <p className="excerpt">{post.frontmatter.excerpt}</p>
-    <p className="read-more">Read more... ({post.frontmatter.reading_time} min read)</p>
+    <p className="read-more"><Link to={post.frontmatter.slug}>Read more... ({post.frontmatter.reading_time} min read)</Link></p>
   </PostEntry>
 )
 
@@ -26,6 +26,11 @@ export default PostLink
 const PostEntry = styled.div`
   margin-top: 2em;
   margin-bottom: 2em;
+
+  .cover-image {
+    border-radius: 6px;
+    margin: 4px;
+  }
 
   h3 {
     color: #2f39ae !important;
@@ -59,7 +64,6 @@ const PostEntry = styled.div`
   box-shadow: -1px 4px 14px 3px #aeb4ff75;
   border-radius: 9px;
   padding: 22px;
-  cursor: pointer;
 
   animation-delay: 0s;
   animation: animatetext 1s;
