@@ -36,7 +36,8 @@ export default function Template({
 }
 
 const Article = styled.div`
-  padding-top: 12em;
+  margin-top: 8em;
+  margin-bottom: 12em;
 
   .blog-post-content {
     padding-top: 4em;
