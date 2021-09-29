@@ -59,7 +59,6 @@ const Article = styled.div`
   }
 
   p {
-    margin-top: 1.8em;
     -webkit-font-smoothing: antialiased;
     font-family: Shippori Mincho, serif;
     font-weight: 300;
@@ -67,7 +66,7 @@ const Article = styled.div`
     letter-spacing: -.02em;
     line-height: 1.62;
     color: #080d22;
-    font-size: calc(1.5 * 1rem);
+    font-size: clamp(1.2rem, 12vw - 4.5rem, 1.5rem);
   }
 
   a {
@@ -82,6 +81,18 @@ const Article = styled.div`
   table {
     margin-block-end: 24px;
     margin-block-start: 24px;
+  }
+
+  blockquote {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px;
   }
 
   --deckgo-highlight-code-font-family: IBM Plex Mono;
