@@ -43,17 +43,33 @@ class Articles extends Component {
     return (
       <StaticQuery
         query={graphql`
-          query {
-            allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+          query
+          {
+            allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
               edges {
                 node {
                   id
-                  excerpt(pruneLength: 250)
                   frontmatter {
                     date(formatString: "MMMM DD, YYYY")
                     slug
                     title
                     tags
+                    published
+                    excerpt
+                    reading_time
+                    cover_image
+                  }
+                }
+              }
+            }
+            allFile(filter: {sourceInstanceName: {eq: "article_cover_images"}}) {
+              edges {
+                node {
+                  childImageSharp {
+                    fluid(maxWidth: 1200) {
+                      originalName
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }
