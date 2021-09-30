@@ -33,6 +33,10 @@ class Articles extends Component {
     }
   }
 
+  isArticlePublished(article) {
+    return article.node.frontmatter.published
+  }
+
   addToTagList(tag, accumulator) {
     if (accumulator) {
       accumulator.indexOf(tag) === -1 ? accumulator.push(tag) : console.log("This item already exists: " + tag);
