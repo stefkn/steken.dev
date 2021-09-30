@@ -26,7 +26,7 @@ class Articles extends Component {
   };
 
   articleIsTagged(tag, article) {
-    if (tag === '') {
+    if (tag === '' || tag === 'All articles') {
       return true;
     } else {
       return article.node.frontmatter.tags.split(' ').indexOf(tag) === -1 ? false : true;
