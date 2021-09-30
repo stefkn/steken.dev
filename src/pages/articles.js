@@ -115,18 +115,45 @@ const MainMatter = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
     text-align: left;
-    // margin-bottom: 96px;
+  }
+
+  h1 {
+    line-height: 1.3328;
+    font-size: clamp(4.6rem, 12vw - 1.5rem, 6.5rem);
+
+    animation-delay: 0s;
+    animation: animatetext 1s;
+    animation-fill-mode: forwards;
+  }
+
+  h3 {
+    line-height: 1.3328;
+    font-size: clamp(2.0rem, 12vw - 1.5rem, 3.2rem);
+
+    animation-delay: 1s;
+    animation: animatetext 2s;
+    animation-fill-mode: forwards;
+  }
+
+  p {
+    font-size: clamp(1.6rem, 12vw - 1.5rem, 2.0rem);
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -.02em;
+    text-transform: none;
+    line-height: 1.3328;
+    margin-top: 2em;
+    margin-bottom: 0;
+    white-space: pre-wrap;
+    margin-top: 1em;
+
+    animation-delay: 2s;
+    animation: animatetext 2s;
+    animation-fill-mode: forwards;
   }
 `;
-
-const TagButton = styled.button`
-  background-color: #2f39ae;
-  border-radius: 100px;
-  padding: 11px;
-  color: white;
-  margin: 3px;
-  box-shadow: -2px 2px 7px 0px #2f39ae;
-`
-
 
 export default Articles;
