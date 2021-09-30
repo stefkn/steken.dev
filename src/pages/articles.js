@@ -121,15 +121,16 @@ class Articles extends Component {
 
           return (
           <Layout>
-          <Navbar />
-          <MainMatter>
-            <h1 className="title-main">articles</h1>
-            <h2 className="subtitle-main">here are some topics i have written about:</h2>
-            <div>{Tags}</div>
-            <div>{Posts}</div>
-            <Link className="home-link" to="/">Go back to the homepage</Link>
-          </MainMatter>
-          <Footer bottomImage={false}/>
+            <Navbar />
+            <Container>
+              <MainMatter>
+                <h1>Articles</h1>
+                <p>filter by topic:</p>
+                <TagsButtonContainer>{Tags}</TagsButtonContainer>
+                <PostsContainer>{Posts}</PostsContainer>
+              </MainMatter>
+            </Container>
+            <Footer bottomImage={false}/>
           </Layout>
           )
         }}
