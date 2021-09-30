@@ -18,7 +18,12 @@ class Articles extends Component {
   }
 
   selectTag(tag) {
-    this.setState({selectedTag: tag});
+    this.setState({selectedTag: 'nothing'});
+    let that = this;
+
+    setTimeout( function() {
+      that.setState({selectedTag: tag});
+    }, 1);
   }
 
   selectNoTags = () => {
