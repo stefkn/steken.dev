@@ -39,6 +39,16 @@ class Articles extends Component {
     }
   }
 
+  isSameImageName(image, coverImageName) {
+    return image.node.childImageSharp.fluid.originalName === coverImageName
+  }
+
+  getCoverImage(allImages, coverImageName) {
+    let filteredImages = allImages.filter(image => this.isSameImageName(image, coverImageName))
+    // if multiple are matched, return the first one
+    return (filteredImages.length > 0) ? filteredImages[0].node : null
+  }
+
   render() {
     return (
       <StaticQuery
