@@ -9,6 +9,7 @@ import Navbar from '@common/Navbar';
 
 import styled from 'styled-components';
 import PostLink from "../components/common/PostLink"
+import { Container } from '@components/global';
 
 
 class Articles extends Component {
