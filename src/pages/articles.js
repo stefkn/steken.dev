@@ -96,25 +96,27 @@ class Articles extends Component {
             }
           }
         `}
-        render={data => {
-          const response = data.allMarkdownRemark.edges
+        render={queryResult => {
+          const mdArticles = queryResult.allMarkdownRemark.edges
+            .filter(article => this.isArticlePublished(article))
 
           const reducer = (accumulator, currentValue) => {
             currentValue.forEach((tag) => this.addToTagList(tag, accumulator));
             return accumulator
           }
 
-          let Posts = <div>No posts. 👽</div>;
-          let Tags = <div>No tags. 💁‍♀️</div>;
+          const coverImages = queryResult.allFile.edges
+          let Posts = <div style="margin-top:1em;">No posts. 👽</div>;
+          let Tags = <div style="margin-top:1em;">No tags. 💁‍♀️</div>;
 
-          if (!!response) {
-            Posts = response
-              .filter(edge => this.articleIsTagged(this.state.selectedTag, edge))
-              .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-            Tags = response
-              .map(edge => edge.node.frontmatter.tags.split(' '))
-              .reduce(reducer)
-              .map(tag => <TagButton className={this.state.selectedTag === tag ? 'selelcted-tag-button': null} key={tag} onClick={(e) => this.selectTag(tag)}>{tag}</TagButton>)
+          if (!!mdArticles) {
+            Posts = mdArticles
+              .filter(article => this.articleIsTagged(this.state.selectedTag, article))
+              .map(article => <PostLink key={article.node.id} post={article.node} coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)} />)
+            Tags = mdArticles
+              .map(article => article.node.frontmatter.tags.split(' '))
+              .reduce(reducer, mdArticles ? ['All articles'] : ['No tags yet.'])
+              .map(tag => <TagButton className={this.state.selectedTag === tag ? 'selelcted-tag-button': null} key={tag} onClick={() => this.selectTag(tag)} > {tag} </TagButton>)
           }
 
           return (
