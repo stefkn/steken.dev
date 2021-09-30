@@ -101,18 +101,17 @@ class Articles extends Component {
 }
 
 const MainMatter = styled.div`
-  padding-top: 22vh;
-  padding-left: 16px;
-  padding-right: 16px;
-  max-width: 816px;
-  display: block;
-  margin: 16px auto;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  min-height: 100vh;
 
-  h2 {
-    margin-bottom: 16px;
+  @keyframes animatetext {
+    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
+    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
+    padding-top: 10em;
     grid-template-columns: 1fr;
     text-align: left;
   }
