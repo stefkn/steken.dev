@@ -22,6 +22,60 @@ const AboutMe = () => (
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
+        },
+        python_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "python" }
+        ) {
+          publicURL
+        }
+        flask_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "flask" }
+        ) {
+          publicURL
+        }
+        vue_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "vue" }
+        ) {
+          publicURL
+        }
+        mysql_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "mysql" }
+        ) {
+          publicURL
+        }
+        javascript_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "javascript" }
+        ) {
+          publicURL
+        }
+        gatsby_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "gatsby" }
+        ) {
+          publicURL
+        }
+        java_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "java" }
+        ) {
+          publicURL
+        }
+        react_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "react" }
+        ) {
+          publicURL
+        }
+        graphql_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "graphql" }
+        ) {
+          publicURL
         }
       }
     `}
