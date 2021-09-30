@@ -8,6 +8,8 @@ import Footer from '@sections/Footer';
 import Navbar from '@common/Navbar';
 
 import styled from 'styled-components';
+import { Container } from '@components/global';
+
 
 const AboutMe = () => (
   <StaticQuery
