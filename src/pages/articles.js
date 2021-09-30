@@ -100,6 +100,31 @@ class Articles extends Component {
   }
 }
 
+
+const TagsButtonContainer = styled.div`
+  margin-top: 1em;
+`
+const PostsContainer = styled.div`
+
+`
+const TagButton = styled.button`
+  animation-delay: 0s;
+  animation: animatetext 1s;
+  animation-fill-mode: forwards;
+
+  background-color: #2f39ae;
+  border-radius: 100px;
+  padding: 11px;
+  color: white;
+  margin: 3px;
+  box-shadow: -4px 5px 8px 0px #2f39ae75;
+
+  @keyframes animatetext {
+    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
+    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
+  }
+`
+
 const MainMatter = styled.div`
   padding-top: 10em;
   padding-bottom: 10em;
