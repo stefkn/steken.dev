@@ -15,10 +15,10 @@ const AboutMe = () => (
       query {
         stefan_img: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "me2" }
+          name: { eq: "stefan" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 673) {
+            fluid(maxWidth: 2048) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
