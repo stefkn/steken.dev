@@ -93,7 +93,7 @@ const Article = styled.div`
     background-color: #ebebeb;
     border-radius: 10px;
     padding: 24px;
-    margin: 24px;
+    margin: 32px;
   }
 
   --deckgo-highlight-code-font-family: IBM Plex Mono;
