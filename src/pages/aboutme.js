@@ -254,39 +254,42 @@ const HeroImage = styled.div`
   display: flex;
   flex-direction: column;
 `
+
 const MainMatter = styled.div`
-  padding-top: 22vh;
+  padding-top: 30em;
+  padding-bottom: 10em;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
     text-align: left;
-    // margin-bottom: 96px;
+    padding-top: 10em;
   }
 
-  .subtitle-main {
-    margin-top: 46px;
+  @keyframes animatetext {
+    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
+    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   }
 
-  .title-main {
-    overflow-wrap: break-word;
-    -webkit-font-smoothing: antialiased;
-    letter-spacing: -.04em;
-    font-family: Inter, Helvetica, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: none;
-    line-height: 1.232;
-    font-size: calc(4 * 1rem);
-    margin: 1rem 0;
-    color: #2f39ae;
-    margin-top: 0;
-    margin-bottom: 0;
-    white-space: pre-wrap;
+  h1 {
+    line-height: 1.3328;
+    font-size: clamp(4.6rem, 12vw - 1.5rem, 6.5rem);
+
+    animation-delay: 0s;
+    animation: animatetext 1s;
+    animation-fill-mode: forwards;
+  }
+
+  h3 {
     margin-top: 1em;
+    line-height: 1.3328;
+    font-size: clamp(2.0rem, 12vw - 1.5rem, 3.2rem);
 
-    u {
-      -webkit-text-fill-color: #2f39ae;
-    }
+    animation-delay: 1s;
+    animation: animatetext 2s;
+    animation-fill-mode: forwards;
   }
 
   p {
