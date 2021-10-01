@@ -233,6 +233,27 @@ const AboutMe = () => (
   />
 );
 
+const HeroOverlay = styled.div`
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+
+  z-index: 1;
+  background: black;
+  background: linear-gradient(
+    11deg,
+    rgb(247 247 247) 23%,
+    #dd99ff69 76%,
+    #ff006685 96% );
+`
+
+const HeroImage = styled.div`
+  width: 100%;
+  position: absolute;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+`
 const MainMatter = styled.div`
   padding-top: 22vh;
 
