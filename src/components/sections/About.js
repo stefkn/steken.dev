@@ -112,7 +112,7 @@ const StyledOutlineText = styled.div`
   white-space: pre-wrap;
   margin-top: 2em;
 
-  font-size: clamp(2.8rem, 12vw - 1.5rem, 4.5rem);
+  font-size: clamp(3.4rem,12vw - 1.5rem,4.5rem);
 
 
   -webkit-text-stroke-width: 1.2px;
