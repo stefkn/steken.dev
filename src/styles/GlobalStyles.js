@@ -75,6 +75,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     cursor: pointer;
+    color: #2f39ae;
   }
 
   .title-main {
@@ -86,7 +87,7 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     text-transform: none;
     line-height: 1.232;
-    font-size: calc(4 * 1rem);
+    font-size: calc(5 * 1rem);
     margin: 1rem 0;
     color: #2f39ae;
     margin-top: 0;
