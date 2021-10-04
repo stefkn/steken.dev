@@ -36,8 +36,12 @@ export default function Template({
 }
 
 const Article = styled.div`
-  margin-top: 8em;
   margin-bottom: 12em;
+  width: 70%;
+  margin: 10em auto;
+  max-width: 640px;
+
+  font-family: ${props => props.theme.font.secondary};
 
   .blog-post-content {
     padding-top: 4em;
@@ -46,7 +50,7 @@ const Article = styled.div`
   h2 {
     margin-top: 1em;
     -webkit-font-smoothing: antialiased;
-    font-family: Inter, Helvetica, sans-serif;
+    font-family: ${props => props.theme.font.primary};
     font-weight: 400;
     font-style: normal;
     letter-spacing: -.02em;
@@ -61,13 +65,14 @@ const Article = styled.div`
 
   p {
     -webkit-font-smoothing: antialiased;
-    font-family: Shippori Mincho, serif;
+    font-family: ${props => props.theme.font.secondary};
     font-weight: 300;
     font-style: normal;
     letter-spacing: -.02em;
     line-height: 1.62;
     color: #080d22;
     font-size: clamp(1.2rem, 12vw - 4.5rem, 1.5rem);
+    margin-top: 1em;
   }
 
   a {
@@ -96,7 +101,7 @@ const Article = styled.div`
     margin: 32px;
   }
 
-  --deckgo-highlight-code-font-family: IBM Plex Mono;
+  --deckgo-highlight-code-font-family: ${props => props.theme.font.monospace};
   --deckgo-highlight-code-token-function: #ff146f;
   --deckgo-highlight-code-token-comment: #0914ff;
   --deckgo-highlight-code-carbon-background: #00075f;
@@ -107,7 +112,7 @@ const Article = styled.div`
 
   code {
     element::-webkit-scrollbar { width: 0 !important }
-    font-family: SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;
+    font-family: ${props => props.theme.font.monospace};
     font-size: 1em;
     background-color: #ff66a4;
     border-radius: 5px;
