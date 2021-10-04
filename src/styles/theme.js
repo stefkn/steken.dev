@@ -1,8 +1,8 @@
 const theme = {
   font: {
-    primary: `'Inter'`,
-    secondary: `'Inter'`,
-    herotext: `'Inter'`,
+    primary: `Inter, Helvetica, sans-serif;`,
+    secondary: `Spectral, serif`,
+    herotext: `Inter, Helvetica, sans-serif;`,
     monospace: `'IBM Plex Mono'`,
   },
   font_size: {
