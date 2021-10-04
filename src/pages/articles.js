@@ -202,7 +202,7 @@ const MainMatter = styled.div`
     font-size: clamp(1.6rem, 12vw - 1.5rem, 2.0rem);
     overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
-    font-family: Inter, Helvetica, sans-serif;
+    font-family: ${props => props.theme.font.primary};
     font-weight: 300;
     font-style: normal;
     letter-spacing: -.02em;

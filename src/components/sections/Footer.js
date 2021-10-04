@@ -121,7 +121,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const Copyright = styled.div`
-  font-family: ${props => props.theme.font.secondary};
+  font-family: ${props => props.theme.font.primary};
   ${props => props.theme.font_size.small};
   color: white;
   text-align: left;

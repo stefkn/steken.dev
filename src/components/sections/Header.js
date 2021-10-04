@@ -142,7 +142,7 @@ const ArtBackground = styled.div`
   }
 
   .fake-code > p {
-    font-family: "IBM Plex Mono";
+    font-family: ${props => props.theme.font.monospace};
     color: #ffffff30;
     line-height: 30px;
     overflow: hidden;
