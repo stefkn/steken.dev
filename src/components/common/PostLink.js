@@ -34,7 +34,7 @@ const PostEntry = styled.div`
 
   h3 {
     color: #2f39ae !important;
-    font-family: Inter, Helvetica, sans-serif;
+    font-family: ${props => props.theme.font.primary};
     font-weight: 600;
   }
 

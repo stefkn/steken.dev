@@ -79,7 +79,7 @@ const StyledText = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -.04em;
-  font-family: Inter, Helvetica, sans-serif;
+  font-family: ${props => props.theme.font.primary};
   font-weight: 400;
   font-style: normal;
   text-transform: none;
@@ -145,7 +145,7 @@ const StyledOutlineText = styled.div`
 const StyledSmaller = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
-  font-family: Inter, Helvetica, sans-serif;
+  font-family: ${props => props.theme.font.primary};
   font-weight: 300;
   font-style: normal;
   letter-spacing: -.02em;
