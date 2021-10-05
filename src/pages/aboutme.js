@@ -343,25 +343,48 @@ const MainMatter = styled.div`
       }
     }
 
-const Art = styled.figure`
-  width: 14em;
-  margin: 0;
-  top: 16px;
-  z-index: 0;
+    // .tech-stack-item-col:before {
+    //   content: "";
+    //   background: rgba(22,0,91,.2);
+    //   width: 1px;
+    //   bottom: 29px;
+    //   position: absolute;
+    //   top: 32px;
+    //   right: 0;
+    // }
 
-  Img {
-    border-radius: 20px;
-  }
+    .tech-stack-item-col {
+      display: flex;
+      // border-bottom: 1px solid rgba(22,0,91,.2);
+      position: relative;
+      width: 33%;
 
-  > div {
-    width: 120%;
-    margin-bottom: -4.5%;
-  }
+      @media (max-width: ${props => props.theme.screen.xl}) {
+        width: 33%;
+      }
+      @media (max-width: ${props => props.theme.screen.md}) {
+        width: 50%;
+      }
+      @media (max-width: ${props => props.theme.screen.sm}) {
+        width: 100%;
+      }
+      @media (max-width: ${props => props.theme.screen.xs}) {
+        width: 100%;
+      }
 
-  div picture img {
-    top: 20px;
+      .stack-item-text {
+        padding: 0px 10px 0px 0px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
   }
-`;
 
 const Grid = styled.div`
   display: flex;
