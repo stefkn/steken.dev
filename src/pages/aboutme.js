@@ -83,7 +83,7 @@ const AboutMe = () => (
     `}
     render={data => (
     <Layout>
-      <Navbar />
+      <Navbar isAtTopOfPage={true} />
       <HeroImage><HeroOverlay></HeroOverlay><Img fluid={data.stefan_img.childImageSharp.fluid} /></HeroImage>
       <Container>
         <MainMatter>

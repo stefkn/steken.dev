@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 const NotFoundPage = () => (
   <Layout>
-    <Navbar />
+    <Navbar isAtTopOfPage={true} />
     <MainMatter>
       <h1>404 Not Found</h1>
       <p>Sad face.</p>

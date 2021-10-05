@@ -23,7 +23,7 @@ const IndexPage = () => (
   <Layout>
     <HeaderAnimationBackground />
     <HeaderAnimation />
-    <Navbar />
+    <Navbar isAtTopOfPage={true} />
     <Header />
     <About />
     <Footer bottomImage={false} />

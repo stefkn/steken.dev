@@ -121,7 +121,7 @@ class Articles extends Component {
 
           return (
           <Layout>
-            <Navbar />
+            <Navbar isAtTopOfPage={true} />
             <Container>
               <MainMatter>
                 <h1>Articles</h1>
