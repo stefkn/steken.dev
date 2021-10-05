@@ -286,6 +286,7 @@ const MainMatter = styled.div`
     margin-top: 1em;
     line-height: 1.3328;
     font-size: clamp(2.0rem, 12vw - 1.5rem, 3.2rem);
+    font-family: ${props => props.theme.font.primary};
 
     animation-delay: 1s;
     animation: animatetext 2s;
@@ -293,20 +294,23 @@ const MainMatter = styled.div`
   }
 
   p {
+    font-size: clamp(1.6rem, 12vw - 1.5rem, 2.0rem);
     overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
-    font-family: Inter, Helvetica, sans-serif;
+    font-family: ${props => props.theme.font.primary};
     font-weight: 300;
     font-style: normal;
     letter-spacing: -.02em;
     text-transform: none;
     line-height: 1.3328;
-    font-size: calc(2.2 * 1rem);
-    color: #2f39ae;
-    margin-top: 0;
+    margin-top: 2em;
     margin-bottom: 0;
     white-space: pre-wrap;
-    margin-top: 2em;
+    margin-top: 1em;
+
+    animation-delay: 2s;
+    animation: animatetext 2s;
+    animation-fill-mode: forwards;
   }
 
   .text {
