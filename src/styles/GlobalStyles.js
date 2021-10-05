@@ -167,6 +167,23 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 10px;
     background-color: #b19ccf;
   }
+
+  .at-top {
+    background-color: ${props => props.theme.color.primary};
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+
+  .not-at-top {
+    background: linear-gradient(180deg, #f7f7f7 30%, #f7f7f700 110%);
+
+    a {
+      color: black;
+    }
+  }
 `;
 
 export default GlobalStyles;
