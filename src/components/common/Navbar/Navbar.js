@@ -57,11 +57,11 @@ class Navbar extends Component {
     const { mobileMenuOpen } = this.state;
 
     return (
-      <Nav {...this.props}>
+      <Nav {...this.props} className={this.props.isAtTopOfPage ? "at-top" : "not-at-top"}>
         <StyledContainer>
-          <Brand><Link to="/" style={{'color': 'white', 'textDecoration': 'none'}} id="navbar-title">steken.dev</Link></Brand>
+          <Brand><Link to="/" id="navbar-title">steken.dev</Link></Brand>
           <Mobile>
-            <button onClick={this.toggleMobileMenu} style={{ color: 'white' }}>
+            <button onClick={this.toggleMobileMenu}>
               <MenuIcon />
             </button>
           </Mobile>
