@@ -386,35 +386,32 @@ const MainMatter = styled.div`
     }
   }
 
-const Grid = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 64px;
-`
+  .spotify-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
-const Card = styled.div`
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  background-color: rgb(236 235 255);
 
-  @media (max-width: ${props => props.theme.screen.md}) {
-    flex-basis: 100%;
-  }
+    .spotify-embed {
+      border-radius: 8px;
+      box-shadow: -2px -2px 16px 2px #0000004a;
 
-  .card-title {
-    font-size: 38px;
-    margin-top: 18px;
-  }
-`
+      @media (max-width: ${props => props.theme.screen.md}) {
+        width: 100%;
+      }
+      width: 40%;
+
+      margin: 40px;
+      background-color: rgb(40, 40, 40);
+
+      animation-delay: 0s;
+      animation: animatetext 2s;
+      animation-fill-mode: forwards;
+    }
+   }
+`;
+
 
 export default AboutMe;
