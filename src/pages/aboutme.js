@@ -313,13 +313,35 @@ const MainMatter = styled.div`
     animation-fill-mode: forwards;
   }
 
-  .text {
-    margin-top: 32px;
-  }
-  .text-first {
-    margin-top: 62px;
-  }
-`;
+  .section-tech {
+    padding: 62px 32px 48px 32px;
+    background: #e2e4ff52;
+    border: solid rgba(22,0,91,.2);
+    border-width: 1px 0;
+    margin-bottom: 42px;
+    margin-top: 42px;
+    font-size: 16px;
+    line-height: 1.51;
+
+    .row {
+      margin: 10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tech-stack-item-logo {
+      background-color: white;
+      border-radius: 16px;
+      margin: 16px;
+      padding: 22px;
+      box-shadow: -2px -2px 20px 2px #00000014;
+      max-height: 105px;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
 
 const Art = styled.figure`
   width: 14em;
