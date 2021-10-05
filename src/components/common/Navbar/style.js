@@ -4,7 +4,6 @@ import { Container } from '@components/global';
 
 export const Nav = styled.nav`
   padding: 16px 0;
-  background-color: ${props => props.theme.color.primary};
   position: fixed;
   width: 100%;
   height: 5em;
@@ -63,7 +62,6 @@ export const NavItem = styled.li`
 
   a {
     text-decoration: none;
-    color: white;
     filter: drop-shadow(7px -13px 22px #000000);
   }
 
@@ -100,7 +98,6 @@ export const MobileMenu = styled.div`
 
 export const Brand = styled.div`
   font-family: ${props => props.theme.font.primary};
-  color: white;
   ${props => props.theme.font_size.large};
 `;
 
@@ -122,10 +119,9 @@ export const Mobile = styled.div`
   `}
 
   button {
-    background-color: #ff0067;
+    background-color: #ff0067c9;
     filter: drop-shadow(7px -13px 32px #ff0067);
-    padding: 10px;
-    color: white;
+    padding: 9px 9px 6px 10px;
     box-shadow: black;
     box-shadow: 40px black;
     border-radius: 100px;
