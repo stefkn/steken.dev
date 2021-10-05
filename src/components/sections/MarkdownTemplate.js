@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
 import { graphql } from "gatsby";
 
 import Layout from '@common/Layout';
@@ -15,10 +16,19 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const [scroll, setScroll] = useState(0)
   deckDeckGoHighlightElement();
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const scrollCheck = window.scrollY < 100
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck)
+      }
+    })
+  })
   return (
     <Layout>
-        <Navbar />
+        <Navbar isAtTopOfPage={scroll} />
         <Container>
           <Article className="page-main">
               <h1 className="title-main">{frontmatter.title}</h1>
