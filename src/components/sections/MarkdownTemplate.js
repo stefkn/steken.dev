@@ -47,9 +47,16 @@ export default function Template({
 
 const Article = styled.div`
   margin-bottom: 12em;
-  width: 70%;
   margin: 10em auto;
   max-width: 640px;
+
+  body {
+    background: linear-gradient(181deg, #a8afff 1%, transparent 20%);
+  }
+
+  @media (min-width: ${props => props.theme.screen.md}) {
+    width: 70%;
+  }
 
   font-family: ${props => props.theme.font.secondary};
 
