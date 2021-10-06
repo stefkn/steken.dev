@@ -57,6 +57,13 @@ const Article = styled.div`
     padding-top: 4em;
   }
 
+  h1 {
+    font-size: calc(4 * 1rem);
+    max-width: 100%;
+    overflow: hidden;
+    font-size: clamp(4rem, 12vw - 4.5rem, 6rem);
+  }
+
   h2 {
     margin-top: 1em;
     -webkit-font-smoothing: antialiased;
@@ -64,6 +71,11 @@ const Article = styled.div`
     font-weight: 400;
     font-style: normal;
     letter-spacing: -.02em;
+  }
+
+  h3 {
+    margin-top: 1em;
+    font-family: ${props => props.theme.font.primary};
   }
 
   .subtitle-main {
