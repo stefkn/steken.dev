@@ -81,7 +81,7 @@ const Article = styled.div`
     letter-spacing: -.02em;
     line-height: 1.62;
     color: #080d22;
-    font-size: clamp(1.2rem, 12vw - 4.5rem, 1.5rem);
+    font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
     margin-top: 1em;
   }
 
@@ -123,8 +123,9 @@ const Article = styled.div`
   code {
     element::-webkit-scrollbar { width: 0 !important }
     font-family: ${props => props.theme.font.monospace};
-    font-size: 1em;
-    background-color: #ff66a4;
+    font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
+    background-color: #ff6ba7;
+    font-weight: 500;
     border-radius: 5px;
     padding: 3px;
     color: #ffffff;
