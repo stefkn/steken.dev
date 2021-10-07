@@ -69,6 +69,7 @@ const Article = styled.div`
     max-width: 100%;
     overflow: hidden;
     font-size: clamp(4rem, 12vw - 4.5rem, 6rem);
+    filter: drop-shadow(1px -1px 45px #2f39ae);
   }
 
   h2 {
