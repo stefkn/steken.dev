@@ -6,12 +6,9 @@ export const Nav = styled.nav`
   padding: 16px 0;
   position: fixed;
   width: 100%;
-  height: 5em;
   top: 0;
   z-index: 1000;
-  -webkit-transition: background-color 500ms linear;
-  -ms-transition: background-color 500ms linear;
-  transition: background-color 500ms linear;
+
 
   .fade-in {
     visibility: visible;
