@@ -52,7 +52,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`IBM Plex Mono\:100,200,300,400,500,600,700`, `Inter\:300,400,500,700,900`, `Shippori Mincho\:400,600`],
+        fonts: [
+          `IBM Plex Mono\:100,200,300,400,500,600,700`,
+          `Inter\:300,400,500,700,900`,
+          `Rubik\:100,200,300,400,500,600,700`,
+          `Spectral\:200,300`,
+        ],
       },
     },
     {
