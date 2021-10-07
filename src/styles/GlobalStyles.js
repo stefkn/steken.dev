@@ -171,6 +171,7 @@ const GlobalStyles = createGlobalStyle`
   .at-top {
     background-color: ${props => props.theme.color.primary};
     color: white;
+    height: 5em;
 
     a {
       color: white;
@@ -178,7 +179,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .not-at-top {
-    background: linear-gradient(180deg, #f7f7f7 30%, #f7f7f700 110%);
+    background: linear-gradient(
+      180deg,#f7f7f7 8%,#f7f7f700 100%);
+    height: 11em;
 
     a {
       color: black;
