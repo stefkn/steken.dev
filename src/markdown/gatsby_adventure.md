@@ -21,6 +21,7 @@ cover_image: "img_5328.jpeg"
 >
 >**The Great Gatsby** ∙ F. Scott Fitzgerald ∙ 1925
 
+*Excuse the cliché Gatsby / Great Gatsby joke...*
 
 While it seems to have lost some of its luster lately in comparison to even newer kids on the block [^1], I've been working on this [Gatsby](https://www.gatsbyjs.com/) personal website now (it shames me to admit) for the better part of a year, basing initially off of an excellent free template called Absurd, by ajayns.
 
@@ -100,6 +101,6 @@ SSR is the more "traditional" approach, and encompasses the CGI scripts we menti
 
 [^9]: These are the most popular today, but were not the first by a long shot. What could be considered the first SPA website was created [as far back as 2002.](https://en.wikipedia.org/wiki/Single-page_application#cite_note-4)
 
-[^10]: Along with about a billion dependencies...
+[^10]: Along with about a billion dependencies... !<div style="max-width: 400px"> ![A boy with a very very large backpack with the caption, "a simple web page" / "2GB node modules"](../images/article_images/node_modules_backpack.jpeg) </div>
 
 [^11]: Technically, it will respond with a place where you can fetch the bundle of JS from, like a CDN (Content Delivery Network) but the effect is the same.
