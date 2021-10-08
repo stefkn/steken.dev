@@ -160,6 +160,21 @@ const Article = styled.div`
   .footnotes {
     margin-top: 8em;
   }
+
+  ul {
+    color: #080d22;
+    line-height: 1.5;
+
+    li {
+      margin-top: 1em;
+    }
+  }
+
+  .footnotes {
+    img {
+      border-radius: 12px;
+    }
+  }
 `;
 
 export const pageQuery = graphql`
