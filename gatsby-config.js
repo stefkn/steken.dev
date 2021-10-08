@@ -31,12 +31,45 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `article_cover_images`,
-        path: `${__dirname}/src/images/article_cover_images`,
+        name: `article_images`,
+        path: `${__dirname}/src/images/article_images`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              theme: 'synthwave'
+            }
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,26 +104,6 @@ module.exports = {
           '@styles': path.resolve(__dirname, 'src/styles/'),
           '@static': path.resolve(__dirname, 'static/'),
         },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-highlight-code`,
-            options: {
-              theme: 'synthwave'
-            }
-          },
-        ],
       },
     },
     `gatsby-plugin-catch-links`,
