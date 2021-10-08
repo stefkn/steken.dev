@@ -19,6 +19,7 @@
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-svgr": "^2.0.1",
     "gatsby-remark-highlight-code": "^1.4.2",
+    "gatsby-remark-images": "^5.11.0",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-transformer-remark": "^2.8.20",
     "gatsby-transformer-sharp": "^2.1.8",
