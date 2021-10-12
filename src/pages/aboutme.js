@@ -104,7 +104,7 @@ const AboutMe = () => (
           </p>
 
           <p>
-            My personal philosophy (specifically regarding software, and working together) is heavily inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>.
+            My personal philosophy (specifically regarding software, and working together) is heavily inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>. I also like the <a href="https://jobs.netflix.com/culture">Netflix culture</a> document.
           </p>
 
           <p>
