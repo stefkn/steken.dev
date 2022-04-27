@@ -4,7 +4,7 @@ date: "2021-10-25"
 title: "Introducing Gatsby"
 subtitle: "Why, hello old sport!"
 tags: "programming gatsby web blog"
-published: true
+published: false
 excerpt: A brief intro to static, client- and server-side rendering, and what static site generators are about.
 reading_time: 15
 cover_image: "img_5328.jpeg"
@@ -14,12 +14,11 @@ cover_image: "img_5328.jpeg"
   <img src="https://media.giphy.com/media/g9582DNuQppxC/source.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></img>
 </div>
 
-
->_“Anything can happen now that we’ve slid over this bridge,”_ I thought; _“anything at all...”_
+> _“Anything can happen now that we’ve slid over this bridge,”_ I thought; _“anything at all...”_
 >
->_Even Gatsby could happen,_ without any particular wonder.
+> _Even Gatsby could happen,_ without any particular wonder.
 >
->**The Great Gatsby** ∙ F. Scott Fitzgerald ∙ 1925
+> **The Great Gatsby** ∙ F. Scott Fitzgerald ∙ 1925
 
 *Excuse the cliché Gatsby / Great Gatsby reference...*
 
@@ -27,25 +26,25 @@ While it seems to have lost some of its luster lately in comparison to even newe
 
 If for no other reason than to get more exposure to React and GraphQL, and to experience the process of migrating from one static site generator (Jekyll) to another, I'm still very glad that I undertook the project. It's been a while since I worked with React, so it was a great excuse to learn about changes since older versions (<16) such as Hooks and Fiber. [^2]
 
-Since we're on the topic, I thought it would be a great excuse to write a small piece on static vs. client/server-side rendering (CSR/SSR), what in the world a _"Jamstack"_ is, and what Gatsby is all about.
+Since we're on the topic, I thought it would be a great excuse to write a small piece on static vs. client- and server-side rendering (CSR/SSR), what in the world a _"Jamstack"_ is, and what Gatsby is all about.
 
 
 ## A brief history of the web
 
-In order to explain the differences between the three main web paradigms, it's necessary to go back (briefly) into the history of the modern web for a little context – a topic I find fascinating. Here goes:
+In order to explain the differences between the three main web paradigms, it's necessary to go back (briefly) into the history of the modern web, for a little context – luckily, a topic I find fascinating. Here goes:
 
-As you may already know, the World Wide Web was a **side-project** of a contractor-turned-scientist at CERN, (now a Sir) Tim Berners-Lee – *making every other side project since look pretty underwhelming.* In the earliest days, there was one web server, a NeXT Computer with a now-legendary sticker on the front reading: **"this machine is a server ... DO NOT POWER DOWN !!!"** [^3]
+As you may already know, the World Wide Web [^12] was a **side-project** of a contractor-turned-scientist at CERN, (now a Sir) Tim Berners-Lee – *serving as possibly the best excuse for [20% time]() ever.* In the earliest days, there was one web server, a NeXT Computer with a now-legendary sticker on the front reading: **"this machine is a server ... DO NOT POWER DOWN !!!"** [^3]
 
 This machine has a fascinating history, a Marvel-esque cross-universe Silicon Valley origin story with Steve Jobs and his fabled ousting from Apple... but I digress. The  machine ran the first web server software, [CERN httpd](https://en.wikipedia.org/wiki/CERN_httpd). For those playing along at home, you can even go and look at some of the [original C source](https://www.w3.org/Daemon/Implementation/HTDaemon.c) code at the W3C foundation.
 
-In essence, httpd – while cutting-edge stuff at the time – was pretty simple. [^4] You give it some configuration rules, tell it where the files are, and that's it. Other machines can send it HTTP requests, and httpd will respond to them with the files it finds under the `/Public/Web/` directory. [^5] In terms of interactivity, the best you could ask for were [Common Gateway Interface (CGI)](https://www.w3.org/Daemon/User/CGI/Overview.html) scripts. Instead of simply serving a HTML document when a browser issues a request for a CGI URL, the server runs a specified CGI script, which outputs either a dynamically-generated HTML document (such as a list of search results) or the location of another HTML document. See [here](https://computer.howstuffworks.com/cgi3.htm) for more details.
+In essence, httpd – while cutting-edge stuff at the time – was pretty simple. [^4] You give it some configuration rules, tell it where the files are, and that's it. Other machines can send it HTTP requests over the network, and httpd will respond to them with the files it finds under the `/Public/Web/` directory. [^5] In terms of interactivity, the best you could ask for were [Common Gateway Interface (CGI)](https://www.w3.org/Daemon/User/CGI/Overview.html) scripts. Instead of simply serving a HTML document when a browser issues a request for a CGI URL, the server runs a specified CGI script, which outputs either a dynamically-generated HTML document (such as a list of search results) or the location of another HTML document. See [here](https://computer.howstuffworks.com/cgi3.htm) for more details.
 
-While still used today, the web server spawns a new CGI process for each new incoming request to a CGI URL; **the overhead of spawning and killing a process for each new request quickly becomes massive** when dealing with a high-throughput website. Clearly, the modern interactive web wouldn't be possible if we were still using CGI scripts to render everything!
+While still very much in use today, the web server spawns a new CGI process for each new incoming request to a CGI URL; **the overhead of spawning and killing a process for each new request quickly becomes massive** when dealing with a high-throughput website. Clearly, the modern interactive web wouldn't be possible if we were still using CGI scripts to render everything!
 
 
 ## Static, Client- and Server Side Rendering
 
-This brings us neatly to the topic of static, client- and server-side rendering. We're far from the days of yore when web pages were largely static content; we now expect web pages to be **sophisticated applications in themselves,** allowing us to send messages, shop securely, stream live content, [collaboratively animate](https://garticphone.com/), [get lost in the world](https://www.geoguessr.com/), and much more. CGI simply doesn't give us the flexibility we need to enable such experiences. Which brings us to:
+This brings us neatly to the topic of static, client- and server-side rendering. We're far from the days of yore when web pages were largely static content; we now expect web pages to be **sophisticated applications in themselves,** allowing us to send messages, shop, bank, stream live content, [collaboratively animate](https://garticphone.com/), [get lost in the world](https://www.geoguessr.com/), and much more. CGI simply doesn't give us the flexibility we need to enable such experiences. Which brings us to:
 
 ### Client Side Rendering (CSR)
 
@@ -53,11 +52,11 @@ This brings us neatly to the topic of static, client- and server-side rendering.
 
 In the modern day, we've discovered that this client-side JS can be used to display the entire web page. Using frontend frameworks such as React, Angular and Vue, [^9] we now have a world where the client requests a URL, and the server will respond with static HTML, CSS, and a bundle of JS. [^11] This bundle of JS, containing a frontend framework [^10] as we mentioned earlier, will hook in to the DOM (Document Object Model) which the browser uses to display the contents of the web page.
 
-Now, if you were to submit a form, or follow a link, the frontend framework can take care of rendering the result. **The advantage here is that this means the frontend framework has the freedom to "replace" what would otherwise become another request to the server.**
+Now, if you were to click a button, or navigate to another page, the frontend framework can take care of rendering the result. **The advantage here is that this means the frontend framework has the freedom to "replace" what would otherwise become another request to the server.**
 
 For example, for a simple website consisting of two pages, with the homepage linking to the second page:
 
-- With SSR, the client would request the homepage. Clicking on the link would issue a request for the second page. (The second request would re-request all of the assets duplicated between the two pages)
+- With SSR, the client would request the homepage. Clicking on the link would issue a request for the second page. (The second request could re-request all of the assets duplicated between the two pages)
 - Using CSR, the required assets for both pages can be requested on the initial page load, and the frontend framework can take care of *only swapping out the differing page elements* purely on the client side, reducing both the number of required requests and the number of draw calls. [^7] It can intercept requests that would ordinarily issue a new request to the server and replace them with client-side JS event handlers.
 
 The advantages of CSR are numerous, but it's not a fix-all solution. If you have a complex app that requires a lot of user interaction it would definitely be an approach to consider – combining a frontend framework, such as React, with a state management framework, like Redux, gives you a great foundation for a fully self-contained [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application) (SPA). [^8] This approach allows instant feedback to user interaction and a generally "snappy" feeling experience if done right.
@@ -95,7 +94,7 @@ SSR is the more "traditional" approach, and encompasses the CGI scripts we menti
 
 [^6]: Interestingly, this mirrors the development of the personal computer; in the early days, terminals would connect and [timeshare](https://en.wikipedia.org/wiki/Time-sharing) on a single mainframe computer. With the introduction of microcomputers, and later the IBM Personal Computer, computing power moved out to the "edge" -- out from large, loud, air-conditioned server rooms and into people's offices and homes. You could even argue that this trend continues with the proliferation of IoT (Internet of Things) and [Ambient Computing](https://www.digitaltrends.com/computing/what-is-ambient-computing/).
 
-[^7]: This explanation glosses over a great deal of complexity involved in comparing and reconcilling updates to the DOM in an efficient manner, an impressive technical feat on its own. React does this using an in-memory representation of the DOM called the Virtual DOM, against which it can compare the real DOM using a [diffing algorithm.](https://reactjs.org/docs/reconciliation.html). This means it only needs tp update the sub-tree of components that have been updated. [More in-depth info here.](https://hackernoon.com/virtual-dom-reconciliation-and-diffing-algorithm-explained-simply-ycn34gr)
+[^7]: This explanation glosses over a great deal of complexity involved in comparing and reconcilling updates to the DOM in an efficient manner, an impressive technical feat on its own. React does this using an in-memory representation of the DOM called the Virtual DOM, against which it can compare the real DOM using a [diffing algorithm.](https://reactjs.org/docs/reconciliation.html). This means it only needs to update the sub-tree of components that have been updated. [More in-depth info here.](https://hackernoon.com/virtual-dom-reconciliation-and-diffing-algorithm-explained-simply-ycn34gr) Other schools of thought now consider this a tremendous waste of resources, and basically [pure overhead.](https://svelte.dev/blog/virtual-dom-is-pure-overhead) Who's right? I don't know. I'm just happy to be here.
 
 [^8]: Ditto with frontend framework Vue combined with the Vuex state management library. We use this at tails.com! Other options include Angular, ExtJS, KnockoutJS, Ember, and much more.
 
@@ -104,3 +103,5 @@ SSR is the more "traditional" approach, and encompasses the CGI scripts we menti
 [^10]: Along with about a billion dependencies... !<div style="max-width: 400px"> ![A boy with a very very large backpack with the caption, "a simple web page" / "2GB node modules"](../images/article_images/node_modules_backpack.jpeg) </div>
 
 [^11]: Technically, it will respond with a place where you can fetch the bundle of JS from, like a CDN (Content Delivery Network) but the effect is the same.
+
+[^12]: Not to be confused with the DARPANET / ARPANET, the earliest incarnation of a nationwide computer network (that would become the Internet)
