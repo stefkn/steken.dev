@@ -106,10 +106,10 @@ class Articles extends Component {
           }
 
           const coverImages = queryResult.allFile.edges
-          let Posts = <div style="margin-top:1em;">No posts. 👽</div>;
-          let Tags = <div style="margin-top:1em;">No tags. 💁‍♀️</div>;
+          let Posts = <div style={{marginTop: '1em'}}>No posts. Watch this space! 👽</div>;
+          let Tags = <div style={{marginTop: '1em'}}>No tags. #sadface  💁‍♀️</div>;
 
-          if (!!mdArticles) {
+          if (!!mdArticles && mdArticles.length > 0) {
             Posts = mdArticles
               .filter(article => this.articleIsTagged(this.state.selectedTag, article))
               .map(article => <PostLink key={article.node.id} post={article.node} coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)} />)
