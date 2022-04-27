@@ -42,7 +42,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 8050",
     "start": "npm run dev",
     "format": "prettier --write \"src/**/*.js\"",
     "clean": "rm -rf .cache && rm -rf public"
