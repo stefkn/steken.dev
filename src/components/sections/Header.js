@@ -53,7 +53,7 @@ const Header = () => (
         <Container>
           <Grid>
             <ArtBackground>
-              <div class="fake-code">
+              <div className="fake-code">
                 <p>
                   {`public static void main(string[] args)`}
                   <br />
