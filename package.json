@@ -36,6 +36,10 @@
     "three": "^0.118.3",
     "three-orbit-controls": "^82.1.0"
   },
+  "resolutions": {
+    "@babel/preset-env": "7.12.11",
+    "@babel/plugin-transform-spread": "7.12.1"
+  },
   "keywords": [
     "gatsby"
   ],
