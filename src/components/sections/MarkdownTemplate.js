@@ -94,7 +94,7 @@ const Article = styled.div`
   }
 
   p {
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: auto;
     font-family: ${props => props.theme.font.secondary};
     font-weight: 300;
     font-style: normal;
@@ -110,8 +110,8 @@ const Article = styled.div`
   }
 
   ul, ol, table {
-    font-size: 24px;
-    color: #564F62;
+    font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
+    line-height: 1.62;
   }
 
   table {
