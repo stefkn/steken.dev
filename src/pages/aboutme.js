@@ -55,6 +55,12 @@ const AboutMe = () => (
         ) {
           publicURL
         }
+        go_logo: file(
+          sourceInstanceName: { eq: "stack" }
+          name: { eq: "go" }
+        ) {
+          publicURL
+        }
         gatsby_logo: file(
           sourceInstanceName: { eq: "stack" }
           name: { eq: "gatsby" }
