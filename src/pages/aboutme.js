@@ -269,6 +269,7 @@ const HeroImage = styled.div`
   max-height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 72px;
 `
 
 const MainMatter = styled.div`
