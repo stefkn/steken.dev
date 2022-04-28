@@ -50,7 +50,7 @@
     "start": "npm run dev",
     "format": "prettier --write \"src/**/*.js\"",
     "clean": "rm -rf .cache && rm -rf public",
-    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/stefkn/steken.dev.git"
+    "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/stefkn/steken.dev.git"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
