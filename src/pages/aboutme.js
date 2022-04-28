@@ -140,7 +140,7 @@ const AboutMe = () => (
                      <img src={data.python_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>Python</h4>
+                      <h4><a href="https://www.python.org/">Python</a></h4>
                       <p>I'm most experienced using Python.</p>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const AboutMe = () => (
                       <img src={data.flask_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>Flask</h4>
+                      <h4><a href="https://flask.palletsprojects.com/">Flask</a></h4>
                       <p>Big Flask web apps!</p>
                     </div>
                   </div>
@@ -160,18 +160,8 @@ const AboutMe = () => (
                       <img src={data.vue_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>Vue.js</h4>
+                      <h4><a href="https://vuejs.org/">Vue.js</a></h4>
                       <p>We made a frontend app using Vue for tails.com</p>
-                    </div>
-                  </div>
-
-                  <div className="col tech-stack-item-col">
-                    <div className="tech-stack-item-logo">
-                      <img src={data.mysql_logo.publicURL} />
-                    </div>
-                    <div className="stack-item-text">
-                      <h4>MySQL</h4>
-                      <p>Still don't fully understand JOINS.</p>
                     </div>
                   </div>
 
@@ -180,8 +170,18 @@ const AboutMe = () => (
                       <img src={data.javascript_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>JavaScript</h4>
+                      <h4><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></h4>
                       <p>I use a lot of JS in personal and work projects.</p>
+                    </div>
+                  </div>
+
+                  <div className="col tech-stack-item-col">
+                    <div className="tech-stack-item-logo">
+                      <img src={data.go_logo.publicURL} />
+                    </div>
+                    <div className="stack-item-text">
+                      <h4><a href="https://go.dev/">Go</a></h4>
+                      <p>I've completed some coding challenges in Golang.</p>
                     </div>
                   </div>
 
@@ -190,18 +190,8 @@ const AboutMe = () => (
                       <img src={data.gatsby_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>Gatsby</h4>
+                      <h4><a href="https://www.gatsbyjs.com/">Gatsby</a></h4>
                       <p>This site is made using Gatsby. It's good!</p>
-                    </div>
-                  </div>
-
-                  <div className="col tech-stack-item-col">
-                    <div className="tech-stack-item-logo">
-                      <img src={data.java_logo.publicURL} />
-                    </div>
-                    <div className="stack-item-text">
-                      <h4>Java</h4>
-                      <p>public static void uuhh...</p>
                     </div>
                   </div>
 
@@ -210,7 +200,7 @@ const AboutMe = () => (
                       <img src={data.react_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>React</h4>
+                      <h4><a href="https://reactjs.org/">React</a></h4>
                       <p>Are you even a dev these days without React on your CV?</p>
                     </div>
                   </div>
@@ -220,8 +210,28 @@ const AboutMe = () => (
                       <img src={data.graphql_logo.publicURL} />
                     </div>
                     <div className="stack-item-text">
-                      <h4>GraphQL</h4>
+                      <h4><a href="https://graphql.org/">GraphQL</a></h4>
                       <p>I learned a lot of GQL working with Gatsby. We also use it at work.</p>
+                    </div>
+                  </div>
+
+                  <div className="col tech-stack-item-col">
+                    <div className="tech-stack-item-logo">
+                      <img src={data.mysql_logo.publicURL} />
+                    </div>
+                    <div className="stack-item-text">
+                      <h4><a href="https://www.mysql.com/">MySQL</a></h4>
+                      <p>Still don't fully understand JOINS.</p>
+                    </div>
+                  </div>
+
+                  <div className="col tech-stack-item-col">
+                    <div className="tech-stack-item-logo">
+                      <img src={data.java_logo.publicURL} />
+                    </div>
+                    <div className="stack-item-text">
+                      <h4><a href="https://www.java.com/en/">Java</a></h4>
+                      <p>public static void main uuhh...</p>
                     </div>
                   </div>
                 </div>
