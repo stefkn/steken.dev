@@ -240,7 +240,7 @@ const AboutMe = () => (
           </section>
 
           <p>
-            While I work, I find it helpful to listen to music to get me into the Code Zone (tm) which is usually a lot of repetitive Techno, Trance, EDM and House music (original, I know) and I have some of the best tracks organised into Spotify playlists. If you'd like, give them a listen here!
+            While I work, I find it helpful to listen to music to get me into the Code Zone (tm) which is usually a lot of repetitive Techno, Trance, EDM and House music (original, I know) and I have some of the best tracks organised into Spotify playlists. If you'd like, you can give them a listen here! I hope they aid your concentration too.
           </p>
 
           <div className="spotify-container">
