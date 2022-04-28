@@ -118,15 +118,15 @@ const AboutMe = () => (
           </p>
 
           <p>
-            At its worst, tech can be an intimidating, elitist and exclusionary place. At its best, it can be delightful, inclusive and empowering – a place where all people can come together to learn, share, and create. I want to work with teams and organisations who see it as part of their mission to create strong, positive engineering cultures grounded in ethical and social values.
+            At its worst, tech can be an intimidating, elitist and exclusionary place. At its best, it can be <b>delightful, inclusive and empowering</b> – a place where <b>all</b> people can come together to learn, grow, and build. I want to work with tech teams and organisations who consider it just as much a part of their mission to create <b>strong, positive, ethical engineering cultures</b> as it is to <b>ship great software.</b>
           </p>
 
           <p>
-            My personal philosophy (specifically regarding software, tech, and working together) is heavily inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>.
+            My personal philosophy (specifically regarding software, tech, and working together) is inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>, which are a great framework for building a <b>culture of trust</b> and <b>collaboration</b>, and banning a number of highly irritating "smart person" anti-social behaviors.
           </p>
 
           <p>
-            I was inspired to start writing articles and publishing them on a personal website by fellow engineers and friends: <a href="https://healeycodes.com/">healeycodes</a>, <a href="https://www.moonclash.com/">moonclash</a> (AKA the adam sandler of software), <a href="https://samlader.com/">saml</a>, <a href="https://matteo.baldelli.dev/">matteo</a> and many more. What's up!
+            I was inspired to build a personal website by fellow engineers and friends: <a href="https://healeycodes.com/">healeycodes</a>, <a href="https://www.moonclash.com/">moonclash</a> (AKA the adam sandler of software), <a href="https://samlader.com/">saml</a>, <a href="https://matteo.baldelli.dev/">matteo</a> and many more. What's up yo!
           </p>
 
           <section className="section-tech">
