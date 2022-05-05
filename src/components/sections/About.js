@@ -27,6 +27,14 @@ class About extends Component {
   }
 }
 
+const blobAnimation = keyframes`
+  0% { transform: scaleY(100%) scaleX(100%) translateY(0px) translateX(0px) rotate(0deg); }
+  20% { transform: scaleY(120%) scaleX(110%) translateY(-23px) translateX(13px) rotate(13deg); }
+  40% { transform: scaleY(120%) scaleX(120%) translateY(-190px) translateX(28px) rotate(110deg); }
+  60% { transform: scaleY(120%) scaleX(130%) translateY(-43px) translateX(34px) rotate(180deg); }
+  80% { transform: scaleY(150%) scaleX(120%) translateY(-23px) translateX(15px) rotate(220deg); }
+  100% { transform: scaleY(100%) scaleX(100%) translateY(0px) translateX(0px) rotate(360deg); }
+`;
 
 const BlobSVG = styled.div`
   position: relative;
@@ -49,9 +57,7 @@ const BlobSVG = styled.div`
     bottom: -20em;
     filter: opacity(0.47);
 
-    -webkit-animation: moving-blob 20s linear infinite;
-    -moz-animation: moving-blob 20s linear infinite;
-    animation: moving-blob 20s linear infinite;
+    animation: ${blobAnimation} 80s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
   }
 `;
 
@@ -69,9 +75,7 @@ const BlobSVG2 = styled.div`
     bottom: -20em;
     filter: opacity(0.47);
 
-    -webkit-animation: moving-blob 20s linear infinite;
-    -moz-animation: moving-blob 20s linear infinite;
-    animation: moving-blob 20s linear infinite;
+    animation: ${blobAnimation} 140s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
   }
 `;
 
