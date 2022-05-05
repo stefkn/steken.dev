@@ -117,7 +117,6 @@ export const Mobile = styled.div`
 
   button {
     background-color: #ff0067c9;
-    filter: drop-shadow(7px -13px 32px #ff0067);
     padding: 9px 9px 6px 10px;
     box-shadow: black;
     box-shadow: 40px black;
