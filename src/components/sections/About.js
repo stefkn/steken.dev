@@ -57,7 +57,7 @@ const BlobSVG = styled.div`
     bottom: -20em;
     filter: opacity(0.47);
 
-    animation: ${blobAnimation} 80s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
+    animation: ${blobAnimation} 60s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
   }
 `;
 
@@ -75,7 +75,7 @@ const BlobSVG2 = styled.div`
     bottom: -20em;
     filter: opacity(0.47);
 
-    animation: ${blobAnimation} 140s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
+    animation: ${blobAnimation} 120s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
   }
 `;
 
