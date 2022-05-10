@@ -189,5 +189,17 @@ export const pageQuery = graphql`
         cover_image
       }
     }
+    articleImages: allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              originalName
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
   }
 `
