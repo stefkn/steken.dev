@@ -61,13 +61,6 @@ module.exports = {
               theme: 'synthwave'
             }
           },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
