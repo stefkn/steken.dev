@@ -57,6 +57,16 @@ const Article = styled.div`
   margin: 10em auto;
   max-width: 640px;
 
+  .title-main {
+    position: relative;
+    z-index: 1;
+    top: -4em;
+    filter: drop-shadow(-7px 0px 35px #ffffff);
+    color: rgb(61 75 255);
+    opacity: 90%;
+    mix-blend-mode: difference;
+  }
+
   body {
     background: linear-gradient(181deg, #a8afff 1%, transparent 20%);
   }
@@ -76,7 +86,6 @@ const Article = styled.div`
     max-width: 100%;
     overflow: hidden;
     font-size: clamp(4rem, 12vw - 4.5rem, 6rem);
-    filter: drop-shadow(1px -1px 45px #2f39ae);
   }
 
   h2 {
