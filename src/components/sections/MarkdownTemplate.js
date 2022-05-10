@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { graphql } from "gatsby";
+import Img from 'gatsby-image';
 
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
@@ -31,6 +32,12 @@ export default function Template({
         <Navbar isAtTopOfPage={scroll} />
         <Container>
           <Article className="page-main">
+              {(data.articleImages.edges.find(edge => edge.node.childImageSharp.fluid.originalName === frontmatter.cover_image)) &&
+                <Img
+                  className="series-image"
+                  fluid={data.articleImages.edges.find(image => image.node.childImageSharp.fluid.originalName === frontmatter.cover_image).node.childImageSharp.fluid}
+                />
+              }
               <h1 className="title-main">{frontmatter.title}</h1>
               <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
               <h2 className="subtitle-date">{frontmatter.date}</h2>
