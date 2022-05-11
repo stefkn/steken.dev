@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import Layout from '@common/Layout';
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image';
 
 import Footer from '@sections/Footer';
 import Navbar from '@common/Navbar';
