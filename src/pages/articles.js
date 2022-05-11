@@ -40,14 +40,22 @@ class Articles extends Component {
   }
 
   selectNoTags = () => {
-    this.setState({selectedTag: ''})
-  };
+    this.setState({selectedTag: ''});
+  }
 
   articleIsTagged(tag, article) {
     if (tag === '' || tag === 'All articles') {
       return true;
     } else {
       return article.node.frontmatter.tags.split(' ').indexOf(tag) === -1 ? false : true;
+    }
+  }
+
+  articleIsInSeries(series, article) {
+    if (series === '' || series === 'All articles') {
+      return true;
+    } else {
+      return article.node.frontmatter.series === series ? true : false;
     }
   }
 
@@ -58,6 +66,12 @@ class Articles extends Component {
   addToTagList(tag, accumulator) {
     if (accumulator) {
       accumulator.indexOf(tag) === -1 ? accumulator.push(tag) : console.log("This item already exists: " + tag);
+    }
+  }
+
+  addToSeriesList(series, accumulator) {
+    if (accumulator) {
+      accumulator.indexOf(series) === -1 ? accumulator.push(series) : console.log("This item already exists: " + series);
     }
   }
 
