@@ -15,15 +15,26 @@ import { Container } from '@components/global';
 class Articles extends Component {
   constructor(props) {
     super(props);
-    this.state = {selectedTag: ''};
+    this.state = {selectedTag: '', selectedSeries: ''};
   }
 
   selectTag(tag) {
     this.setState({selectedTag: 'nothing'});
+    this.setState({selectedSeries: 'nothing'});
     let that = this;
 
     setTimeout( function() {
       that.setState({selectedTag: tag});
+    }, 1);
+  }
+
+  selectSeries(series) {
+    this.setState({selectedTag: 'nothing'});
+    this.setState({selectedSeries: 'nothing'});
+    let that = this;
+
+    setTimeout( function() {
+      that.setState({selectedSeries: series});
     }, 1);
   }
 
