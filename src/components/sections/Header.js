@@ -100,6 +100,7 @@ const ArtBackground = styled.div`
 
   transform: skewY(-13deg);
   animation: animatebgs 2s;
+  animation: float 8s ease-in-out infinite;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 
@@ -176,6 +177,21 @@ const HeaderWrapper = styled.header`
   @keyframes showSubText {
     0% { opacity: 0%; }
     100% { opacity: 100%; }
+  }
+
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px) skewY(-13deg);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px) skewY(-13deg);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px) skewY(-13deg);
+    }
   }
 
   h1 {
