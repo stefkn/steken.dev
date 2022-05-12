@@ -39,12 +39,14 @@ export default function Template({
                 />
               }
               <h1 className="title-main">{frontmatter.title}</h1>
-              <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
-              <h2 className="subtitle-date">{frontmatter.date}</h2>
-              <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-              />
+              <div className="main-content">
+                <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
+                <h2 className="subtitle-date">{frontmatter.date}</h2>
+                <div
+                className="blog-post-content"
+                dangerouslySetInnerHTML={{ __html: html }}
+                />
+              </div>
           </Article>
         </Container>
         <Footer bottomImage={false} />
@@ -100,6 +102,11 @@ const Article = styled.div`
   h3 {
     margin-top: 1em;
     font-family: ${props => props.theme.font.primary};
+  }
+
+  .main-content {
+    position: relative;
+    top: -12em;
   }
 
   .subtitle-main {
