@@ -156,8 +156,11 @@ const Article = styled.div`
 
   --deckgo-highlight-code-font-family: ${props => props.theme.font.monospace};
   --deckgo-highlight-code-token-function: #ff146f;
-  --deckgo-highlight-code-token-comment: #0914ff;
-  --deckgo-highlight-code-carbon-background: #00075f;
+  --deckgo-highlight-code-token-regex: #ff146f;
+  --deckgo-highlight-code-token-comment: #84a2ff;
+  --deckgo-highlight-code-token-property: #84a2ff;
+  --deckgo-highlight-code-token-selector: #afa8ff;
+  --deckgo-highlight-code-carbon-background: #000d5b;
   --deckgo-highlight-code-carbon-box-shadow: none;
   --deckgo-highlight-code-container-height: max-content;
   --deckgo-highlight-code-carbon-overflow: hidden;
