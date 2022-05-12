@@ -175,14 +175,15 @@ const GlobalStyles = createGlobalStyle`
 
     a {
       color: white;
+      padding: 6px;
     }
   }
 
-  .not-at-top {
-    background: linear-gradient(
-      180deg,#f7f7f7 8%,#f7f7f700 100%);
-    height: 11em;
+  .transparent {
+    background-color: transparent;
+  }
 
+  .not-at-top {
     a {
       color: black;
     }
