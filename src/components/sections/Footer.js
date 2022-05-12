@@ -118,6 +118,7 @@ const FooterWrapper = styled.footer`
   background-color: #080b2c;
   padding: 90px 0;
   color: white;
+  width: 100%;
 `;
 
 const Copyright = styled.div`
