@@ -59,7 +59,8 @@ const PostEntry = styled.div`
     color: #2f39ae;
   }
 
-  width: 100%;
+  width: 46%;
+  margin: 2%;
   background-color: rgb(236 235 255);
   box-shadow: -1px 4px 14px 3px #aeb4ff75;
   border-radius: 9px;
