@@ -158,8 +158,9 @@ const HeaderWrapper = styled.header`
   padding-top: 96px;
   height: 60em;
   display: block;
-  background: #2f39ae;
+
   overflow: hidden;
+  z-index: 3;
 
   -webkit-transition: background-color 0ms linear;
   -ms-transition: background-color 0ms linear;
