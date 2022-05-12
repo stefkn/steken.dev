@@ -57,7 +57,7 @@ class Navbar extends Component {
     const { mobileMenuOpen } = this.state;
 
     return (
-      <Nav {...this.props} className={this.props.isAtTopOfPage ? "at-top" : "not-at-top"}>
+      <Nav {...this.props} className={[this.props.isAtTopOfPage ? "at-top" : "not-at-top", this.props.isTransparent ? 'transparent' : '' ]}>
         <StyledContainer>
           <Brand><Link to="/" id="navbar-title">steken.dev</Link></Brand>
           <Mobile>
