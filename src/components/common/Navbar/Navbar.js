@@ -84,4 +84,9 @@ class Navbar extends Component {
   }
 }
 
+Navbar.defaultProps = {
+  isAtTopOfPage: true,
+  isTransparent: false,
+};
+
 export default Navbar;
