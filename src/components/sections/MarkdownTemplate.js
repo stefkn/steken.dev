@@ -17,16 +17,16 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const [scroll, setScroll] = useState(0)
-  deckDeckGoHighlightElement();
+  const [scroll, setScroll] = useState(true)
+
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY < 100
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck)
-      }
+      setScroll(window.scrollY < 100)
     })
   })
+
+  deckDeckGoHighlightElement();
+
   return (
     <Layout>
         <Navbar isAtTopOfPage={scroll} />
