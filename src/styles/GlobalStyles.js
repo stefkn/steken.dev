@@ -185,7 +185,11 @@ const GlobalStyles = createGlobalStyle`
 
   .not-at-top {
     a {
-      color: black;
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 6px;
+      background: linear-gradient(128deg,rgb(255 84 153 / 24%) 0%,rgb(255 75 148 / 90%) 50%,rgb(174 181 255) 100%);
+      filter: none !important;
     }
   }
 `;
