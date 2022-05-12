@@ -59,7 +59,10 @@ export const NavItem = styled.li`
 
   a {
     text-decoration: none;
-    filter: drop-shadow(7px -13px 22px #000000);
+  }
+
+  a:hover {
+    color: #ff0063;
   }
 
   &.active {
@@ -84,7 +87,7 @@ export const MobileMenu = styled.div`
   text-align-last: end;
   margin: 10px 70px 10px 10px;
   z-index: 3;
-  background: #4150ff94;
+  background: rgb(111 119 221 / 30%);
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
   -webkit-backdrop-filter: blur( 6px );
   backdrop-filter: blur( 6px );
