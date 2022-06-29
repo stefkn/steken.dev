@@ -36,6 +36,7 @@ const PostEntry = styled.div`
     color: #2f39ae !important;
     font-family: ${props => props.theme.font.primary};
     font-weight: 600;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   a:-webkit-any-link {
