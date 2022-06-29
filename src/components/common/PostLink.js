@@ -60,6 +60,10 @@ const PostEntry = styled.div`
     color: #2f39ae;
   }
 
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+
   width: 46%;
   margin: 2%;
   background-color: rgb(236 235 255);
