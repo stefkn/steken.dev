@@ -1,5 +1,9 @@
 const path = require('path');
 
+require("dotenv").config({
+  path: `.env.${process.env.ADOBE_API_KEY}`,
+});
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
