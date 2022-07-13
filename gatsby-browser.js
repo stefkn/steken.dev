@@ -31,5 +31,16 @@ export function onRouteUpdate({ location, prevLocation }) {
             );
         });
 
+        function recursivelyWaitForAdobeViewSDK () {
+            setTimeout(() => {
+                if (window.adobe_dc_view_sdk) {
+                    document.dispatchEvent(new Event('adobe_dc_view_sdk.ready'));
+                } else {
+                    recursivelyWaitForAdobeViewSDK();
+                }
+            }, 100);
+        }
+
+        recursivelyWaitForAdobeViewSDK();
     };
 }
