@@ -37,8 +37,9 @@ class HeaderAnimation extends React.Component {
     )
     camera.position.z = 70
 
-    const renderer = new THREE.WebGLRenderer({ antialiasing: true })
+    const renderer = new THREE.WebGLRenderer({ antialiasing: false, powerPreference: "high-performance" })
     renderer.outputEncoding = THREE.sRGBEncoding
+
     // Thanks https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
     window.mobileCheck = function() {
         let check = false;
