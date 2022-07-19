@@ -149,10 +149,24 @@ class HeaderAnimation extends React.Component {
         -webkit-transition: all 0s ease;
         transition: all 0s ease;
         position: sticky;
+        top: -700px;
+
+        @media (max-width: 1020px) {
+            top: -700px;
+        }
+        @media (max-width: 620px) {
+            top: -700px;
+        }
+        @media (max-width: 420px) {
+            top: -700px;
+        }
+        @media (max-width: 320px) {
+            top: -700px;
+        }
 
         canvas {
-            width: 90vw;
-            height: 60em;
+            width: 100%;
+            height: 40em;
             display: block;
             position: relative;
             background-color: #2f39ae;
@@ -160,16 +174,6 @@ class HeaderAnimation extends React.Component {
 
             -webkit-transition: all 0s ease;
             transition: all 0s ease;
-        }
-
-        @media (max-width: 1420px) {
-            top: -1028px;
-        }
-        @media (max-width: 320px) {
-            top: -1026px;
-        }
-        @media (min-width: 1420px) {
-            top: -1026px;
         }
     `
     return (
