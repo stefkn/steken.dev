@@ -106,9 +106,11 @@ class HeaderAnimation extends React.Component {
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight
         camera.updateProjectionMatrix()
-        renderer.setSize(window.innerWidth-10, window.innerHeight-200)
+        renderer.setSize(window.innerWidth-10, window.innerHeight+10)
         render()
     }
+
+    onWindowResize();
 
     // const stats = Stats()
     // document.body.appendChild(stats.dom)
