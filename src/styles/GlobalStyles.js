@@ -189,8 +189,14 @@ const GlobalStyles = createGlobalStyle`
       color: #ffffff;
       border-radius: 6px;
       padding: 6px;
-      background: linear-gradient(128deg,rgb(255 84 153 / 24%) 0%,rgb(255 75 148 / 90%) 50%,rgb(174 181 255) 100%);
+      background: linear-gradient(
+        128deg,
+        rgb(147 153 255 / 40%) 7%,
+        rgb(255 123 177) 83%,
+        rgb(255 103 71) 110%
+      );
       filter: none !important;
+      border: 1px solid rgba(255, 255, 255, 43%);
     }
   }
 `;
