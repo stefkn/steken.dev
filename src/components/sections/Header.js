@@ -158,6 +158,7 @@ const HeaderWrapper = styled.header`
   padding-top: 96px;
   height: 60em;
   display: block;
+  // pointer-events: none;
 
   overflow: hidden;
   z-index: 3;
@@ -165,6 +166,9 @@ const HeaderWrapper = styled.header`
   -webkit-transition: background-color 0ms linear;
   -ms-transition: background-color 0ms linear;
   transition: background-color 0ms linear;
+  -webkit-transition: opacity 500ms linear;
+  -ms-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
