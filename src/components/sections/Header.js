@@ -104,12 +104,12 @@ const ArtBackground = styled.div`
   animation-delay: 0s;
   animation-fill-mode: forwards;
 
-  background: linear-gradient(128deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.55) 50%, rgba(252,176,69,0.7) 100%);
+  background: linear-gradient(128deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.55) 50%, rgba(252,176,69) 100%);
   box-shadow: -19px -17px 20px 0px rgb(30 33 78 / 33%);
   backdrop-filter: hue-rotate(10deg) blur(4px);
   -webkit-backdrop-filter: blur( 7.5px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 255, 255, 255, 0.45 );
   position: absolute;
   z-index: 0;
 
