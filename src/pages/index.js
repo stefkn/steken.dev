@@ -12,7 +12,7 @@ import Footer from '@sections/Footer';
 const IndexPage = () => (
   <Layout>
     <HeaderAnimation />
-    <Navbar isAtTopOfPage={true} isTransparent={true} />
+    <Navbar isAtTopOfPage={false} isTransparent={true} />
     <Header />
     <About />
     <Footer bottomImage={false} />
