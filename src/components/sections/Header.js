@@ -249,13 +249,12 @@ const Grid = styled.div`
   }
 `;
 
-const Text = styled.div`
-  justify-self: center;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: start;
-  }
-`;
+// const Text = styled.div`
+//   justify-self: center;
+//   @media (max-width: ${props => props.theme.screen.md}) {
+//     justify-self: start;
+//   }
+// `;
 
 const HeaderText = styled.div`
   background-color: #0d1bdcd6;
