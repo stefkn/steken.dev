@@ -79,25 +79,24 @@ const BlobSVG2 = styled.div`
   }
 `;
 
-const StyledText = styled.div`
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  letter-spacing: -.04em;
-  font-family: ${props => props.theme.font.primary};
-  font-weight: 400;
-  font-style: normal;
-  text-transform: none;
-  line-height: 1.232;
-  font-size: calc(4 * 1rem);
-  margin: 1rem 0;
-  color: #2f39ae;
-  margin-top: 0;
-  margin-bottom: 0;
-  white-space: pre-wrap;
-  margin-top: 2em;
-
-  transition: all 2s ease !important;
-`;
+// const StyledText = styled.div`
+//   overflow-wrap: break-word;
+//   -webkit-font-smoothing: antialiased;
+//   letter-spacing: -.04em;
+//   font-family: ${props => props.theme.font.primary};
+//   font-weight: 400;
+//   font-style: normal;
+//   text-transform: none;
+//   line-height: 1.232;
+//   font-size: calc(4 * 1rem);
+//   margin: 1rem 0;
+//   color: #2f39ae;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   white-space: pre-wrap;
+//   margin-top: 2em;
+//   transition: all 2s ease !important;
+// `;
 
 const StyledOutlineText = styled.div`
   overflow-wrap: break-word;
