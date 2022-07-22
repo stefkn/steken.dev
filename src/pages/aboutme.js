@@ -251,10 +251,10 @@ const AboutMe = () => (
           </p>
 
           <div className="spotify-container">
-            <iframe className="spotify-embed"
+            <iframe title="spotify-1" className="spotify-embed"
             src="https://open.spotify.com/embed/playlist/33KRDnK7r5ni98VbD4fFcI?theme=1"
             width="100%" height="375" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe className="spotify-embed"
+            <iframe title="spotify-2" className="spotify-embed"
             src="https://open.spotify.com/embed/playlist/7KgJoiKb4HKasiHp2r9xv8"
             width="100%" height="375" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
