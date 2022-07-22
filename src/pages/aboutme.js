@@ -137,7 +137,7 @@ const AboutMe = () => (
                 <div className="row">
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                     <img src={data.python_logo.publicURL} />
+                     <img src={data.python_logo.publicURL} alt="Python logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://www.python.org/">Python</a></h4>
@@ -147,7 +147,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.flask_logo.publicURL} />
+                      <img src={data.flask_logo.publicURL} alt="Flask logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://flask.palletsprojects.com/">Flask</a></h4>
@@ -157,7 +157,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.vue_logo.publicURL} />
+                      <img src={data.vue_logo.publicURL} alt="VueJS logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://vuejs.org/">Vue.js</a></h4>
@@ -167,7 +167,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.javascript_logo.publicURL} />
+                      <img src={data.javascript_logo.publicURL} alt="JavaScript logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></h4>
@@ -177,7 +177,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.go_logo.publicURL} />
+                      <img src={data.go_logo.publicURL} alt="Golang logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://go.dev/">Go</a></h4>
@@ -187,7 +187,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.gatsby_logo.publicURL} />
+                      <img src={data.gatsby_logo.publicURL} alt="Gatsby logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://www.gatsbyjs.com/">Gatsby</a></h4>
@@ -197,7 +197,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.react_logo.publicURL} />
+                      <img src={data.react_logo.publicURL} alt="React logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://reactjs.org/">React</a></h4>
@@ -207,7 +207,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.graphql_logo.publicURL} />
+                      <img src={data.graphql_logo.publicURL} alt="GraphQL logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://graphql.org/">GraphQL</a></h4>
@@ -217,7 +217,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.mysql_logo.publicURL} />
+                      <img src={data.mysql_logo.publicURL} alt="MySQL logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://www.mysql.com/">MySQL</a></h4>
@@ -227,7 +227,7 @@ const AboutMe = () => (
 
                   <div className="col tech-stack-item-col">
                     <div className="tech-stack-item-logo">
-                      <img src={data.java_logo.publicURL} />
+                      <img src={data.java_logo.publicURL} alt="Java logo" />
                     </div>
                     <div className="stack-item-text">
                       <h4><a href="https://www.java.com/en/">Java</a></h4>
