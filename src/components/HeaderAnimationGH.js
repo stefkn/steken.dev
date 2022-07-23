@@ -34,16 +34,7 @@ class HeaderAnimation extends React.Component {
         return check;
     };
 
-    renderer.setSize(window.innerWidth, window.innerHeight-200)
-    if (window.mobileCheck()) {
-        renderer.setSize(window.innerWidth, window.innerHeight+20)
-    }
-
-    if (window.devicePixelRatio < 2) {
-        renderer.setPixelRatio(window.devicePixelRatio/1.5);
-    } else {
-        renderer.setPixelRatio(window.devicePixelRatio/2);
-    }
+    renderer.setSize(window.innerWidth, window.innerHeight)
 
     document.getElementById(`header-animation-container`).appendChild(renderer.domElement)
 
@@ -89,12 +80,28 @@ class HeaderAnimation extends React.Component {
         }
     )
 
-    window.addEventListener('resize', onWindowResize, false)
     function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight
-        camera.updateProjectionMatrix()
-        renderer.setSize(window.innerWidth-10, window.innerHeight+10)
-        render()
+        if (window.innerHeight - 200 > 800) {
+            renderer.setSize(window.innerWidth, window.innerHeight - 200);
+        } else {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        if (window.mobileCheck()) {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        if (window.devicePixelRatio < 2) {
+            renderer.setPixelRatio(window.devicePixelRatio/1.5);
+        } else {
+            renderer.setPixelRatio(window.devicePixelRatio/2);
+        }
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        render();
+    }
     }
 
     onWindowResize();
