@@ -22,7 +22,7 @@ class HeaderAnimation extends React.Component {
         0.1,
         1000
     )
-    camera.position.z = 70
+    camera.position.z = 50
 
     const renderer = new THREE.WebGLRenderer({ antialiasing: false, powerPreference: "high-performance" })
     renderer.outputEncoding = THREE.sRGBEncoding
