@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 // import Stats from 'three/examples/jsm/libs/stats.module'
 
@@ -9,7 +9,6 @@ import styled from 'styled-components';
 class HeaderAnimation extends React.Component {
   componentDidMount() {
     const scene = new THREE.Scene()
-    // scene.add(new THREE.AxesHelper(5))
 
     scene.background = new THREE.Color('#2f39ae');
 
@@ -60,8 +59,8 @@ class HeaderAnimation extends React.Component {
 
     document.getElementById(`header-animation-container`).appendChild(renderer.domElement)
 
-    // const controls = new OrbitControls(camera, renderer.domElement)
-    // controls.enableDamping = true
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.enableDamping = true
 
     // const material = new THREE.MeshBasicMaterial({})
     const envTexture = new THREE.CubeTextureLoader().load([
@@ -119,8 +118,7 @@ class HeaderAnimation extends React.Component {
 
     function animate() {
         requestAnimationFrame(animate)
-
-        // controls.update()
+        controls.update()
         theta += 0.1;
 
         if (mesh) {
