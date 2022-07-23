@@ -104,6 +104,8 @@ class HeaderAnimation extends React.Component {
     }
     }
 
+
+    window.addEventListener('resize', onWindowResize, false)
     onWindowResize();
 
     // const stats = Stats()
@@ -141,24 +143,9 @@ class HeaderAnimation extends React.Component {
     const HeaderAnimContainer = styled.div`
         -webkit-transition: all 0s ease;
         transition: all 0s ease;
-        position: sticky;
-        top: -700px;
-
-        @media (max-width: 1020px) {
-            top: -700px;
-        }
-        @media (max-width: 620px) {
-            top: -700px;
-        }
-        @media (max-width: 420px) {
-            top: -700px;
-        }
-        @media (max-width: 320px) {
-            top: -700px;
-        }
 
         canvas {
-            width: 100%;
+            width: 100% !important;
             height: 40em;
             display: block;
             position: relative;
