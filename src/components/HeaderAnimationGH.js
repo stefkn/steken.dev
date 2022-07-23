@@ -52,15 +52,15 @@ class HeaderAnimation extends React.Component {
     ])
     envTexture.mapping = THREE.CubeReflectionMapping
     const material = new THREE.MeshPhysicalMaterial({
-        color: '#616be6',
+        color: '#fe317e',
         envMap: envTexture,
-        metalness: 0.25,
-        roughness: 0.1,
-        opacity: 1.0,
+        metalness: 0.1,
+        roughness: 0.8,
+        opacity: 0.4,
         transparent: true,
-        transmission: 0.99,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.25
+        transmission: 0.8,
+        clearcoat: 0.8,
+        clearcoatRoughness: 0.65
     })
 
     const loader = new STLLoader()
