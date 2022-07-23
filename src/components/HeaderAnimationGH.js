@@ -102,8 +102,56 @@ class HeaderAnimation extends React.Component {
 
         render();
     }
+
+    const headerWrapper = document.getElementById('header-wrapper')
+
+    function makeHeaderWrapperDisappear() {
+        headerWrapper.style.pointerEvents = 'none';
+        headerWrapper.style.opacity = '0%';
     }
 
+    function makeHeaderWrapperAppear() {
+        headerWrapper.style.pointerEvents = 'auto';
+        headerWrapper.style.opacity = '100%';
+    }
+
+    let mouseInElem = false
+    let mouseInElemCounter = 0
+
+    function recursivelyWaitForMouseInElem(timeSoFar, step, limit) {
+        if (timeSoFar < limit) {
+          setTimeout(
+            () => {
+                console.log(mouseInElemCounter);
+
+                if (window.location.pathname === '/') {
+                    recursivelyWaitForMouseInElem(timeSoFar+step, step, limit);
+                }
+
+                mouseInElem = Array.from(
+                    document.querySelectorAll(":hover")
+                ).some(
+                    el => {
+                        return el.id === "header-animation-container" || el.id === "header-wrapper"
+                    }
+                );
+
+                if (mouseInElem) {
+                    mouseInElemCounter++;
+                    if (mouseInElemCounter > 1) {
+                        makeHeaderWrapperDisappear();
+                    }
+                } else {
+                    mouseInElemCounter = 0;
+                    makeHeaderWrapperAppear();
+                }
+            },
+            step
+          );
+        }
+    }
+
+    recursivelyWaitForMouseInElem(0, 500, 1000*60*5);
 
     window.addEventListener('resize', onWindowResize, false)
     onWindowResize();
