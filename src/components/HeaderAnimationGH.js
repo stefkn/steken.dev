@@ -11,22 +11,10 @@ class HeaderAnimation extends React.Component {
     const scene = new THREE.Scene()
 
     scene.background = new THREE.Color('#2f39ae');
-
-    const light = new THREE.SpotLight()
-    light.position.set(50, 50, 50)
-    scene.add(light)
-
-    const light2 = new THREE.AmbientLight( '#2f39ae' ); // soft white light
-    scene.add( light2 );
-
-    const light0 = new THREE.DirectionalLight('#fe317e', 1);
-    scene.add(light0);
-
-    const light10 = new THREE.DirectionalLight('#fe317e', 0.6);
-    scene.add(light10);
-
-    const light1 = new THREE.PointLight('red', 10, 1, 0);
-    scene.add(light1);
+    scene.add(new THREE.AmbientLight( '#fe317e', 1 ));
+    scene.add(new THREE.DirectionalLight('#fe317e', 2));
+    scene.add(new THREE.DirectionalLight('#2f39ae', 3));
+    scene.add(new THREE.DirectionalLight('#fcb045', 2));
 
     const camera = new THREE.PerspectiveCamera(
         75,
