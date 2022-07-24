@@ -17,6 +17,25 @@ export default function HTML(props) {
         />
         {props.headComponents}
         <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <style type="text/css"
+          dangerouslySetInnerHTML={{ __html: `
+            .fade-out-anim {
+              animation: fadeout 800ms;
+              animation-fill-mode: forwards;
+              opacity: 1;
+            }
+            @keyframes fadeout {
+              100% {
+                opacity: 0;
+              }
+            }
+            .remove {
+              display: none;
+              pointer-events: none;
+            }
+          ` }}
+        >
+        </style>
       </head>
       <body {...props.bodyAttributes} style={{overflow: 'hidden'}}>
         <div
