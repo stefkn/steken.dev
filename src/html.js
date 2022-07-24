@@ -17,6 +17,36 @@ export default function HTML(props) {
         />
         {props.headComponents}
         <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script type="text/javascript"
+          dangerouslySetInnerHTML={{ __html: `
+            if (window.location.pathname === '/') {
+              window.scroll({
+                top: 0,
+                left: 0,
+              });
+              setTimeout(() => {
+                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
+                gracefulLoading.classList.add('fade-out-anim');
+                document.body.style.overflow = 'auto';
+              }, 1500);
+              setTimeout(() => {
+                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
+                gracefulLoading.classList.add('remove');
+              }, 2500);
+            } else {
+              setTimeout(() => {
+                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
+                gracefulLoading.classList.add('fade-out-anim');
+                document.body.style.overflow = 'auto';
+              }, 500);
+              setTimeout(() => {
+                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
+                gracefulLoading.classList.add('remove');
+              }, 1000);
+            }
+          ` }}
+        >
+        </script>
         <style type="text/css"
           dangerouslySetInnerHTML={{ __html: `
             .fade-out-anim {
