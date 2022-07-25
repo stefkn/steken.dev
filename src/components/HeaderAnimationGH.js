@@ -122,7 +122,7 @@ class HeaderAnimation extends React.Component {
         if (timeSoFar < limit) {
           setTimeout(
             () => {
-                console.log(mouseInElemCounter);
+                // console.log(mouseInElemCounter);
 
                 if (window.location.pathname === '/') {
                     recursivelyWaitForMouseInElem(timeSoFar+step, step, limit);
@@ -173,6 +173,8 @@ class HeaderAnimation extends React.Component {
             mesh.rotation.z += radius * Math.cos( THREE.MathUtils.degToRad( theta ) );
             mesh.rotation.y += radius * Math.sin( THREE.MathUtils.degToRad( theta ) );
             mesh.rotation.x += radius * Math.sin( THREE.MathUtils.degToRad( theta ) );
+            // console.log(Math.sin( THREE.MathUtils.degToRad( theta ) ));
+            // camera.position.z += Math.sin( THREE.MathUtils.degToRad( theta ) )*15;
         }
 
         render()
