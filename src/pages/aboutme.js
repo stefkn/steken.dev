@@ -239,17 +239,10 @@ const AboutMe = () => (
             </div>
           </section>
 
-          <h3>My CV / Résumé</h3>
-          <h6 className="cv-subtitle">AKA ye grande PDF of self-congratulation</h6>
-
-          <div id="adobe-dc-view" style={{width: '100%', height: '100%'}}></div>
-
           <h3>Coding Tunes</h3>
-
           <p>
             While I work, I find it helpful to listen to music to get me into the Code Zone (tm) which is usually a lot of repetitive Techno, Trance, EDM and House music (original, I know) and I have some of the best tracks organised into Spotify playlists. If you'd like, you can give them a listen here! I hope they aid your concentration too.
           </p>
-
           <div className="spotify-container">
             <iframe title="spotify-1" className="spotify-embed"
             src="https://open.spotify.com/embed/playlist/33KRDnK7r5ni98VbD4fFcI?theme=1"
@@ -258,6 +251,10 @@ const AboutMe = () => (
             src="https://open.spotify.com/embed/playlist/7KgJoiKb4HKasiHp2r9xv8"
             width="100%" height="375" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
+
+          <h3>My CV / Résumé</h3>
+          <h6 className="cv-subtitle">AKA ye grande PDF of self-congratulation</h6>
+          <div id="adobe-dc-view" style={{width: '100%', height: '100%'}}></div>
         </MainMatter>
       </Container>
       <Footer bottomImage={false} />
