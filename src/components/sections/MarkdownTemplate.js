@@ -62,10 +62,9 @@ const Article = styled.div`
   .title-main {
     position: relative;
     z-index: 1;
-    top: -4em;
-    filter: drop-shadow(-7px 0px 35px #ffffff);
-    color: rgb(61 75 255);
-    opacity: 90%;
+
+    color: rgb(100 111 255);
+    opacity: 100%;
     mix-blend-mode: difference;
   }
 
@@ -77,7 +76,8 @@ const Article = styled.div`
     width: 70%;
   }
 
-  font-family: ${props => props.theme.font.secondary};
+  // font-family: ${props => props.theme.font.secondary};
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
   .blog-post-content {
     padding-top: 4em;
