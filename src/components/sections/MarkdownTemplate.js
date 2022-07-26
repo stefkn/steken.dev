@@ -226,7 +226,7 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 2048) {
               originalName
               ...GatsbyImageSharpFluid
             }
