@@ -168,13 +168,15 @@ const Article = styled.div`
 
   code {
     element::-webkit-scrollbar { width: 0 !important }
-    font-family: ${props => props.theme.font.monospace};
+    // font-family: ${props => props.theme.font.monospace};
+    font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
     font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
-    background-color: #ff6ba7;
+    background-color: rgb(150 136 255);
     font-weight: 500;
-    border-radius: 5px;
-    padding: 3px;
+    border-radius: 4px;
+    padding: 0px;
     color: #ffffff;
+    border: 1px solid rgb(232 234 255);
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
