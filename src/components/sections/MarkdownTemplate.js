@@ -106,11 +106,11 @@ const Article = styled.div`
 
   .main-content {
     position: relative;
-    top: -12em;
   }
 
   .subtitle-main {
-    color: #ff146f;
+    color: rgb(120 131 255);
+    mix-blend-mode: multiply;
   }
   .subtitle-date {
     color: #564F62;
@@ -118,11 +118,12 @@ const Article = styled.div`
 
   p {
     -webkit-font-smoothing: auto;
-    font-family: ${props => props.theme.font.secondary};
+    // font-family: ${props => props.theme.font.secondary};
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 300;
     font-style: normal;
-    letter-spacing: -.02em;
-    line-height: 1.62;
+    // letter-spacing: -.02em;
+    // line-height: 1.62;
     color: #080d22;
     font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
     margin-top: 1em;
