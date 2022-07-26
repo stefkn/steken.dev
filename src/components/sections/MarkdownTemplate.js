@@ -154,7 +154,8 @@ const Article = styled.div`
     margin: 32px;
   }
 
-  --deckgo-highlight-code-font-family: ${props => props.theme.font.monospace};
+  // --deckgo-highlight-code-font-family: ${props => props.theme.font.monospace};
+  --deckgo-highlight-code-font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   --deckgo-highlight-code-token-function: #ff146f;
   --deckgo-highlight-code-token-regex: #ff146f;
   --deckgo-highlight-code-token-comment: #84a2ff;
