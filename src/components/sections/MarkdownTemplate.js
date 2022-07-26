@@ -183,6 +183,11 @@ const Article = styled.div`
     // margin-bottom: 96px;
   }
 
+  iframe {
+    margin-top: 2em;
+    border-radius: 12px;
+  }
+
   .footnotes {
     margin-top: 8em;
   }
