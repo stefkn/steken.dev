@@ -28,6 +28,7 @@ export default function HTML(props) {
                 const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
                 gracefulLoading.classList.add('fade-out-anim');
                 document.body.style.overflow = 'auto';
+                document.body.style.backgroundColor = '#f7f7f7';
               }, 1500);
               setTimeout(() => {
                 const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
@@ -38,6 +39,7 @@ export default function HTML(props) {
                 const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
                 gracefulLoading.classList.add('fade-out-anim');
                 document.body.style.overflow = 'auto';
+                document.body.style.backgroundColor = '#f7f7f7';
               }, 500);
               setTimeout(() => {
                 const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
