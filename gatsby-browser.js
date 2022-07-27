@@ -20,15 +20,17 @@ export function onRouteUpdate({ location, prevLocation }) {
 
     if (['/aboutme', '/aboutme/'].includes(location.pathname) && window.adobe_dc_view_sdk) {
         document.addEventListener('adobe_dc_view_sdk.ready', function () {
-            var adobeDCView = new window.adobe_dc_view_sdk.default({
-                clientId: `${process.env.ADOBE_API_KEY}`,
-                divId: 'adobe-dc-view',
-            });
-            adobeDCView.previewFile({
-                    content: { location: { url: '/CV_2022.pdf' } },
-                    metaData: { fileName: '/CV_2022.pdf' },
-                },{embedMode: "IN_LINE", dockPageControls: false}
-            );
+            setTimeout(() => {
+                var adobeDCView = new window.adobe_dc_view_sdk.default({
+                    clientId: `${process.env.ADOBE_API_KEY}`,
+                    divId: 'adobe-dc-view',
+                });
+                adobeDCView.previewFile({
+                        content: { location: { url: '/CV_2022.pdf' } },
+                        metaData: { fileName: 'CV_2022.pdf' },
+                    },{embedMode: "IN_LINE", dockPageControls: false}
+                );
+            }, 1000);
         });
 
         function recursivelyWaitForAdobeViewSDK () {
@@ -38,7 +40,7 @@ export function onRouteUpdate({ location, prevLocation }) {
                 } else {
                     recursivelyWaitForAdobeViewSDK();
                 }
-            }, 100);
+            }, 300);
         }
 
         recursivelyWaitForAdobeViewSDK();
