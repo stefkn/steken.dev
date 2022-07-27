@@ -94,7 +94,7 @@ module.exports = {
           `Inter\:300,400,500,700,900`,
           `Rubik\:100,200,300,400,500,600,700`,
           `Spectral\:200,300`,
-          `Source Code Pro\:200,300,500`,
+          `Source Code Pro\:200,300,400,500`,
         ],
       },
     },
