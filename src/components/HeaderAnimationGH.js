@@ -7,6 +7,9 @@ import React from "react"
 import styled from 'styled-components';
 
 class HeaderAnimation extends React.Component {
+  _onWindowResize = null;
+  _renderer = null;
+
   componentDidMount() {
     const scene = new THREE.Scene()
 
@@ -25,6 +28,7 @@ class HeaderAnimation extends React.Component {
     camera.position.z = 50
 
     const renderer = new THREE.WebGLRenderer({ antialiasing: false, powerPreference: "high-performance" })
+    this._renderer = renderer
     renderer.outputEncoding = THREE.sRGBEncoding
 
     // Thanks https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
@@ -102,6 +106,7 @@ class HeaderAnimation extends React.Component {
 
         render();
     }
+    this._onWindowResize = onWindowResize;
 
     const headerWrapper = document.getElementById('header-wrapper')
 
