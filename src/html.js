@@ -67,17 +67,18 @@ export default function HTML(props) {
         >
         </style>
       </head>
-      <body {...props.bodyAttributes} style={{overflow: 'hidden'}}>
+      <body {...props.bodyAttributes} style={{overflow: 'hidden', backgroundColor: '#2f39ae'}}>
         <div
           id="graceful-loader-curtain-index"
           className="graceful-loader-curtain"
           style={{
             position: 'absolute',
             top: '0px',
+            left: '0px',
             height:'100%',
             width:'100%',
             backgroundColor: '#2f39ae',
-            zIndex: 1000
+            zIndex: 10000
           }}
         ></div>
         {props.preBodyComponents}
