@@ -10,8 +10,6 @@ import { Container } from '@components/global';
 
 import styled from 'styled-components';
 
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -24,8 +22,6 @@ export default function Template({
       setScroll(window.scrollY < 100)
     })
   })
-
-  deckDeckGoHighlightElement();
 
   return (
     <Layout>
