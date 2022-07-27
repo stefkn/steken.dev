@@ -194,6 +194,11 @@ class HeaderAnimation extends React.Component {
     animate()
   }
 
+  componentWillUnmount() {
+    this._renderer.dispose();
+    window.removeEventListener('resize', this._onWindowResize);
+  }
+
   render() {
     const HeaderAnimContainer = styled.div`
         -webkit-transition: all 0s ease;
