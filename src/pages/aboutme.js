@@ -254,7 +254,7 @@ const AboutMe = () => (
 
           <h3>My CV / Résumé</h3>
           <h6 className="cv-subtitle">AKA ye grande PDF of self-congratulation</h6>
-          <div id="adobe-dc-view" style={{width: '100%', height: '100%'}}></div>
+          <div id="adobe-dc-view" style={{width: '100%', height: '100%', boxShadow: '3px 7px 9px 0px rgb(152 160 255)', borderRadius: '16px'}}></div>
         </MainMatter>
       </Container>
       <Footer bottomImage={false} />
