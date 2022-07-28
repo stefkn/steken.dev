@@ -52,7 +52,7 @@ const Header = () => (
       <HeaderWrapper id="header-wrapper">
         <Container>
           <Grid>
-            <ArtBackground>
+            <ArtBackground id="bg-art-1">
               <div className="fake-code">
                 <p>
                   {`public static void main(string[] args)`}
@@ -74,8 +74,8 @@ const Header = () => (
                 </p>
               </div>
             </ArtBackground>
-            <Art><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
-            <HeaderText>
+            <Art id="bg-art-2"><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
+            <HeaderText id="bg-art-3">
               <h1 style={headerstyle} >
                 Hello.
               </h1>
