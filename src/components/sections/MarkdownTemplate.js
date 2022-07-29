@@ -169,12 +169,13 @@ const Article = styled.div`
     // font-family: ${props => props.theme.font.monospace};
     font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
     font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
-    background-color: rgb(150 136 255);
-    font-weight: 500;
+    background-color: rgb(93 72 255);
+    font-weight: 400;
     border-radius: 4px;
-    padding: 0px;
+    padding: 1px;
     color: #ffffff;
-    border: 1px solid rgb(232 234 255);
+    border: 1px solid rgb(255 133 182);
+    line-height: 1.5;
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
