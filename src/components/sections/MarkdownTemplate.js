@@ -18,9 +18,19 @@ export default function Template({
   const [scroll, setScroll] = useState(true)
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    let isMounted = true
+
+    function scrollEventHandler () {
       setScroll(window.scrollY < 100)
-    })
+    }
+
+    if (isMounted) {
+      document.addEventListener("scroll", scrollEventHandler)
+    }
+    return () => {
+      isMounted = false
+      document.removeEventListener("scroll", scrollEventHandler);
+    };
   })
 
   return (
