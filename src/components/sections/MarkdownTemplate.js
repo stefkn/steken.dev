@@ -68,6 +68,17 @@ const HeroOverlay = styled.div`
   z-index: 1;
   background: linear-gradient(11deg, rgb(247, 247, 247) 30%, rgba(221, 153, 255, 55%) 76%, rgba(255, 0, 102, 52%) 96% );
 `
+
+const HeroImage = styled.div`
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+`
+
 const Article = styled.div`
   margin-bottom: 12em;
   margin: 10em auto;
