@@ -35,26 +35,28 @@ const PostEntry = styled.div`
   }
 
   h3 {
-    color: #2f39ae !important;
+    color: white !important;
     font-family: ${props => props.theme.font.primary};
     font-weight: 600;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   a:-webkit-any-link {
-    color: #2f39ae;
+    color: white;
     cursor: pointer;
     text-decoration: none;
   }
 
   p.excerpt {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
     line-height: 1.3328;
+    color: #1a191d;
+    font-weight: 400;
   }
 
   .post-date {
     font-size: 16px;
-    color: #2f39ae;
+    color: white;
   }
 
   .read-more {
