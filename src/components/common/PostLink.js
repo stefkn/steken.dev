@@ -56,8 +56,22 @@ const PostEntry = styled.div`
   }
 
   .read-more {
+    background: #293aff;
+    border-radius: 10px;
+    padding: 6px;
+    text-align: center;
+    max-width: 260px;
     font-size: 16px;
-    color: #2f39ae;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(198, 203, 255, 39%);
+  }
+  .read-more:hover {
+    bottom: 1px;
+    box-shadow: 6px 5px 20px 0px rgba(255, 0, 106, 53%);
+  }
   }
 
   @media (max-width: 720px) {
