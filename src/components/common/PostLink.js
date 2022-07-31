@@ -10,14 +10,16 @@ const PostLink = ({ post, coverImage }) => (
         <Img className="cover-image" fluid={coverImage.childImageSharp.fluid} />
       </Link>
     }
-    <div className="post-date">{post.frontmatter.date}</div>
-    <h3 className="subtitle-main">
-        <Link to={post.frontmatter.slug}>
-          {post.frontmatter.title}
-        </Link>
-    </h3>
-    <p className="excerpt">{post.frontmatter.excerpt}</p>
-    <p className="read-more"><Link to={post.frontmatter.slug}>Read more... ({post.frontmatter.reading_time} min read)</Link></p>
+    <div className="text-content">
+      <div className="post-date">{post.frontmatter.date}</div>
+      <h3 className="subtitle-main">
+          <Link to={post.frontmatter.slug}>
+            {post.frontmatter.title}
+          </Link>
+      </h3>
+      <p className="excerpt">{post.frontmatter.excerpt}</p>
+      <p className="read-more"><Link to={post.frontmatter.slug}>Read more... ({post.frontmatter.reading_time} min read)</Link></p>
+    </div>
   </PostEntry>
 )
 
