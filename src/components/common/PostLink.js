@@ -92,9 +92,6 @@ const PostEntry = styled.div`
 
   width: 46%;
   margin: 2%;
-  background-color: rgb(236 235 255);
-  box-shadow: -1px 4px 14px 3px #aeb4ff75;
-  border-radius: 9px;
   padding: 22px;
 
   animation-delay: 0s;
