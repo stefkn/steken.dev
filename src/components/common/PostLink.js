@@ -101,4 +101,18 @@ const PostEntry = styled.div`
   @keyframes animatetext {
     0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
     100% { transform: translate3d(0, 0, 0); opacity: 100%;}
+  }
+
+  background: linear-gradient(
+    155deg,rgb(158, 14, 255, 29%) 0%,
+    rgba(0, 20, 255, 12%) 20%,
+    rgba(253, 29, 29, 39%) 81%,
+    rgba(255, 210, 151, 70%) 100%
+  );
+
+  box-shadow: 4px 6px 16px 0px rgb(0 16 255 / 16%);
+  backdrop-filter: hue-rotate(10deg) blur(4px);
+  -webkit-backdrop-filter: blur( 7.5px );
+  border-radius: 10px;
+  border: 1px solid rgb(232 234 255);
   `;
