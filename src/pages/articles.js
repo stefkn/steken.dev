@@ -90,7 +90,16 @@ class Articles extends Component {
         query={graphql`
           query
           {
-            allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+            stefan_img: file(
+              sourceInstanceName: { eq: "art" }
+              name: { eq: "miyajima_temple" }
+            ) {
+              childImageSharp {
+                fluid(maxWidth: 2048) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
               edges {
                 node {
                   id
