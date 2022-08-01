@@ -118,7 +118,7 @@ class Articles extends Component {
                 }
               }
             }
-            allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
+            articleImages: allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
               edges {
                 node {
                   childImageSharp {
