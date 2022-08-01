@@ -153,9 +153,12 @@ class Articles extends Component {
             return accumulator
           }
 
-          const coverImages = queryResult.allFile.edges
-          let Posts = <div style={{marginTop: '1em'}}>No posts. Watch this space! 👽</div>;
-          let Tags = <div style={{marginTop: '1em'}}>No tags. #sadface  💁‍♀️</div>;
+          const seriesReducer = (accumulator, currentValue) => {
+            if (!!currentValue) {
+              this.addToSeriesList(currentValue.node.frontmatter.series, accumulator);
+            }
+            return accumulator
+          }
 
           if (!!mdArticles && mdArticles.length > 0) {
             Posts = mdArticles
