@@ -100,12 +100,14 @@ class Articles extends Component {
                 }
               }
             }
+            articles: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
               edges {
                 node {
                   id
                   frontmatter {
                     date(formatString: "MMMM DD, YYYY")
                     slug
+                    series
                     title
                     tags
                     published
