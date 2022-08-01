@@ -145,7 +145,7 @@ class Articles extends Component {
           }
         `}
         render={queryResult => {
-          const mdArticles = queryResult.allMarkdownRemark.edges
+          const mdArticles = queryResult.articles.edges
             .filter(article => this.isArticlePublished(article))
 
           const reducer = (accumulator, currentValue) => {
