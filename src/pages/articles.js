@@ -130,6 +130,18 @@ class Articles extends Component {
                 }
               }
             }
+            seriesImages: allFile(filter: {sourceInstanceName: {eq: "series_images"}}) {
+              edges {
+                node {
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      originalName
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
           }
         `}
         render={queryResult => {
