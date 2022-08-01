@@ -160,6 +160,13 @@ class Articles extends Component {
             return accumulator
           }
 
+          const coverImages = queryResult.articleImages.edges
+          const seriesImages = queryResult.seriesImages.edges
+
+          let Posts = <div style={{marginTop: '1em'}}>No posts. Watch this space!</div>;
+          let Tags = <div style={{marginTop: '1em'}}>No tags yet.</div>;
+          let Series = <div style={{display: 'none'}}></div>;
+
           if (!!mdArticles && mdArticles.length > 0) {
             Posts = mdArticles
               .filter(article => this.articleIsTagged(this.state.selectedTag, article))
