@@ -169,8 +169,15 @@ class Articles extends Component {
 
           if (!!mdArticles && mdArticles.length > 0) {
             Posts = mdArticles
-              .filter(article => this.articleIsTagged(this.state.selectedTag, article))
-              .map(article => <PostLink key={article.node.id} post={article.node} coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)} />)
+              .filter(article => this.articleIsTagged(this.state.selectedTag, article) || this.articleIsInSeries(this.state.selectedSeries, article))
+              .map(
+                article =>
+                <PostLink
+                  key={article.node.id}
+                  post={article.node}
+                  coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)}
+                />
+              )
             Tags = mdArticles
               .map(article => article.node.frontmatter.tags.split(' '))
               .reduce(reducer, mdArticles ? ['All articles'] : ['No tags yet.'])
