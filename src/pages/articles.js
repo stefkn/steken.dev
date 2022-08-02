@@ -178,6 +178,32 @@ class Articles extends Component {
                   coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)}
                 />
               )
+
+            Series = mdArticles
+              .reduce(seriesReducer, [])
+              .map(
+                series =>
+                !!seriesData[series] ?
+                  <SeriesCard
+                    className={this.state.selectedSeries === series ? 'selelcted-series-card': null}
+                    key={series}
+                    onClick={() => this.selectSeries(series)}
+                  >
+                    <h3 className="seriescard-heading">series</h3>
+                    <h2>{series}</h2>
+                    {this.getCoverImage(seriesImages, seriesData[series].imageName) !== null &&
+                      <Img
+                        key={series}
+                        className="series-image"
+                        fluid={this.getCoverImage(seriesImages, seriesData[series].imageName).childImageSharp.fluid}
+                      />
+                    }
+                    <div className="series-description">
+                      <p>{seriesData[series].description}</p>
+                    </div>
+                  </SeriesCard> : null
+              )
+
             Tags = mdArticles
               .map(article => article.node.frontmatter.tags.split(' '))
               .reduce(reducer, mdArticles ? ['All articles'] : ['No tags yet.'])
