@@ -304,7 +304,7 @@ const MainMatter = styled.div`
 
   h3 {
     line-height: 1.3328;
-    font-size: clamp(2.0rem, 12vw - 1.5rem, 3.2rem);
+    font-size: clamp(2.0rem, 12vw - 1.5rem, 1.8rem);
 
     animation-delay: 1s;
     animation: animatetext 2s;
