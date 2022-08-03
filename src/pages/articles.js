@@ -330,6 +330,20 @@ const MainMatter = styled.div`
     animation: animatetext 2s;
     animation-fill-mode: forwards;
   }
+
+  div::-webkit-scrollbar {
+    width: 1px;
+    height: 6px;
+  }
+
+  div::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  div::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 20px;
+  }
 `;
 
 export default Articles;
