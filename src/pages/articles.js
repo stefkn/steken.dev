@@ -250,9 +250,15 @@ class Articles extends Component {
 const TagsButtonContainer = styled.div`
   margin-top: 1em;
 `
-const PostsContainer = styled.div`
 
+const PostsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 1em;
 `
+
 const TagButton = styled.button`
   animation-delay: 0s;
   animation: animatetext 1s;
