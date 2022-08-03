@@ -220,6 +220,10 @@ class Articles extends Component {
           return (
           <Layout>
             <Navbar isAtTopOfPage={true} />
+            <HeroImage>
+              <HeroOverlay></HeroOverlay>
+              <Img fluid={queryResult.stefan_img.childImageSharp.fluid} />
+            </HeroImage>
             <Container>
               <MainMatter>
                 <h1>Articles</h1>
