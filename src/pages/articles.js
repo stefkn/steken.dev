@@ -227,8 +227,13 @@ class Articles extends Component {
             <Container>
               <MainMatter>
                 <h1>Articles</h1>
+
                 <p>filter by topic:</p>
                 <TagsButtonContainer>{Tags}</TagsButtonContainer>
+
+                { (!!Series && !!seriesData && Object.keys(seriesData).length !== 0) && <p>or by series:</p> }
+                <SeriesContainer>{Series}</SeriesContainer>
+
                 <PostsContainer>{Posts}</PostsContainer>
               </MainMatter>
             </Container>
