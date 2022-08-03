@@ -207,7 +207,14 @@ class Articles extends Component {
             Tags = mdArticles
               .map(article => article.node.frontmatter.tags.split(' '))
               .reduce(reducer, mdArticles ? ['All articles'] : ['No tags yet.'])
-              .map(tag => <TagButton className={this.state.selectedTag === tag ? 'selelcted-tag-button': null} key={tag} onClick={() => this.selectTag(tag)} > {tag} </TagButton>)
+              .map(
+                tag =>
+                <TagButton
+                  className={this.state.selectedTag === tag ? 'selelcted-tag-button': null}
+                  key={tag}
+                  onClick={() => this.selectTag(tag)} > {tag}
+                </TagButton>
+              )
           }
 
           return (
