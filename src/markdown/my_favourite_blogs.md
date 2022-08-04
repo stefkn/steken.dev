@@ -12,3 +12,6 @@ cover_image: "img_5328.jpeg"
 
 [no.lol](https://www.no.lol/)
 [joshwcomeau](https://www.joshwcomeau.com/)
+[drewdevault](https://drewdevault.com/)
+[macwright](https://macwright.com/)
+[simonweckert](http://www.simonweckert.com/index.html)
