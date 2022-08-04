@@ -246,6 +246,22 @@ class Articles extends Component {
   }
 }
 
+// const seriesData = {
+//   "Cybersecurity": {
+//     "imageName": "cybersecurity.jpeg",
+//     "description": "Cybersecurity is the study of the security of digital systems and networks. It is the study of the threats and vulnerabilities that exist in these systems and networks.",
+//   },
+//   "Design Patterns": {
+//     "imageName": "design-patterns.jpeg",
+//     "description": "Design patterns are a family of recurring design patterns, which are used in software design. They are a way to express design as code.",
+//   },
+//   "git good at git": {
+//     "imageName": "git-branch.jpg",
+//     "description": "git is a version control system for tracking changes in source code during software development. It is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+//   }
+// }
+const seriesData = {}
+
 
 const TagsButtonContainer = styled.div`
   margin-top: 1em;
