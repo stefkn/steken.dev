@@ -276,6 +276,16 @@ const HeroOverlay = styled.div`
     #ff006685 96% );
 `
 
+const HeroImage = styled.div`
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 72px;
+`
+
 
 const TagsButtonContainer = styled.div`
   margin-top: 1em;
