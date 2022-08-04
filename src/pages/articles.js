@@ -286,6 +286,19 @@ const HeroImage = styled.div`
   margin-top: 72px;
 `
 
+const SeriesContainer = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .selelcted-series-card {
+    background: linear-gradient( 155deg,rgb(158 14 255 / 5%) 0%,rgb(0 20 255 / 12%) 20%,rgb(255 158 221 / 52%) 29%,rgb(85 85 255 / 81%) 100% );
+    .series-description {
+      backdrop-filter: brightness(130%) blur(14px);
+    }
+  }
+`
+
 
 const TagsButtonContainer = styled.div`
   margin-top: 1em;
