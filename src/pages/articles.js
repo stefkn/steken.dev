@@ -299,6 +299,68 @@ const SeriesContainer = styled.div`
   }
 `
 
+const SeriesCard = styled.div`
+  min-height: 12em;
+  min-width: 14em;
+
+  @media (max-width: 620px) {
+    width: 50%;
+  }
+  width: 40%;
+  @media (min-width: 900px) {
+    width: 20%;
+  }
+
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 6px 0 rgba(3, 14, 45, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin: 20px 30px 20px 0px;
+  font-weight: bold;
+  cursor: pointer;
+
+  p { font-size: 1em !important; }
+  h2 { font-size: 1.4em; font-weight: 600; }
+
+  .series-image {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .seriescard-heading {
+    font-size: 12px;
+    color: rgb(163 163 163);
+  }
+
+  .series-description {
+    position: relative;
+    border-radius: 10px;
+    padding: 12px;
+    -webkit-transform: skewY(6deg);
+    -ms-transform: skewY(6deg);
+    -webkit-transform: skewY(6deg);
+    -ms-transform: skewY(6deg);
+    transform: skewY(6deg);
+    border: 1px solid rgb(95 109 255 / 20%);
+    x-shadow: 7px 13px 20px 0pxrgb(255 183 213 / 62%);
+    -webkit-backdrop-filter: hue-rotate(312deg) blur(14px);
+    -webkit-backdrop-filter: hue-rotate(312deg) blur(14px);
+    backdrop-filter: hue-rotate(145deg) blur(14px);
+    -webkit-backdrop-filter: hue-rotate(312deg) blur(14px);
+    top: -50px;
+    background-color: rgb(255 255 255 / 54%);
+
+    p {
+      margin: 0;
+      font-weight: 400;
+      color: rgb(32 29 38);
+    }
+  }
+`
 
 const TagsButtonContainer = styled.div`
   margin-top: 1em;
