@@ -7,14 +7,14 @@ import { ReactComponent as Blob1SVG } from '../../images/blob1.svg';
 class About extends Component {
   render() {
     return (
-      <Section id="about">
+      <Section id="about" className="about-section">
         <Frontmatter>
               <StyledOutlineText className="fade-in-on-view">
                 Stefan Kenichiro Nowak is a <a href="https://lifeat.tails.com/tag/engineering/">Software Engineer</a> at <a href="https://tails.com/gb/">tails.com</a>. Before that, he was a student of <a href="https://www.kcl.ac.uk/study/undergraduate/courses/computer-science-msci">Computer Science</a> at <a href="https://en.wikipedia.org/wiki/King%27s_College_London">King's College London</a>.
               </StyledOutlineText>
-              <BlobSVG>
+              <BlobSVG1>
                   <Blob1SVG />
-              </BlobSVG>
+              </BlobSVG1>
               <StyledSmaller className="fade-in-on-view">
                 When not staring at one of my many screens, you might catch me reading a book or ten, going on a journey somewhere, lifting heavy things, or cooking something tasty.
               </StyledSmaller>
@@ -36,7 +36,7 @@ const blobAnimation = keyframes`
   100% { transform: scaleY(100%) scaleX(100%) translateY(0px) translateX(0px) rotate(360deg); }
 `;
 
-const BlobSVG = styled.div`
+const BlobSVG1 = styled.div`
   position: relative;
   width: 85em;
   z-index: -1;
