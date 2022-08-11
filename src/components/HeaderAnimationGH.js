@@ -202,6 +202,12 @@ class HeaderAnimation extends React.Component {
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        audio {
+            position: absolute;
+            z-index: 100;
+            right: 4em;
+            bottom: 4em;
         }
     `
     return (
