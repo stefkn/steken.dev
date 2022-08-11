@@ -191,14 +191,17 @@ class HeaderAnimation extends React.Component {
 
         canvas {
             width: 100% !important;
-            height: 40em;
+            height: 60em;
             display: block;
             position: relative;
-            background-color: #2f39ae;
             z-index: 1;
 
             -webkit-transition: all 0s ease;
             transition: all 0s ease;
+            background-image: url(/apple-bg3.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         }
     `
     return (
