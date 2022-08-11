@@ -78,15 +78,7 @@ class HeaderAnimation extends React.Component {
     )
 
     function onWindowResize() {
-        if (window.innerHeight - 200 > 800) {
-            renderer.setSize(window.innerWidth, window.innerHeight - 200);
-        } else {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        if (window.mobileCheck()) {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
         if (window.devicePixelRatio < 2) {
             renderer.setPixelRatio(window.devicePixelRatio/1.5);
