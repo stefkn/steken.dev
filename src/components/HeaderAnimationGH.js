@@ -13,7 +13,7 @@ class HeaderAnimation extends React.Component {
   componentDidMount() {
     const scene = new THREE.Scene()
 
-    scene.background = new THREE.Color('#2f39ae');
+    // scene.background = new THREE.Color('#2f39ae');
     scene.add(new THREE.AmbientLight( '#fe317e', 1 ));
     scene.add(new THREE.DirectionalLight('#fe317e', 2));
     scene.add(new THREE.DirectionalLight('#2f39ae', 3));
@@ -27,7 +27,7 @@ class HeaderAnimation extends React.Component {
     )
     camera.position.z = 50
 
-    const renderer = new THREE.WebGLRenderer({ antialiasing: false, powerPreference: "high-performance" })
+    const renderer = new THREE.WebGLRenderer({ antialiasing: false, powerPreference: "high-performance", alpha: true })
     this._renderer = renderer
     renderer.outputEncoding = THREE.sRGBEncoding
 
