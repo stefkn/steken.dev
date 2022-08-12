@@ -198,9 +198,11 @@ class HeaderAnimation extends React.Component {
 
             -webkit-transition: all 0s ease;
             transition: all 0s ease;
-            background-image: url(/apple-bg3.jpeg);
+            background-color: #0e063e;
+            background-image: url(/apple-bg4.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
         }
 
         audio {
