@@ -37,6 +37,7 @@ class HeaderAnimation extends React.Component {
 
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
+    controls.enableZoom = false
 
     // const material = new THREE.MeshBasicMaterial({})
     const envTexture = new THREE.CubeTextureLoader().load([
