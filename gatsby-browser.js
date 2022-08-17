@@ -18,31 +18,35 @@ export function onRouteUpdate({ location, prevLocation }) {
     // console.log("old pathname", prevLocation ? prevLocation.pathname : null);
     // console.log(`${process.env.ADOBE_API_KEY}`);
 
-    if (['/aboutme', '/aboutme/'].includes(location.pathname) && window.adobe_dc_view_sdk) {
-        document.addEventListener('adobe_dc_view_sdk.ready', function () {
-            setTimeout(() => {
-                var adobeDCView = new window.adobe_dc_view_sdk.default({
-                    clientId: `${process.env.ADOBE_API_KEY}`,
-                    divId: 'adobe-dc-view',
-                });
-                adobeDCView.previewFile({
-                        content: { location: { url: '/CV_2022.pdf' } },
-                        metaData: { fileName: 'CV_2022.pdf' },
-                    },{embedMode: "IN_LINE", dockPageControls: false}
-                );
-            }, 1000);
-        });
+    if (!location.pathname === '/') {
+        document.body.style.overflow = 'auto';
+    }
 
-        function recursivelyWaitForAdobeViewSDK () {
-            setTimeout(() => {
-                if (window.adobe_dc_view_sdk) {
-                    document.dispatchEvent(new Event('adobe_dc_view_sdk.ready'));
-                } else {
-                    recursivelyWaitForAdobeViewSDK();
-                }
-            }, 300);
-        }
+    // if (['/aboutme', '/aboutme/'].includes(location.pathname) && window.adobe_dc_view_sdk) {
+    //     document.addEventListener('adobe_dc_view_sdk.ready', function () {
+    //         setTimeout(() => {
+    //             var adobeDCView = new window.adobe_dc_view_sdk.default({
+    //                 clientId: `${process.env.ADOBE_API_KEY}`,
+    //                 divId: 'adobe-dc-view',
+    //             });
+    //             adobeDCView.previewFile({
+    //                     content: { location: { url: '/CV_2022.pdf' } },
+    //                     metaData: { fileName: 'CV_2022.pdf' },
+    //                 },{embedMode: "IN_LINE", dockPageControls: false}
+    //             );
+    //         }, 1000);
+    //     });
 
-        recursivelyWaitForAdobeViewSDK();
-    };
+    //     function recursivelyWaitForAdobeViewSDK () {
+    //         setTimeout(() => {
+    //             if (window.adobe_dc_view_sdk) {
+    //                 document.dispatchEvent(new Event('adobe_dc_view_sdk.ready'));
+    //             } else {
+    //                 recursivelyWaitForAdobeViewSDK();
+    //             }
+    //         }, 300);
+    //     }
+
+    //     recursivelyWaitForAdobeViewSDK();
+    // };
 }
