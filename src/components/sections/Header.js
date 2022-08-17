@@ -154,7 +154,7 @@ const HeaderWrapper = styled.header`
   position: absolute;
   max-width: 100vw;
   width: 100%;
-  top: 3vh;
+  top: 5%;
   padding-top: 96px;
   height: 60em;
   display: block;
