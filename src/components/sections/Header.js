@@ -32,64 +32,73 @@ const headersecondarystyle = {
 }
 
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_headerbg: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "headerbg" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 673) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Header = () => {
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      document.dispatchEvent(new Event("indexHeaderLoaded", {"bubbles":true, "cancelable":false}));
+    }, 500)
+  }, []);
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          art_headerbg: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "headerbg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 673) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <HeaderWrapper id="header-wrapper">
-        <Container>
-          <Grid>
-            <ArtBackground id="bg-art-1">
-              <div className="fake-code">
-                <p>
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
+      `}
+      render={data => (
+        <HeaderWrapper id="header-wrapper">
+          <Container>
+            <Grid>
+              <ArtBackground id="bg-art-1">
+                <div className="fake-code">
+                  <p>
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                  </p>
+                </div>
+              </ArtBackground>
+              <Art id="bg-art-2"><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
+              <HeaderText id="bg-art-3">
+                <h1 style={headerstyle} >
+                  Hello.
+                </h1>
+                <br />
+                <p className="subtext" style={headersecondarystyle}>
+                  Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧London, England.
                 </p>
-              </div>
-            </ArtBackground>
-            <Art id="bg-art-2"><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
-            <HeaderText id="bg-art-3">
-              <h1 style={headerstyle} >
-                Hello.
-              </h1>
-              <br />
-              <p className="subtext" style={headersecondarystyle}>
-                Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧London, England.
-              </p>
-            </HeaderText>
-          </Grid>
-        </Container>
-      </HeaderWrapper>
-    )}
-  />
-);
+              </HeaderText>
+            </Grid>
+          </Container>
+        </HeaderWrapper>
+      )}
+    />
+  )
+}
 
 
 const ArtBackground = styled.div`
