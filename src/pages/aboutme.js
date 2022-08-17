@@ -443,6 +443,25 @@ const MainMatter = styled.div`
     }
   }
 
+  .load-pdf-btn {
+    background-color: rgb(255 95 149);
+    padding: 20px;
+    border-radius: 40px;
+    margin: auto;
+    max-width: 319px;
+    width: 60%;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 3px 5px 12px 0px #00000029;
+    color: white;
+    font-weight: 600;
+  }
+
+  .load-pdf-btn:hover {
+    bottom: 1px;
+    box-shadow: 6px 5px 20px 0px rgba(255, 0, 106, 53%);
+  }
+
   .spotify-container {
     width: 100%;
     overflow: hidden;
