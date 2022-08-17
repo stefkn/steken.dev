@@ -9,14 +9,16 @@ import About from '@sections/About';
 import Footer from '@sections/Footer';
 
 
-const IndexPage = () => (
-  <Layout>
-    <HeaderAnimation />
-    <Navbar isAtTopOfPage={false} isTransparent={true} />
-    <Header />
-    <About />
-    <Footer bottomImage={false} />
-  </Layout>
-);
+const IndexPage = () => {
+  return (
+    <Layout>
+      <HeaderAnimation />
+      <Navbar isAtTopOfPage={false} isTransparent={true} />
+      <Header />
+      <About />
+      <Footer bottomImage={false} />
+    </Layout>
+  )
+};
 
 export default IndexPage;
