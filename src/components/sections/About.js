@@ -16,7 +16,7 @@ class About extends Component {
                   <Blob1SVG />
               </BlobSVG1>
               <StyledSmaller className="fade-in-on-view">
-                When not staring at one of my many screens, you might catch me reading a book or ten, going on a journey somewhere, lifting heavy things, or cooking something tasty.
+                When not staring at one of my many screens, you might catch me reading a book or two, eating a lot of nice food, visiting another city, lifting heavy things, or cooking something spicy 🌶
               </StyledSmaller>
               <BlobSVG2>
                   <Blob1SVG />
