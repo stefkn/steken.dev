@@ -176,6 +176,20 @@ const StyledSmaller = styled.div`
 
   font-size: clamp(1.8rem, 12vw - 1.5rem, 2.3rem);
 
+  border-radius: 20px;
+  padding: 30px;
+  z-index: 2;
+  background: rgb(233 30 99 / 21%);
+  box-shadow: 0 8px 32px 0 rgb(151 0 51 / 40%);
+  -webkit-backdrop-filter: blur( 4px );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgb(255 255 255 / 31%);
+  -webkit-transform: skewY(-4deg);
+  -ms-transform: skewY(-4deg);
+  transform: skewY(-4deg);
+
   transition: all 2s ease !important;
 `
 
