@@ -161,10 +161,9 @@ const StyledOutlineText = styled.div`
 const StyledSmaller = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
-  font-family: ${props => props.theme.font.primary};
-  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  letter-spacing: -.02em;
   text-transform: none;
   line-height: 1.3328;
   margin: 1rem 0;
