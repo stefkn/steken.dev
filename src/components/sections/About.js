@@ -117,6 +117,19 @@ const StyledOutlineText = styled.div`
 
   font-size: clamp(3.4rem,12vw - 1.5rem,4.5rem);
 
+  border-radius: 20px;
+  padding: 30px;
+  z-index: 2;
+  background: rgb(34 152 255 / 33%);
+  box-shadow: 0 8px 32px 0 rgb(16 25 144 / 37%);
+  -webkit-backdrop-filter: blur( 4px );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255,255,255,0.18 );
+  -webkit-transform: skewY(4deg);
+  -ms-transform: skewY(4deg);
+  transform: skewY(4deg);
 
   -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: rgb(2 0 98);
