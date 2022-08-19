@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
     // font-family: ${props => props.theme.font.primary};
     background: #f7f7f7;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    overflow: hidden;
   }
 
   h1, h2, h3, p {
