@@ -16,73 +16,20 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
         <script type="text/javascript"
-          dangerouslySetInnerHTML={{ __html: `
-            if (window.location.pathname === '/') {
-              window.scroll({
-                top: 0,
-                left: 0,
-              });
-              setTimeout(() => {
-                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
-                gracefulLoading.classList.add('fade-out-anim');
-                document.body.style.overflow = 'auto';
-                document.body.style.backgroundColor = '#f7f7f7';
-              }, 1500);
-              setTimeout(() => {
-                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
-                gracefulLoading.classList.add('remove');
-              }, 2500);
-            } else {
-              setTimeout(() => {
-                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
-                gracefulLoading.classList.add('fade-out-anim');
-                document.body.style.overflow = 'auto';
-                document.body.style.backgroundColor = '#f7f7f7';
-              }, 500);
-              setTimeout(() => {
-                const gracefulLoading = document.getElementById('graceful-loader-curtain-index');
-                gracefulLoading.classList.add('remove');
-              }, 1000);
-            }
-          ` }}
-        >
-        </script>
-        <style type="text/css"
-          dangerouslySetInnerHTML={{ __html: `
-            .fade-out-anim {
-              animation: fadeout 800ms;
-              animation-fill-mode: forwards;
-              opacity: 1;
-            }
-            @keyframes fadeout {
-              100% {
-                opacity: 0;
-              }
-            }
-            .remove {
-              display: none;
-              pointer-events: none;
-            }
-          ` }}
-        >
-        </style>
-      </head>
-      <body {...props.bodyAttributes} style={{overflow: 'hidden', backgroundColor: '#2f39ae'}}>
-        <div
-          id="graceful-loader-curtain-index"
-          className="graceful-loader-curtain"
-          style={{
-            position: 'absolute',
-            top: '0px',
-            left: '0px',
-            height:'100%',
-            width:'100%',
-            backgroundColor: '#2f39ae',
-            zIndex: 10000
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Load the Adobe View SDK when we get the event
+              document.addEventListener('loadAdobeSDKNow', () => {
+                var script = document.createElement('script');
+                script.src = 'https://documentcloud.adobe.com/view-sdk/main.js';
+                document.head.appendChild(script);
+              })
+            `
           }}
-        ></div>
+        ></script>
+      </head>
+      <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
           key={`body`}
