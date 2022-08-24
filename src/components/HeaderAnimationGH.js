@@ -160,6 +160,10 @@ class HeaderAnimation extends React.Component {
   componentWillUnmount() {
     this._renderer.dispose();
     window.removeEventListener('resize', this._onWindowResize);
+    document.getElementById(`header-animation-container`).removeEventListener('touchstart', this._toggleHeaderVisibility);
+    document.getElementById(`header-animation-container`).removeEventListener('click', this._toggleHeaderVisibility);
+    document.getElementById(`header-wrapper`).removeEventListener('touchstart', this._toggleHeaderVisibility);
+    document.getElementById(`header-wrapper`).removeEventListener('click', this._toggleHeaderVisibility);
   }
 
   render() {
