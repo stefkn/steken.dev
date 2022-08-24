@@ -116,30 +116,10 @@ class HeaderAnimation extends React.Component {
     }
     this._toggleHeaderVisibility = toggleHeaderVisibility;
 
-                mouseInElem = Array.from(
-                    document.querySelectorAll(":hover")
-                ).some(
-                    el => {
-                        return el.id === "header-animation-container" || el.id === "header-wrapper"
-                    }
-                );
-
-                if (mouseInElem) {
-                    mouseInElemCounter++;
-                    if (mouseInElemCounter > 1) {
-                        makeHeaderWrapperDisappear();
-                    }
-                } else {
-                    mouseInElemCounter = 0;
-                    makeHeaderWrapperAppear();
-                }
-            },
-            step
-          );
-        }
-    }
-
-    recursivelyWaitForMouseInElem(0, 500, 1000*60*5);
+    document.getElementById(`header-animation-container`).addEventListener('touchstart', toggleHeaderVisibility, false)
+    document.getElementById(`header-animation-container`).addEventListener('click', toggleHeaderVisibility, false)
+    document.getElementById(`header-wrapper`).addEventListener('touchstart', toggleHeaderVisibility, false)
+    document.getElementById(`header-wrapper`).addEventListener('click', toggleHeaderVisibility, false)
 
     window.addEventListener('resize', onWindowResize, false)
     onWindowResize();
