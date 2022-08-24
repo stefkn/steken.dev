@@ -213,7 +213,7 @@ class HeaderAnimation extends React.Component {
     `
     return (
       <HeaderAnimContainer id={`header-animation-container`}>
-        <audio controls loop preload="true" src="/Percussions_digital_arpeggios.mp3"></audio>
+        <audio controls loop preload="false" src="/Percussions_digital_arpeggios.mp3"></audio>
       </HeaderAnimContainer>
     )
   }
