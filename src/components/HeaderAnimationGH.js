@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 class HeaderAnimation extends React.Component {
   _onWindowResize = null;
+  _toggleHeaderVisibility = null;
   _renderer = null;
 
   componentDidMount() {
@@ -96,28 +97,24 @@ class HeaderAnimation extends React.Component {
 
     const headerWrapper = document.getElementById('header-wrapper')
 
+    let headerVisible = true;
+
     function makeHeaderWrapperDisappear() {
         headerWrapper.style.pointerEvents = 'none';
         headerWrapper.style.opacity = '0%';
+        headerVisible = false;
     }
 
     function makeHeaderWrapperAppear() {
         headerWrapper.style.pointerEvents = 'auto';
         headerWrapper.style.opacity = '100%';
+        headerVisible = true;
     }
 
-    let mouseInElem = false
-    let mouseInElemCounter = 0
-
-    function recursivelyWaitForMouseInElem(timeSoFar, step, limit) {
-        if (timeSoFar < limit) {
-          setTimeout(
-            () => {
-                // console.log(mouseInElemCounter);
-
-                if (window.location.pathname === '/') {
-                    recursivelyWaitForMouseInElem(timeSoFar+step, step, limit);
-                }
+    function toggleHeaderVisibility() {
+        headerVisible ? makeHeaderWrapperDisappear() : makeHeaderWrapperAppear()
+    }
+    this._toggleHeaderVisibility = toggleHeaderVisibility;
 
                 mouseInElem = Array.from(
                     document.querySelectorAll(":hover")
