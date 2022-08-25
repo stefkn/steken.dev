@@ -65,7 +65,7 @@ class HeaderAnimation extends React.Component {
     const loader = new STLLoader()
     let mesh;
     loader.load(
-        '/stefkn-2021.stl',
+        '/stefkn-2021-small.stl',
         function (geometry) {
             mesh = new THREE.Mesh(geometry, material)
             scene.add(mesh)
