@@ -1,5 +1,7 @@
 # steken.dev
 
+![Screenshot 2022-08-30 at 12 30 11](https://user-images.githubusercontent.com/20523205/187425717-b8a96be2-977e-4b95-94db-2df3a2b3a73e.png)
+
 Personal website using Gatsby, Styled Components, GraphQL and a few other things.
 
 Based on an absurd Gatsby starter by https://github.com/ajayns.
@@ -34,6 +36,3 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 
 This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
 
-## Deployment
-
-Deployment via Netlify. Pushes to master will trigger CD pipeline.
