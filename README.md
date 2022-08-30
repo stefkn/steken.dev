@@ -36,6 +36,3 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 
 This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
 
-## Deployment
-
-Deployment via Netlify. Pushes to master will trigger CD pipeline.
