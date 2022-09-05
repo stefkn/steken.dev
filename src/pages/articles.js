@@ -169,7 +169,16 @@ class Articles extends Component {
 
           if (!!mdArticles && mdArticles.length > 0) {
             Posts = mdArticles
-              .filter(article => this.articleIsTagged(this.state.selectedTag, article) || this.articleIsInSeries(this.state.selectedSeries, article))
+              .filter(
+                article =>
+                this.articleIsTagged(
+                  this.state.selectedTag,
+                  article,
+                ) || this.articleIsInSeries(
+                  this.state.selectedSeries,
+                  article,
+                )
+              )
               .map(
                 article =>
                 <PostLink
@@ -221,12 +230,18 @@ class Articles extends Component {
               )
 
             Tags = mdArticles
-              .map(article => article.node.frontmatter.tags.split(' '))
-              .reduce(reducer, mdArticles ? ['All articles'] : ['No tags yet.'])
+              .map(
+                article => article.node.frontmatter.tags.split(' ')
+              )
+              .reduce(
+                reducer, mdArticles ? ['All articles'] : ['No tags yet.']
+              )
               .map(
                 tag =>
                 <TagButton
-                  className={this.state.selectedTag === tag ? 'selelcted-tag-button': null}
+                  className={
+                    this.state.selectedTag === tag ? 'selelcted-tag-button' : null
+                  }
                   key={tag}
                   onClick={() => this.selectTag(tag)} > {tag}
                 </TagButton>
@@ -276,6 +291,8 @@ class Articles extends Component {
 //     "description": "git is a version control system for tracking changes in source code during software development. It is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
 //   }
 // }
+
+
 const seriesData = {}
 
 const HeroOverlay = styled.div`
