@@ -175,7 +175,12 @@ class Articles extends Component {
                 <PostLink
                   key={article.node.id}
                   post={article.node}
-                  coverImage={this.getCoverImage(coverImages, article.node.frontmatter.cover_image)}
+                  coverImage={
+                    this.getCoverImage(
+                      coverImages,
+                      article.node.frontmatter.cover_image,
+                    )
+                  }
                 />
               )
 
@@ -185,18 +190,29 @@ class Articles extends Component {
                 series =>
                 !!seriesData[series] ?
                   <SeriesCard
-                    className={this.state.selectedSeries === series ? 'selelcted-series-card': null}
+                    className={
+                      this.state.selectedSeries === series ? 'selelcted-series-card': null
+                    }
                     key={series}
                     onClick={() => this.selectSeries(series)}
                   >
                     <h3 className="seriescard-heading">series</h3>
                     <h2>{series}</h2>
-                    {this.getCoverImage(seriesImages, seriesData[series].imageName) !== null &&
-                      <Img
-                        key={series}
-                        className="series-image"
-                        fluid={this.getCoverImage(seriesImages, seriesData[series].imageName).childImageSharp.fluid}
-                      />
+                    {
+                      this.getCoverImage(
+                        seriesImages,
+                        seriesData[series].imageName,
+                      ) !== null &&
+                        <Img
+                          key={series}
+                          className="series-image"
+                          fluid={
+                            this.getCoverImage(
+                              seriesImages,
+                              seriesData[series].imageName,
+                            ).childImageSharp.fluid
+                          }
+                        />
                     }
                     <div className="series-description">
                       <p>{seriesData[series].description}</p>
