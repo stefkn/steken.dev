@@ -14,18 +14,29 @@ import { Container } from '@components/global';
 const AboutMe = () => {
 
   const loadAdobeViewSDK = function () {
-    document.dispatchEvent(new Event("loadAdobeSDKNow", {"bubbles":true, "cancelable":false}));
+    document.dispatchEvent(
+      new Event(
+        "loadAdobeSDKNow",
+        {"bubbles":true, "cancelable":false}
+      )
+    );
+
     setTimeout(() => {
       var adobeDCView = new window.adobe_dc_view_sdk.default({
           clientId: `${process.env.ADOBE_API_KEY}`,
           divId: 'adobe-dc-view',
       });
+
       adobeDCView.previewFile({
-              content: { location: { url: '/CV_2022.pdf' } },
-              metaData: { fileName: 'CV_2022.pdf' },
-          },{embedMode: "IN_LINE", dockPageControls: false}
+            content: { location: { url: '/CV_2022.pdf' } },
+            metaData: { fileName: 'CV_2022.pdf' },
+          },{
+            embedMode: "IN_LINE",
+            dockPageControls: false,
+          }
       );
     }, 500);
+
     document.getElementById('load-pdf-btn').style.display = 'none'
   }
 
@@ -108,7 +119,10 @@ const AboutMe = () => {
       render={data => (
       <Layout>
         <Navbar isAtTopOfPage={true} />
-        <HeroImage><HeroOverlay></HeroOverlay><Img fluid={data.stefan_img.childImageSharp.fluid} /></HeroImage>
+        <HeroImage>
+          <HeroOverlay></HeroOverlay>
+          <Img fluid={data.stefan_img.childImageSharp.fluid} />
+        </HeroImage>
         <Container>
           <MainMatter>
             <h1>
