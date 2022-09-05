@@ -36,8 +36,23 @@ export default function Template({
   return (
     <Layout>
         <Navbar isAtTopOfPage={scroll} />
-        {(data.articleImages.edges.find(edge => edge.node.childImageSharp.fluid.originalName === frontmatter.cover_image)) &&
-          <HeroImage><HeroOverlay></HeroOverlay><Img fluid={data.articleImages.edges.find(image => image.node.childImageSharp.fluid.originalName === frontmatter.cover_image).node.childImageSharp.fluid} /></HeroImage>
+        {
+          (
+            data.articleImages.edges.find(
+              edge =>
+              edge.node.childImageSharp.fluid.originalName === frontmatter.cover_image
+            )
+          )
+          &&
+          <HeroImage>
+            <HeroOverlay></HeroOverlay>
+            <Img fluid={
+              data.articleImages.edges.find(
+                image =>
+                image.node.childImageSharp.fluid.originalName === frontmatter.cover_image
+              ).node.childImageSharp.fluid
+            } />
+          </HeroImage>
         }
         <Container>
           <Article className="page-main">
