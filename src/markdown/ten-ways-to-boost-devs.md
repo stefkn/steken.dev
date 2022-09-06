@@ -59,3 +59,16 @@ Now, once the meeting is over, I need to go back to where I was and try to remem
 This is all lost time that needs to be spent again, just to get back to where we were before the meeting notification pinged us.
 
 *Wait... who scheduled another meeting directly after that one!? It's not even 11am yet!!!*
+
+## He Protec but He Also Attac
+
+<iframe src="https://giphy.com/embed/xT5LMX1HX4Lwys905i" width="100%" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+**Distractions attack from all sides! Defend your team's focus.**
+
+Some of the very best managers, team leads, and product managers are the ones who can shield their team so they can focus on achieving goals, instead of responding to events ad-hoc.
+
+I like the analogy of the Tank, a character stereotype from multiplayer team-based shooters and MOBAs. They have a lot of HP, they are big and charge in at the front, soaking up a lot of damage so that the more nimble and specialist teammates at the back can sneak forward and capture the flag, or blow up a tower, or push a cart, or do whatever other strange thing the game devs have thought up.
+
+In any size of organisation there will always be things that need to be done. A great manager will help the team prioritise, manage external expectations, and sometimes respond with clear and emphatic 'No's. You only have as much capacity as you have, and ensuring that you keep your sprint goals and targets realistic will go a long way to keeping team the team's morale, focus and productivity high.
+
