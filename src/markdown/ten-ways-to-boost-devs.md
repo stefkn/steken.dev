@@ -44,3 +44,18 @@ Do your devs know the rest of the org? If they notice that an issue will impact 
 
 These are all just rhetorical questions designed to get you thinking about whether your rituals and ways of working are the most conducive to the kind of deep focus that software can often require.
 
+## Hold that invite...
+
+**[Context switching](https://en.wikipedia.org/wiki/Context_switch) is overhead.**
+
+At this point in our post-COVID world the *"meetings suck and I hate them"* discourse feels pretty passé. I feel that meetings are important, and are sometimes the most efficient way to get a number of people all on the same page with the opportunity to ask questions as soon as they arise.
+
+Now I've said that, I can also say: meetings induce mental [overhead](https://en.wikipedia.org/wiki/Overhead_(computing)), and, if the purpose of the meeting can be achieved to an acceptable level by an email chain, it should by all means be cancelled. By "mental overhead", I mean that meetings require more from the person than just their attention *during* the meeting. If I'm deep in the weeds of some payment processor integration logic, and I have a meeting in 10 minutes, I need to drop everything to mentally prepare–*what questions do I have? Do I have any documentation or data I need to present? Will I be asked any questions?* Otherwise, without preparation, the meeting itself might be wasted as it becomes a series of, *"oh, well, let me go see if I can find that out and I'll get back to you tomorrow..."* and another TODO is added to the list.
+
+There's also an important point to make here regarding meetings are *truly necessary*. We love meeting because it all feels very official and like *serious work* is getting done–but is it really? Personally speaking, I've been in meetings in the past with, like, two team leads and three different department heads all discussing a problem that might best have been solved by giving a couple of mid-level devs a half-sprint to focus on it. Instead, we have 5 different action items across three departments... you get the gist.
+
+Now, once the meeting is over, I need to go back to where I was and try to remember all the bits of context I was trying to keep in mind. *Was this variable an array or a mapping again? ...and wait, why are we calling this external function? What in the world was this bitwise operator doing in here?*
+
+This is all lost time that needs to be spent again, just to get back to where we were before the meeting notification pinged us.
+
+*Wait... who scheduled another meeting directly after that one!? It's not even 11am yet!!!*
