@@ -31,3 +31,16 @@ It's weird to even have to point this out, but sometimes, amongst our refinement
 Not only is it important to have subject-matter experts in the room, but the people who are *actually going to do the work* have *got* to be there too. With any luck, those people should ideally be the same people. If they're not, account for **more time** to do the planned task(s), as these people will need to exchange knowledge and expertise, whether sync (with another technical handover meeting) or async (via documentation and messaging).
 
 Requirements change. Such is life. We can't do much to stop life being life, but what we can guard against miscommunication and misunderstanding (which effectively change the requirements, even if the underlying cause is internal) by communicating, planning and documenting merticulously and fastidiously.
+
+## Help them help themselves help us all
+
+**Give your devs the tools they need to do the job.**
+
+This doesn't necessarily mean hardware or office furniture either; think about how your team is organised. Are you in-office, hybrid or remote? Do you span multiple time-zones? What's everyone's first language? Morning-person or night-owl? How many on your team have children to pick up from school, or relatives to look after?
+
+How do you organise information? Is everything scattered across hundreds of Jira ticket comments across six different epics, with the rest buried in a Slack thread from an archived private channel from six months ago? How do other teams organise their documentation? Do your devs have sufficient time in the sprint to document their systems and services? Can they see other teams' documentation? Here's a big one: *do they have the credentials to access any required external services?* If not, do they know where to go, or who to ask?
+
+Do your devs know the rest of the org? If they notice that an issue will impact a data team pipeline, or a QA test regimen, or they need to ask for an infrastructure change, do they know who to talk to? Could a PM take over that conversation and let the dev get back to building?
+
+These are all just rhetorical questions designed to get you thinking about whether your rituals and ways of working are the most conducive to the kind of deep focus that software can often require.
+
