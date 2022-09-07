@@ -47,3 +47,28 @@ git log
 git revert <COMMIT_ID>
 ```
 
+
+## Get friendly
+
+Find yourself typing out `git commit -m "another commit"` again and again? Get friendly with `git` and agree on some shorthands!
+These can also be modified in the `~/.gitconfig` file.
+
+```markdown
+# alias "git co" to "git checkout"
+git config --global alias.co checkout
+# alias "git ci" to "git commit"
+git config --global alias.ci commit
+# alias "git br" to "git branch"
+git config --global alias.br branch
+```
+
+
+## I pull, things are Up To Date, I push, I am rejected for missing refs, I pull again... (repeat 20x)
+
+This is a weird one I get sometimes when I forget to set an upstream on a local branch pushed to remote.
+
+```markdown
+# Set upstream of the current branch
+git branch -u <REMOTE_BRANCH_NAME>
+```
+
