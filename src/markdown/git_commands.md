@@ -72,3 +72,35 @@ This is a weird one I get sometimes when I forget to set an upstream on a local 
 git branch -u <REMOTE_BRANCH_NAME>
 ```
 
+
+## Wait... what was I doing again?
+
+```markdown
+# Show the diff comparing local working directory and the last commit on the current branch
+git diff HEAD
+```
+
+
+## I don't want to lose this, but I also don't want to commit this
+
+I often find that my local environment needs a lot of modifications in order to make it work for development that definitely shouldn't be pushed to remote. For example, fiddling with configuration files to point them to local versions of some service, or commenting out certain functions that I don't want to have run in local development cycles for speed or data reasons.
+
+Luckily for us, `git` was built by people who had similar workflows, and so has native support for "stashing"; this command pops all the modifications made since the last commit onto a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) of such groups of modifications, allowing us to get our repo back to that previous state, without losing our changes.
+
+```markdown
+# stash the current changes in the repo
+git stash
+# recall the last stashed changes
+git stash pop
+```
+
+
+## Oops, I forgot a Thing!
+
+```markdown
+# Replace the last commit with the currently-staged changes and the last commit together in one commit.
+# Or use with nothing staged to change the last commit's commit message.
+git commit --amend
+```
+
+For more, I would highly recommend a peruse through the excellent [git-tips/tips](https://github.com/git-tips/tips) repo to even the most seasoned developer!
