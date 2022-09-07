@@ -19,3 +19,31 @@ This post is not for one of those days. It is for one of those *other* days when
 
 Suddenly things are feeling a lot less magical than the other day. The veil is lifted, the illusion is broken, you realise santa is not real, the easter bunny doesn't hide the  chocolates and there is no such thing as magic; just a metric tonne of C code written by some Finnish guy with serious [behavioural problems.](https://www.newyorker.com/science/elements/after-years-of-abusive-e-mails-the-creator-of-linux-steps-aside)
 
+
+## Take me back to the good old days
+
+Irreversibly broken your local environment after hacking some stuff together? (for uncommitted changes)
+
+```markdown
+# See the log of commits to find where you want to go back to
+git log
+
+# Hard reset your local repo to what it was like at the given commit
+git reset --hard <COMMIT_ID>
+```
+
+
+## I have committed some terrible sins
+
+Committed some stuff that's causing problems? Revert them!
+
+A revert is different from other ways of undoing committed changes like `reset`, as it creates a new commit on the HEAD that is the inverse of the given commit, preserving the history of the repo. Kind of like if you were to undo everything you did in the commit as a new commit and committed that commit. *Capisce?*
+
+```markdown
+# See the log of commits to find which commit you'd like to undo
+git log
+
+# Revert the commit!
+git revert <COMMIT_ID>
+```
+
