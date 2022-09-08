@@ -54,3 +54,9 @@ Notice that each of the keys is associated with a string that is a valid command
 
 When you install `gh-pages`, it creates a `gh-pages` command line utility. Run `gh-pages --help` to see a list of supported options. Since it will be installed when we install our dependencies to run the project, we can use it in the deploy script to handle the GitHub Pages deployment. In the deploy script above, we use the `-d` argument to point it to the `/public` directory, which means it will copy everything in `/public` and push it to the `gh-pages` branch on the remote, which will trigger a GitHub Actions Workflow to be published on GitHub Pages.
 
+Hold on though, not so fast -- you will need to authenticate. How? See the `$GITHUB_TOKEN` there? That's going to be substituted with your GitHub repo's [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT) which you'll need to make and add to your environment variables. This is also a good time to talk about Secrets.
+
+This project (and most projects with any kind of external service dependency) will probably have a few or more API keys and access tokens to juggle. We can't just commit them in code to the repo, because they would be open and available for the public (and bad actors) to steal and use! The solution is to use [encrypted project secrets.](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+
+One important thing to note here though: since we're building a static site, we're _a little limited_ in what we can do with regards to secret management.
+
