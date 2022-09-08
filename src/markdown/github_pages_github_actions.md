@@ -63,3 +63,13 @@ One important thing to note here though: since we're building a static site, we'
 We can of course have **build-time secrets**, which are secrets that can only be accessed during the build process in the context of whatever runs your build (such as a [VM](https://en.wikipedia.org/wiki/Virtual_machine), a [serverless function](https://en.wikipedia.org/wiki/Serverless_computing) or a [Docker container](https://www.docker.com/resources/what-container/)) but can't be accessed outside of there. For example, say, if your static site relied upon a lot of licensed assets from a stock photo library API that you pay for – in the build process you could store the key as an encrypted build-time project secret, and the build runner would get that secret, use it to authenticate some requests for the said content at build-time, grab the assets it needs and then deploy.
 
 What we can't really support is runtime secrets.[^*] Since the site is static, if we're using some 3rd-party service, the secrets will be exposed through network calls however clever we are in hiding them while they're stored on the client's side. If we need to do this, our options are basically limited to [proxying](https://en.wikipedia.org/wiki/Proxy_server) the request in some manner, either by using a [Backend-For-Frontend](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends) (BFF) or a serverless function, mediating the external calls there and storing the keys on that layer instead.[^1]
+
+With that disclaimer out of the way, let's store a build-time secret for the Adobe View SDK, which I use to render the PDF of my CV on the aboutme page. I'm going to do this more as a learning exercise than a security measure, as the key will be included in the static site so that users viewing the site can use the Adobe PDF viewer. Luckily, it's free for unlimited use, and each key is restricted by domain, so there's not a lot a bad actor can do even if they do extract the key.
+
+
+
+
+
+[^*] (As with everything on this site, caveat emptor: to the best of my knowledge!)
+
+[^1] This is all what I understand from this StackOverflow discussion https://stackoverflow.com/questions/62231572/how-to-store-and-access-api-keys-and-passwords-with-gatsby
