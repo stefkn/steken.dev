@@ -72,3 +72,35 @@ I like the analogy of the Tank, a character stereotype from multiplayer team-bas
 
 In any size of organisation there will always be things that need to be done. A great manager will help the team prioritise, manage external expectations, and sometimes respond with clear and emphatic 'No's. You only have as much capacity as you have, and ensuring that you keep your sprint goals and targets realistic will go a long way to keeping team the team's morale, focus and productivity high.
 
+## What Kind of Dev Are You?
+
+**Different folks have different feelings about engineering.**
+
+*Well, duh.* This may sound banal, but hear me out: understanding the philosophical attitude of developers you're working with will help you make better project decisions.
+
+*Philosophical attitude!?* Yep. Indulge me. So there was once this guy called Plato.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Plato._Etching_by_D._Cunego%2C_1783%2C_after_R._Mengs_after_Raph_Wellcome_V0004702.jpg" style="width: 50%; display: block; margin: 20px auto;">
+    <h6>
+        It's Plato! (actually, this is now thought to be a nickname given to him by his wrestling coach due to his wide build, "Platon", literally meaning "broad"... I guess the ancient Greek equivalent of being called "MrBeast" or "Absolute Unit"?)
+    </h6>
+</img>
+
+[^2]
+
+Plato had many ideas, but among them is the [Theory of Forms.](https://en.wikipedia.org/wiki/Theory_of_forms)[^1] You might also know them by the term "Platonic ideal". Without getting too deep, the Theory of Forms is about ideals. More specifically, Plato argues that there exist timeless, immutable, absolute ideas, or Forms, which are the non-physical *essences* of things. Anything that exists in reality is just a pale immitation of its ideal, its **Form.**
+
+I like to think of Forms as a little bit like [classes](https://en.wikipedia.org/wiki/Class_(computer_programming)) in programming. It doesn't map perfectly, but a class encapsulates some common traits among a certain group of objects, and dictates how all members of the class should operate, and, most importantly; *is used to instantiate concrete instances of a given class of object.* Forms are similar, they are the ideal of a given class of physical (or even mental) thing, like bicycles, horses, bananas and even friendship or love. Plato argued that, while not physically real, Forms played an essential part in how we understand and categorise things, and are extremely useful practically as measure of comparison or a thought tool.
+
+*OK. So what the hell does this have to do with developer productivity!?*
+
+Given any sufficiently complicated software system, a good engineer begins to daydream, "how could this be better?" and, depending on the quality of the codebase, "this would be so much easier if..." can be a daily–or even hourly–thought.
+
+Whether we know it or not, in these moments we are considering the Form of this system. In this idealised notion, the system is 100% available, as secure as a nuclear bunker, easy to debug, uses a thimble of memory, runs in constant time and deploys everywhere instantly.
+
+
+
+
+[^1] [Here's](https://www.youtube.com/watch?v=MgotDFs6cdE) an excellent 4-minute explainer video.
+
+[^2] [According to Wikipedia, at least](https://en.wikipedia.org/wiki/Early_life_of_Plato#cite_note-dliii4-28)
