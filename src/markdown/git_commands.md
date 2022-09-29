@@ -103,4 +103,11 @@ git stash pop
 git commit --amend
 ```
 
-For more, I would highly recommend a peruse through the excellent [git-tips/tips](https://github.com/git-tips/tips) repo to even the most seasoned developer!
+# More git resources
+- [git-tips/tips](https://github.com/git-tips/tips) is a collection of more tips and tricks to get the most out of git.
+- [git immersion](https://gitimmersion.com) is a guided tour of git where you learn by doing.
+- [The Odin Project](https://www.theodinproject.com/lessons/foundations-git-basics) has an excellent Git Basics module.
+- [A Visual Git Reference](http://marklodato.github.io/visual-git-guide/index-en.html) is great for people who get more out of diagrams than with text, which is super useful for some of the more complex git scenarios out there.
+- [GitHub Minesweeper](https://profy.dev/project/github-minesweeper) play Minesweeper while learning git!
+- [https://learngitbranching.js.org](Learn Git Branching) is an amazing fake desktop environment where you can learn command line git in the browser.
+- [Oh My Git!](https://ohmygit.org) another open-source game for learning how to use git. so good!
