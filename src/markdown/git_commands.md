@@ -13,14 +13,16 @@ cover_image_credit: "image credit: Stefan Nowak"
 ---
 
 
-What can be said about git? Version Control as a concept still blows my mind to this day, and when everything is going right, it can feel like absolute magic – like merging master back into an ancient feature branch and [Everything Just Working(tm)](https://www.youtube.com/watch?v=nVqcxarP9J4) is pretty amazing.
+What can be said about git? Version Control as a concept still blows my mind to this day, and when everything is going right, it can feel like magic – merging master back into an ancient feature branch and [Everything Just Working(tm)](https://www.youtube.com/watch?v=nVqcxarP9J4), with all the latest updates, never gets old.
 
-This post is not for one of those days. It is for one of those *other* days when you're trying to do something simple, and all you get back is a stone-faced `Already up to date.` Or, even worse, a `Failed to push refs to remote`
+This post is not for one of those days. It is for one of those *other* days when you're trying to do something simple, and all you get back is a stone-faced `Already up to date.` Or, even worse, a `Failed to push refs to remote`.
 
-Suddenly things are feeling a lot less magical than the other day. The veil is lifted, the illusion is broken, you realise santa is not real, the easter bunny doesn't hide the  chocolates and there is no such thing as magic; just a metric tonne of C code written by some Finnish guy with serious [behavioural problems.](https://www.newyorker.com/science/elements/after-years-of-abusive-e-mails-the-creator-of-linux-steps-aside)
+Suddenly things are feeling a lot less magical than the other day. The veil is lifted, the illusion is broken; you realise santa is not real, the easter bunny doesn't hide the chocolates and there is no such thing as magic–just a big stack of C code written by some volunteer Bulgarian open-source wizard being cyberbullied by a Finnish guy with serious [behavioural problems.](https://www.newyorker.com/science/elements/after-years-of-abusive-e-mails-the-creator-of-linux-steps-aside)
+
+So, here are some common situations and some suggestions for how to extract yourself from said predicaments.
 
 
-## Take me back to the good old days
+## Take me back!
 
 Irreversibly broken your local environment after hacking some stuff together? (for uncommitted changes)
 
