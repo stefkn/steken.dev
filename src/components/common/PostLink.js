@@ -80,14 +80,10 @@ const PostEntry = styled.div`
   .text-content {
     position: relative;
     border-radius: 30px;
-    padding: 42px;
-    transform: skewY(6deg);
-    border: 1px solid rgba(198, 203, 255, 39%);
-
-    box-shadow: 7px 13px 20px 0px rgba(255, 183, 213, 62%);
-    backdrop-filter: hue-rotate(312deg) blur(14px);
-    -webkit-backdrop-filter: hue-rotate(312deg) blur(14px);
-    top: -50px;
+    padding: 30px 5px;
+    border: 1pxsolidrgba(198,203,255,39%);
+    box-shadow: 7px 13px 20px 0pxrgba(255,183,213,62%);
+    top: 4px;
   }
 
   @media (max-width: 720px) {
