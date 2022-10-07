@@ -1,15 +1,15 @@
 ---
-slug: "/article/git-commands/1"
+slug: "/article/git-commands"
 series: "git good at git"
-date: "2022-05-09"
+date: "2022-09-01"
 title: "Useful git commands"
-subtitle: "A useful little cheat sheet of git commands for things I often have trouble with"
+subtitle: "A cheat sheet of git commands, for things I often have trouble with"
 tags: "git version-control cli"
 published: true
-excerpt: git can be such a pain sometimes, but damn if it's not an incredible tool.
-reading_time: 15
+excerpt: What can be said about git? Version Control as a concept still blows my mind to this day, and when everything is going right, it can feel like magic.
+reading_time: 10
 cover_image: "IMG_5793.jpg"
-cover_image_credit: "credit for image goes to "
+cover_image_credit: "image credit: Stefan Nowak"
 ---
 
 
