@@ -103,11 +103,18 @@ const PostEntry = styled.div`
     100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   }
 
-  background: linear-gradient(
-    155deg,rgb(158, 14, 255, 29%) 0%,
-    rgba(0, 20, 255, 12%) 20%,
-    rgba(253, 29, 29, 39%) 81%,
-    rgba(255, 210, 151, 70%) 100%
+  background-image: linear-gradient(
+    155deg,
+    hsl(223deg 70% 42%) 0%,
+    hsl(252deg 40% 52%) 13%,
+    hsl(272deg 37% 55%) 24%,
+    hsl(291deg 33% 58%) 35%,
+    hsl(310deg 35% 64%) 46%,
+    hsl(324deg 44% 72%) 57%,
+    hsl(335deg 51% 79%) 67%,
+    hsl(344deg 59% 86%) 78%,
+    hsl(352deg 65% 93%) 89%,
+    hsl(0deg 75% 98%) 100%
   );
 
   box-shadow: 4px 6px 16px 0px rgb(0 16 255 / 16%);
