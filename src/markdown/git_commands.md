@@ -93,6 +93,19 @@ $ git clean -fd --dry-run
 ```
 
 
+## Judge other* people's code
+
+You're working in a file and you're like, *"this is the worst thing I have ever seen. absolute spaghetti ramyun [chapagetti](https://en.wikipedia.org/wiki/Chapagetti) logic. Who could be unironically committing this to our beautiful repo!?"*
+
+Be careful what you wish for though... it might just have been **you** 6 months ago.
+
+<iframe allow="fullscreen" frameBorder="0" height="290" src="https://giphy.com/embed/zRwA2JgARLVYgWtfgY/video" width="100%"></iframe>
+
+*Protip: Just blame it on someone who's already left the company.*
+
+```markdown
+# See the attribution for a given line range, for the given file
+$ git blame -L <START_LINE_NUMBER>,<END_LINE_NUMBER> <FILE_PATH>
 ```
 
 
