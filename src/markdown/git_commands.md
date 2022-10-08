@@ -35,7 +35,7 @@ git reset --hard <COMMIT_ID>
 ```
 
 
-## I have committed some terrible sins
+## Father, I hath committed a sin
 
 Committed some stuff that's causing problems? Revert them!
 
@@ -43,14 +43,28 @@ A revert is different from other ways of undoing committed changes like `reset`,
 
 ```markdown
 # See the log of commits to find which commit you'd like to undo
-git log
+$ git log
 
 # Revert the commit!
-git revert <COMMIT_ID>
+$ git revert <COMMIT_ID>
 ```
 
 
-## Get friendly
+## OK, but what if I committed to master? (Or prod, or main, or trunk, etc.)
+
+Don't you worry, don't you worry child...
+
+Just create a new branch, roll back the master branch (where you accidentally committed your changes) to how it was before, and bring those changes with you to the new branch.
+
+```markdown
+# make a new branch to move to
+$ git branch new-branch
+# reset the current branch state and make the changes unstaged
+$ git reset HEAD~ --hard
+# move to the new branch
+$ git checkout new-branch
+```
+
 
 Find yourself typing out `git commit -m "another commit"` again and again? Get friendly with `git` and agree on some shorthands!
 These can also be modified in the `~/.gitconfig` file.
