@@ -66,16 +66,33 @@ $ git checkout new-branch
 ```
 
 
+## Git friendly
+
 Find yourself typing out `git commit -m "another commit"` again and again? Get friendly with `git` and agree on some shorthands!
+
 These can also be modified in the `~/.gitconfig` file.
 
 ```markdown
 # alias "git co" to "git checkout"
-git config --global alias.co checkout
+$ git config --global alias.co checkout
 # alias "git ci" to "git commit"
-git config --global alias.ci commit
+$ git config --global alias.ci commit
 # alias "git br" to "git branch"
-git config --global alias.br branch
+$ git config --global alias.br branch
+```
+
+
+## Dress rehearsal
+
+About to do something that might have far-reaching, unretractable consequences? Like, say, pushing to production? I find it gives me peace of mind to do a `--dry-run` first, which means that git will simulate the action of the command but *not actually go through with it.*
+
+```markdown
+# Don't actually do the thing, but *simulate* the CLI output for if you did.
+# Works with many of git's commands, clean is just an example.
+$ git clean -fd --dry-run
+```
+
+
 ```
 
 
