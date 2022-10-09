@@ -109,21 +109,34 @@ $ git blame -L <START_LINE_NUMBER>,<END_LINE_NUMBER> <FILE_PATH>
 ```
 
 
-## I pull, things are Up To Date, I push, I am rejected for missing refs, I pull again... (repeat 20x)
+## Look how they massacred my file
+
+Sometimes it can be helpful to see how a file has changed, especially if something that used to work is no longer working after merging the latest commits on prod back into your local branch, for example.
+
+
+```markdown
+# See a log of changes to the provided file
+$ git log -p <FILE_PATH>
+```
+
+
+## Pull; things are Up To Date. Push; rejected for missing refs. Push... (repeat 20x)
 
 This is a weird one I get sometimes when I forget to set an upstream on a local branch pushed to remote.
 
 ```markdown
 # Set upstream of the current branch
-git branch -u <REMOTE_BRANCH_NAME>
+$ git branch -u <REMOTE_BRANCH_NAME>
 ```
 
 
-## Wait... what was I doing again?
+## Wait... what was I even doing again?
+
+We all get this one. Go off and make a coffee and then: head empty. Mind blank. Buh.
 
 ```markdown
 # Show the diff comparing local working directory and the last commit on the current branch
-git diff HEAD
+$ git diff HEAD
 ```
 
 
