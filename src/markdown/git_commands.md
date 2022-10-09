@@ -158,15 +158,18 @@ $ git stash list
 ```
 
 
-## Oops, I forgot a Thing!
+## ...wait, one last thing!
+
+Ever think you're finished, and then commit, only to realise – *wait, no, I still need to do X?* Or, accidentally committed something that shouldn't be pushed? No problem, *git got ya.*
 
 ```markdown
 # Replace the last commit with the currently-staged changes and the last commit together in one commit.
-# Or use with nothing staged to change the last commit's commit message.
-git commit --amend
+# Or, use with nothing staged to change the last commit's commit message.
+$ git commit --amend
 ```
 
-# More git resources
+
+## More git resources
 - [git-tips/tips](https://github.com/git-tips/tips) is a collection of more tips and tricks to get the most out of git.
 - [git immersion](https://gitimmersion.com) is a guided tour of git where you learn by doing.
 - [The Odin Project](https://www.theodinproject.com/lessons/foundations-git-basics) has an excellent Git Basics module.
