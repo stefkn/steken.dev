@@ -140,7 +140,7 @@ $ git diff HEAD
 ```
 
 
-## I don't want to lose this, but I also don't want to commit this
+## I need this, but I also don't want to commit this
 
 I often find that my local environment needs a lot of modifications in order to make it work for development that definitely shouldn't be pushed to remote. For example, fiddling with configuration files to point them to local versions of some service, or commenting out certain functions that I don't want to have run in local development cycles for speed or data reasons.
 
@@ -148,9 +148,13 @@ Luckily for us, `git` was built by people who had similar workflows, and so has 
 
 ```markdown
 # stash the current changes in the repo
-git stash
+$ git stash
+# stash current changes, including *untracked* files
+$ git stash -u
 # recall the last stashed changes
-git stash pop
+$ git stash pop
+# see all of your stashes
+$ git stash list
 ```
 
 
