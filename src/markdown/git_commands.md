@@ -1,7 +1,7 @@
 ---
 slug: "/article/git-commands"
 series: "git good at git"
-date: "2022-09-01"
+date: "2022-10-12"
 title: "Useful git commands"
 subtitle: "A cheat sheet of git commands, for things I often have trouble with"
 tags: "git version-control cli"
@@ -175,5 +175,5 @@ $ git commit --amend
 - [The Odin Project](https://www.theodinproject.com/lessons/foundations-git-basics) has an excellent Git Basics module.
 - [A Visual Git Reference](http://marklodato.github.io/visual-git-guide/index-en.html) is great for people who get more out of diagrams than with text, which is super useful for some of the more complex git scenarios out there.
 - [GitHub Minesweeper](https://profy.dev/project/github-minesweeper) play Minesweeper while learning git!
-- [https://learngitbranching.js.org](Learn Git Branching) is an amazing fake desktop environment where you can learn command line git in the browser.
+- [Learn Git Branching](https://learngitbranching.js.org) is an amazing fake desktop environment where you can learn command line git in the browser.
 - [Oh My Git!](https://ohmygit.org) another open-source game for learning how to use git. so good!
