@@ -6,6 +6,9 @@ import SEO from '@common/SEO';
 
 import theme from '@styles/theme';
 import GlobalStyles from '@styles/GlobalStyles';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+
+deckDeckGoHighlightElement();
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>

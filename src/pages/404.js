@@ -11,8 +11,10 @@ const NotFoundPage = () => (
   <Layout>
     <Navbar isAtTopOfPage={true} />
     <MainMatter>
-      <h1>404 Not Found</h1>
-      <p>Sad face.</p>
+      <h1>HTTP404</h1>
+      <h2>Not Found</h2>
+      <h3>Looks like we couldn't find that one.</h3>
+      <p>Sorry about that!</p>
       <Link to="/">Go back to the homepage</Link>
     </MainMatter>
     <Footer bottomImage={false} />

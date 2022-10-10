@@ -32,64 +32,73 @@ const headersecondarystyle = {
 }
 
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_headerbg: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "headerbg" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 673) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Header = () => {
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      document.dispatchEvent(new Event("indexHeaderLoaded", {"bubbles":true, "cancelable":false}));
+    }, 500)
+  }, []);
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          art_headerbg: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "headerbg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 673) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <HeaderWrapper id="header-wrapper">
-        <Container>
-          <Grid>
-            <ArtBackground>
-              <div className="fake-code">
-                <p>
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
-                  {`public static void main(string[] args)`}
-                  <br />
+      `}
+      render={data => (
+        <HeaderWrapper id="header-wrapper">
+          <Container>
+            <Grid>
+              <ArtBackground id="bg-art-1">
+                <div className="fake-code">
+                  <p>
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                    {`public static void main(string[] args)`}
+                    <br />
+                  </p>
+                </div>
+              </ArtBackground>
+              <Art id="bg-art-2"><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
+              <HeaderText id="bg-art-3">
+                <h1 style={headerstyle} >
+                  Hello.
+                </h1>
+                <br />
+                <p className="subtext" style={headersecondarystyle}>
+                  Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧London, England.
                 </p>
-              </div>
-            </ArtBackground>
-            <Art><Img fluid={data.art_headerbg.childImageSharp.fluid} /></Art>
-            <HeaderText>
-              <h1 style={headerstyle} >
-                Hello.
-              </h1>
-              <br />
-              <p className="subtext" style={headersecondarystyle}>
-                Stefan Kenichiro Nowak is <br /> a full-stack software engineer in <br /> 🇬🇧London, England.
-              </p>
-            </HeaderText>
-          </Grid>
-        </Container>
-      </HeaderWrapper>
-    )}
-  />
-);
+              </HeaderText>
+            </Grid>
+          </Container>
+        </HeaderWrapper>
+      )}
+    />
+  )
+}
 
 
 const ArtBackground = styled.div`
@@ -104,12 +113,12 @@ const ArtBackground = styled.div`
   animation-delay: 0s;
   animation-fill-mode: forwards;
 
-  background: linear-gradient(128deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.55) 50%, rgba(252,176,69,0.7) 100%);
+  background: linear-gradient(128deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.55) 50%, rgba(252,176,69) 100%);
   box-shadow: -19px -17px 20px 0px rgb(30 33 78 / 33%);
   backdrop-filter: hue-rotate(10deg) blur(4px);
   -webkit-backdrop-filter: blur( 7.5px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 255, 255, 255, 0.45 );
   position: absolute;
   z-index: 0;
 
@@ -154,10 +163,11 @@ const HeaderWrapper = styled.header`
   position: absolute;
   max-width: 100vw;
   width: 100%;
-  top: 3vh;
+  top: 5%;
   padding-top: 96px;
   height: 60em;
   display: block;
+  // pointer-events: none;
 
   overflow: hidden;
   z-index: 3;
@@ -165,6 +175,9 @@ const HeaderWrapper = styled.header`
   -webkit-transition: background-color 0ms linear;
   -ms-transition: background-color 0ms linear;
   transition: background-color 0ms linear;
+  -webkit-transition: opacity 500ms linear;
+  -ms-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
@@ -249,13 +262,12 @@ const Grid = styled.div`
   }
 `;
 
-const Text = styled.div`
-  justify-self: center;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: start;
-  }
-`;
+// const Text = styled.div`
+//   justify-self: center;
+//   @media (max-width: ${props => props.theme.screen.md}) {
+//     justify-self: start;
+//   }
+// `;
 
 const HeaderText = styled.div`
   background-color: #0d1bdcd6;

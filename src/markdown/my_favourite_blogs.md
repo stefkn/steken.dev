@@ -12,3 +12,7 @@ cover_image: "img_5328.jpeg"
 
 [no.lol](https://www.no.lol/)
 [joshwcomeau](https://www.joshwcomeau.com/)
+[drewdevault](https://drewdevault.com/)
+[macwright](https://macwright.com/)
+[simonweckert](http://www.simonweckert.com/index.html)
+[idle words](https://idlewords.com/) check out [Our Comrade The Electron](https://idlewords.com/talks/our_comrade_the_electron.htm)

@@ -72,3 +72,4 @@ yarn.lock
 # VScode
 .vscode/
 
+.env

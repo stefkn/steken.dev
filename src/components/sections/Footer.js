@@ -62,7 +62,8 @@ const Footer = (props) => (
               <br />
               <SmallText>
                 <p>Hand-distilled in small batches with <SmallIcon src={GatsbyIcon} /> <a href="https://www.gatsbyjs.org/">Gatsby</a> and <SmallIcon src={ReactIcon} /> <a href="https://reactjs.org/">React</a>.</p>
-                <p>Header animation using <a href="https://threejs.org/">three.js</a>. Absurd Gatsby starter by <a href="https://github.com/ajayns">@ajayns</a>. Queries by <SmallIcon src={GQLIcon} /> <a href="https://graphql.org/">GraphQL</a>.</p>
+                <p>Absurd Gatsby starter by <a href="https://github.com/ajayns">@ajayns</a>. Queries by <SmallIcon src={GQLIcon} /> <a href="https://graphql.org/">GraphQL</a>.</p>
+                <p>Index animation using <a href="https://threejs.org/">three.js</a>. STL from <a href="https://skyline.github.com/stefkn/2021">GitHub Skyline</a>. Index music by <a href="https://percussions.bandcamp.com/">Percussions.</a></p>
               </SmallText>
             </Copyright>
             <SocialIcons>

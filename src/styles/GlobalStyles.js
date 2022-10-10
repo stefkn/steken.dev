@@ -17,8 +17,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: ${props => props.theme.font.primary};
+    // font-family: ${props => props.theme.font.primary};
     background: #f7f7f7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   }
 
   h1, h2, h3, p {
@@ -188,9 +189,19 @@ const GlobalStyles = createGlobalStyle`
       color: #ffffff;
       border-radius: 6px;
       padding: 6px;
-      background: linear-gradient(128deg,rgb(255 84 153 / 24%) 0%,rgb(255 75 148 / 90%) 50%,rgb(174 181 255) 100%);
+      background: linear-gradient(
+        128deg,
+        rgb(147 153 255 / 40%) 7%,
+        rgb(255 123 177) 83%,
+        rgb(255 103 71) 110%
+      );
       filter: none !important;
+      border: 1px solid rgba(255, 255, 255, 43%);
     }
+  }
+
+  .about-section {
+    background: linear-gradient(167deg,rgb(47 57 174) -10%,rgb(181 74 128 / 64%) 70%,rgb(255 120 0 / 46%) 110%);
   }
 `;
 
