@@ -21,9 +21,13 @@ export function onRouteUpdate({ location, prevLocation }) {
 
     // toggle notch color based on the route.
     const themeMeta = document.getElementById('theme-color-meta');
+    const mainTitle = document.getElementById('navbar-title');
+
     if (location.pathname === '/') {
         const tm = themeMeta.setAttribute("content", '#eda9cd');
+        mainTitle.style.pointerEvents = 'none';
     } else {
         const tm = themeMeta.setAttribute("content", '#2f39ae');
+        mainTitle.style.pointerEvents = 'auto';
     }
 }
