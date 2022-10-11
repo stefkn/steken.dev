@@ -17,4 +17,13 @@ export function onRouteUpdate({ location, prevLocation }) {
     // console.log("new pathname", location.pathname);
     // console.log("old pathname", prevLocation ? prevLocation.pathname : null);
     // console.log(`${process.env.ADOBE_API_KEY}`);
+
+
+    // toggle notch color based on the route.
+    const themeMeta = document.getElementById('theme-color-meta');
+    if (location.pathname === '/') {
+        const tm = themeMeta.setAttribute("content", '#eda9cd');
+    } else {
+        const tm = themeMeta.setAttribute("content", '#2f39ae');
+    }
 }
