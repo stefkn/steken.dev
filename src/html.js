@@ -19,6 +19,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
+        <meta id="theme-color-meta" name="theme-color" content={"#2f39ae"} />
         {props.headComponents}
         <script type="text/javascript"
           dangerouslySetInnerHTML={{
