@@ -9,13 +9,13 @@ const SEO_DATA = {
   keywords: ['gatsby', 'site', 'personal', 'code', 'software', 'website'],
   img: '',
   twitterId: '@1ICHIR0',
-  facebookId: '',
+  // facebookId: '',
 };
 
 const SEO = () => {
   return (
     <Helmet>
-      <meta property="fb:app_id" content={SEO_DATA.facebookId} />
+      {/* <meta property="fb:app_id" content={SEO_DATA.facebookId} /> */}
       <meta property="og:title" content={SEO_DATA.title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SEO_DATA.url} />
@@ -29,8 +29,6 @@ const SEO = () => {
       <meta name="twitter:description" content={SEO_DATA.description} />
       <meta name="twitter:domain" content={SEO_DATA.url} />
       <meta name="twitter:image:src" content={SEO_DATA.img} />
-
-      {/* <meta name="theme-color" content={"#2f39ae"} /> */}
 
       <meta name="description" content={SEO_DATA.description} />
       <meta name="keywords" content={SEO_DATA.keywords.join(', ')} />
