@@ -30,7 +30,7 @@ const SEO = () => {
       <meta name="twitter:domain" content={SEO_DATA.url} />
       <meta name="twitter:image:src" content={SEO_DATA.img} />
 
-      <meta name="theme-color" content={"#2f39ae"} />
+      {/* <meta name="theme-color" content={"#2f39ae"} /> */}
 
       <meta name="description" content={SEO_DATA.description} />
       <meta name="keywords" content={SEO_DATA.keywords.join(', ')} />
