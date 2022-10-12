@@ -197,6 +197,7 @@ const GlobalStyles = createGlobalStyle`
       );
       filter: none !important;
       border: 1px solid rgba(255, 255, 255, 43%);
+      height: 5em !important;
     }
   }
 
