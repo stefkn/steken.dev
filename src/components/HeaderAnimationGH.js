@@ -189,8 +189,8 @@ class HeaderAnimation extends React.Component {
         audio {
             position: absolute;
             z-index: 100;
-            right: 2em;
-            bottom: 2em;
+            right: 1em;
+            bottom: 1em;
             height: 38px;
         }
     `
