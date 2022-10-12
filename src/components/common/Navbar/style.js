@@ -75,15 +75,15 @@ export const NavItem = styled.li`
 `;
 
 export const MobileMenu = styled.div`
+  position: absolute;
   width: 15em;
-  -webkit-transform: skewY(
-  -13deg);
+  -webkit-transform: skewY(-8deg);
   -ms-transform: skewY(8deg);
   transform: skewY(8deg);
   float: right;
-  height: 12em;
-  position: relative;
-  bottom: 0em;
+  height: 10em;
+  bottom: -8em;
+  left: 35em;
   border-radius: 12px;
   padding: 20px;
   text-align-last: end;
