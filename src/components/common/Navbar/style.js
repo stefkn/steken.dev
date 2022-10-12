@@ -83,7 +83,6 @@ export const MobileMenu = styled.div`
   float: right;
   height: 10em;
   bottom: -8em;
-  left: 35em;
   border-radius: 12px;
   padding: 20px;
   text-align-last: end;
@@ -96,6 +95,11 @@ export const MobileMenu = styled.div`
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgba( 255,255,255,0.18 );
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    bottom: -9em;
+    right: -3em;
+  }
   `;
 
 export const Brand = styled.div`
