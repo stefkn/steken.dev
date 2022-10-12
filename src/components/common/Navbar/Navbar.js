@@ -14,6 +14,7 @@ import {
 } from './style';
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
+import { ReactComponent as XIcon } from '@static/icons/x.svg';
 
 const NAV_ITEMS = [['About Me', '🧬 About Me'], ['Articles', '📚 Articles']];
 
@@ -62,7 +63,7 @@ class Navbar extends Component {
           <Brand><Link to="/" id="navbar-title">steken.dev</Link></Brand>
           <Mobile>
             <button onClick={this.toggleMobileMenu}>
-              <MenuIcon />
+              {mobileMenuOpen ? <XIcon /> : <MenuIcon />}
             </button>
           </Mobile>
 
