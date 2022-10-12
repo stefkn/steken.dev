@@ -173,7 +173,7 @@ class HeaderAnimation extends React.Component {
 
         canvas {
             width: 100% !important;
-            height: 60em;
+            height: 100% !important;
             display: block;
             position: relative;
             z-index: 1;
