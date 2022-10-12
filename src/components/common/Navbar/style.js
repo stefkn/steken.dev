@@ -130,5 +130,12 @@ export const Mobile = styled.div`
     box-shadow: black;
     box-shadow: 40px black;
     border-radius: 100px;
+    height: 42px;
+    width: 42px;
+  }
+
+  svg {
+    height: 18px;
+    width: 18px;
   }
 `;
