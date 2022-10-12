@@ -12,12 +12,14 @@ export const Nav = styled.nav`
 
   .fade-in {
     visibility: visible;
+    display: block;
     opacity: 1;
     transition: opacity 0.5s linear;
   }
 
   .fade-out {
     visibility: hidden;
+    display: none;
     opacity: 0;
     transition: visibility 0s 0.5s, opacity 0.5s linear;
   }
