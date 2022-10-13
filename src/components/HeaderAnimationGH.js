@@ -185,19 +185,9 @@ class HeaderAnimation extends React.Component {
             background-size: cover;
             background-position: center;
         }
-
-        audio {
-            position: absolute;
-            z-index: 100;
-            right: 1em;
-            bottom: 1em;
-            height: 38px;
-        }
     `
     return (
-      <HeaderAnimContainer id={`header-animation-container`}>
-        <audio controls loop preload="false" src="/Percussions_digital_arpeggios.mp3"></audio>
-      </HeaderAnimContainer>
+      <HeaderAnimContainer id={`header-animation-container`}></HeaderAnimContainer>
     )
   }
 }
