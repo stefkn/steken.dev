@@ -204,6 +204,14 @@ const GlobalStyles = createGlobalStyle`
   .about-section {
     background: linear-gradient(167deg,rgb(47 57 174) -10%,rgb(181 74 128 / 64%) 70%,rgb(255 120 0 / 46%) 110%);
   }
+
+  audio {
+    position: fixed;
+    z-index: 100;
+    top: 93%;
+    right: 5%;
+    height: 38px;
+  }
 `;
 
 export default GlobalStyles;
