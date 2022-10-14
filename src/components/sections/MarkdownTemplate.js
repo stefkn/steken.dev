@@ -21,7 +21,18 @@ export default function Template({
     let isMounted = true
 
     function scrollEventHandler () {
-      setScroll(window.scrollY < 100)
+      const scrolledBelowPoint = window.scrollY < 100;
+      if (scroll !== scrolledBelowPoint) {
+        setScroll(scrolledBelowPoint)
+
+        // for Notched devices -- modify theme based on if the navbar is blue or not so we don't have a jarring bar around the notch.
+        const themeMeta = document.getElementById('theme-color-meta');
+        if (scrolledBelowPoint) {
+          const tm = themeMeta.setAttribute("content", '#2f39ae');
+        } else {
+          const tm = themeMeta.setAttribute("content", '#ffffff');
+        }
+      }
     }
 
     if (isMounted) {
