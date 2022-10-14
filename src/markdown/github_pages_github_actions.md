@@ -54,6 +54,50 @@ Notice that each of the keys is associated with a string that is a valid command
 
 When you install `gh-pages`, it creates a `gh-pages` command line utility. Run `gh-pages --help` to see a list of supported options. Since it will be installed when we install our dependencies to run the project, we can use it in the deploy script to handle the GitHub Pages deployment. In the deploy script above, we use the `-d` argument to point it to the `/public` directory, which means it will copy everything in `/public` and push it to the `gh-pages` branch on the remote, which will trigger a GitHub Actions Workflow to be published on GitHub Pages.
 
+```shell-session
+$ yarn run build
+yarn run v1.22.4
+gatsby build
+success open and validate gatsby-configs - 0.064s
+success load plugins - 0.899s
+success onPreInit - 0.038s
+success delete html and css files from previous builds - 0.018s
+success initialize cache - 0.004s
+success copy gatsby files - 0.175s
+success onPreBootstrap - 0.022s
+success createSchemaCustomization - 0.164s
+success Checking for changed pages - 0.001s
+success source and transform nodes - 0.188s
+success building schema - 0.693s
+info Total nodes: 157, SitePage nodes: 11 (use --verbose for breakdown)
+success createPages - 0.080s
+success Checking for changed pages - 0.001s
+success createPagesStatefully - 0.148s
+success Cleaning up stale page-data - 0.002s
+success update schema - 0.127s
+success onPreExtractQueries - 0.005s
+success extract queries from components - 1.314s
+success write out redirect data - 0.014s
+success Build manifest and related icons - 3.614s
+success onPostBootstrap - 3.630s
+info bootstrap finished - 11.444s
+success run page queries - 2.263s - 11/11 4.86/s
+success write out requires - 0.018s
+success Building production JavaScript and CSS bundles - 7.700s
+success Rewriting compilation hashes - 0.003s
+success Building HTML renderer - 1.878s
+success Building static HTML for pages - 0.338s - 15/15 44.34/s
+success Generating image thumbnails - 12.583s - 37/37 2.94/s
+success onPostBuild - 0.004s
+info Done building in 24.097625255 sec
+
+✨  Done in 24.69s.
+$ gh-pages -d public -r https://$GITHUB_TOKEN@github.com/stefkn/steken.dev.git
+Published
+```
+
+## Handling Secrets (shh!)
+
 Hold on though, not so fast -- you will need to authenticate. How? See the `$GITHUB_TOKEN` there? That's going to be substituted with your GitHub repo's [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT) which you'll need to make and add to your environment variables. This is also a good time to talk about Secrets.
 
 This project (and most projects with any kind of external service dependency) will probably have a few or more API keys and access tokens to juggle. We can't just commit them in code to the repo, because they would be open and available for the public (and bad actors) to steal and use! The solution is to use [encrypted project secrets.](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
