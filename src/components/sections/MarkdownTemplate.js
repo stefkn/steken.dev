@@ -30,7 +30,7 @@ export default function Template({
         if (scrolledBelowPoint) {
           const tm = themeMeta.setAttribute("content", '#2f39ae');
         } else {
-          const tm = themeMeta.setAttribute("content", '#ffffff');
+          const tm = themeMeta.setAttribute("content", '#f7f7f7');
         }
       }
     }
