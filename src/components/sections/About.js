@@ -130,10 +130,14 @@ const StyledOutlineText = styled.div`
   -webkit-transform: skewY(4deg);
   -ms-transform: skewY(4deg);
   transform: skewY(4deg);
-
   -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: rgb(2 0 98);
   -webkit-text-fill-color: #ffffff;
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 10px;
+    background: rgb(34 152 255 / 15%);
+  }
 
   a {
     -webkit-text-fill-color: #ffffff;
@@ -188,6 +192,11 @@ const StyledSmaller = styled.div`
   -webkit-transform: skewY(-4deg);
   -ms-transform: skewY(-4deg);
   transform: skewY(-4deg);
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 10px;
+    background: rgb(233 30 99 / 12%);
+  }
 
   transition: all 2s ease !important;
 `
