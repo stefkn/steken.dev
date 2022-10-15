@@ -54,6 +54,9 @@ Notice that each of the keys is associated with a string that is a valid command
 
 When you install `gh-pages`, it creates a `gh-pages` command line utility. Run `gh-pages --help` to see a list of supported options. Since it will be installed when we install our dependencies to run the project, we can use it in the deploy script to handle the GitHub Pages deployment. In the deploy script above, we use the `-d` argument to point it to the `/public` directory, which means it will copy everything in `/public` and push it to the `gh-pages` branch on the remote, which will trigger a GitHub Actions Workflow to be published on GitHub Pages.
 
+You can also see how this works by running it locally. (this also saves you from having to run your builds remotely if you're not using GitHub Pages and want to use as few credits as possible) Just `cd` into the top level directory of the repo and run `yarn run build`. This is exactly what the task runner would do on GitHub actions as well, just not on your machine. The end result is the same though, it will copy everything in `/public` and push it to the `gh-pages` branch on the remote. This triggers another task to deloy the built files from that branch. You should see output that looks like the below: if you do, congrats, you've just deployed your site!
+
+
 ```shell-session
 $ yarn run build
 yarn run v1.22.4
