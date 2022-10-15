@@ -170,10 +170,10 @@ const Article = styled.div`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 300;
     font-style: normal;
-    // letter-spacing: -.02em;
-    // line-height: 1.62;
+    letter-spacing: -.01em;
+    line-height: 1.62;
     color: #080d22;
-    font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
+    font-size: clamp(1rem, 12vw - 4.5rem, 1.5rem);
     margin-top: 1em;
   }
 
