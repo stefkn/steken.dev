@@ -173,7 +173,7 @@ const Article = styled.div`
     letter-spacing: -.01em;
     line-height: 1.62;
     color: #080d22;
-    font-size: clamp(1rem, 12vw - 4.5rem, 1.5rem);
+    font-size: clamp(1.15rem, 12vw - 4.5rem, 1.5rem);
     margin-top: 1em;
   }
 
