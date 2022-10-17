@@ -132,10 +132,10 @@ const Article = styled.div`
   }
 
   h1 {
-    font-size: calc(4 * 1rem);
     max-width: 100%;
     overflow: hidden;
-    font-size: clamp(4rem, 12vw - 4.5rem, 6rem);
+    font-size: clamp(3.8rem, 12vw - 4.5rem, 4rem);
+  }
   }
 
   h2 {
