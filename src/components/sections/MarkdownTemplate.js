@@ -139,7 +139,7 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 1em;
+    margin-top: 0.2em;
     -webkit-font-smoothing: antialiased;
     font-family: ${props => props.theme.font.primary};
     font-weight: 400;
