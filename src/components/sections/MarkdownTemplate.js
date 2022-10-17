@@ -144,7 +144,8 @@ const Article = styled.div`
     font-family: ${props => props.theme.font.primary};
     font-weight: 400;
     font-style: normal;
-    letter-spacing: -.02em;
+    letter-spacing: -.04em;
+    font-size: clamp(1.6rem, 12vw - 4.5rem, 2.4rem);
   }
 
   h3 {
