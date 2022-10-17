@@ -119,4 +119,4 @@ With that disclaimer out of the way, let's store a build-time secret for the Ado
 
 [^*] (As with everything on this site, caveat emptor: to the best of my knowledge!)
 
-[^1] This is all what I understand from this StackOverflow discussion https://stackoverflow.com/questions/62231572/how-to-store-and-access-api-keys-and-passwords-with-gatsby
+[^1] This is all what I understand from this [StackOverflow discussion](https://stackoverflow.com/questions/62231572/how-to-store-and-access-api-keys-and-passwords-with-gatsby)
