@@ -296,8 +296,49 @@ class Articles extends Component {
 //   }
 // }
 
-
 const seriesData = {}
+
+const TagsBox = styled.div`
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  h3 {
+    color: white !important;
+    font-family: ${props => props.theme.font.primary};
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  .post-date {
+    font-size: 16px;
+    color: white;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+
+  width: 46%;
+  margin: 2%;
+  padding: 22px;
+
+  animation-delay: 0s;
+  animation: animatetext 1s;
+  animation-fill-mode: forwards;
+
+  @keyframes animatetext {
+    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
+    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
+  }
+
+  background-color: rgba(14 17 53 / 60%);
+
+  box-shadow: 4px 6px 16px 0px rgb(0 16 255 / 16%);
+  backdrop-filter: hue-rotate(10deg) blur(4px);
+  -webkit-backdrop-filter: blur( 7.5px );
+  border-radius: 10px;
+  border: 1px solid rgb(232 234 255);
+`
 
 const HeroOverlay = styled.div`
   width: 100%;
