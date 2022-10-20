@@ -479,7 +479,7 @@ const TagButton = styled.button`
 `
 
 const MainMatter = styled.div`
-  padding-top: 10em;
+  padding-top: 7em;
   padding-bottom: 10em;
   min-height: 100vh;
 
@@ -489,15 +489,13 @@ const MainMatter = styled.div`
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    padding-top: 10em;
     grid-template-columns: 1fr;
     text-align: left;
   }
 
   h1 {
-    line-height: 1.3328;
-    font-size: clamp(4.6rem, 12vw - 1.5rem, 6.5rem);
-
+    font-size: clamp(3.2rem, 12vw - 1.5rem, 4.5rem);
+    margin-left: 22px;
     animation-delay: 0s;
     animation: animatetext 1s;
     animation-fill-mode: forwards;
