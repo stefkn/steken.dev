@@ -98,6 +98,9 @@ const HeroOverlay = styled.div`
 
   z-index: 1;
   background: linear-gradient(11deg, rgb(247, 247, 247) 30%, rgba(221, 153, 255, 55%) 76%, rgba(255, 0, 102, 52%) 96% );
+
+  background: linear-gradient(6deg,rgb(0 5 255) 0%,rgb(64 0 255 / 36%) 0%,rgb(214 110 255 / 49%) 19%,rgb(255 155 189 / 60%) 93%,rgb(20 28 115 / 0%) 100% );
+  mix-blend-mode: hard-light;
 `
 
 const HeroImage = styled.div`
