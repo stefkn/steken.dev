@@ -10,6 +10,7 @@ excerpt: What can be said about git? Version Control as a concept still blows my
 reading_time: 10
 cover_image: "IMG_5793.jpg"
 cover_image_credit: "image credit: Stefan Nowak"
+author_image: "stefan.jpg"
 ---
 
 
