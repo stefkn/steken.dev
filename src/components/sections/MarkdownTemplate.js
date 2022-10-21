@@ -182,13 +182,13 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 0.2em;
+    margin-top: 0.6em;
     -webkit-font-smoothing: antialiased;
     font-family: ${props => props.theme.font.primary};
     font-weight: 400;
     font-style: normal;
     letter-spacing: -.04em;
-    font-size: clamp(1.6rem, 12vw - 4.5rem, 2.4rem);
+    font-size: clamp(1.4rem, 12vw - 4.5rem, 2rem);
   }
 
   h3 {
@@ -202,8 +202,8 @@ const Article = styled.div`
 
   .subtitle-main {
     color: rgb(120 131 255);
-    mix-blend-mode: multiply;
   }
+
   .subtitle-date {
     color: #564F62;
   }
