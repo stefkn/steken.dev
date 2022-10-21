@@ -16,12 +16,15 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const [scroll, setScroll] = useState(true)
+  const [scrollDepth, setScrollDepth] = useState(0)
 
   useEffect(() => {
     let isMounted = true
 
     function scrollEventHandler () {
-      const scrolledBelowPoint = window.scrollY < 100;
+      setScrollDepth(window.scrollY)
+      const scrolledBelowPoint = window.scrollY < 20;
+
       if (scroll !== scrolledBelowPoint) {
         setScroll(scrolledBelowPoint)
 
