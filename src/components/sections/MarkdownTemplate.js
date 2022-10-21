@@ -116,7 +116,18 @@ const HeroImage = styled.div`
 const Article = styled.div`
   margin-bottom: 12em;
   margin: 10em auto;
-  max-width: 640px;
+  max-width: 52em;
+
+  .frontmatter {
+    background-color: rgb(37 37 37);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+
+    animation-delay: 0s;
+    animation: fadeup 1s;
+    animation-fill-mode: forwards;
+  }
 
   .title-main {
     position: relative;
