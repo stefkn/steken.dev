@@ -70,8 +70,13 @@ export default function Template({
         }
         <Container>
           <Article className="page-main">
-              <h1 className="title-main">{frontmatter.title}</h1>
-              <div className="main-content">
+              <div className="frontmatter">
+                <h1
+                  className="title-main"
+                  title-content={frontmatter.title}
+                >
+                  {frontmatter.title}
+                </h1>
                 <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
                 <h2 className="subtitle-date">{frontmatter.date}</h2>
                 <div
