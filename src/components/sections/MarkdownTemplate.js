@@ -314,6 +314,8 @@ export const pageQuery = graphql`
         title
         subtitle
         cover_image
+        author_image
+        tags
       }
     }
     articleImages: allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
