@@ -208,6 +208,21 @@ const Article = styled.div`
         border-radius: 100px;
         margin: 12px 6px;
         padding: 10px;
+
+        p {
+          background-image: linear-gradient(321deg,rgb(31 48 255) 0,rgb(238 141 255) 30%,rgb(199 168 255) 50%,rgb(255 163 163) 70%,rgb(255 109 159) 90%,rgb(255 144 182) 100%);
+          background-size: 100%;
+          background-repeat: repeat;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: rgb(0 0 0 / 0%);
+          -moz-background-clip: text;
+          -moz-text-fill-color: transparent;
+          font-weight: 600;
+          font-size: 22px;
+          margin: 0px;
+        }
+      }
+    }
   }
 
   // font-family: ${props => props.theme.font.secondary};
