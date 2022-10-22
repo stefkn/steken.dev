@@ -146,7 +146,19 @@ const Article = styled.div`
   }
 
   @media (min-width: ${props => props.theme.screen.md}) {
-    width: 70%;
+    width: 100%;
+  }
+
+  .mid-content {
+    border-bottom: solid;
+    border-bottom-width: 0px;
+    border-bottom-color: rgb(247 247 247);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   // font-family: ${props => props.theme.font.secondary};
