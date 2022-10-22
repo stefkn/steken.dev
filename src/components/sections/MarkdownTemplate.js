@@ -194,6 +194,20 @@ const Article = styled.div`
       animation: fadeup 1s;
       animation-fill-mode: forwards;
     }
+
+    .tag-pills {
+      display: inline-flex;
+
+      animation-delay: 1s;
+      animation: fadeup 1s;
+      animation-fill-mode: forwards;
+
+      .tag-pill {
+        background-color: rgb(37 37 37);
+        box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+        border-radius: 100px;
+        margin: 12px 6px;
+        padding: 10px;
   }
 
   // font-family: ${props => props.theme.font.secondary};
