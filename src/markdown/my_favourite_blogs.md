@@ -8,6 +8,7 @@ published: false
 excerpt: Some of my favourite blogs from around the web
 reading_time: 15
 cover_image: "img_5328.jpeg"
+author_image: "stefan.jpg"
 ---
 
 [no.lol](https://www.no.lol/)
