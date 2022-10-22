@@ -83,6 +83,12 @@ export default function Template({
               <div className="main-content">
                 <div className="mid-content">
                   <div className="author-image">
+                    <Img fluid={
+                      data.articleImages.edges.find(
+                        image =>
+                        image.node.childImageSharp.fluid.originalName === frontmatter.author_image
+                      ).node.childImageSharp.fluid
+                    } />
                     <p>Stefan Nowak</p>
                   </div>
                   <div className='tag-pills'>
