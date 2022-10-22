@@ -8,6 +8,7 @@ published: false
 excerpt: A brief intro to static, client- and server-side rendering, and what static site generators are about.
 reading_time: 15
 cover_image: "img_5328.jpeg"
+author_image: "stefan.jpg"
 ---
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;">

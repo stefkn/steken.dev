@@ -10,6 +10,7 @@ excerpt: Lorem ipsum dolor sit amet, consectetur
 reading_time: 15
 cover_image: "IMG_5620.jpg"
 cover_image_credit: "credit for image goes to "
+author_image: "stefan.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet dapibus sapien sit amet sodales. Cras aliquet purus arcu, at convallis turpis suscipit quis. Vivamus finibus velit et metus lacinia sollicitudin. Etiam congue turpis vitae neque placerat, nec sagittis nulla dictum. Nulla vestibulum bibendum nisi sed vulputate. Etiam nec blandit urna. Cras id justo ante.

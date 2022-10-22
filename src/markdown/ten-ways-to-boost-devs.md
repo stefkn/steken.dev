@@ -10,6 +10,7 @@ excerpt: THIS One Housewife From Bingley Discovered One Simple Trick To 10x Her 
 reading_time: 25
 cover_image: "IMG_5786.jpg"
 cover_image_credit: "stefan nowak"
+author_image: "stefan.jpg"
 ---
 
 
