@@ -139,10 +139,6 @@ const Article = styled.div`
   .title-main {
     position: relative;
     z-index: 1;
-
-    color: rgb(100 111 255);
-    opacity: 100%;
-    mix-blend-mode: difference;
   }
 
   body {
