@@ -159,6 +159,16 @@ const Article = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+
+    .author-image {
+      min-width: 80px;
+      display: inline-flex;
+      align-items: center;
+      margin: 16px 16px;
+
+      .gatsby-image-wrapper {
+        min-width: 100px;
+      }
   }
 
   // font-family: ${props => props.theme.font.secondary};
