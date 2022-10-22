@@ -79,6 +79,16 @@ export default function Template({
                 </h1>
                 <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
                 <h2 className="subtitle-date">{frontmatter.date}</h2>
+              </div>
+              <div className="main-content">
+                <div className="mid-content">
+                  <div className="author-image">
+                    <p>Stefan Nowak</p>
+                  </div>
+                  <div className='tag-pills'>
+                    {frontmatter.tags.split(' ').map((tag) => {return <div className="tag-pill"><p>{tag}</p></div>})}
+                  </div>
+                </div>
                 <div
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: html }}
