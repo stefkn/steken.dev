@@ -111,6 +111,13 @@ const HeroImage = styled.div`
   display: flex;
   flex-direction: column;
   top: 0px;
+
+  transition-duration: 0.8s;
+  transition-delay: 0s;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    height: 70%;
+  }
 `
 
 const Article = styled.div`
