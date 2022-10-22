@@ -169,6 +169,31 @@ const Article = styled.div`
       .gatsby-image-wrapper {
         min-width: 100px;
       }
+
+      img {
+        border-radius: 300px;
+        object-fit: fill;
+      }
+
+      p {
+        margin: 0px 26px;
+        font-weight: 600;
+        color: white;
+
+        background-color: rgb(37 37 37);
+        box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+        border-radius: 100px;
+        margin: 12px 6px;
+        padding: 10px;
+        animation-delay: 1s;
+        animation: fadeup 1s;
+        animation-fill-mode: forwards;
+      }
+
+      animation-delay: 1s;
+      animation: fadeup 1s;
+      animation-fill-mode: forwards;
+    }
   }
 
   // font-family: ${props => props.theme.font.secondary};
