@@ -264,7 +264,7 @@ const Article = styled.div`
     box-shadow: 0 3px 14px 0 rgb(0 0 0 / 10%);
 
     @media (max-width: ${props => props.theme.screen.md}) {
-      padding: 1em 2em;
+      padding: 0.1em 1em;
       margin-top: 1em;
     }
 
