@@ -180,10 +180,18 @@ const Article = styled.div`
       min-width: 80px;
       display: inline-flex;
       align-items: center;
-      margin: 16px 16px;
+      margin: 10px 0px;
+
+      @media (min-width: ${props => props.theme.screen.md}) {
+        margin: 16px 16px;
+      }
 
       .gatsby-image-wrapper {
-        min-width: 100px;
+        min-width: 80px;
+
+        @media (min-width: ${props => props.theme.screen.md}) {
+          min-width: 100px;
+        }
       }
 
       img {
