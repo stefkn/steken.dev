@@ -230,8 +230,12 @@ const Article = styled.div`
         background-color: rgb(37 37 37);
         box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
         border-radius: 100px;
-        margin: 12px 6px;
+        margin: 6px 6px;
         padding: 10px;
+
+        @media (min-width: ${props => props.theme.screen.md}) {
+          margin: 12px 6px;
+        }
 
         p {
           background-image: linear-gradient(321deg,rgb(31 48 255) 0,rgb(238 141 255) 30%,rgb(199 168 255) 50%,rgb(255 163 163) 70%,rgb(255 109 159) 90%,rgb(255 144 182) 100%);
