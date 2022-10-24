@@ -205,7 +205,7 @@ const Article = styled.div`
         color: white;
 
         background-color: rgb(37 37 37);
-        box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+        box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
         border-radius: 100px;
         margin: 12px 6px;
         padding: 10px;
@@ -228,7 +228,7 @@ const Article = styled.div`
 
       .tag-pill {
         background-color: rgb(37 37 37);
-        box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+        box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
         border-radius: 100px;
         margin: 12px 6px;
         padding: 10px;
