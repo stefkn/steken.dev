@@ -58,8 +58,8 @@ export default function Template({
             )
           )
           &&
-          <HeroImage id="article-bg-gradient" style={{"height": 60+scrollDepth/10 + '%' }}>
-            <HeroOverlay></HeroOverlay>
+          <HeroImage>
+            <HeroOverlay style={{"height": 60+scrollDepth/10 + '%' }}></HeroOverlay>
             <Img fluid={
               data.articleImages.edges.find(
                 image =>
