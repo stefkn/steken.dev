@@ -117,6 +117,10 @@ const HeroOverlay = styled.div`
 
   background: linear-gradient(6deg,rgb(0 5 255) 0%,rgb(64 0 255 / 36%) 0%,rgb(214 110 255 / 49%) 19%,rgb(255 155 189 / 60%) 93%,rgb(20 28 115 / 0%) 100% );
   mix-blend-mode: hard-light;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    height: 70%;
+  }
 `
 
 const HeroImage = styled.div`
@@ -131,9 +135,7 @@ const HeroImage = styled.div`
   transition-duration: 0.8s;
   transition-delay: 0s;
 
-  @media (max-width: ${props => props.theme.screen.md}) {
-    height: 70%;
-  }
+  overflow: hidden;
 `
 
 const Article = styled.div`
