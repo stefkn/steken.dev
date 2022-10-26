@@ -233,11 +233,11 @@ const Article = styled.div`
         box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
         border-radius: 100px;
         margin: 6px 6px;
-        padding: 8px 10px;
+        padding: 6px 16px;
 
         @media (min-width: ${props => props.theme.screen.md}) {
           margin: 12px 6px;
-          padding: 10px;
+          padding: 6px 16px;
         }
 
         p {
