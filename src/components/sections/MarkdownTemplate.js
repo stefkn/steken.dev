@@ -174,9 +174,14 @@ const Article = styled.div`
 
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+
+    justify-content: center;
+
+    @media (min-width: ${props => props.theme.screen.md}) {
+      justify-content: space-between;
+    }
 
     .author-image {
       min-width: 80px;
