@@ -193,8 +193,8 @@ const StyledSmaller = styled.div`
   -ms-transform: skewY(-4deg);
   transform: skewY(-4deg);
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    padding: 10px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding: 20px;
     background: rgb(233 30 99 / 12%);
   }
 
