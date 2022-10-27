@@ -134,8 +134,8 @@ const StyledOutlineText = styled.div`
   -webkit-text-stroke-color: rgb(2 0 98);
   -webkit-text-fill-color: #ffffff;
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    padding: 10px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding: 20px;
     background: rgb(34 152 255 / 15%);
   }
 
