@@ -14,6 +14,33 @@ import { Container } from '@components/global';
 const AboutMe = () => {
   const [scroll, setScroll] = useState(true)
 
+  useEffect(() => {
+    let isMounted = true
+
+    function scrollEventHandler () {
+      const scrolledBelowPoint = window.scrollY < 20;
+
+      if (scroll !== scrolledBelowPoint) {
+        setScroll(scrolledBelowPoint)
+
+        // for Notched devices -- modify theme based on if the navbar is blue or not so we don't have a jarring bar around the notch.
+        const themeMeta = document.getElementById('theme-color-meta');
+        if (scrolledBelowPoint) {
+          const tm = themeMeta.setAttribute("content", '#2f39ae');
+        } else {
+          const tm = themeMeta.setAttribute("content", '#f7f7f7');
+        }
+      }
+    }
+
+    if (isMounted) {
+      document.addEventListener("scroll", scrollEventHandler)
+    }
+    return () => {
+      isMounted = false
+      document.removeEventListener("scroll", scrollEventHandler);
+    };
+  })
 
   const loadAdobeViewSDK = function () {
     document.dispatchEvent(
