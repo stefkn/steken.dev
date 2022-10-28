@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -12,6 +12,8 @@ import { Container } from '@components/global';
 
 
 const AboutMe = () => {
+  const [scroll, setScroll] = useState(true)
+
 
   const loadAdobeViewSDK = function () {
     document.dispatchEvent(
@@ -118,7 +120,7 @@ const AboutMe = () => {
       `}
       render={data => (
       <Layout>
-        <Navbar isAtTopOfPage={true} />
+        <Navbar isAtTopOfPage={scroll} />
         <HeroImage>
           <HeroOverlay></HeroOverlay>
           <Img fluid={data.stefan_img.childImageSharp.fluid} />
