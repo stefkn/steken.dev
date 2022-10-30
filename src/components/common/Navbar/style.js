@@ -137,5 +137,10 @@ export const Mobile = styled.div`
   svg {
     height: 18px;
     width: 18px;
+    color: white;
+
+    path {
+      fill: white;
+    }
   }
 `;
