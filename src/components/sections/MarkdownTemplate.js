@@ -179,7 +179,19 @@ const Article = styled.div`
 
     justify-content: center;
 
+    background-image: linear-gradient(
+      153deg, rgb(88 113 255), rgb(174 0 244 / 84%)
+    );
+    border-radius: 11px;
+    margin-top: 12px;
+    padding: 10px 10px;
+
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+
     @media (min-width: ${props => props.theme.screen.md}) {
+      background-image: linear-gradient(
+        153deg, rgb(88 113 255 / 60%), rgb(174 0 244 / 64%)
+      );
       justify-content: space-between;
     }
 
