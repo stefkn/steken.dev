@@ -30,6 +30,36 @@ export const Container = styled.div`
   `};
 `;
 
+export const AboutMeContainer = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 22px;
+
+  @media (min-width: ${props => props.theme.screen.xs}) {
+    max-width: 540px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.sm}) {
+    max-width: 720px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.md}) {
+    max-width: 960px;
+    padding: 0 22px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.lg}) {
+    max-width: 1200px;
+  }
+
+  ${props =>
+    props.fluid &&
+    `
+    max-width: 1200px !important;
+  `};
+`;
+
 export const Section = styled.section`
   padding: 168px 0;
   overflow: hidden;
