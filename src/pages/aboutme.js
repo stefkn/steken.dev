@@ -414,7 +414,7 @@ const MainMatter = styled.div`
   }
 
   .section-tech {
-    padding: 62px 32px 48px 32px;
+    padding: 62px 22px 48px 22px;
     background: #e2e4ff52;
     border: solid rgba(22,0,91,.2);
     border-width: 1px 0;
