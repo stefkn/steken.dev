@@ -8,7 +8,7 @@ import Footer from '@sections/Footer';
 import Navbar from '@common/Navbar';
 
 import styled from 'styled-components';
-import { Container } from '@components/global';
+import { AboutMeContainer } from '@components/global';
 
 
 const AboutMe = () => {
@@ -152,7 +152,7 @@ const AboutMe = () => {
           <HeroOverlay></HeroOverlay>
           <Img fluid={data.stefan_img.childImageSharp.fluid} />
         </HeroImage>
-        <Container>
+        <AboutMeContainer>
           <MainMatter>
             <h1>
               About
@@ -318,7 +318,7 @@ const AboutMe = () => {
             <div id="load-pdf-btn" onClick={loadAdobeViewSDK} className="load-pdf-btn"> Load the PDF! </div>
             <div id="adobe-dc-view" style={{width: '100%', height: '100%', boxShadow: '3px 7px 9px 0px rgb(152 160 255)', borderRadius: '16px'}}></div>
           </MainMatter>
-        </Container>
+        </AboutMeContainer>
         <Footer bottomImage={false} />
       </Layout>
       )}
