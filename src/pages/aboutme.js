@@ -212,7 +212,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://flask.palletsprojects.com/">Flask</a></h4>
-                        <p>Big Flask web apps!</p>
+                        <p>Big Flask web apps! Werkzeug! UWSGI!</p>
                       </div>
                     </div>
 
@@ -222,7 +222,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://vuejs.org/">Vue.js</a></h4>
-                        <p>We made a frontend app using Vue for tails.com</p>
+                        <p>We made a frontend app using VueJS for tails.com</p>
                       </div>
                     </div>
 
@@ -242,7 +242,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://go.dev/">Go</a></h4>
-                        <p>I've completed some coding challenges in Golang.</p>
+                        <p>I've completed a few coding challenges in Golang.</p>
                       </div>
                     </div>
 
@@ -252,7 +252,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://www.gatsbyjs.com/">Gatsby</a></h4>
-                        <p>This site is made using Gatsby. It's good!</p>
+                        <p>This site is made using Gatsby.</p>
                       </div>
                     </div>
 
@@ -262,7 +262,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://reactjs.org/">React</a></h4>
-                        <p>Are you even a dev these days without React on your CV?</p>
+                        <p>Cue "I develop fulstack with React and Node" <a href="/fullstack.jpeg">meme</a></p>
                       </div>
                     </div>
 
@@ -272,7 +272,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://graphql.org/">GraphQL</a></h4>
-                        <p>I learned a lot of GQL working with Gatsby. We also use it at work.</p>
+                        <p>I learned a lot of GQL working with Gatsby. We also use it to integrate  microservices at work.</p>
                       </div>
                     </div>
 
@@ -282,7 +282,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://www.mysql.com/">MySQL</a></h4>
-                        <p>Still don't fully understand JOINS.</p>
+                        <p>Still don't fully understand JOINS... <a href="https://www.youtube.com/watch?v=w3ZRLllWgHI">Anyone who says they do is lying!</a></p>
                       </div>
                     </div>
 
