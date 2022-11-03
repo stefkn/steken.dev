@@ -52,7 +52,7 @@ const AboutMe = () => {
 
     setTimeout(() => {
       var adobeDCView = new window.adobe_dc_view_sdk.default({
-          clientId: `${process.env.ADOBE_API_KEY}`,
+          clientId: `${process.env.GATSBY_ADOBE_API_KEY}`,
           divId: 'adobe-dc-view',
       });
 
