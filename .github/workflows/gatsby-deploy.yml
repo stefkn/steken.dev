@@ -85,8 +85,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-      - name: Echo environment variables
-        run: echo " GATSBY_ADOBE_API_KEY - ${{ secrets.GATSBY_ADOBE_API_KEY }} "
 
   # Deployment job
   deploy:
