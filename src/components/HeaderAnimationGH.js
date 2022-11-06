@@ -1,8 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
-// import Stats from 'three/examples/jsm/libs/stats.module'
-
 import React from "react"
 import styled from 'styled-components';
 
@@ -40,7 +38,6 @@ class HeaderAnimation extends React.Component {
     controls.enableDamping = true
     controls.enableZoom = false
 
-    // const material = new THREE.MeshBasicMaterial({})
     const envTexture = new THREE.CubeTextureLoader().load([
         'img/px_50.png',
         'img/nx_50.png',
@@ -107,8 +104,6 @@ class HeaderAnimation extends React.Component {
     window.addEventListener('resize', onWindowResize, false)
     onWindowResize();
 
-    // const stats = Stats()
-    // document.body.appendChild(stats.dom)
     const radius = 0.003;
     let theta = 0.000024
 
@@ -118,19 +113,12 @@ class HeaderAnimation extends React.Component {
         theta += 0.1;
 
         if (mesh) {
-            // mesh.rotation.y += 0.005
-            // mesh.rotation.x += 0.005
-            // mesh.rotation.z += 0.0025
             mesh.rotation.z += radius * Math.cos( THREE.MathUtils.degToRad( theta ) );
             mesh.rotation.y += radius * Math.sin( THREE.MathUtils.degToRad( theta ) );
             mesh.rotation.x += radius * Math.sin( THREE.MathUtils.degToRad( theta ) );
-            // console.log(Math.sin( THREE.MathUtils.degToRad( theta ) ));
-            // camera.position.z += Math.sin( THREE.MathUtils.degToRad( theta ) )*15;
         }
 
         render()
-
-        // stats.update()
     }
 
     function render() {
