@@ -62,23 +62,6 @@ class HeaderAnimation extends React.Component {
         clearcoatRoughness: 0.65
     })
 
-    const loader = new STLLoader()
-    let mesh;
-    loader.load(
-        '/stefkn-2021-small.stl',
-        function (geometry) {
-            mesh = new THREE.Mesh(geometry, material)
-            scene.add(mesh)
-            mesh.rotateX(5)
-        },
-        (xhr) => {
-            console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
-        },
-        (error) => {
-            console.log(error)
-        }
-    )
-
     function onWindowResize() {
         renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -154,7 +137,26 @@ class HeaderAnimation extends React.Component {
         renderer.render(scene, camera)
     }
 
-    animate()
+    function resolved(result) {
+        mesh = new THREE.Mesh(result, material)
+        scene.add(mesh)
+        mesh.rotateX(5)
+        animate();
+    }
+
+    function rejected(result) {
+        if (process.env.NODE_ENV === 'development') {
+            console.error(result);
+        }
+    }
+
+    const loader = new STLLoader()
+    let mesh;
+    loader.loadAsync(
+        '/stefkn-2021-small.stl'
+    ).then(
+        resolved, rejected
+    )
   }
 
   componentWillUnmount() {
