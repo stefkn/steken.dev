@@ -313,7 +313,7 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 0.6em;
+    margin-top: 1.6em;
     -webkit-font-smoothing: antialiased;
     font-family: ${props => props.theme.font.primary};
     font-weight: 400;
@@ -333,10 +333,12 @@ const Article = styled.div`
 
   .subtitle-main {
     color: rgb(120 131 255);
+    margin-top: 1em;
   }
 
   .subtitle-date {
     color: #564F62;
+    margin-top: 1em;
   }
 
   p {
