@@ -116,6 +116,40 @@ If we need to securely store secrets, our options are basically limited to [prox
 
 With that disclaimer out of the way, let's store a build-time secret for the Adobe View SDK, which I use to render the PDF of my CV on the About Me page. I'm going to do this more as a learning exercise than a security measure, as **the key will be included in the static site's data so that users viewing the site can use the Adobe PDF viewer.** Luckily, it's free for unlimited use, and each key is restricted by domain, so there's not a lot a bad actor can do even if they do extract the key.
 
+## Setting up environment variables
+
+Check out [Gatsby's official docs](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/) here.
+
+First, we should set up environment variables for development. For that, we can create a file called `.env.development` (Gatsby looks for this file so make sure it's called exactly that!) by using the command `touch .env.development`. It's a good idea to add this file to the `.gitignore` file so you don't commit it as well.
+
+In here we can put our Adobe API Key which has been set up to allow usage on the host `localhost`, so it loads correctly during local development. **We also prefixed the name with `GATSBY_` because this allows the variable to be exposed to the browser code** If you don't prefix it, it will only be available to Node.js code during build-time and you'll get nothing when you try to use it in React-land in the browser! This is Gatsby's method of making sure you're *absolutely sure that you want to share your environment variables with the whole world*.
+
+```shell
+# .env.development
+GATSBY_ADOBE_API_KEY=51f01227cb65ff4e05fffd40ff471bbd41234d
+```
+
+Next, go to `gatsby-config.js` and do a cheeky `require` at the top:
+
+```javascript
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+module.exports = {
+  plugins: [ ...
+```
+
+Now in our code, we can access the variable like so:
+
+```javascript
+var adobeDCView = new window.adobe_dc_view_sdk.default({
+    clientId: `${process.env.GATSBY_ADOBE_API_KEY}`,
+    divId: 'adobe-dc-view',
+});
+```
+
+Done! Now, the harder part. How do we get this into our build?
 
 What we can't really support is runtime secrets.[^*] Since the site is static, if we're using some 3rd-party service, the secrets will be exposed through network calls however clever we are in hiding them while they're stored on the client's side. If we need to do this, our options are basically limited to [proxying](https://en.wikipedia.org/wiki/Proxy_server) the request in some manner, either by using a [Backend-For-Frontend](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends) (BFF) or a serverless function, mediating the external calls there and storing the keys on that layer instead.[^1]
 
