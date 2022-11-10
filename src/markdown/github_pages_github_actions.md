@@ -151,10 +151,17 @@ var adobeDCView = new window.adobe_dc_view_sdk.default({
 
 Done! Now, the harder part. How do we get this into our build?
 
-What we can't really support is runtime secrets.[^*] Since the site is static, if we're using some 3rd-party service, the secrets will be exposed through network calls however clever we are in hiding them while they're stored on the client's side. If we need to do this, our options are basically limited to [proxying](https://en.wikipedia.org/wiki/Proxy_server) the request in some manner, either by using a [Backend-For-Frontend](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends) (BFF) or a serverless function, mediating the external calls there and storing the keys on that layer instead.[^1]
+## Environment variables with GitHub Actions
 
-With that disclaimer out of the way, let's store a build-time secret for the Adobe View SDK, which I use to render the PDF of my CV on the aboutme page. I'm going to do this more as a learning exercise than a security measure, as the key will be included in the static site so that users viewing the site can use the Adobe PDF viewer. Luckily, it's free for unlimited use, and each key is restricted by domain, so there's not a lot a bad actor can do even if they do extract the key.
+This will be specific to GitHub Actions but probably similar to other CI/CD providers too.
 
+First we'll need to generate a new key for Adobe View SDK which is allowed to be used on the actual hostname of this site, steken.dev. To do that, go to the developer console and follow the instructions to generate some new keys.
+
+Next, go to your repo and go to Settings -> Environments -> Environment Secrets, and add it, making sure it has the exact same name here as it does in the `.env.development` file. Once that's done, double-check which environment the secret exists in by going to Settings -> Secrets -> Actions and looking at the link highlighted here:
+
+![The GitHub settings page where you can confirm your environments secrets](../images/article_images/environment-secrets.png)
+
+Getting close now! It's time to set up a deployment process with GitHub Actions.
 
 
 
