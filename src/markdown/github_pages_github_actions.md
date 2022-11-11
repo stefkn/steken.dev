@@ -163,8 +163,13 @@ Next, go to your repo and go to Settings -> Environments -> Environment Secrets,
 
 Getting close now! It's time to set up a deployment process with GitHub Actions.
 
+## Setting up a deployment pipeline with GitHub Actions
 
+No one has time to be running CLI commands every time you want to push an update to the site! We're going to do it a better way -- with a Continuous Deployment pipeline triggered by a push to a specific branch! There are a number of providers you can set this up with like Codeship, Bitbucket Pipelines, CircleCI, AWS CodePipeline, GitLab, etc. Today I'll be using GitHub Actions, because it's free!
 
+What sets GitHub Actions apart from other CI/CD providers is the ecosystem. You can browse through a marketplace of integrations created by people for doing just about anything. We could use something like [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages) integration, or something specific to Gatsby.
+
+Here's the Action I ended up using; you can use it by creating a file like, `.github/workflows/gatsby-deploy.yml`:
 
 [^*] (As with everything on this site, caveat emptor: to the best of my knowledge!)
 
