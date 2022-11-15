@@ -282,4 +282,15 @@ jobs:
         uses: actions/deploy-pages@v1
 ```
 
+This should create a pipeline with two steps, `build` and `deploy` which gets kicked off whenever you push to the master branch.
+
+This is what the `build` steps should look like on the Actions UI:
+
+![The build steps should look like this](../images/article_images/build-steps.png)
+
+[^*] (As with everything on this site, caveat emptor: this is only to the best of my limited knowledge!)
+
 [^1] This is all what I understand from this [StackOverflow discussion](https://stackoverflow.com/questions/62231572/how-to-store-and-access-api-keys-and-passwords-with-gatsby)
+
+This [article](https://dev.to/steeeeeph/how-to-implement-env-variables-in-gatsby-and-react-252d) by
+[Stephanie Van Bockhaven](https://dev.to/steeeeeph) helped me wrap my head around this!
