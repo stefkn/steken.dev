@@ -179,11 +179,11 @@ Here's the Action I ended up using; you can use it by creating a file like, `.gi
 name: Deploy Gatsby site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+# Runs on pushes targeting the default branch
   push:
     branches: ["master"]
 
-  # Allows you to run this workflow manually from the Actions tab
+# Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -203,16 +203,16 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
+# Build job
   build:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
     steps:
-        # Checkout the repo
+# Checkout the repo
       - name: Checkout
         uses: actions/checkout@v3
-        # Figure out which package manager we're using, on steken.dev we use Yarn
+# Figure out which package manager we're using, on steken.dev we use Yarn
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -228,22 +228,20 @@ jobs:
             echo "Unable to determine packager manager"
             exit 1
           fi
-        # setup the Node JS build environment
+# setup the Node JS build environment
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-        # An action to enable Pages and extract various metadata about a site.
+# An action to enable Pages and extract various metadata about a site.
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
         with:
-          # Automatically inject pathPrefix in your Gatsby configuration file.
-          #
-          # You may remove this line if you want to manage the configuration yourself.
+# Automatically inject pathPrefix in your Gatsby configuration file.
           static_site_generator: gatsby
-        # This action allows caching dependencies and build outputs to improve workflow execution time.
+# This action allows caching dependencies and build outputs to improve workflow execution time.
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -253,22 +251,22 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-        # install all the build dependencies
+# install all the build dependencies
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        # We're ready! do the build!
+# We're ready! do the build!
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
           GATSBY_ADOBE_API_KEY: ${{ secrets.GATSBY_ADOBE_API_KEY }}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
-        # Get all the assets created by the build and upload them so they can be deployed to GitHub Pages
+# Get all the assets created by the build and upload them so they can be deployed to GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
 
-  # Deployment job
+# Deployment job
   deploy:
     environment:
       name: github-pages
@@ -276,7 +274,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-        # Deploy to Pages! Lets goooo
+# Deploy to Pages! Lets goooo
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
