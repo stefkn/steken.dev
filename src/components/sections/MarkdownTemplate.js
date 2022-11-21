@@ -401,12 +401,12 @@ const Article = styled.div`
     // font-family: ${props => props.theme.font.monospace};
     font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
     font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
-    background-color: rgb(93 72 255);
+    background-color: #4150ff;
     font-weight: 400;
     border-radius: 4px;
-    padding: 1px;
+    padding: 0px 10px;
     color: #ffffff;
-    border: 1px solid rgb(255 133 182);
+    border: 1px solid rgb(0 9 255);
     line-height: 1.5;
   }
 
