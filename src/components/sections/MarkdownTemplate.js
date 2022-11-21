@@ -285,7 +285,7 @@ const Article = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
   .blog-post-content {
-    background: linear-gradient(180deg, rgb(247 247 247) 0%, rgb(0 0 0 / 0%) 80%);
+    background: rgb(255 255 253);
     padding: 0.2em 2em;
     border-radius: 12px;
     margin-top: 1em;
