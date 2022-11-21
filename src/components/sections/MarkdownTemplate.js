@@ -143,6 +143,10 @@ const Article = styled.div`
   margin: 10em auto;
   max-width: 52em;
 
+  .gatsby-resp-image-wrapper, .gatsby-resp-image-image, .gatsby-resp-image-link, .gatsby-resp-image-background-image {
+    border-radius: 12px !important;
+  }
+
   .frontmatter {
     background-color: rgb(37 37 37);
     border-radius: 10px;
