@@ -127,7 +127,6 @@ const HeroImage = styled.div`
   z-index: -1;
   width: 100%;
   position: absolute;
-  max-height: 100%;
   display: flex;
   flex-direction: column;
   top: 0px;
