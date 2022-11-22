@@ -127,9 +127,6 @@ const StyledOutlineText = styled.div`
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgba( 255,255,255,0.18 );
-  -webkit-transform: skewY(4deg);
-  -ms-transform: skewY(4deg);
-  transform: skewY(4deg);
   -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: rgb(2 0 98);
   -webkit-text-fill-color: #ffffff;
@@ -189,9 +186,6 @@ const StyledSmaller = styled.div`
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgb(255 255 255 / 31%);
-  -webkit-transform: skewY(-4deg);
-  -ms-transform: skewY(-4deg);
-  transform: skewY(-4deg);
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding: 20px;
