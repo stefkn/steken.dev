@@ -23,7 +23,7 @@ export default function HTML(props) {
               // Load the Adobe View SDK when we get the event
               document.addEventListener('loadAdobeSDKNow', () => {
                 var script = document.createElement('script');
-                script.src = 'https://documentcloud.adobe.com/view-sdk/main.js';
+                script.src = 'https://documentservices.adobe.com/view-sdk/viewer.js';
                 document.head.appendChild(script);
               })
             `
