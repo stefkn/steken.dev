@@ -38,7 +38,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <audio id="index-audio" controls loop preload="false" src="/Percussions_digital_arpeggios.mp3"></audio>
       </body>
     </html>
   )
