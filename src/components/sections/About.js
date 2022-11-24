@@ -120,8 +120,7 @@ const StyledOutlineText = styled.div`
   border-radius: 20px;
   padding: 30px;
   z-index: 2;
-  background: rgb(34 152 255 / 33%);
-  box-shadow: 0 8px 32px 0 rgb(16 25 144 / 37%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 19%);
   -webkit-backdrop-filter: blur( 4px );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
@@ -179,8 +178,7 @@ const StyledSmaller = styled.div`
   border-radius: 20px;
   padding: 30px;
   z-index: 2;
-  background: rgb(233 30 99 / 21%);
-  box-shadow: 0 8px 32px 0 rgb(151 0 51 / 40%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 19%);
   -webkit-backdrop-filter: blur( 4px );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
