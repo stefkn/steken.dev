@@ -120,6 +120,7 @@ const FooterWrapper = styled.footer`
   padding: 90px 0;
   color: white;
   width: 100%;
+  position: absolute;
 `;
 
 const Copyright = styled.div`
