@@ -103,11 +103,17 @@ export default function Template({
                 />
               </div>
           </Article>
+          <ArticleBottomSpacer></ArticleBottomSpacer>
         </Container>
         <Footer bottomImage={false} />
     </Layout>
   )
 }
+
+const ArticleBottomSpacer = styled.div`
+  position: relative;
+  height: 200px;
+`
 
 const HeroOverlay = styled.div`
   width: 100%;
