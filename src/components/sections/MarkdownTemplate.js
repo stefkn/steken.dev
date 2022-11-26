@@ -308,13 +308,13 @@ const Article = styled.div`
 
   .blog-post-content {
     background: rgb(255 255 253);
-    padding: 0.2em 2em;
+    padding: 2em 2em;
     border-radius: 12px;
     margin-top: 1em;
-    box-shadow: 0 3px 14px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
 
     @media (max-width: ${props => props.theme.screen.md}) {
-      padding: 0.1em 1em;
+      padding: 1em 1em;
       margin-top: 1em;
     }
 
