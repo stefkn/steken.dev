@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 import Footer from '@sections/Footer';
+import { Link } from 'gatsby';
 import { Container } from '@components/global';
 
 import styled from 'styled-components';
@@ -79,6 +80,7 @@ export default function Template({
                 </h1>
                 <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
                 <h2 className="subtitle-date">{frontmatter.date}</h2>
+                <Link to="/articles" class="articles-link">⏎ Back to all articles</Link>
               </div>
               <div className="main-content">
                 <div className="mid-content">
