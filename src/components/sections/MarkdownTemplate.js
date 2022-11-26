@@ -121,9 +121,16 @@ const HeroOverlay = styled.div`
   position: absolute;
 
   z-index: 1;
-  background: linear-gradient(11deg, rgb(247, 247, 247) 30%, rgba(221, 153, 255, 55%) 76%, rgba(255, 0, 102, 52%) 96% );
 
-  background: linear-gradient(6deg,rgb(0 5 255) 0%,rgb(64 0 255 / 36%) 0%,rgb(214 110 255 / 49%) 19%,rgb(255 155 189 / 60%) 93%,rgb(20 28 115 / 0%) 100% );
+  background: linear-gradient(
+    6deg,
+    rgb(0 5 255) 0%,
+    rgb(64 0 255 / 39%) 0%,
+    rgb(214 110 255 / 20%) 19%,
+    rgb(255 155 235 / 47%) 93%,
+    rgb(20 28 115 / 0%) 100%
+  );
+
   mix-blend-mode: hard-light;
 
   @media (max-width: ${props => props.theme.screen.md}) {
@@ -269,7 +276,15 @@ const Article = styled.div`
         }
 
         p {
-          background-image: linear-gradient(321deg,rgb(31 48 255) 0,rgb(238 141 255) 30%,rgb(199 168 255) 50%,rgb(255 163 163) 70%,rgb(255 109 159) 90%,rgb(255 144 182) 100%);
+          background-image: linear-gradient(
+            321deg,
+            rgb(31 48 255) 0,
+            rgb(238 141 255) 30%,
+            rgb(199 168 255) 50%,
+            rgb(255 163 163) 70%,
+            rgb(255 109 159) 90%,
+            rgb(255 144 182) 100%
+          );
           background-size: 100%;
           background-repeat: repeat;
           -webkit-background-clip: text;
@@ -314,7 +329,15 @@ const Article = styled.div`
     overflow: hidden;
     font-size: clamp(2.6rem, 12vw - 4.5rem, 4rem);
 
-    background-image: linear-gradient(321deg,rgb(31 48 255) 0,rgb(238 141 255) 30%,rgb(199 168 255) 50%,rgb(255 163 163) 70%,rgb(255 109 159) 90%,rgb(255 144 182) 100%);
+    background-image: linear-gradient(
+      321deg,
+      rgb(31 48 255) 0,
+      rgb(238 141 255) 30%,
+      rgb(199 168 255) 50%,
+      rgb(255 163 163) 70%,
+      rgb(255 109 159) 90%,
+      rgb(255 144 182) 100%
+    );
     background-size: 100%;
     background-repeat: repeat;
     -webkit-background-clip: text;
