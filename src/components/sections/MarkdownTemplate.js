@@ -216,6 +216,7 @@ const Article = styled.div`
     border-bottom: solid;
     border-bottom-width: 0px;
     border-bottom-color: rgb(247 247 247);
+    border: 1px solid rgba( 255,255,255,0.18 );
 
     display: inline-flex;
     align-items: center;
@@ -272,7 +273,7 @@ const Article = styled.div`
         box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
         border-radius: 100px;
         margin: 12px 6px;
-        padding: 10px;
+        padding: 10px 26px;
         animation-delay: 1s;
         animation: fadeup 1s;
         animation-fill-mode: forwards;
