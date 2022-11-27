@@ -474,6 +474,25 @@ const Article = styled.div`
     // margin-bottom: 96px;
   }
 
+  @media (min-width: ${props => props.theme.screen.xl}) {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1230px;
+    position: relative;
+
+    .frontmatter {
+      min-width: 600px;
+      margin-right: 40px;
+      position: sticky;
+      top: 151px;
+    }
+
+    .main-content {
+      margin-top: 200px;
+    }
+  }
+
   iframe {
     margin-top: 2em;
     border-radius: 12px;
