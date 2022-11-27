@@ -59,15 +59,17 @@ export default function Template({
             )
           )
           &&
-          <HeroImage>
-            <HeroOverlay style={{"height": 60+scrollDepth/10 + '%' }}></HeroOverlay>
-            <Img fluid={
-              data.articleImages.edges.find(
-                image =>
-                image.node.childImageSharp.fluid.originalName === frontmatter.cover_image
-              ).node.childImageSharp.fluid
-            } />
-          </HeroImage>
+          <HeroImageWrapper>
+            <HeroImage>
+              <HeroOverlay style={{"height": 60+scrollDepth/10 + '%' }}></HeroOverlay>
+              <Img fluid={
+                data.articleImages.edges.find(
+                  image =>
+                  image.node.childImageSharp.fluid.originalName === frontmatter.cover_image
+                ).node.childImageSharp.fluid
+              } />
+            </HeroImage>
+          </HeroImageWrapper>
         }
         <Container>
           <Article className="page-main">
@@ -150,10 +152,20 @@ const HeroImage = styled.div`
   transition-delay: 0s;
 
   overflow: hidden;
+
+  position: sticky;
+  top: 0px;
+`
+
+const HeroImageWrapper = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
 `
 
 const Article = styled.div`
-  margin-bottom: 12em;
   margin: 10em auto;
   max-width: 52em;
 
