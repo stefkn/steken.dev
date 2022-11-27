@@ -175,13 +175,28 @@ const Article = styled.div`
 
   .frontmatter {
     background-color: rgb(37 37 37);
+    border: 1px solid rgba( 255,255,255,0.18 );
     border-radius: 10px;
-    padding: 40px;
+    padding: 40px 40px 90px 40px;
     box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+    position: relative;
 
     animation-delay: 0s;
     animation: fadeup 1s;
     animation-fill-mode: forwards;
+  }
+
+  .articles-link {
+    color: rgb(255 255 255);
+    background-color: rgb(233 30 99);
+    box-shadow: 0 6px 18px 0 rgb(0 0 0 / 30%);
+    border-radius: 100px;
+    margin-top: 20px;
+    padding: 6px 16px;
+    position: absolute;
+  }
+  .articles-link:hover {
+    box-shadow: 6px 5px 20px 0px rgba(255, 0, 106, 53%);
   }
 
   .title-main {
