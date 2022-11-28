@@ -143,6 +143,12 @@ const AboutMe = () => {
           ) {
             publicURL
           }
+          tailwind_logo: file(
+            sourceInstanceName: { eq: "stack" }
+            name: { eq: "tailwind" }
+          ) {
+            publicURL
+          }
         }
       `}
       render={data => (
@@ -262,7 +268,7 @@ const AboutMe = () => {
                       </div>
                       <div className="stack-item-text">
                         <h4><a href="https://reactjs.org/">React</a></h4>
-                        <p>Cue "I develop fulstack with React and Node" <a href="/fullstack.jpeg">meme</a></p>
+                        <p>Cue "I develop fullstack with React and Node" <a href="/fullstack.jpeg">meme</a></p>
                       </div>
                     </div>
 
@@ -293,6 +299,16 @@ const AboutMe = () => {
                       <div className="stack-item-text">
                         <h4><a href="https://www.java.com/en/">Java</a></h4>
                         <p>public static void main uuhh...</p>
+                      </div>
+                    </div>
+
+                    <div className="col tech-stack-item-col">
+                      <div className="tech-stack-item-logo">
+                        <img src={data.tailwind_logo.publicURL} alt="TailwindCSS logo" />
+                      </div>
+                      <div className="stack-item-text">
+                        <h4><a href="https://tailwindcss.com/">Tailwind CSS</a></h4>
+                        <p>I've used Tailwind on a few personal and hackathon projects.</p>
                       </div>
                     </div>
                   </div>
