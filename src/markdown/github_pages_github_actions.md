@@ -5,7 +5,7 @@ date: "2022-09-09"
 title: "Setting up a GitHub Actions build and deploy pipeline for steken.dev"
 subtitle: "Gatsby, GitHub Actions and GitHub Pages. The 3 Gs"
 tags: "gatsby github-actions github-pages"
-published: false
+published: true
 excerpt: On the road to shipping this website I had to figure out a few things. Well, maybe more than a few things. In the hopes that this is helpful to someone
 reading_time: 15
 cover_image: "tokyo.jpeg"
@@ -13,7 +13,7 @@ cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
 
-On the road to shipping this website I had to figure out a few things. Well, maybe more than a few things. In the hopes that this is helpful to someone (or, at the very least, a future-me who has forgotten how everything was set up) I'm going to document how I configured Gatsby and GitHub Actions to build and deploy this site to GitHub Pages, including how I set up secret management for this project. So lets go!
+On the road to shipping this website I had to figure out a few things. Well, maybe more than a few things. In the hopes that this is helpful to someone (or, at the very least, just future-me who has forgotten how everything was set up) I'm going to document how I configured Gatsby and GitHub Actions to build and deploy this site to GitHub Pages, including how I set up secret management for this project. Let's do this!
 
 There are probably many ways to go about this goal, but we'll go the simplest route by using the `gh-pages` package which can be found [here.](https://www.npmjs.com/package/gh-pages)
 
@@ -258,6 +258,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
+# Here, we're providing the Adobe API key as an environment variable
           GATSBY_ADOBE_API_KEY: ${{ secrets.GATSBY_ADOBE_API_KEY }}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
 # Get all the assets created by the build and upload them so they can be deployed to GitHub Pages
@@ -274,17 +275,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-# Deploy to Pages! Lets goooo
+# Deploy to Pages! Lets goooo 🚀
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 ```
 
-This should create a pipeline with two steps, `build` and `deploy` which gets kicked off whenever you push to the master branch.
+This should create a pipeline with two steps, `build` and `deploy` which get kicked off whenever you push to the master branch. Notice the step `Build with Gatsby` defines an environment variable (in the `env` bit) called `GATSBY_ADOBE_API_KEY` – this needs to match the key you set up in Settings -> Environments -> Environment Secrets for it to find and make it available in the build environment for (in this case) Yarn to use.
 
 This is what the `build` steps should look like on the Actions UI:
 
 ![The build steps should look like this](../images/article_images/build-steps.png)
+
+...and that should be it! Your site is available at the address that the deployment has been set up to point to in Settings.
 
 [^*] (As with everything on this site, caveat emptor: this is only to the best of my limited knowledge!)
 
