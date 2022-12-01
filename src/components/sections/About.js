@@ -41,20 +41,13 @@ const BlobSVG1 = styled.div`
   width: 85em;
   z-index: -1;
 
-  @media (max-width: ${props => props.theme.screen.xs}) {
-    bottom: 40em;
-  }
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    bottom: 40em;
-  }
-
   svg {
     position: absolute;
     height: 80em;
     z-index: 10;
     left: -25em;
-    bottom: -20em;
+
+    top: -500px;
     filter: opacity(0.47);
 
     animation: ${blobAnimation} 60s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
@@ -72,8 +65,9 @@ const BlobSVG2 = styled.div`
     height: 80em;
     z-index: 10;
     left: -25em;
-    bottom: -20em;
+
     filter: opacity(0.47);
+    top: -600px;
 
     animation: ${blobAnimation} 120s cubic-bezier(1, 0.31, 0.36, 0.67) infinite 0s;
   }
