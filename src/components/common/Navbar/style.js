@@ -82,7 +82,7 @@ export const MobileMenu = styled.div`
   transform: skewY(8deg);
   float: right;
   height: 10em;
-  bottom: -8em;
+  top: 3em;
   border-radius: 12px;
   padding: 20px;
   text-align-last: end;
@@ -97,7 +97,7 @@ export const MobileMenu = styled.div`
   border: 1px solid rgba( 255,255,255,0.18 );
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    bottom: -9em;
+    top: 4em;
     right: -3em;
   }
   `;
