@@ -8,7 +8,7 @@ tags: "challenge code puzzles"
 published: false
 excerpt: Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with.
 reading_time: 15
-cover_image: "tokyo.jpeg"
+cover_image: "DSC02931.jpeg"
 cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
@@ -17,7 +17,7 @@ Another year goes by, another Advent of Code to be attempted (and probably faile
 
 ## #1: Calorie Counting
 
-Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas, the delimiter is instead a blank newline) and we need to sum the total of each contiguous block and find the greatest value. I'm going to try to do this in Elixir.
+Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas and newlines instead, the delimiter between sub-lists is a blank newline) and we need to sum the total of each contiguous block and find the greatest value. We then need to find the largest, 2nd largest, 3rd largest and the sum of those three in the second part. I'm going to try to do this in Elixir.
 
 To set up, I downloaded my puzzle input from the website and set up my environment so that it was sitting in a UTF-8 encoded `.txt` file in the root directory called `"input.txt"`
 
@@ -99,5 +99,232 @@ IO.puts "TOTAL: #{total}"
 
 ```
 
-I've got to admit, Elixir blew my mind a little, but I got there! I think the key to solving this was cutting the input down into a small toy problem, solving that problem, and then scaling up.
+I've got to admit, Elixir blew my mind a little, but I got there! I think the key to solving this was cutting the input down into a small toy problem, solving that problem, and then scaling up. Wrapping my head around the recusrion was also a challenge. Otherwsie, barring some confusion with Elixir's syntax, I feel like I'm getting the hang of it.
 
+## 2: Rock Paper Scissors
+
+We have an input, again delimited by newlines, which associates `{A,B,C} -> {X,Y,Z}` such that set 1 describes what the opponent plays and set 2 describes what hand you play in, like, a billion (actually 2500) rounds of Rock, Paper, Scissors. The total score is calculated based on the hand you play (y tho?), and the outcome of the round. Find the total score of all rounds described in the input.
+
+This sounds like a job for maps! or dictionaries. or associative arrays. Key-value pairs? Lookup tables. `HashMap`. Hash table? *Tomayto, tomato, tohmahtoe.*
+
+```elixir
+# define atoms
+_a = :A
+_b = :B
+_c = :C
+_x = :X
+_y = :Y
+_z = :Z
+_w = :win
+_l = :loss
+_d = :draw
+
+# encode all possible game outcomes in a map
+game_map = %{
+  {:A, :X} => :draw,
+  {:A, :Y} => :win,
+  {:A, :Z} => :loss,
+  {:B, :X} => :loss,
+  {:B, :Y} => :draw,
+  {:B, :Z} => :win,
+  {:C, :X} => :win,
+  {:C, :Y} => :loss,
+  {:C, :Z} => :draw,
+}
+
+# encode the points system in another map
+points_map = %{
+  :X => 1,
+  :Y => 2,
+  :Z => 3,
+  :win => 6,
+  :loss => 0,
+  :draw => 3,
+}
+
+# Read the file into memory
+{:ok, filecontents} = File.read("input2.txt")
+
+# Split input into list of strings on newline
+splitcontents = filecontents |> String.split("\n", trim: true)
+
+# Parse (cast) bytestrings into tuples with atoms inside -- this step will fail if you pass anything in that isn't a binary (beware some bitstrings can be valid, but not valid binaries, e.g. <<3::4>>) as it uses to_existing_atom
+tupleslist = Enum.map(
+  splitcontents,
+  fn
+    x -> {
+      String.to_existing_atom(String.at(x,0)),
+      String.to_existing_atom(String.at(x,2))
+    }
+  end
+)
+
+# Define a recursive function to assign outcomes to the list
+defmodule Recursion do
+  # Recursive step
+  def iterate_through_games(tupleslist, n, result, game_map, points_map) when n > 0 do
+    # Get the nth element
+    {:ok, elem} = Enum.fetch(tupleslist, length(tupleslist) - n)
+
+    IO.inspect elem
+    {x, y} = elem
+
+    # points gained from the hand you played
+    IO.inspect points_map[y]
+
+    # the result of the game
+    IO.inspect game_map[elem]
+
+    # points gained from the result of the game
+    IO.inspect points_map[game_map[elem]]
+
+    # total points
+    IO.inspect points_map[y] + points_map[game_map[elem]]
+
+    # accumulate result
+    result = result + points_map[y] + points_map[game_map[elem]]
+
+    # recursion again!
+    iterate_through_games(tupleslist, n - 1, result, game_map, points_map)
+  end
+
+  # base case
+  def iterate_through_games(tupleslist, 0, result, game_map, points_map) do
+    {:ok, result}
+  end
+end
+
+{:ok, res} = Recursion.iterate_through_games(tupleslist, length(tupleslist), 0, game_map, points_map)
+
+IO.inspect res
+```
+
+This one felt like it was a similar difficulty to the last, but, I feel like I know Elixir better now. The trickiest bit with this one was a problem I was having with converting strings to atoms. `String.to_existing_atom()` works great, but was giving me errors when I tried to use it.
+
+```
+** (ArgumentError) errors were found at the given arguments:
+
+  * 1st argument: not a binary
+
+    :erlang.binary_to_existing_atom(nil, :utf8)
+    main.exs:53: anonymous fn/1 in :elixir_compiler_0.__FILE__/1
+    (elixir 1.12.2) lib/enum.ex:1582: Enum."-map/2-lists^map/1-0-"/2
+    (elixir 1.12.2) lib/enum.ex:1582: Enum."-map/2-lists^map/1-0-"/2
+    main.exs:49: (file)
+exit status 1
+```
+
+Not a binary? I thought we were working with strings? This sent me down a rabbit-hole of trying to figure out what type `String.at()` returns (it's a bitstring, *"a contiguous sequence of bits in memory."*) and if it could ever **not** be a binary (strings in Elixir are binary-encoded UTF-8) and since *"a binary is a bitstring where the number of bits is divisible by 8"* I was shocked to learn that that means that **every binary is a bitstring, but not every bitstring is a binary.** Brain... hurting...
+
+Not to worry, the issue was actually much simpler. The clue was in the error. `:erlang.binary_to_existing_atom(nil, :utf8)` this is Elixir calling an underlying Erlang function. More specifically, this is Elixir trying to call `binary_to_existing_atom` on `nil`, saying it's encoded in UTF-8. Which is obviously not gonna fly. Someone is passing `nil`s to my function...
+
+As it turns out, I just need to trim my split.
+
+```elixir
+# bad, we don't want any nils
+splitcontents = filecontents |> String.split("\n", trim: false)
+
+# much better thank you
+splitcontents = filecontents |> String.split("\n", trim: true)
+```
+
+Part two switched things up – turns out set 2 doesn't describe the hand you play, it describes the outcome of the game. Now, to calculate the total score, we need to shuffle things around a bit. I created a new map, `game_map_2`, which captured this new information. I then added a `case` block in the recursive step that figures out which hand you need to play to get the desired outcome. Lookup the point value of that hand, and you've got the answer!
+
+```elixir
+# encode all possible game outcomes in a map
+game_map_2 = %{
+  {:A, :X} => :loss,
+  {:A, :Y} => :draw,
+  {:A, :Z} => :win,
+  {:B, :X} => :loss,
+  {:B, :Y} => :draw,
+  {:B, :Z} => :win,
+  {:C, :X} => :loss,
+  {:C, :Y} => :draw,
+  {:C, :Z} => :win,
+}
+
+# encode the points system in another map -- keeping this as it's still valid
+points_map = %{
+  :X => 1,
+  :Y => 2,
+  :Z => 3,
+  :win => 6,
+  :loss => 0,
+  :draw => 3,
+}
+
+# Read the file into memory
+{:ok, filecontents} = File.read("input2.txt")
+
+# Split input into list of strings on newline
+splitcontents = filecontents |> String.split("\n", trim: true)
+
+# Parse (cast) bytestrings into tuples with atoms inside -- this step will fail if you pass anything in that isn't a binary (beware some bitstrings can be valid, but not valid binaries, e.g. <<3::4>>) as it uses to_existing_atom
+tupleslist = Enum.map(
+  splitcontents,
+  fn
+    x -> {
+      String.to_existing_atom(String.at(x,0)),
+      String.to_existing_atom(String.at(x,2))
+    }
+  end
+)
+
+# Define a recursive function to assign outcomes to the list
+defmodule Recursion do
+  # Recursive step
+  def iterate_through_games(tupleslist, n, result, game_map, points_map) when n > 0 do
+    # Get the nth element
+    {:ok, elem} = Enum.fetch(tupleslist, length(tupleslist) - n)
+
+    IO.inspect elem
+    {x, y} = elem
+
+    # the result of the game
+    IO.inspect game_map[elem]
+
+    # points gained from the result of the game
+    IO.inspect points_map[game_map[elem]]
+
+    # the hand the oppponent played
+    IO.inspect x
+
+    # the hand we need to play
+    hand = case elem do
+      {:A, :X} -> :Z
+      {:A, :Y} -> :X
+      {:A, :Z} -> :Y
+      {:B, :X} -> :X
+      {:B, :Y} -> :Y
+      {:B, :Z} -> :Z
+      {:C, :X} -> :Y
+      {:C, :Y} -> :Z
+      {:C, :Z} -> :X
+    end
+    IO.inspect hand
+
+    # the points we get from the hand we played
+    IO.inspect points_map[hand]
+
+    # accumulate result
+    result = result + points_map[game_map[elem]] + points_map[hand]
+
+    # recursion again!
+    iterate_through_games(tupleslist, n - 1, result, game_map, points_map)
+  end
+
+  # base case
+  def iterate_through_games(tupleslist, 0, result, game_map, points_map) do
+    {:ok, result}
+  end
+end
+
+{:ok, res} = Recursion.iterate_through_games(tupleslist, length(tupleslist), 0, game_map_2, points_map)
+
+IO.inspect res
+```
+
+Definitely not the most elegant way to solve it, but I'm not trying to win points for style here!
+
+## #3: ???
