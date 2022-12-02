@@ -11,6 +11,7 @@ class HeaderAnimation extends React.Component {
 
   componentDidMount() {
     const scene = new THREE.Scene()
+    const initialWindowInnerHeight = window.innerHeight;
 
     // scene.background = new THREE.Color('#2f39ae');
     scene.add(new THREE.AmbientLight( '#fe317e', 1 ));
@@ -60,7 +61,7 @@ class HeaderAnimation extends React.Component {
     })
 
     function onWindowResize() {
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, initialWindowInnerHeight);
 
         if (window.devicePixelRatio < 2) {
             renderer.setPixelRatio(window.devicePixelRatio/1.5);
@@ -68,7 +69,7 @@ class HeaderAnimation extends React.Component {
             renderer.setPixelRatio(window.devicePixelRatio/2);
         }
 
-        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.aspect = window.innerWidth / initialWindowInnerHeight;
         camera.updateProjectionMatrix();
 
         render();
