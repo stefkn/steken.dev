@@ -453,7 +453,7 @@ const Article = styled.div`
   --deckgo-highlight-code-carbon-background: #000d5b;
   --deckgo-highlight-code-carbon-box-shadow: none;
   --deckgo-highlight-code-container-height: max-content;
-  --deckgo-highlight-code-carbon-overflow: hidden;
+  --deckgo-highlight-code-carbon-overflow: scroll;
   --deckgo-highlight-code-scroll: none;
 
   code {
@@ -468,6 +468,7 @@ const Article = styled.div`
     color: #ffffff;
     border: 1px solid rgb(0 9 255);
     line-height: 1.5;
+    overflow-wrap: break-word;
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
