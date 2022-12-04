@@ -327,4 +327,241 @@ IO.inspect res
 
 Definitely not the most elegant way to solve it, but I'm not trying to win points for style here!
 
-## #3: ???
+## #3: Rucksack Reorganization
+
+This one also went pretty smoothly.
+
+What helped me solve this much more quickly was my discovery of the `MapSet`, which meant I didn't need to write my own comparison algorithm from scratch and that I could just call `MapSet.intersection()` to get the elements in both compartments of the backpack.
+
+```elixir
+# encode the list of all atoms in a tuple
+priorities = Enum.with_index([:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z])
+
+# Read the file into memory
+{:ok, filecontents} = File.read("input3.txt")
+
+# Split input into list of strings on newline
+splitcontents = filecontents |> String.split("\n", trim: true)
+
+IO.inspect priorities
+# IO.inspect splitcontents
+
+# take each line (each backpack contents) and split into tuples of MapSets for each backpack
+defmodule Recursion do
+  # Recursive step
+  def iterate_through_backpacks(tupleslist, n, result, priorities) when n > 0 do
+    # Get the nth element
+    {:ok, elem} = Enum.fetch(tupleslist, length(tupleslist) - n)
+
+    IO.inspect elem
+    tuple = {
+      MapSet.new(
+        String.graphemes(
+          String.slice(elem, 0, div(String.length(elem), 2))
+        )
+      ),
+      MapSet.new(
+        String.graphemes(
+          String.slice(elem, div(String.length(elem), 2), String.length(elem))
+        )
+      )
+    }
+    IO.inspect tuple
+
+    # Get the intersection of the two compartments of the backpack
+    intersection = MapSet.intersection(
+      elem(tuple,0), elem(tuple,1)
+    )
+
+    IO.inspect MapSet.to_list(intersection)
+
+    # get the priority from our list
+    duplicateitem = String.to_existing_atom(hd(MapSet.to_list(intersection)))
+
+    IO.inspect duplicateitem
+
+    # find the matching priority in the priorities list
+    {atom, priority} = Enum.find(
+      priorities, fn(element) ->
+        match?({^duplicateitem, priority}, element)
+      end
+    )
+
+    # Accumulate the result... remember, the priority is one less than the acutal priority because it is zero indexed! so we add one here.
+    result = result + priority + 1
+
+
+    iterate_through_backpacks(tupleslist, n - 1, result, priorities)
+  end
+
+  # base case
+  def iterate_through_backpacks(tupleslist, 0, result, priorities) do
+    {:ok, result}
+  end
+end
+
+{:ok, res} = Recursion.iterate_through_backpacks(splitcontents, length(splitcontents), 0, priorities)
+
+IO.inspect res
+```
+
+For part two, it was just a matter of rewriting it a bit so that instead of comparing the two halves of each string, we were making MapSets and comparing every three whole strings instead.
+
+```elixir
+# encode the list of all atoms in a tuple
+priorities = Enum.with_index([:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z])
+
+# Read the file into memory
+{:ok, filecontents} = File.read("input3.txt")
+
+# Split input into list of strings on newline
+splitcontents = filecontents |> String.split("\n", trim: true)
+
+IO.inspect priorities
+# IO.inspect splitcontents
+
+# take each line (each backpack contents) and split into tuples of MapSets for each backpack
+defmodule Recursion do
+  # Recursive step
+  def iterate_through_backpacks(tupleslist, n, result, priorities) when n > 0 do
+    # Get the group's backpacks
+    {:ok, elem1} = Enum.fetch(tupleslist, length(tupleslist) - n)
+    {:ok, elem2} = Enum.fetch(tupleslist, length(tupleslist) - n + 1)
+    {:ok, elem3} = Enum.fetch(tupleslist, length(tupleslist) - n + 2)
+
+    IO.puts "================"
+    IO.inspect elem1
+    IO.inspect elem2
+    IO.inspect elem3
+
+    elem1 = MapSet.new(
+      String.graphemes(
+        elem1
+      )
+    )
+
+    elem2 = MapSet.new(
+      String.graphemes(
+        elem2
+      )
+    )
+
+    elem3 = MapSet.new(
+      String.graphemes(
+        elem3
+      )
+    )
+
+    # Get the intersection of all the groups backpacks
+    intersection = MapSet.intersection(
+      MapSet.intersection(
+        elem1, elem2
+      ), elem3
+    )
+
+    IO.inspect MapSet.to_list(intersection)
+
+    # get the priority from our list
+    duplicateitem = String.to_existing_atom(hd(MapSet.to_list(intersection)))
+
+    # find the matching priority in the priorities list
+    {atom, priority} = Enum.find(
+      priorities, fn(element) ->
+        match?({^duplicateitem, priority}, element)
+      end
+    )
+
+    # Accumulate the result... remember, the priority is one less than the acutal priority because it is zero indexed! so we add one here.
+    result = result + priority + 1
+
+
+    iterate_through_backpacks(tupleslist, n - 3, result, priorities)
+  end
+
+  # base case
+  def iterate_through_backpacks(tupleslist, 0, result, priorities) do
+    {:ok, result}
+  end
+end
+
+{:ok, res} = Recursion.iterate_through_backpacks(splitcontents, length(splitcontents), 0, priorities)
+
+IO.inspect res
+```
+
+## #4: Camp Cleanup
+
+
+
+```elixir
+# Read the file into memory
+{:ok, filecontents} = File.read("input4.txt")
+
+# Split input into list of strings on newline "71-71,42-72"
+splitcontents = filecontents |> String.split("\n", trim: true)
+
+IO.inspect splitcontents
+
+# Split each string on the comma to make lists of each pair [["71-71", "42-72"],]
+pairs = Enum.map(splitcontents, fn x -> String.split(x, ",", trim: true) end)
+
+IO.inspect pairs
+
+# split integers out into their own strings [[["71", "71"], ["42", "72"]],]
+stringlists = Enum.map(pairs, fn [a, b] -> [
+  String.split(a, "-",   trim: true),
+  String.split(b, "-", trim: true)
+] end)
+
+IO.inspect stringlists
+
+# https://stackoverflow.com/questions/65135280/why-does-for-x-3-4-do-x-3-return-t-f-in-elixir/65136734#65136734
+# ['GG', '*H']... looks wrong but lists of integers in the ASCII range (0-127) get represented as charlists, all good
+intlists = Enum.map(stringlists, fn [[a, b],[c, d]] -> [
+  [ elem(Integer.parse(a), 0), elem(Integer.parse(b), 0) ],
+  [ elem(Integer.parse(c), 0), elem(Integer.parse(d), 0) ]
+] end)
+
+IO.inspect intlists
+
+# [ [#MapSet<[71..71]>, #MapSet<[42..72]>], ...
+rangesets = Enum.map(intlists, fn [[a, b],[c, d]] -> [
+  MapSet.new(Enum.to_list(a..b)),
+  MapSet.new(Enum.to_list(c..d))
+] end)
+
+# Check if either MapSet's intersection is wholly equal to either of the MapSets
+subsets = Enum.map(rangesets, fn [a, b] ->
+  MapSet.equal?(MapSet.intersection(a, b), a)
+  ||
+  MapSet.equal?(MapSet.intersection(a, b), b)
+  ||
+  MapSet.equal?(MapSet.intersection(b, a), a)
+  ||
+  MapSet.equal?(MapSet.intersection(b, a), b)
+end)
+
+IO.inspect subsets
+
+# Count the trues!
+IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if x, do: 1 + acc, else: 0 + acc end)
+```
+
+Answering part two was actually so chill; just use the built in `MapSet.disjoint?()` function to check if either set has any member in common at all!
+
+```elixir
+# ... do all the same stuff up to here
+
+# Check if either MapSet's intersection is wholly equal to either of the MapSets
+subsets = Enum.map(rangesets, fn [a, b] ->
+  MapSet.disjoint?(a, b)
+  &&
+  MapSet.disjoint?(b, a)
+end)
+
+IO.inspect subsets
+
+# Count the trues!
+IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if !x, do: 1 + acc, else: 0 + acc end)
+```
+
