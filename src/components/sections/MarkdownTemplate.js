@@ -286,6 +286,8 @@ const Article = styled.div`
 
     .tag-pills {
       display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
 
       animation-delay: 1s;
       animation: fadeup 1s;
