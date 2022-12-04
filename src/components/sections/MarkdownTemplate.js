@@ -493,6 +493,8 @@ const Article = styled.div`
 
     .main-content {
       margin-top: 200px;
+      min-width: 60%;
+      max-width: 60%;
     }
   }
 
