@@ -329,22 +329,22 @@ Definitely not the most elegant way to solve it, but I'm not trying to win point
 
 ## #3: Rucksack Reorganization
 
-This one also went pretty smoothly.
+This one also went pretty smoothly – we're given another bunch of alphabetical, case-sensitive strings where we need to check for duplicated characters in the first and second half of each string.
 
-What helped me solve this much more quickly was my discovery of the `MapSet`, which meant I didn't need to write my own comparison algorithm from scratch and that I could just call `MapSet.intersection()` to get the elements in both compartments of the backpack.
+What helped me solve this much more quickly was my discovery of the `MapSet`, which meant I didn't need to write my own comparison algorithm from scratch and that I could just call `MapSet.intersection()` to get the elements in both compartments of the backpack. So convenient!
 
 ```elixir
 # encode the list of all atoms in a tuple
-priorities = Enum.with_index([:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z])
+priorities = Enum.with_index(
+  [:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z,
+  :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z]
+)
 
 # Read the file into memory
 {:ok, filecontents} = File.read("input3.txt")
 
 # Split input into list of strings on newline
 splitcontents = filecontents |> String.split("\n", trim: true)
-
-IO.inspect priorities
-# IO.inspect splitcontents
 
 # take each line (each backpack contents) and split into tuples of MapSets for each backpack
 defmodule Recursion do
@@ -353,7 +353,6 @@ defmodule Recursion do
     # Get the nth element
     {:ok, elem} = Enum.fetch(tupleslist, length(tupleslist) - n)
 
-    IO.inspect elem
     tuple = {
       MapSet.new(
         String.graphemes(
@@ -366,7 +365,6 @@ defmodule Recursion do
         )
       )
     }
-    IO.inspect tuple
 
     # Get the intersection of the two compartments of the backpack
     intersection = MapSet.intersection(
@@ -389,7 +387,6 @@ defmodule Recursion do
 
     # Accumulate the result... remember, the priority is one less than the acutal priority because it is zero indexed! so we add one here.
     result = result + priority + 1
-
 
     iterate_through_backpacks(tupleslist, n - 1, result, priorities)
   end
@@ -416,9 +413,6 @@ priorities = Enum.with_index([:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q
 
 # Split input into list of strings on newline
 splitcontents = filecontents |> String.split("\n", trim: true)
-
-IO.inspect priorities
-# IO.inspect splitcontents
 
 # take each line (each backpack contents) and split into tuples of MapSets for each backpack
 defmodule Recursion do
