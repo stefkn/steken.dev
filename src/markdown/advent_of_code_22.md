@@ -453,8 +453,6 @@ defmodule Recursion do
       ), elem3
     )
 
-    IO.inspect MapSet.to_list(intersection)
-
     # get the priority from our list
     duplicateitem = String.to_existing_atom(hd(MapSet.to_list(intersection)))
 
@@ -467,7 +465,6 @@ defmodule Recursion do
 
     # Accumulate the result... remember, the priority is one less than the acutal priority because it is zero indexed! so we add one here.
     result = result + priority + 1
-
 
     iterate_through_backpacks(tupleslist, n - 3, result, priorities)
   end
@@ -485,7 +482,7 @@ IO.inspect res
 
 ## #4: Camp Cleanup
 
-
+This sounded deceptively easy. It wasn't! We're given strings of the format `71-71,42-72` indicating ranges of sections that pairs of elves have been assigned to clean. We need to figure out how many pairs are assigned such that one of the pair is a complete subset of the other (contained entirely by the other range). `MapSet` also came in very handy here.
 
 ```elixir
 # Read the file into memory
@@ -494,12 +491,8 @@ IO.inspect res
 # Split input into list of strings on newline "71-71,42-72"
 splitcontents = filecontents |> String.split("\n", trim: true)
 
-IO.inspect splitcontents
-
 # Split each string on the comma to make lists of each pair [["71-71", "42-72"],]
 pairs = Enum.map(splitcontents, fn x -> String.split(x, ",", trim: true) end)
-
-IO.inspect pairs
 
 # split integers out into their own strings [[["71", "71"], ["42", "72"]],]
 stringlists = Enum.map(pairs, fn [a, b] -> [
@@ -507,16 +500,12 @@ stringlists = Enum.map(pairs, fn [a, b] -> [
   String.split(b, "-", trim: true)
 ] end)
 
-IO.inspect stringlists
-
 # https://stackoverflow.com/questions/65135280/why-does-for-x-3-4-do-x-3-return-t-f-in-elixir/65136734#65136734
 # ['GG', '*H']... looks wrong but lists of integers in the ASCII range (0-127) get represented as charlists, all good
 intlists = Enum.map(stringlists, fn [[a, b],[c, d]] -> [
   [ elem(Integer.parse(a), 0), elem(Integer.parse(b), 0) ],
   [ elem(Integer.parse(c), 0), elem(Integer.parse(d), 0) ]
 ] end)
-
-IO.inspect intlists
 
 # [ [#MapSet<[71..71]>, #MapSet<[42..72]>], ...
 rangesets = Enum.map(intlists, fn [[a, b],[c, d]] -> [
@@ -535,13 +524,11 @@ subsets = Enum.map(rangesets, fn [a, b] ->
   MapSet.equal?(MapSet.intersection(b, a), b)
 end)
 
-IO.inspect subsets
-
 # Count the trues!
 IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if x, do: 1 + acc, else: 0 + acc end)
 ```
 
-Answering part two was actually so chill; just use the built in `MapSet.disjoint?()` function to check if either set has any member in common at all!
+Answering part two (find how many pairs where they have *any* number in common at all) was actually so chill; just use the built in `MapSet.disjoint?()` function to check if either set has any member in common!
 
 ```elixir
 # ... do all the same stuff up to here
