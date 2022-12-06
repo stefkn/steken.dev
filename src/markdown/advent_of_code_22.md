@@ -571,10 +571,6 @@ defmodule Recursion do
     current = length(tupleslist) - n
     {:ok, elem1} = Enum.fetch(tupleslist, current)
 
-    # IO.puts "================"
-    # IO.puts current
-    # IO.inspect elem1
-
     # if the element is the empty string, and there's at least 3 more elements in front to check, check if they are all also the empty string -- if they are, skip forwards by 4 and replace by a single ""
     if length(tupleslist) > current + 3 do
       {:ok, elem2} = Enum.fetch(tupleslist, current + 1)
@@ -616,8 +612,6 @@ splitcontents = Enum.map(
       Recursion.iterate_through_stackinput(x, length(x), []),
     1)
 end)
-
-# IO.inspect splitcontents
 
 # Now splitcontents looks like:
 # [
@@ -663,8 +657,6 @@ stacks = Enum.map(
     x, fn x -> x !== "" end
   ) end
 )
-
-IO.inspect stacks
 
 # Now let's parse the instructions
 
@@ -754,4 +746,48 @@ Part two was mercifully easier, I just replaced the `Enum.reduce()` block above 
   tostack
 }
 ```
+
+## #6: Tuning Trouble
+
+I'm very happy with how this one went. It's not the most optimal (it compares every element in the `currentchars` list each time) but it's pretty short and sweet, and can be configured to look for a marker of any reasonable length. Hooray for reusability!
+
+```elixir
+# Read the stack input into memory
+{:ok, filecontents} = File.read("input6.txt")
+
+# split the one massive long string into a list of graphemes (chars)
+graphemes = String.graphemes(filecontents)
+
+n = 50000 # how long to compare for, just make this larger than the input string length
+uniquelength = 4 # how long the unique string has to be
+
+chars_until_marker = Enum.flat_map_reduce(
+  graphemes, [],
+  fn x, acc ->
+    if length(acc) > uniquelength - 1 && length(acc) < n do
+      # grab the last 0-uniquelength chars to check against
+      currentchars = Enum.map(Enum.to_list(0..uniquelength - 1), fn x -> Enum.at(acc, x) end)
+      # if they are all unique, halt and return, otherwise add the latest on to the accumulator and keep going
+      if length(Enum.uniq(currentchars)) === uniquelength do
+        {:halt, acc}
+      else
+        {[x], [x] ++ acc}
+      end
+    else
+      # keep going, we don't have enough to compare against yet
+      if length(acc) < n, do: {[x], [x] ++ acc}, else: {:halt, acc}
+    end
+  end
+)
+
+IO.inspect length(elem(chars_until_marker,1)) # the length of the string we get back is our answer!
+```
+
+## Helpful websites!
+
+These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
+
+[Elixir School](https://elixirschool.com/en/lessons)
+[Visual Elixir Reference](https://superruzafa.github.io/visual-elixir-reference//)
+[Elixir Examples](https://elixir-examples.github.io/)
 
