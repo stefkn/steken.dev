@@ -21,9 +21,77 @@ class RecentPosts extends Component {
 
   render() {
     return (
-      <RecentPostsDiv id="recent-articles">
-        Recent Posts
-      </RecentPostsDiv>
+      <StaticQuery
+        query={graphql`
+          query
+          {
+            articles: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    date(formatString: "MMMM DD, YYYY")
+                    slug
+                    series
+                    title
+                    tags
+                    published
+                    excerpt
+                    reading_time
+                    cover_image
+                  }
+                }
+              }
+            }
+            articleImages: allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
+              edges {
+                node {
+                  childImageSharp {
+                    fluid(maxWidth: 1200) {
+                      originalName
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={queryResult => {
+          const mdArticles = queryResult.articles.edges
+            .filter(article => this.isArticlePublished(article))
+
+          const coverImages = queryResult.articleImages.edges
+
+          let Posts = <div style={{marginTop: '1em'}}>No posts. Watch this space!</div>;
+
+          if (!!mdArticles && mdArticles.length > 0) {
+            Posts = mdArticles
+              .map(
+                article =>
+                <PostLink
+                  key={article.node.id}
+                  post={article.node}
+                  coverImage={
+                    this.getCoverImage(
+                      coverImages,
+                      article.node.frontmatter.cover_image,
+                    )
+                  }
+                />
+              )
+          }
+
+          return (
+          <RecentPostsDiv>
+            <h1>Recent Posts</h1>
+            <PostsContainer>
+              {Posts}
+            </PostsContainer>
+          </RecentPostsDiv>
+          )
+        }}
+      />
     )
   }
 }
