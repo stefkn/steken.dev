@@ -783,6 +783,324 @@ chars_until_marker = Enum.flat_map_reduce(
 IO.inspect length(elem(chars_until_marker,1)) # the length of the string we get back is our answer!
 ```
 
+## Day 7: No Space Left On Device
+
+Okay, things are starting to get a bit tricker! We're given a list of terminal commands and their output, and we need to parse them and find the total sizes of directories with a nested structure under a certain size. This sounds like another job for recursion!
+
+```elixir
+# Read the stack input into memory, split on newline
+{:ok, filecontents} = File.read("input7.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+
+defmodule Recursion do
+  # Recursive step
+  def parse_all_commands(inslist, n, result) when n > 0 do
+    # Get the nth element
+    current = length(inslist) - n
+    {:ok, i} = Enum.fetch(inslist, current)
+
+    case String.graphemes(i) do
+      ["$", " ", "c", "d", " " | tail] ->
+        # "$ cd {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"cd --- ", dirname}
+
+      ["$", " ", "l", "s"] ->
+        # "$ ls {}"
+        IO.inspect {"ls ------------------------- "}
+
+      ["d", "i", "r", " " | tail] ->
+        # "$ dir {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"dir: ", dirname}
+
+      fileandsize ->
+        # size, " ", name_of_file
+        size = Enum.take_while(
+          fileandsize,
+          fn x -> x !== " "
+        end)
+        {sizeint, ""} = Integer.parse(
+          Enum.reduce(size, fn x, acc -> acc <> x end)
+        )
+
+        name = Enum.take_while(
+          Enum.drop(fileandsize, length(size) + 1),
+          fn x -> x !== " "
+        end)
+        name = Enum.reduce(name, fn x, acc -> acc <> x end)
+
+        IO.inspect {"file: ", name, sizeint}
+    end
+
+    parse_all_commands(inslist, n - 1, result)
+  end
+
+  # base case
+  def parse_all_commands(inslist, 0, result) do
+    {:ok, result}
+  end
+end
+
+{:ok, res} = Recursion.parse_all_commands(
+  filecontents,
+  length(filecontents),
+  []
+)
+
+IO.inspect res
+```
+
+This products output like:
+
+```
+{"cd --- ", "/"}
+{"ls ------------------------- "}
+{"file: ", "cgc.vzv", 149291}
+{"dir: ", "cmcrzdt"}
+{"dir: ", "hwdvrrp"}
+{"file: ", "hwqvsl", 26925}
+{"dir: ", "lsmv"}
+{"dir: ", "ngfllcq"}
+{"dir: ", "ngnzzmpc"}
+{"dir: ", "pwhjps"}
+{"dir: ", "rgwnzttf"}
+{"file: ", "tcglclw.hsn", 260556}
+{"dir: ", "trvznjhb"}
+{"dir: ", "wgcqrc"}
+{"file: ", "whpnhm", 68873}
+{"cd --- ", "cmcrzdt"}
+{"ls ------------------------- "}
+{"dir: ", "chqllfw"}
+{"file: ", "hjpf", 95243}
+{"file: ", "hwqvsl", 108868}
+{"file: ", "jpppczvz.mtp", 115004}
+{"dir: ", "lnsgfnbr"}
+{"dir: ", "pdtjlb"}
+{"dir: ", "rqfzvwts"}
+{"dir: ", "trvznjhb"}
+{"cd --- ", "chqllfw"}
+{"ls ------------------------- "}
+{"file: ", "cgs.hbt", 56623}
+{"file: ", "zqb.grc", 134804}
+{"cd --- ", ".."}
+{"cd --- ", "lnsgfnbr"}
+{"ls ------------------------- "}
+{"dir: ", "jtzw"}
+{"dir: ", "ngfllcq"}
+{"dir: ", "sdm"}
+{"dir: ", "wlsg"}
+{"cd --- ", "jtzw"}
+{"ls ------------------------- "}
+{"dir: ", "nfz"}
+{"cd --- ", "nfz"}
+{"ls ------------------------- "}
+{"file: ", "hwqvsl", 255427}
+{"file: ", "tmnjbqq.fzh", 94147}
+{"cd --- ", ".."}
+{"cd --- ", ".."}
+{"cd --- ", "ngfllcq"}
+{"ls ------------------------- "}
+{"file: ", "cdgqtwcv.lzn", 110661}
+{"file: ", "dpf", 208050}
+{"cd --- ", ".."}
+```
+
+We can now use this as a base to start calculating totals. We can actually ignore all 'ls' and 'dir' lines as they're not actually important! All we care about are the lines that give us file sizes and the `cd` lines.
+
+```elixir
+# Read the stack input into memory, split on newline
+{:ok, filecontents} = File.read("input7.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+
+defmodule Recursion do
+  # Recursive step
+  def parse_all_commands(inslist, n, result, acc) when n > 0 do
+    # Get the nth element
+    current = length(inslist) - n
+    {:ok, i} = Enum.fetch(inslist, current)
+
+    case String.graphemes(i) do
+      ["$", " ", "c", "d", " " | tail] ->
+        # "$ cd {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"cd --- ", dirname}
+
+        if dirname === ".." do
+          if hd(result) < 100001 do
+            acc = [hd(result) | acc]
+
+            result = [hd(result) + hd(tl(result)) | tl(tl(result))]
+
+            IO.inspect {"res: ", result, acc}
+            parse_all_commands(inslist, n - 1, result, acc)
+          else
+            result = [hd(result) + hd(tl(result)) | tl(tl(result))]
+
+            IO.inspect {"res: ", result, acc}
+            parse_all_commands(inslist, n - 1, result, acc)
+          end
+        else
+          result = [0 | result]
+
+          IO.inspect {"res: ", result, acc}
+          parse_all_commands(inslist, n - 1, result, acc)
+        end
+
+      ["$", " ", "l", "s"] ->
+        # "$ ls {}"
+        IO.inspect {"ls ------------------------- "}
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+
+      ["d", "i", "r", " " | tail] ->
+        # "$ dir {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"dr: ", dirname}
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+
+      fileandsize ->
+        # size, " ", name_of_file
+        size = Enum.take_while(
+          fileandsize,
+          fn x -> x !== " "
+        end)
+        {sizeint, ""} = Integer.parse(
+          Enum.reduce(size, fn x, acc -> acc <> x end)
+        )
+
+        name = Enum.take_while(
+          Enum.drop(fileandsize, length(size) + 1),
+          fn x -> x !== " "
+        end)
+        name = Enum.reduce(name, fn x, acc -> acc <> x end)
+
+        IO.inspect {"fl: ", name, sizeint}
+        result = [hd(result) + sizeint | tl(result)]
+
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+    end
+  end
+
+  # base case
+  def parse_all_commands(inslist, 0, result, acc) do
+    {:ok, result, acc}
+  end
+end
+
+{:ok, res, acc} = Recursion.parse_all_commands(
+  filecontents,
+  length(filecontents),
+  [],
+  []
+)
+
+IO.inspect Enum.sum(acc)
+```
+
+Finally, for Part 2, we just need to scan through the directory totals to find the smallest one that brings us up to the total. I spent a while debugging only to realise that as part of the solution to Part 1, I was ignoring all directories with a total size `< 100001`! Just commenting that out gave me the correct answer.
+
+```elixir
+# Read the stack input into memory, split on newline
+{:ok, filecontents} = File.read("input7.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+
+defmodule Recursion do
+  # Recursive step
+  def parse_all_commands(inslist, n, result, acc) when n > 0 do
+    # Get the nth element
+    current = length(inslist) - n
+    {:ok, i} = Enum.fetch(inslist, current)
+
+    case String.graphemes(i) do
+      ["$", " ", "c", "d", " " | tail] ->
+        # "$ cd {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"cd --- ", dirname}
+
+        if dirname === ".." do
+          # if hd(result) < 100001 do
+            acc = [hd(result) | acc]
+
+            result = [hd(result) + hd(tl(result)) | tl(tl(result))]
+
+            IO.inspect {"res: ", result, acc}
+            parse_all_commands(inslist, n - 1, result, acc)
+          # else
+          #   result = [hd(result) + hd(tl(result)) | tl(tl(result))]
+
+          #   IO.inspect {"res: ", result, acc}
+          #   parse_all_commands(inslist, n - 1, result, acc)
+          # end
+        else
+          result = [0 | result]
+
+          IO.inspect {"res: ", result, acc}
+          parse_all_commands(inslist, n - 1, result, acc)
+        end
+
+      ["$", " ", "l", "s"] ->
+        # "$ ls {}"
+        IO.inspect {"ls ------------------------- "}
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+
+      ["d", "i", "r", " " | tail] ->
+        # "$ dir {}"
+        dirname = name = Enum.reduce(tail, fn x, acc -> acc <> x end)
+        IO.inspect {"dr: ", dirname}
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+
+      fileandsize ->
+        # size, " ", name_of_file
+        size = Enum.take_while(
+          fileandsize,
+          fn x -> x !== " "
+        end)
+        {sizeint, ""} = Integer.parse(
+          Enum.reduce(size, fn x, acc -> acc <> x end)
+        )
+
+        name = Enum.take_while(
+          Enum.drop(fileandsize, length(size) + 1),
+          fn x -> x !== " "
+        end)
+        name = Enum.reduce(name, fn x, acc -> acc <> x end)
+
+        IO.inspect {"fl: ", name, sizeint}
+        result = [hd(result) + sizeint | tl(result)]
+
+        IO.inspect {"res: ", result, acc}
+        parse_all_commands(inslist, n - 1, result, acc)
+    end
+  end
+
+  # base case
+  def parse_all_commands(inslist, 0, result, acc) do
+    {:ok, result, acc}
+  end
+end
+
+{:ok, res, acc} = Recursion.parse_all_commands(
+  filecontents,
+  length(filecontents),
+  [],
+  []
+)
+
+totalspace = 70000000 - Enum.sum(res)
+neededspace = 30000000
+
+possible = Enum.filter(acc, fn x -> totalspace + x >= neededspace end)
+sorted = Enum.sort(possible)
+
+IO.inspect(hd(sorted))
+```
+
+
 ## Helpful websites!
 
 These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
