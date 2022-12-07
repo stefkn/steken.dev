@@ -15,7 +15,7 @@ author_image: "stefan.jpg"
 
 Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with, when I feel brave enough.
 
-## #1: Calorie Counting
+## Day 1: Calorie Counting
 
 Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas and newlines instead, the delimiter between sub-lists is a blank newline) and we need to sum the total of each contiguous block and find the greatest value. We then need to find the largest, 2nd largest, 3rd largest and the sum of those three in the second part. I'm going to try to do this in Elixir.
 
@@ -101,7 +101,7 @@ IO.puts "TOTAL: #{total}"
 
 I've got to admit, Elixir blew my mind a little, but I got there! I think the key to solving this was cutting the input down into a small toy problem, solving that problem, and then scaling up. Wrapping my head around the recusrion was also a challenge. Otherwsie, barring some confusion with Elixir's syntax, I feel like I'm getting the hang of it.
 
-## 2: Rock Paper Scissors
+## Day 2: Rock Paper Scissors
 
 We have an input, again delimited by newlines, which associates `{A,B,C} -> {X,Y,Z}` such that set 1 describes what the opponent plays and set 2 describes what hand you play in, like, a billion (actually 2500) rounds of Rock, Paper, Scissors. The total score is calculated based on the hand you play (y tho?), and the outcome of the round. Find the total score of all rounds described in the input.
 
@@ -327,7 +327,7 @@ IO.inspect res
 
 Definitely not the most elegant way to solve it, but I'm not trying to win points for style here!
 
-## #3: Rucksack Reorganization
+## Day 3: Rucksack Reorganization
 
 This one also went pretty smoothly – we're given another bunch of alphabetical, case-sensitive strings where we need to check for duplicated characters in the first and second half of each string.
 
@@ -480,7 +480,7 @@ end
 IO.inspect res
 ```
 
-## #4: Camp Cleanup
+## Day 4: Camp Cleanup
 
 This sounded deceptively easy. It wasn't! We're given strings of the format `71-71,42-72` indicating ranges of sections that pairs of elves have been assigned to clean. We need to figure out how many pairs are assigned such that one of the pair is a complete subset of the other (contained entirely by the other range). `MapSet` also came in very handy here.
 
@@ -546,7 +546,7 @@ IO.inspect subsets
 IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if !x, do: 1 + acc, else: 0 + acc end)
 ```
 
-## #5: Supply Stacks
+## Day 5: Supply Stacks
 
 This one was suuuper tough, but mainly because I didn't think through the problem properly before writing my first line of code! I ended up writing a bunch of parsing logic that was totally unnecessary and taking much longer than I would otherwise have needed. Also this solution is pretty terrible in terms of, like, everything. But hey, got there in the end! It's like they always say, *neva donto give appu!*
 
@@ -747,7 +747,7 @@ Part two was mercifully easier, I just replaced the `Enum.reduce()` block above 
 }
 ```
 
-## #6: Tuning Trouble
+## Day 6: Tuning Trouble
 
 I'm very happy with how this one went. It's not the most optimal (it compares every element in the `currentchars` list each time) but it's pretty short and sweet, and can be configured to look for a marker of any reasonable length. Hooray for reusability!
 
