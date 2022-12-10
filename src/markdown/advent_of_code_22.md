@@ -851,7 +851,7 @@ end
 IO.inspect res
 ```
 
-This products output like:
+This produces output like:
 
 ```
 {"cd --- ", "/"}
@@ -1100,6 +1100,121 @@ sorted = Enum.sort(possible)
 IO.inspect(hd(sorted))
 ```
 
+## Day 8: Treetop Tree House
+
+This took me a little while to figure out too! The lessons I'm taking away here are as follows:
+
+- use `fetch!()` instead of `fetch()` so that you're not constantly using `elem(x, 1)` to get rid of the `:ok` -- this one made my initial attempts' code so illegibile I had to give up and start over 😭
+- operations on rows are just the same as operating on columns if you transpose the input *taps forehead with finger*
+- variable naming is so important. When you're iterating through three layers deep in some crazy nested data structure using an anonymous function you **need** to be unambiguous and exact, otherwise debugging becomes totally impossible.
+- `IO.inspect` is your friend, but be careful about calling him too much, as this can also be confusing. Debugging is a kind of engineering.
+- Getting the product of two matrices using `Enum.map()` is actually pretty elegant!
+
+```elixir
+# Read the input into memory, split on newline
+{:ok, filecontents} = File.read("input8.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+filecontents = Enum.map(filecontents, fn x -> String.graphemes(x) end)
+
+# Parse all strings into a list of ints
+rowgrid = Enum.map(filecontents, fn x ->
+  Enum.map(x, fn x ->
+      elem(Integer.parse(x), 0)
+    end
+  )
+  end
+)
+
+# Thanks to https://elixirforum.com/t/transpose-a-list-of-lists-using-list-comprehension/17638/2
+defmodule Transp do
+  def transpose([[] | _]), do: []
+  def transpose(m) do
+    [Enum.map(m, &hd/1) | transpose(Enum.map(m, &tl/1))]
+  end
+end
+
+colgrid = Transp.transpose(rowgrid)
+
+IO.inspect rowgrid
+IO.inspect colgrid
+
+# Now we have two lists of lists, one representing the rows, one representing the columns.
+# If a tree is visible in either one, it is visible.
+# Therefore, if we can create a visibility map of both, and then take the AND of both, we have our overall visibility.
+
+defmodule CheckVis do
+  def is_visible_in_list(row, height, index) do
+    # IO.inspect "is_visible_in_list=========================r,h,i"
+    # IO.inspect {row, height, index}
+
+    # is it first or last in the row (at the edge of the forest)
+    if index === 0 || index === length(row) - 1 do
+      1
+    else
+      # Look back
+      lookback = Enum.reduce(Enum.reverse(Enum.to_list(0..index-1)), 1, fn i, acc ->
+        # IO.inspect {"lb elem, height", elem(Enum.fetch(row, i), 1), height}
+        if elem(Enum.fetch(row, i), 1) < height do
+          if acc == 0, do: 0, else: 1 # if it's already occluded (hidden by a taller tree before) it stays hidden
+        else
+          0 # hidden by a taller tree
+        end
+      end)
+      # Look forward
+      lookfwd = Enum.reduce(Enum.to_list(index+1..length(row)-1), 1, fn i, acc ->
+        # IO.inspect {"lf elem, height", elem(Enum.fetch(row, i), 1), height}
+        if elem(Enum.fetch(row, i), 1) < height do
+          if acc == 0, do: 0, else: 1 # if it's already occluded (hidden by a taller tree before) it stays hidden
+        else
+          0 # hidden by a taller tree
+        end
+      end)
+      # IO.inspect {lookback, lookfwd}
+      lookback + lookfwd
+    end
+  end
+end
+
+rowgridvis = Enum.map(rowgrid, fn row ->
+  Enum.map(Enum.with_index(row), fn tree ->
+      CheckVis.is_visible_in_list(row, elem(tree, 0), elem(tree, 1))
+    end
+  )
+  end
+)
+
+colgridvis = Enum.map(colgrid, fn row ->
+  Enum.map(Enum.with_index(row), fn tree ->
+      CheckVis.is_visible_in_list(row, elem(tree, 0), elem(tree, 1))
+    end
+  )
+  end
+)
+
+# Now we have two matrixes (rows and cols) where, for each index, the tree at that index is either 0 = not visible, 1 = visible in one direction, or 2 = visible in both directions.
+
+IO.inspect rowgridvis
+IO.inspect colgridvis
+
+totalvis = Enum.map(Enum.with_index(rowgridvis), fn {row, rowindex} ->
+  Enum.map(Enum.with_index(row), fn {treeheight, inrowindex} ->
+      treeheight + Enum.fetch!(Enum.fetch!(colgridvis, inrowindex), rowindex)
+    end
+  )
+  end
+)
+
+IO.inspect totalvis
+
+# To find the total number of visible trees, we just count how many trees have >0 degrees of visibility!
+
+IO.inspect Enum.reduce(totalvis, 0, fn x, acc ->
+  acc + Enum.reduce(x, 0, fn y, acc2 ->
+    acc = if y > 0, do: acc2 + 1, else: acc2
+  end)
+end)
+
+```
 
 ## Helpful websites!
 
