@@ -1216,6 +1216,91 @@ end)
 
 ```
 
+Part 2 was also tricky! I'm sensing a theme here...
+
+```elixir
+# Read the input into memory, split on newline
+{:ok, filecontents} = File.read("input8.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+filecontents = Enum.map(filecontents, fn x -> String.graphemes(x) end)
+
+# Parse all strings into a list of ints
+rowgrid = Enum.map(filecontents, fn x ->
+  Enum.map(x, fn x ->
+      elem(Integer.parse(x), 0)
+    end
+  )
+  end
+)
+
+# Thanks to https://elixirforum.com/t/transpose-a-list-of-lists-using-list-comprehension/17638/2
+defmodule Transp do
+  def transpose([[] | _]), do: []
+  def transpose(m) do
+    [Enum.map(m, &hd/1) | transpose(Enum.map(m, &tl/1))]
+  end
+end
+
+colgrid = Transp.transpose(rowgrid)
+
+IO.inspect rowgrid
+IO.inspect colgrid
+
+# Now we have two lists of lists, one representing the rows, one representing the columns.
+# If a tree is visible in either one, it is visible.
+# Therefore, if we can create a visibility map of both, and then take the AND of both, we have our overall visibility.
+
+defmodule CheckVis do
+  def is_visible_in_list(row, height, index) do
+    # is it first or last in the row (at the edge of the forest)
+    if index === 0 || index === length(row) - 1 do
+      IO.inspect {0,0}
+      {0, 0}
+    else
+      # Look back
+      lookback = Enum.reduce(Enum.reverse(Enum.to_list(0..index-1)), {0, :notdone}, fn i, acc ->
+        if elem(acc, 1) === :notdone do
+          if elem(Enum.fetch(row, i), 1) < height do
+            {elem(acc, 0) +1, :notdone} # count +1 visible tree
+          else
+            if elem(acc, 0) === 0, do: {1, :done}, else: {elem(acc, 0) + 1, :done} # hidden by a taller tree
+          end
+        else
+          {elem(acc, 0), :done}
+        end
+      end)
+      # Look forward
+      lookfwd = Enum.reduce(Enum.to_list(index+1..length(row)-1), {0, :notdone}, fn i, acc ->
+        if elem(acc, 1) === :notdone do
+          if elem(Enum.fetch(row, i), 1) < height do
+            {elem(acc, 0) +1, :notdone} # count +1 visible tree
+          else
+            if elem(acc, 0) === 0, do: {1, :done}, else: {elem(acc, 0) + 1, :done} # hidden by a taller tree
+          end
+        else
+          {elem(acc, 0), :done}
+        end
+      end)
+      {elem(lookback, 0), elem(lookfwd, 0)}
+    end
+  end
+end
+
+rowgridvis = Enum.map(rowgrid, fn row ->
+  Enum.map(Enum.with_index(row), fn tree ->
+      CheckVis.is_visible_in_list(row, elem(tree, 0), elem(tree, 1))
+    end
+  )
+  end
+)
+
+colgridvis = Enum.map(colgrid, fn row ->
+  Enum.map(Enum.with_index(row), fn tree ->
+      CheckVis.is_visible_in_list(row, elem(tree, 0), elem(tree, 1))
+    end
+  )
+  end
+)
 ## Helpful websites!
 
 These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
