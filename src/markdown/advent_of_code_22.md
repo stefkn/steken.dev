@@ -1301,6 +1301,24 @@ colgridvis = Enum.map(colgrid, fn row ->
   )
   end
 )
+
+# We now multiply together each of the scenic scores for up, down, left and right
+
+totalvis = Enum.map(Enum.with_index(rowgridvis), fn {row, rowindex} ->
+  Enum.map(Enum.with_index(row), fn {treeheight, inrowindex} ->
+      elem(treeheight, 0) *
+      elem(Enum.fetch!(Enum.fetch!(colgridvis, inrowindex), rowindex), 0) *
+      elem(treeheight, 1) *
+      elem(Enum.fetch!(Enum.fetch!(colgridvis, inrowindex), rowindex), 1)
+    end
+  )
+  end
+)
+
+# Get the maximum of every row, and get the maximum of those
+IO.inspect Enum.max(Enum.map(totalvis, fn x -> Enum.max(x) end))
+```
+
 ## Helpful websites!
 
 These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
