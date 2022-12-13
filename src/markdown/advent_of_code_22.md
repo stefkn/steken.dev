@@ -1319,6 +1319,141 @@ totalvis = Enum.map(Enum.with_index(rowgridvis), fn {row, rowindex} ->
 IO.inspect Enum.max(Enum.map(totalvis, fn x -> Enum.max(x) end))
 ```
 
+## Day 9: Rope Bridge
+
+I spent a long time trying to come up with a more general way of expressing the rules, but in the end, I gave up and made a big `case` block which encompasses all possible movements of the head. Oh well, it worked.
+
+```elixir
+# Read the input into memory, split on newline
+{:ok, filecontents} = File.read("input9.txt")
+filecontents = filecontents |> String.split("\n", trim: true)
+filecontents = Enum.map(filecontents, fn x -> String.graphemes(x) end)
+
+filecontents = Enum.map(filecontents, fn [head | tail] ->
+  tail = Enum.drop(tail, 1)
+  dist = Enum.reduce(tail, fn x, acc -> acc <> x end)
+  %{:dir => head, :dist => elem(Integer.parse(dist), 0)}
+end)
+
+start = %{:x => 0, :y => 0} # head and tail both start here
+
+IO.inspect filecontents
+
+headcoords = elem(Enum.map_reduce(filecontents, [start], fn move, prevposlist ->
+  prevx = Enum.fetch!(prevposlist, length(prevposlist) - 1).x
+  prevy = Enum.fetch!(prevposlist, length(prevposlist) - 1).y
+  case move do
+    %{dir: "L", dist: d} ->
+      {"L", prevposlist ++ Enum.map(
+        Enum.to_list(1..d), fn step -> %{:x => prevx - step, :y => prevy}
+      end)}
+    %{dir: "R", dist: d} ->
+      {"R", prevposlist ++ Enum.map(
+        Enum.to_list(1..d), fn step -> %{:x => prevx + step, :y => prevy}
+      end)}
+    %{dir: "U", dist: d} ->
+      {"L", prevposlist ++ Enum.map(
+        Enum.to_list(1..d), fn step -> %{:x => prevx, :y => prevy + step}
+      end)}
+    %{dir: "D", dist: d} ->
+      {"L", prevposlist ++ Enum.map(
+        Enum.to_list(1..d), fn step -> %{:x => prevx, :y => prevy - step}
+      end)}
+  end
+end), 1)
+
+IO.inspect headcoords
+
+tailcoords = Enum.map_reduce(headcoords, [], fn pos, prevposlist ->
+
+  if length(prevposlist) <= 1 do
+    # first and second step we don't move
+    { %{x: 0, y: 0}, prevposlist ++ [%{tail: %{x: 0, y: 0}, head: pos}] }
+  else
+    current_tl = Enum.fetch!(prevposlist, length(prevposlist) - 1).tail
+    diff = %{ x: pos.x - current_tl.x, y: pos.y - current_tl.y }
+
+    case diff do
+      # ==================== No move
+      %{x: 0, y: 0} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      # ==================== Straight moves
+      %{x: 2, y: 0} ->
+        { %{x: current_tl.x + 1, y: current_tl.y},
+        prevposlist ++ [%{tail: %{x: current_tl.x + 1, y: current_tl.y}, head: pos}] }
+      %{x: 0, y: 2} ->
+        { %{x: current_tl.x, y: current_tl.y + 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x, y: current_tl.y + 1}, head: pos}] }
+      %{x: -2, y: 0} ->
+        { %{x: current_tl.x - 1, y: current_tl.y},
+        prevposlist ++ [%{tail: %{x: current_tl.x - 1, y: current_tl.y}, head: pos}] }
+      %{x: 0, y: -2} ->
+        { %{x: current_tl.x, y: current_tl.y - 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x, y: current_tl.y - 1}, head: pos}] }
+      # ==================== 1-1 Diagonal moves
+      %{x: 1, y: 1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: -1, y: 1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: 1, y: -1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: -1, y: -1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      # ==================== 1-0 Diagonal moves
+      %{x: 0, y: 1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: 1, y: 0} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: 0, y: -1} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      %{x: -1, y: 0} ->
+        { current_tl,
+        prevposlist ++ [%{tail: current_tl, head: pos}] }
+      # ==================== 1-2 / 2-1 Diagonal moves
+      %{x: 2, y: 1} ->
+        { %{x: current_tl.x + 1, y: current_tl.y + 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x + 1, y: current_tl.y + 1}, head: pos}] }
+      %{x: -2, y: 1} ->
+        { %{x: current_tl.x - 1, y: current_tl.y + 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x - 1, y: current_tl.y + 1}, head: pos}] }
+      %{x: 2, y: -1} ->
+        { %{x: current_tl.x + 1, y: current_tl.y - 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x + 1, y: current_tl.y - 1}, head: pos}] }
+      %{x: -2, y: -1} ->
+        { %{x: current_tl.x - 1, y: current_tl.y - 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x - 1, y: current_tl.y - 1}, head: pos}] }
+      %{x: 1, y: 2} ->
+        { %{x: current_tl.x + 1, y: current_tl.y + 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x + 1, y: current_tl.y + 1}, head: pos}] }
+      %{x: 1, y: -2} ->
+        { %{x: current_tl.x + 1, y: current_tl.y - 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x + 1, y: current_tl.y - 1}, head: pos}] }
+      %{x: -1, y: 2} ->
+        { %{x: current_tl.x - 1, y: current_tl.y + 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x - 1, y: current_tl.y + 1}, head: pos}] }
+      %{x: -1, y: -2} ->
+        { %{x: current_tl.x - 1, y: current_tl.y - 1},
+        prevposlist ++ [%{tail: %{x: current_tl.x - 1, y: current_tl.y - 1}, head: pos}] }
+      other ->
+        IO.inspect {"--------------------other", other}
+        IO.inspect {"pos", pos, "prevpos", prevposlist}
+        { %{x: current_tl.x, y: current_tl.y},
+        prevposlist ++ [%{tail: %{x: current_tl.x, y: current_tl.y}, head: pos}] }
+    end
+  end
+end)
+
+IO.inspect tailcoords
+IO.inspect length(Enum.uniq(elem(tailcoords, 0)))
+```
 ## Helpful websites!
 
 These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
