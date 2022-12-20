@@ -13,7 +13,7 @@ cover_image_credit: "image credit: Stefan Nowak"
 author_image: "stefan.jpg"
 ---
 
-I definitely can't claim to be a CLI expert. However, it's sometimes the easiest way to achieve something when you're outside of the bounds of something that a UI can express for you, or you want to do something super specific and/or repetitive. It does start to feel pretty `leet h4ck3r` when you begin to grasp the concept of the Unix pipe system and chaining together multiple commands into a useful magic incantation. I'm not quite there yet myself, but hope to be there some day!
+I definitely can't claim to be a CLI expert. However, it's sometimes the easiest way to achieve something when you're outside of the bounds of something that a UI can express for you, or you want to do something super specific and/or repetitive. It does start to feel pretty `leet h4ck3r` when you begin to grasp the concept of the Unix pipe system and chaining together multiple commands into a useful magic incantation. I'm not quite there yet myself, but hope to be there some day! CLI skills also really come in handy whenever you're doing something SysAdmin-ey or infrastructure related.
 
 ## `rm`
 
