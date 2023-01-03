@@ -5,7 +5,7 @@ title: "Introducing Gatsby"
 subtitle: "Why, hello old sport!"
 tags: "programming gatsby web blog"
 published: false
-excerpt: A brief intro to static, client- and server-side rendering, and what static site generators are about.
+excerpt: A brief intro to the web in general, and then a deep-dive into static, client- and server-side rendering, and what these fancy static site generators are about.
 reading_time: 15
 cover_image: "DSC02848.jpeg"
 cover_image_credit: "image credit: Stefan Nowak"
