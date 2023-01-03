@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { Section } from '@components/global';
 import { ReactComponent as Blob1SVG } from '../../images/blob1.svg';
+import RecentPosts from '@sections/RecentPosts';
 
 class About extends Component {
   render() {
