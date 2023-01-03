@@ -6,7 +6,7 @@ title: "Useful CLI commands"
 subtitle: "A cheat sheet of CLI commands, for emergencies"
 tags: "unix bash linux cli"
 published: false
-excerpt: It's been said that if you get really good at working in the command line, you ascend into being a tech witch/wizaerd of olde. Multiple studies have confirmed this as, in fact, true.
+excerpt: It's been said that if you get really good at working in the command line, you ascend into being a tech witch/wizaerd of olde. Multiple peer-reviewed studies have confirmed this as, in fact, true.
 reading_time: 10
 cover_image: "DSC04587.jpeg"
 cover_image_credit: "image credit: Stefan Nowak"
