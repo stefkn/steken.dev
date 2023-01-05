@@ -79,7 +79,7 @@ class RecentPosts extends Component {
                     )
                   }
                 />
-              )
+              ).slice(0,4);
           }
 
           return (
