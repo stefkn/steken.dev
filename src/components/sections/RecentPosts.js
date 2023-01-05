@@ -84,7 +84,7 @@ class RecentPosts extends Component {
 
           return (
           <RecentPostsDiv>
-            <h1>Recent Posts</h1>
+            <h1><u>Recent Posts</u></h1>
             <PostsContainer>
               {Posts}
             </PostsContainer>
