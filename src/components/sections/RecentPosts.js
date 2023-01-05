@@ -100,7 +100,7 @@ const PostsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 1em;
+  margin-top: 0.4em;
   margin-bottom: 1em;
 `
 
@@ -117,24 +117,18 @@ const RecentPostsDiv = styled.div`
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
-  margin-top: 4em;
+  margin-top: 3em;
 
   font-size: clamp(1.8rem, 12vw - 1.5rem, 2.3rem);
 
-  border-radius: 20px;
-  padding: 10px;
+  padding: 0px
   z-index: 2;
-  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 19%);
-  -webkit-backdrop-filter: blur( 4px );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
-  border: 1px solid rgb(255 255 255 / 31%);
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    padding: 10px;
-    background: rgb(233 30 99 / 12%);
-  }
+  // box-shadow: 0 8px 32px 0 rgb(0 0 0 / 19%);
+  // -webkit-backdrop-filter: blur( 4px );
+  // backdrop-filter: blur( 4px );
+  // -webkit-backdrop-filter: blur( 4px );
+  border-radius: 0px;
+  border: 0px;
 
   transition: all 2s ease !important;
 `
