@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby'
 
-import PostLink from "../common/PostLink"
+import IndexPostLink from "../common/IndexPostLink"
 
 class RecentPosts extends Component {
   isArticlePublished(article) {
@@ -69,7 +69,7 @@ class RecentPosts extends Component {
             Posts = mdArticles
               .map(
                 article =>
-                <PostLink
+                <IndexPostLink
                   key={article.node.id}
                   post={article.node}
                   coverImage={
