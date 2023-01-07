@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { Section } from '@components/global';
 import { ReactComponent as Blob1SVG } from '../../images/blob1.svg';
-// import RecentPosts from '@sections/RecentPosts';
+import RecentPosts from '@sections/RecentPosts';
 
 class About extends Component {
   render() {
@@ -21,7 +21,7 @@ class About extends Component {
               <Blob1SVG />
           </BlobSVG2>
 
-          {/* <RecentPosts /> */}
+          <RecentPosts />
         </Frontmatter>
       </Section>
     )
