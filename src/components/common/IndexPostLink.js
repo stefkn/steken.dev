@@ -37,10 +37,19 @@ const PostEntry = styled.div`
   }
 
   h3 {
-    color: white !important;
+    color: white;
     font-family: ${props => props.theme.font.primary};
     font-weight: 600;
     font-size: clamp(1.6rem, 2.5vw, 1.8rem);
+  }
+  h3 > a:hover {
+    color: #ff4181 !important;
+    -webkit-text-fill-color: #ff4181;
+    background-image: linear-gradient(to bottom, #ff4181 8%, #ff4181 8%, #ff4181 30%, #ff4181 30%, #ff4181);
+    background-position: 0 1.4em;
+    background-repeat: repeat-x;
+    background-size: 2px 3px;
+    text-decoration: none;
   }
 
   a:-webkit-any-link {
