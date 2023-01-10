@@ -123,8 +123,8 @@ const StyledOutlineText = styled.div`
   }
 
   a:hover {
-    -webkit-text-fill-color: rgb(2 0 98);
-    background-image: linear-gradient(to bottom, rgb(2 0 98) 28%, rgb(2 0 98) 28%, rgb(2 0 98) 72%, rgb(2 0 98) 72%, rgb(2 0 98));
+    -webkit-text-fill-color: #ff4181;
+    background-image: linear-gradient(to bottom, #ff4181 28%, #ff4181 28%, #ff4181 72%, #ff4181 72%, #ff4181);
     background-position: 0 1.03em;
     background-repeat: repeat-x;
     background-size: 2px 6px;
