@@ -185,11 +185,11 @@ const AboutMe = () => {
             </p>
 
             <p>
-              At its worst, tech can be an intimidating, elitist and exclusionary place. At its best, it can be <b>delightful, inclusive and empowering</b> – a place where <b>all</b> people can come together to learn, grow, and build. I want to work with tech teams and organisations who consider it just as much a part of their mission to create <b>strong, positive, ethical engineering cultures</b> as it is to <b>ship great software.</b>
+              At its worst, tech can be an intimidating, elitist and exclusionary place. At its best, it can be <b>delightful, inclusive and empowering</b> – a place where <b><u>all</u></b> people can come together to learn, grow, and build. I want to work with tech teams and organisations who consider it just as much a part of their mission to create <b>strong, positive, ethical engineering cultures</b> as it is to <b>ship great software.</b>
             </p>
 
             <p>
-              My personal philosophy (specifically regarding software, tech, and working together) is inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>, which are a great framework for building a <b>culture of trust</b> and <b>collaboration</b>, and banning a number of highly irritating "smart person" anti-social behaviors.
+              My personal philosophy (specifically regarding software, tech, and working together) is inspired by the <a href="https://www.recurse.com/manual">User's Manual of the Recurse Center</a>. I especially like their <a href="https://www.recurse.com/manual#sec-environment">Social Rules</a>, which are a great framework for building a <b>culture of trust</b> and <b>collaboration</b>, and discouraging a number of counterproductive anti-social behaviors.
             </p>
 
             <p>
