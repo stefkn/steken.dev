@@ -335,10 +335,11 @@ What helped me solve this much more quickly was my discovery of the `MapSet`, wh
 
 ```elixir
 # encode the list of all atoms in a tuple
-priorities = Enum.with_index(
-  [:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z,
-  :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z]
-)
+priorities = Enum.with_index([
+  :a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,
+  :u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,
+  :O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z
+])
 
 # Read the file into memory
 {:ok, filecontents} = File.read("input3.txt")
@@ -406,7 +407,11 @@ For part two, it was just a matter of rewriting it a bit so that instead of comp
 
 ```elixir
 # encode the list of all atoms in a tuple
-priorities = Enum.with_index([:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,:u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,:O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z])
+priorities = Enum.with_index([
+  :a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o,:p,:q,:r,:s,:t,
+  :u,:v,:w,:x,:y,:z, :A,:B,:C,:D,:E,:F,:G,:H,:I,:J,:K,:L,:M,:N,
+  :O,:P,:Q,:R,:S,:T,:U,:V,:W,:X,:Y,:Z
+])
 
 # Read the file into memory
 {:ok, filecontents} = File.read("input3.txt")
