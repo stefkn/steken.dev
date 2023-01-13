@@ -1,13 +1,13 @@
 ---
 slug: "/article/challenges/advent-of-code-22"
-series: "Advent of Code"
+series: "Advent of Code 1-10"
 date: "2022-12-01"
-title: "Advent of Code 2022"
+title: "Advent of Code 2022; Days 1-10"
 subtitle: "Because nothing says Christmas like 25 frustrating coding challenges"
 tags: "challenge code puzzles"
 published: false
 excerpt: Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with.
-reading_time: 15
+reading_time: 50
 cover_image: "DSC02931.jpeg"
 cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
