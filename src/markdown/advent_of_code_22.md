@@ -553,7 +553,7 @@ IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if !x, do: 1 + acc, else: 0 + ac
 
 ## Day 5: Supply Stacks
 
-This one was suuuper tough, but mainly because I didn't think through the problem properly before writing my first line of code! I ended up writing a bunch of parsing logic that was totally unnecessary and taking much longer than I would otherwise have needed. Also this solution is pretty terrible in terms of, like, everything. But hey, got there in the end! It's like they always say, *neva donto give appu!*
+This one was suuuper tough, but mainly because I didn't think through the problem properly before writing my first line of code! I ended up writing a bunch of parsing logic that was totally unnecessary and taking much longer than I would otherwise have needed. Also this solution is pretty terrible in terms of, like, everything. But hey, got there in the end! It's like they always say, *never don't give up!*
 
 ```elixir
 # Read the stack input into memory
@@ -1157,23 +1157,31 @@ defmodule CheckVis do
       1
     else
       # Look back
-      lookback = Enum.reduce(Enum.reverse(Enum.to_list(0..index-1)), 1, fn i, acc ->
-        # IO.inspect {"lb elem, height", elem(Enum.fetch(row, i), 1), height}
-        if elem(Enum.fetch(row, i), 1) < height do
-          if acc == 0, do: 0, else: 1 # if it's already occluded (hidden by a taller tree before) it stays hidden
-        else
-          0 # hidden by a taller tree
+      lookback = Enum.reduce(
+        Enum.reverse(Enum.to_list(0..index-1)), 1, fn i, acc ->
+          if elem(Enum.fetch(row, i), 1) < height do
+            # if it's already occluded
+            # (hidden by a taller tree before) it stays hidden
+            if acc == 0, do: 0, else: 1
+          else
+            # hidden by a taller tree
+            0
+          end
         end
-      end)
+      )
       # Look forward
-      lookfwd = Enum.reduce(Enum.to_list(index+1..length(row)-1), 1, fn i, acc ->
-        # IO.inspect {"lf elem, height", elem(Enum.fetch(row, i), 1), height}
-        if elem(Enum.fetch(row, i), 1) < height do
-          if acc == 0, do: 0, else: 1 # if it's already occluded (hidden by a taller tree before) it stays hidden
-        else
-          0 # hidden by a taller tree
+      lookfwd = Enum.reduce(
+        Enum.to_list(index+1..length(row)-1), 1, fn i, acc ->
+          if elem(Enum.fetch(row, i), 1) < height do
+            # if it's already occluded
+            # (hidden by a taller tree before) it stays hidden
+            if acc == 0, do: 0, else: 1
+          else
+            # hidden by a taller tree
+            0
+          end
         end
-      end)
+      )
       # IO.inspect {lookback, lookfwd}
       lookback + lookfwd
     end
