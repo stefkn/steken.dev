@@ -1271,29 +1271,47 @@ defmodule CheckVis do
       {0, 0}
     else
       # Look back
-      lookback = Enum.reduce(Enum.reverse(Enum.to_list(0..index-1)), {0, :notdone}, fn i, acc ->
-        if elem(acc, 1) === :notdone do
-          if elem(Enum.fetch(row, i), 1) < height do
-            {elem(acc, 0) +1, :notdone} # count +1 visible tree
+      lookback = Enum.reduce(
+        Enum.reverse(Enum.to_list(0..index-1)),
+        {0, :notdone},
+        fn i, acc ->
+          if elem(acc, 1) === :notdone do
+            if elem(Enum.fetch(row, i), 1) < height do
+              # count +1 visible tree
+              {elem(acc, 0) +1, :notdone}
+            else
+              # hidden by a taller tree
+              if elem(acc, 0) === 0, do:
+                {1, :done},
+              else:
+                {elem(acc, 0) + 1, :done}
+            end
           else
-            if elem(acc, 0) === 0, do: {1, :done}, else: {elem(acc, 0) + 1, :done} # hidden by a taller tree
+            {elem(acc, 0), :done}
           end
-        else
-          {elem(acc, 0), :done}
         end
-      end)
+      )
       # Look forward
-      lookfwd = Enum.reduce(Enum.to_list(index+1..length(row)-1), {0, :notdone}, fn i, acc ->
-        if elem(acc, 1) === :notdone do
-          if elem(Enum.fetch(row, i), 1) < height do
-            {elem(acc, 0) +1, :notdone} # count +1 visible tree
+      lookfwd = Enum.reduce(
+        Enum.to_list(index+1..length(row)-1),
+        {0, :notdone},
+        fn i, acc ->
+          if elem(acc, 1) === :notdone do
+            if elem(Enum.fetch(row, i), 1) < height do
+              # count +1 visible tree
+              {elem(acc, 0) +1, :notdone}
+            else
+              # hidden by a taller tree
+              if elem(acc, 0) === 0, do:
+                {1, :done},
+              else:
+                {elem(acc, 0) + 1, :done}
+            end
           else
-            if elem(acc, 0) === 0, do: {1, :done}, else: {elem(acc, 0) + 1, :done} # hidden by a taller tree
+            {elem(acc, 0), :done}
           end
-        else
-          {elem(acc, 0), :done}
         end
-      end)
+      )
       {elem(lookback, 0), elem(lookfwd, 0)}
     end
   end
