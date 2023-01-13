@@ -1485,6 +1485,67 @@ end)
 IO.inspect tailcoords
 IO.inspect length(Enum.uniq(elem(tailcoords, 0)))
 ```
+
+I started part 2, but ran into a few weird issues that were proving impossible to debug because I couldn't look at a list of coordinates and visualise quickly enough if they were right or not. So I decided to make a small function that would render each configuration of head and tail on a grid, and then call this function on the resulting list of coordinates like so:
+
+```elixir
+defmodule Visualise do
+  def print_all_moves(inputlist) do
+    IO.write "\e[H\e[J"; # clears the terminal
+    Enum.map(inputlist, fn x -> Visualise.print_single_move(x) end)
+  end
+
+  def print_single_move(move) do
+    IO.write "\e[H\e[J"; # clears the terminal
+    minx = -19
+    miny = -20
+    maxx = 19
+    maxy = 20
+
+    for ycoord <- maxy..miny do
+      for xcoord <- minx..maxx do
+        if ycoord === miny do
+          # Draw legend
+          IO.write(if abs(xcoord) < 10 do abs(xcoord) else abs(xcoord)-10 end) # make them line up better
+          IO.write("  ")
+        else
+          if xcoord === maxx do
+            # Draw legend
+            IO.write(ycoord)
+          else
+            # Draw Head / tail / etc
+            if xcoord === move.head.x && ycoord === move.head.y do
+              IO.write("H  ")
+            else
+              if xcoord === move.tail.x && ycoord === move.tail.y do
+                IO.write("T  ")
+              else
+                if ycoord === 0 do
+                  IO.write("───")
+                else
+                  if xcoord === 0 do
+                    IO.write("│  ")
+                  else
+                    IO.write("▓  ")
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+      IO.write("\n")
+    end
+    Process.sleep(100)
+  end
+end
+
+Visualise.print_all_moves(elem(tailcoords, 1))
+```
+
+Finally, I can see where things are moving!
+
+<img src="/day9-visual.gif" style="max-width: 100%; border-radius: 10px;"></img>
 ## Helpful websites!
 
 These sites helped me wrap my head around Elixir while doing these challanges; couldn't have done it without them!
