@@ -13,11 +13,15 @@ cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
 
-Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with, when I feel brave enough.
+Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with, when I feel brave enough! For the first 10 challanges I decided to try my hand at Elixir – it describes itself as, "a dynamic, functional language for building scalable and maintainable applications."
+
+Elixir runs on the Erlang Virtual Machine (AKA the Bogdan Erlang Abstract Machine, or BEAM for short) and Elixir code is compiled into bytecode by the compiler. That bytecode, in the form of the `.beam` files, is then run on the BEAM. Erlang has a [very cool history](https://en.wikipedia.org/wiki/Erlang_(programming_language)#History); it was born out of the depths of Swedish telecoms giant Ericsson to run the logic for their giant, next-generation telecom exchanges. In the late 80s when Erlang was being designed, telephone exchanges were some of the largest and most complex computerised logic systems on the planet!
+
+Fast forward to 2012, and Elixir was created by José Valim, with the aim of enabling ["higher extensibility and productivity in the Erlang VM while keeping compatibility with Erlang's ecosystem"](https://www.youtube.com/watch?v=IZvpKhA6t8A) which sounds good to me! It's gained some pretty wide adoption lately, with big names like PagerDuty, Spotify, Discord and Pinterest using Elixir in their production apps.
 
 ## Day 1: Calorie Counting
 
-Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas and newlines instead, the delimiter between sub-lists is a blank newline) and we need to sum the total of each contiguous block and find the greatest value. We then need to find the largest, 2nd largest, 3rd largest and the sum of those three in the second part. I'm going to try to do this in Elixir.
+Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas and newlines instead, the delimiter between sub-lists is a blank newline) and we need to sum the total of each contiguous block and find the greatest value. We then need to find the largest, 2nd largest, 3rd largest and the sum of those three in the second part.
 
 To set up, I downloaded my puzzle input from the website and set up my environment so that it was sitting in a UTF-8 encoded `.txt` file in the root directory called `"input.txt"`
 
