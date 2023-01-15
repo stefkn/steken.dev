@@ -36,3 +36,10 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 
 This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
 
+## WIP
+
+- TODO: Show tags on article previews
+- TODO: reorganise assets directory structure to make more sense
+- TODO: update the spinning skyline for 2022
+- TODO: create functionality to switch between 2021 and 2022 skylines
+- TODO: create functionality to hide frontmatter / top of article stuff to see bg image
