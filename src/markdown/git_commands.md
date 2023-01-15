@@ -6,7 +6,7 @@ title: "Useful git commands"
 subtitle: "A cheat sheet of git commands, for things I often have trouble with"
 tags: "git version-control cli"
 published: true
-excerpt: What can be said about git? Version Control as a concept still blows my mind to this day, and when everything is going right, it can feel like magic.
+excerpt: What can be said about git? Version Control as a concept still blows my mind to this day, and when everything is going right, it can feel like magic. But when it doesn't though...
 reading_time: 10
 cover_image: "IMG_5793.jpg"
 cover_image_credit: "image credit: Stefan Nowak"
