@@ -17,3 +17,6 @@ author_image: "stefan.jpg"
 [macwright](https://macwright.com/)
 [simonweckert](http://www.simonweckert.com/index.html)
 [idle words](https://idlewords.com/) check out [Our Comrade The Electron](https://idlewords.com/talks/our_comrade_the_electron.htm)
+[SEARCHSYSTEM™](https://www.searchsystem.co/)
+[Palm Report Image Archive](https://www.are.na/share/aRCNPLv)
+[Scan of the month](https://www.scanofthemonth.com/scans)
