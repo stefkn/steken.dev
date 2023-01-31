@@ -7,7 +7,7 @@ tags: "blog"
 published: false
 excerpt: Some of my favourite blogs from around the web
 reading_time: 15
-cover_image: "img_5328.jpeg"
+cover_image: "DSC01135.jpeg"
 author_image: "stefan.jpg"
 ---
 
