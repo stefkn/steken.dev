@@ -74,7 +74,7 @@ const PostEntry = styled.div`
   }
   .read-more:hover {
     bottom: 1px;
-    box-shadow: 6px 5px 20px 0px rgba(255, 0, 106, 53%);
+    box-shadow: 6px 5px 20px 0px rgb(0 5 255 / 81%);
   }
 
   .text-content {
