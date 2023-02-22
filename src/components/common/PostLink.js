@@ -26,8 +26,8 @@ const PostLink = ({ post, coverImage }) => (
 export default PostLink
 
 const PostEntry = styled.div`
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   .cover-image {
     border-radius: 6px;
