@@ -86,12 +86,14 @@ const PostEntry = styled.div`
     top: 4px;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 920px) {
     width: 100%;
   }
 
-  width: 46%;
-  margin: 2%;
+  width: 49.6%;
+  min-height: 510px;
+
+  margin: 0.2%;
   padding: 22px;
 
   animation-delay: 0s;
