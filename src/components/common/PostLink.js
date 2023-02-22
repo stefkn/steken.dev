@@ -78,12 +78,14 @@ const PostEntry = styled.div`
   }
 
   .text-content {
-    position: relative;
+    position: absolute;
     border-radius: 30px;
     padding: 30px 5px;
     border: 1pxsolidrgba(198,203,255,39%);
     box-shadow: 7px 13px 20px 0pxrgba(255,183,213,62%);
-    top: 4px;
+    bottom: 0px;
+    max-width: 85%;
+    z-index: 2;
   }
 
   @media (max-width: 920px) {
