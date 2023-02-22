@@ -56,7 +56,7 @@ const PostEntry = styled.div`
 
   .post-date {
     font-size: 16px;
-    color: white;
+    color: #cccccc;
   }
 
   .read-more {
