@@ -48,9 +48,9 @@ const PostEntry = styled.div`
   }
 
   p.excerpt {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.3rem);
     line-height: 1.3328;
-    color: #1a191d;
+    color: #cccccc;
     font-weight: 400;
   }
 
