@@ -115,4 +115,16 @@ const PostEntry = styled.div`
   -webkit-backdrop-filter: blur( 7.5px );
   border-radius: 10px;
   border: 1px solid rgb(232 234 255);
+
+  :hover {
+    background: linear-gradient(4deg,rgb(0 1 113) 27%,rgb(62 62 62));
+
+    .cover-image {
+      mix-blend-mode: normal;
+    }
+
+    .cover-image:before {
+      background: linear-gradient(4deg,rgb(4 3 111) 1%,rgb(0 0 0 / 0%));
+    }
+  }
   `;
