@@ -32,6 +32,16 @@ const PostEntry = styled.div`
   .cover-image {
     border-radius: 6px;
     margin: 4px;
+    mix-blend-mode: overlay;
+  }
+
+  .cover-image:before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(4deg,rgb(145 148 173) 1%,rgb(0 0 0 / 0%));
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
 
   h3 {
