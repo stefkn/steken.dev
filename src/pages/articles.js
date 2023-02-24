@@ -299,14 +299,14 @@ class Articles extends Component {
 const seriesData = {}
 
 const TagsBox = styled.div`
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   h3 {
-    color: white !important;
+    color: black !important;
     font-family: ${props => props.theme.font.primary};
     font-weight: 600;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: 22px !important;
   }
 
   .post-date {
