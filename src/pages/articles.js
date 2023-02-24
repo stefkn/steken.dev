@@ -318,8 +318,6 @@ const TagsBox = styled.div`
     width: 100%;
   }
 
-  width: 46%;
-  margin: 2%;
   padding: 22px;
 
   animation-delay: 0s;
