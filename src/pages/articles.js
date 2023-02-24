@@ -333,11 +333,14 @@ const TagsBox = styled.div`
 
   background-color: rgba(14 17 53 / 60%);
 
-  box-shadow: 4px 6px 16px 0px rgb(0 16 255 / 16%);
-  backdrop-filter: hue-rotate(10deg) blur(4px);
-  -webkit-backdrop-filter: blur( 7.5px );
   border-radius: 10px;
-  border: 1px solid rgb(232 234 255);
+  border: 1px solid rgb(192 197 255);
+
+  @media (min-width: 900px) {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+  }
 `
 
 const HeroOverlay = styled.div`
