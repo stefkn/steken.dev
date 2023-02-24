@@ -326,6 +326,9 @@ const TagsBox = styled.div`
   animation: animatetext 1s;
   animation-fill-mode: forwards;
 
+  overflow: scroll;
+  max-height: 280px;
+
   @keyframes animatetext {
     0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
     100% { transform: translate3d(0, 0, 0); opacity: 100%;}
