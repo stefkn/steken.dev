@@ -331,7 +331,10 @@ const TagsBox = styled.div`
     100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   }
 
-  background-color: rgba(14 17 53 / 60%);
+  background-color: rgb(218 220 255 / 39%);
+
+  box-shadow: 4px 6px 16px 0px rgb(0 0 0 / 17%);
+  backdrop-filter: hue-rotate(10deg) blur(11px);
 
   border-radius: 10px;
   border: 1px solid rgb(192 197 255);
