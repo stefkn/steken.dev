@@ -9,6 +9,9 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 1000;
 
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    padding: 16px 17px;
+  }
 
   .fade-in {
     visibility: visible;
