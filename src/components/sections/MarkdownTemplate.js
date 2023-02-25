@@ -226,7 +226,8 @@ const Article = styled.div`
     justify-content: center;
 
     background-image: linear-gradient(
-      153deg, rgb(88 113 255), rgb(174 0 244 / 84%)
+      153deg,rgb(34 67 255),
+      rgb(250 38 255 / 53%)
     );
     border-radius: 11px;
     margin-top: 12px;
