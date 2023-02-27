@@ -362,7 +362,10 @@ const TagsBox = styled.div`
   animation: animatetext 1s;
   animation-fill-mode: forwards;
 
-  overflow: scroll;
+  @media (${props => props.theme.screen.sm}) {
+    max-height: fit-content;
+  }
+
   max-height: 280px;
 
   @keyframes animatetext {
