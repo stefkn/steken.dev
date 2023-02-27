@@ -15,7 +15,11 @@ import { Container } from '@components/global';
 class Articles extends Component {
   constructor(props) {
     super(props);
-    this.state = {selectedTag: '', selectedSeries: ''};
+    this.state = {
+      selectedTag: '',
+      selectedSeries: '',
+      showTagsBox: false,
+    };
   }
 
   selectTag(tag) {
