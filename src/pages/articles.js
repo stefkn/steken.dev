@@ -293,6 +293,32 @@ class Articles extends Component {
   }
 }
 
+const TopMatter = styled.div`
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+`
+
+const ShowTagSelectorButton = styled.div`
+  position: relative;
+  min-height: 2em;
+  min-width: 2em;
+  max-width: 8em;
+  background-color: rgb(233 30 99);
+  margin: 0em 0em 0em 2em;
+  padding: 1.2em;
+  border-radius: 27px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 4px 6px 16px 0px rgb(0 0 0 / 28%);
+  font-weight: 600;
+
+  :hover {
+    bottom: 1px;
+    box-shadow: 4px 6px 16px 0px rgb(0 0 0 / 48%);
+  }
+`
+
 // const seriesData = {
 //   "Cybersecurity": {
 //     "imageName": "cybersecurity.jpeg",
