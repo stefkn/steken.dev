@@ -536,6 +536,10 @@ const MainMatter = styled.div`
     100% { transform: translate3d(0, 0, 0); opacity: 100%;}
   }
 
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    padding: 140px 10px 10px 10px;
+  }
+
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
     text-align: left;
@@ -543,7 +547,6 @@ const MainMatter = styled.div`
 
   h1 {
     font-size: clamp(3.2rem, 12vw - 1.5rem, 4.5rem);
-    margin-left: 22px;
     animation-delay: 0s;
     animation: animatetext 1s;
     animation-fill-mode: forwards;
