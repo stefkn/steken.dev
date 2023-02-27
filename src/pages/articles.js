@@ -88,6 +88,14 @@ class Articles extends Component {
     return (filteredImages.length > 0) ? filteredImages[0].node : null
   }
 
+  toggleTagsBoxVisibility() {
+    if (this.state.showTagsBox) {
+      this.setState({showTagsBox: false});
+    } else {
+      this.setState({showTagsBox: true});
+    }
+  }
+
   render() {
     return (
       <StaticQuery
