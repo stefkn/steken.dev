@@ -344,6 +344,11 @@ const Article = styled.div`
     margin-top: 1em;
     box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
 
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      border-radius: 0px;
+      border: 0px;
+    }
+
     @media (max-width: ${props => props.theme.screen.md}) {
       padding: 1em 1em;
       margin-top: 1em;
@@ -352,6 +357,20 @@ const Article = styled.div`
     animation-delay: 1s;
     animation: fadeup 1s;
     animation-fill-mode: forwards;
+
+    h1 {
+      line-height: normal;
+
+      background-image: linear-gradient(
+        321deg,
+        rgb(31 48 255) 0,
+        rgb(238 141 255) 30%,
+        rgb(199 168 255) 50%,
+        rgb(101 111 255) 70%,
+        rgb(255 32 209 / 68%) 90%,
+        rgb(255 0 0 / 83%) 100%
+      );
+    }
   }
 
   h1 {
