@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '@common/Layout';
@@ -14,27 +13,27 @@ import styled from 'styled-components';
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  const [scroll, setScroll] = useState(true)
-  const [scrollDepth, setScrollDepth] = useState(0)
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark;
+  const [scroll, setScroll] = useState(true);
+  const [scrollDepth, setScrollDepth] = useState(0);
 
   useEffect(() => {
-    let isMounted = true
+    let isMounted = true;
 
-    function scrollEventHandler () {
-      setScrollDepth(window.scrollY)
+    function scrollEventHandler() {
+      setScrollDepth(window.scrollY);
       const scrolledBelowPoint = window.scrollY < 20;
 
       if (scroll !== scrolledBelowPoint) {
-        setScroll(scrolledBelowPoint)
+        setScroll(scrolledBelowPoint);
 
         // for Notched devices -- modify theme based on if the navbar is blue or not so we don't have a jarring bar around the notch.
         const themeMeta = document.getElementById('theme-color-meta');
         if (scrolledBelowPoint) {
-          const tm = themeMeta.setAttribute("content", '#2f39ae');
+          const tm = themeMeta.setAttribute('content', '#2f39ae');
         } else {
-          const tm = themeMeta.setAttribute("content", '#f7f7f7');
+          const tm = themeMeta.setAttribute('content', '#f7f7f7');
         }
       }
     }
@@ -483,7 +482,8 @@ const Article = styled.div`
     margin: 32px;
   }
 
-  // --deckgo-highlight-code-font-family: ${props => props.theme.font.monospace};
+  // --deckgo-highlight-code-font-family: ${props =>
+    props.theme.font.monospace};
   --deckgo-highlight-code-font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   --deckgo-highlight-code-token-function: #ff146f;
   --deckgo-highlight-code-token-regex: #ff146f;
@@ -495,12 +495,12 @@ const Article = styled.div`
   --deckgo-highlight-code-container-height: max-content;
   --deckgo-highlight-code-carbon-overflow: scroll;
   --deckgo-highlight-code-scroll: none;
+  --deckgo-highlight-code-font-size: clamp(0.8rem, 12vw - 4.5rem, 1.1rem);
 
   code {
     element::-webkit-scrollbar { width: 0 !important }
     // font-family: ${props => props.theme.font.monospace};
     font-family: Source Code Pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-    font-size: clamp(1.3rem, 12vw - 4.5rem, 1.5rem);
     background-color: #4150ff;
     font-weight: 400;
     border-radius: 4px;
@@ -577,7 +577,9 @@ export const pageQuery = graphql`
         tags
       }
     }
-    articleImages: allFile(filter: {sourceInstanceName: {eq: "article_images"}}) {
+    articleImages: allFile(
+      filter: { sourceInstanceName: { eq: "article_images" } }
+    ) {
       edges {
         node {
           childImageSharp {
@@ -590,4 +592,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
