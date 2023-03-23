@@ -181,6 +181,11 @@ const Article = styled.div`
     box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
     position: relative;
 
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      border-radius: 0px;
+      border: 0px;
+    }
+
     animation-delay: 0s;
     animation: fadeup 1s;
     animation-fill-mode: forwards;
@@ -234,6 +239,11 @@ const Article = styled.div`
     padding: 10px 10px;
 
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      border-radius: 0px;
+      border: 0px;
+    }
 
     @media (min-width: ${props => props.theme.screen.md}) {
       background-image: linear-gradient(
