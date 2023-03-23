@@ -1,14 +1,14 @@
 ---
 slug: "/article/challenges/advent-of-code-22/4-6"
 series: "Advent of Code 4-6"
-date: "2022-12-01"
+date: "2022-12-09"
 title: "Advent of Code 2022; Days 4-6"
 subtitle: "Because nothing says Christmas like 25 frustrating coding challenges"
 tags: "challenge code puzzles"
 published: true
 excerpt: The next 3 challenges in Advent of Code. Things begin to get a little more complicated...
 reading_time: 25
-cover_image: "DSC02931.jpeg"
+cover_image: "IMG_9930.jpeg"
 cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
