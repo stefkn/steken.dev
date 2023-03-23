@@ -19,7 +19,7 @@ Elixir runs on the Erlang Virtual Machine (AKA the Bogdan Erlang Abstract Machin
 
 Fast forward to 2012, and Elixir was created by José Valim, with the aim of enabling ["higher extensibility and productivity in the Erlang VM while keeping compatibility with Erlang's ecosystem"](https://www.youtube.com/watch?v=IZvpKhA6t8A) which sounds good to me! It's gained some pretty wide adoption lately, with big names like PagerDuty, Spotify, Discord and Pinterest using Elixir in their production apps.
 
-## Day 1: Calorie Counting
+# Day 1: Calorie Counting
 
 Things start off pretty chill as they always do. We have a list of lists (basically CSV without the commas and newlines instead, the delimiter between sub-lists is a blank newline) and we need to sum the total of each contiguous block and find the greatest value. We then need to find the largest, 2nd largest, 3rd largest and the sum of those three in the second part.
 
@@ -105,7 +105,7 @@ IO.puts "TOTAL: #{total}"
 
 I've got to admit, Elixir blew my mind a little, but I got there! I think the key to solving this was cutting the input down into a small toy problem, solving that problem, and then scaling up. Wrapping my head around the recusrion was also a challenge. Otherwsie, barring some confusion with Elixir's syntax, I feel like I'm getting the hang of it.
 
-## Day 2: Rock Paper Scissors
+# Day 2: Rock Paper Scissors
 
 We have an input, again delimited by newlines, which associates `{A,B,C} -> {X,Y,Z}` such that set 1 describes what the opponent plays and set 2 describes what hand you play in, like, a billion (actually 2500) rounds of Rock, Paper, Scissors. The total score is calculated based on the hand you play (*y tho?*), and the outcome of the round. Find the total score of all rounds described in the input.
 
@@ -331,7 +331,7 @@ IO.inspect res
 
 Definitely not the most elegant way to solve it, but I'm not trying to win points for style here!
 
-## Day 3: Rucksack Reorganization
+# Day 3: Rucksack Reorganization
 
 This one also went pretty smoothly – we're given another bunch of alphabetical, case-sensitive strings where we need to check for duplicated characters in the first and second half of each string.
 
