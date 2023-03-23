@@ -40,82 +40,92 @@ export default function Template({
     }
 
     if (isMounted) {
-      document.addEventListener("scroll", scrollEventHandler)
+      document.addEventListener('scroll', scrollEventHandler);
     }
     return () => {
-      isMounted = false
-      document.removeEventListener("scroll", scrollEventHandler);
+      isMounted = false;
+      document.removeEventListener('scroll', scrollEventHandler);
     };
-  })
+  });
 
   return (
     <Layout>
-        <Navbar isAtTopOfPage={scroll} />
-        {
-          (
-            data.articleImages.edges.find(
-              edge =>
-              edge.node.childImageSharp.fluid.originalName === frontmatter.cover_image
-            )
-          )
-          &&
-          <HeroImageWrapper>
-            <HeroImage>
-              <HeroOverlay style={{"height": 60+scrollDepth/10 + '%' }}></HeroOverlay>
-              <Img fluid={
+      <Navbar isAtTopOfPage={scroll} />
+      {data.articleImages.edges.find(
+        edge =>
+          edge.node.childImageSharp.fluid.originalName ===
+          frontmatter.cover_image
+      ) && (
+        <HeroImageWrapper>
+          <HeroImage>
+            <HeroOverlay
+              style={{ height: 60 + scrollDepth / 10 + '%' }}
+            ></HeroOverlay>
+            <Img
+              fluid={
                 data.articleImages.edges.find(
                   image =>
-                  image.node.childImageSharp.fluid.originalName === frontmatter.cover_image
+                    image.node.childImageSharp.fluid.originalName ===
+                    frontmatter.cover_image
                 ).node.childImageSharp.fluid
-              } />
-            </HeroImage>
-          </HeroImageWrapper>
-        }
-        <Container>
-          <Article className="page-main">
-              <div className="frontmatter">
-                <h1
-                  className="title-main"
-                  title-content={frontmatter.title}
-                >
-                  {frontmatter.title}
-                </h1>
-                <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
-                <h2 className="subtitle-date">{frontmatter.date}</h2>
-                <Link to="/articles" class="articles-link">⏎ Back to all articles</Link>
-              </div>
-              <div className="main-content">
-                <div className="mid-content">
-                  <div className="author-image">
-                    <Img fluid={
-                      data.articleImages.edges.find(
-                        image =>
-                        image.node.childImageSharp.fluid.originalName === frontmatter.author_image
-                      ).node.childImageSharp.fluid
-                    } />
-                    <p>Stefan Nowak</p>
-                  </div>
-                  <div className='tag-pills'>
-                    {frontmatter.tags.split(' ').map((tag) => {return <div className="tag-pill"><p>{tag}</p></div>})}
-                  </div>
-                </div>
-                <div
-                className="blog-post-content"
-                dangerouslySetInnerHTML={{ __html: html }}
+              }
+            />
+          </HeroImage>
+        </HeroImageWrapper>
+      )}
+      <Container>
+        <Article className="page-main">
+          <div className="frontmatter">
+            <h1 className="title-main" title-content={frontmatter.title}>
+              {frontmatter.title}
+            </h1>
+            <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
+            <h2 className="subtitle-date">{frontmatter.date}</h2>
+            <Link to="/articles" class="articles-link">
+              ⏎ Back to all articles
+            </Link>
+          </div>
+          <div className="main-content">
+            <div className="mid-content">
+              <div className="author-image">
+                <Img
+                  fluid={
+                    data.articleImages.edges.find(
+                      image =>
+                        image.node.childImageSharp.fluid.originalName ===
+                        frontmatter.author_image
+                    ).node.childImageSharp.fluid
+                  }
                 />
+                <p>Stefan Nowak</p>
               </div>
-          </Article>
-          <ArticleBottomSpacer></ArticleBottomSpacer>
-        </Container>
-        <Footer bottomImage={false} />
+              <div className="tag-pills">
+                {frontmatter.tags.split(' ').map(tag => {
+                  return (
+                    <div className="tag-pill">
+                      <p>{tag}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div
+              className="blog-post-content"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </div>
+        </Article>
+        <ArticleBottomSpacer></ArticleBottomSpacer>
+      </Container>
+      <Footer bottomImage={false} />
     </Layout>
-  )
+  );
 }
 
 const ArticleBottomSpacer = styled.div`
   position: relative;
   height: 200px;
-`
+`;
 
 const HeroOverlay = styled.div`
   width: 100%;
@@ -138,7 +148,7 @@ const HeroOverlay = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     height: 70%;
   }
-`
+`;
 
 const HeroImage = styled.div`
   z-index: -1;
@@ -155,7 +165,7 @@ const HeroImage = styled.div`
 
   position: sticky;
   top: 0px;
-`
+`;
 
 const HeroImageWrapper = styled.div`
   position: fixed;
@@ -163,7 +173,7 @@ const HeroImageWrapper = styled.div`
   width: 100%;
   top: 0px;
   left: 0px;
-`
+`;
 
 const Article = styled.div`
   margin: 10em auto;
