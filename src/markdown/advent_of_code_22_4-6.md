@@ -5,15 +5,15 @@ date: "2022-12-01"
 title: "Advent of Code 2022; Days 4-6"
 subtitle: "Because nothing says Christmas like 25 frustrating coding challenges"
 tags: "challenge code puzzles"
-published: false
-excerpt: Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with.
+published: true
+excerpt: The next 3 challenges in Advent of Code. Things begin to get a little more complicated...
 reading_time: 25
 cover_image: "DSC02931.jpeg"
 cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
 
-## Day 4: Camp Cleanup
+# Day 4: Camp Cleanup
 
 This sounded deceptively easy. It wasn't! We're given strings of the format `71-71,42-72` indicating ranges of sections that pairs of elves have been assigned to clean. We need to figure out how many pairs are assigned such that one of the pair is a complete subset of the other (contained entirely by the other range). `MapSet` also came in very handy here.
 
@@ -79,7 +79,7 @@ IO.inspect subsets
 IO.inspect Enum.reduce(subsets, 0, fn x, acc -> if !x, do: 1 + acc, else: 0 + acc end)
 ```
 
-## Day 5: Supply Stacks
+# Day 5: Supply Stacks
 
 This one was suuuper tough, but mainly because I didn't think through the problem properly before writing my first line of code! I ended up writing a bunch of parsing logic that was totally unnecessary and taking much longer than I would otherwise have needed. Also this solution is pretty terrible in terms of, like, everything. But hey, got there in the end! It's like they always say, *never don't give up!*
 
@@ -280,7 +280,7 @@ Part two was mercifully easier, I just replaced the `Enum.reduce()` block above 
 }
 ```
 
-## Day 6: Tuning Trouble
+# Day 6: Tuning Trouble
 
 I'm very happy with how this one went. It's not the most optimal (it compares every element in the `currentchars` list each time) but it's pretty short and sweet, and can be configured to look for a marker of any reasonable length. Hooray for reusability!
 
