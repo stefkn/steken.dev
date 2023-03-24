@@ -312,6 +312,7 @@ const ShowTagSelectorButton = styled.div`
   cursor: pointer;
   box-shadow: 4px 6px 16px 0px rgb(0 0 0 / 28%);
   font-weight: 600;
+  line-height: 40px;
 
   :hover {
     bottom: 1px;
