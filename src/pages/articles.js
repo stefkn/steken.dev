@@ -269,17 +269,32 @@ class Articles extends Component {
             </HeroImage>
             <Container>
               <MainMatter>
-                <h1>Articles</h1>
+                <TopMatter>
+                  <h1>Articles</h1>
+                  <ShowTagSelectorButton
+                    onClick={() => this.toggleTagsBoxVisibility()}>
+                    {
+                      this.state.showTagsBox ?
+                      "hide tags" : "show tags"
+                    }
+                  </ShowTagSelectorButton>
+                </TopMatter>
+
                 { (!!Series && !!seriesData && Object.keys(seriesData).length !== 0) && <p>or by series:</p> }
                 <SeriesContainer>
                   {Series}
                 </SeriesContainer>
 
-                <PostsContainer>
+                {
+                  this.state.showTagsBox ?
                   <TagsBox>
                     <h3>filter by topic:</h3>
                     <TagsButtonContainer>{Tags}</TagsButtonContainer>
                   </TagsBox>
+                  : null
+                }
+
+                <PostsContainer>
                   {Posts}
                 </PostsContainer>
               </MainMatter>
