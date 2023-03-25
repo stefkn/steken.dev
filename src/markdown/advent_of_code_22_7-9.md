@@ -1,19 +1,19 @@
 ---
 slug: "/article/challenges/advent-of-code-22/7-9"
 series: "Advent of Code 7-9"
-date: "2022-12-01"
+date: "2022-12-16"
 title: "Advent of Code 2022; Days 7-9"
 subtitle: "Because nothing says Christmas like 25 frustrating coding challenges"
 tags: "challenge code puzzles"
-published: false
-excerpt: Another year goes by, another Advent of Code to be attempted (and probably failed) by me. This year, I'm going to try and make it even less likely I will succeed by using some languages I'm not familiar with.
-reading_time: 25
+published: true
+excerpt: Three more Advent of Code challenges under the belt after a lot of debugging and staring at terminal output. and I mean A LOT.
+reading_time: 15
 cover_image: "DSC02931.jpeg"
 cover_image_credit: "stefan nowak"
 author_image: "stefan.jpg"
 ---
 
-## Day 7: No Space Left On Device
+# Day 7: No Space Left On Device
 
 Okay, things are starting to get a bit tricker! We're given a list of terminal commands and their output, and we need to parse them and find the total sizes of directories with a nested structure under a certain size. This sounds like another job for recursion!
 
@@ -330,7 +330,7 @@ sorted = Enum.sort(possible)
 IO.inspect(hd(sorted))
 ```
 
-## Day 8: Treetop Tree House
+# Day 8: Treetop Tree House
 
 This took me a little while to figure out too! The lessons I'm taking away here are as follows:
 
@@ -575,7 +575,7 @@ totalvis = Enum.map(Enum.with_index(rowgridvis), fn {row, rowindex} ->
 IO.inspect Enum.max(Enum.map(totalvis, fn x -> Enum.max(x) end))
 ```
 
-## Day 9: Rope Bridge
+# Day 9: Rope Bridge
 
 I spent a long time trying to come up with a more general way of expressing the rules, but in the end, I gave up and made a big `case` block which encompasses all possible movements of the head. Oh well, it worked.
 
