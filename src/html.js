@@ -17,18 +17,6 @@ export default function HTML(props) {
         />
         <meta id="theme-color-meta" name="theme-color" content={"#2f39ae"} />
         {props.headComponents}
-        <script type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Load the Adobe View SDK when we get the event
-              document.addEventListener('loadAdobeSDKNow', () => {
-                var script = document.createElement('script');
-                script.src = 'https://documentservices.adobe.com/view-sdk/viewer.js';
-                document.head.appendChild(script);
-              })
-            `
-          }}
-        ></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
