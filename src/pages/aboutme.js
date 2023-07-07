@@ -43,12 +43,9 @@ const AboutMe = () => {
   })
 
   const loadAdobeViewSDK = function () {
-    document.dispatchEvent(
-      new Event(
-        "loadAdobeSDKNow",
-        {"bubbles":true, "cancelable":false}
-      )
-    );
+    var script = document.createElement('script');
+    script.src = 'https://documentservices.adobe.com/view-sdk/viewer.js';
+    document.head.appendChild(script);
 
     setTimeout(() => {
       var adobeDCView = new window.adobe_dc_view_sdk.default({
@@ -64,7 +61,7 @@ const AboutMe = () => {
             dockPageControls: false,
           }
       );
-    }, 500);
+    }, 1000);
 
     document.getElementById('load-pdf-btn').style.display = 'none'
   }
