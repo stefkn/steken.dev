@@ -56,14 +56,10 @@ const Footer = (props) => (
           <StyledContainer>
             <Copyright>
               <h2>steken.dev</h2>
-              <span>
-                code & illustrations by stefan
-              </span>
-              <br />
               <SmallText>
                 <p>Hand-distilled in small batches with <SmallIcon src={GatsbyIcon} /> <a href="https://www.gatsbyjs.org/">Gatsby</a> and <SmallIcon src={ReactIcon} /> <a href="https://reactjs.org/">React</a>.</p>
                 <p>Absurd Gatsby starter by <a href="https://github.com/ajayns">@ajayns</a>. Queries by <SmallIcon src={GQLIcon} /> <a href="https://graphql.org/">GraphQL</a>.</p>
-                <p>Index animation using <a href="https://threejs.org/">three.js</a>. STL from <a href="https://skyline.github.com/stefkn/2021">GitHub Skyline</a>. Index music by <a href="https://percussions.bandcamp.com/">Percussions.</a></p>
+                <p>Index animation using <a href="https://threejs.org/">three.js</a>. STL from <a href="https://skyline.github.com/stefkn/2021">GitHub Skyline</a>.</p>
               </SmallText>
             </Copyright>
             <SocialIcons>
@@ -117,7 +113,7 @@ const SocialIcons = styled.div`
 
 const FooterWrapper = styled.footer`
   background-color: #080b2c;
-  padding: 90px 0;
+  padding: 90px 30px;
   color: white;
   width: 100%;
   position: absolute;
