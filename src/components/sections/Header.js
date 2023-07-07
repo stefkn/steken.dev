@@ -168,6 +168,7 @@ const HeaderWrapper = styled.header`
   height: 60em;
   display: block;
   // pointer-events: none;
+  padding: 80px 10px 10px 10px;
 
   overflow: hidden;
   z-index: 3;
@@ -178,10 +179,6 @@ const HeaderWrapper = styled.header`
   -webkit-transition: opacity 500ms linear;
   -ms-transition: opacity 500ms linear;
   transition: opacity 500ms linear;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    padding-top: 128px;
-  }
 
   @keyframes showTopText {
     0% { transform: translate3d(0, 50%, 0); opacity: 0%; }
