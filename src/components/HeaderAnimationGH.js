@@ -55,7 +55,6 @@ class HeaderAnimation extends React.Component {
         roughness: 0.8,
         opacity: 0.4,
         transparent: true,
-        transmission: 0.8,
         clearcoat: 0.8,
         clearcoatRoughness: 0.65
     })
