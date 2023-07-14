@@ -112,7 +112,10 @@ class Articles extends Component {
                 }
               }
             }
-            articles: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+            articles: allMarkdownRemark(
+              sort: {order: DESC, fields: [frontmatter___date]},
+              filter: {fileAbsolutePath: {regex: "/\/markdown\//"}},
+            ) {
               edges {
                 node {
                   id
@@ -312,6 +315,8 @@ const TopMatter = styled.div`
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
+  padding: 0px 7px;
+  align-items: center;
 `
 
 const ShowTagSelectorButton = styled.div`

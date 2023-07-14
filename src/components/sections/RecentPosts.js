@@ -25,7 +25,10 @@ class RecentPosts extends Component {
         query={graphql`
           query
           {
-            articles: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+            articles: allMarkdownRemark(
+              sort: {order: DESC, fields: [frontmatter___date]},
+              filter: {fileAbsolutePath: {regex: "/\/markdown\//"}},
+              ) {
               edges {
                 node {
                   id
