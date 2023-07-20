@@ -170,11 +170,7 @@ class HeaderAnimation extends React.Component {
 
             -webkit-transition: all 0s ease;
             transition: all 0s ease;
-            background-color: #ed93b5;
-            background-image: url(/apple-bg4-opt-4-blur-2.jpeg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            background: conic-gradient(from 124deg at 50% 50%, #5600ff, #cf00d4, #ff00a3, #ff0074, #ff004b, #ff6c24, #ff9f00, #ffc800);
         }
     `
     return (
