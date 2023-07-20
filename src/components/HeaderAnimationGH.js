@@ -51,12 +51,12 @@ class HeaderAnimation extends React.Component {
     const material = new THREE.MeshPhysicalMaterial({
         color: '#fe317e',
         envMap: envTexture,
-        metalness: 0.1,
+        metalness: 0.3,
         roughness: 0.8,
-        opacity: 0.4,
+        opacity: 0.7,
         transparent: true,
-        clearcoat: 0.8,
-        clearcoatRoughness: 0.65
+        clearcoat: 0.2,
+        clearcoatRoughness: 0.95
     })
 
     function onWindowResize() {
