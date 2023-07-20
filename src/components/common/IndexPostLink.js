@@ -74,17 +74,18 @@ const PostEntry = styled.div`
   .read-more {
     background: #2641d6;
     border-radius: 10px;
-    padding: 6px 10px;
     margin: 10px 0px;
     text-align: center;
     max-width: 260px;
     font-size: 16px;
     font-weight: 600;
     color: white;
-    position: relative;
     cursor: pointer;
     border: 1px solid rgba(198, 203, 255, 39%);
-    bottom: 0px;
+
+    position: absolute;
+    bottom: 12px;
+    padding: 1px 18px;
   }
   .read-more:hover {
     bottom: 1px;
