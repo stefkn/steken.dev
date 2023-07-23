@@ -24,7 +24,7 @@ export function onRouteUpdate({ location, prevLocation }) {
         const mainTitle = document.getElementById('navbar-title');
 
         if (location.pathname === '/') {
-            themeMeta.setAttribute("content", '#eda9cd');
+            themeMeta.setAttribute("content", '#ff0052');
             mainTitle.style.pointerEvents = 'none';
         } else {
             themeMeta.setAttribute("content", '#2f39ae');
