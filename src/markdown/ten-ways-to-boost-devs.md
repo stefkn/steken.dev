@@ -17,7 +17,7 @@ author_image: "stefan.jpg"
 Would this be an SEO-optimised blog without some good old-fashioned listicles? I hope you're looking forward to the "which famous hacker character from popular media are you?" quiz, which is also currently in the works. It's Boris. It was always [Boris.](https://jamesbond.fandom.com/wiki/Boris_Grishenko)
 _He is invincible._
 
-<iframe src="https://giphy.com/embed/hNJwTYxnfK3te" width="100%" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/hNJwTYxnfK3te" width="100%" height="240" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
 
 Without further ado, here's an *unordered list* of things that come to mind for helping your dev team perform their best, with no particular audience in mind.
 
@@ -63,7 +63,7 @@ This is all lost time that needs to be spent again, just to get back to where we
 
 ## He Protec but He Also Attac
 
-<iframe src="https://giphy.com/embed/xT5LMX1HX4Lwys905i" width="100%" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/xT5LMX1HX4Lwys905i" width="100%" height="366" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
 
 **Distractions attack from all sides! Defend your team's focus.**
 

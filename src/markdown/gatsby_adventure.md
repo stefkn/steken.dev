@@ -13,7 +13,7 @@ author_image: "stefan.jpg"
 ---
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;">
-  <img src="https://media.giphy.com/media/g9582DNuQppxC/source.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+  <img src="https://media.giphy.com/media/g9582DNuQppxC/source.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" className="giphy-embed" allowFullScreen></img>
 </div>
 
 > _“Anything can happen now that we’ve slid over this bridge,”_ I thought; _“anything at all...”_
