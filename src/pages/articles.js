@@ -67,14 +67,14 @@ class Articles extends Component {
   }
 
   addToTagList(tag, accumulator) {
-    if (accumulator) {
-      accumulator.indexOf(tag) === -1 ? accumulator.push(tag) : console.log("This item already exists: " + tag);
+    if (accumulator &&  accumulator.indexOf(tag) === -1) {
+      accumulator.push(tag)
     }
   }
 
   addToSeriesList(series, accumulator) {
-    if (accumulator) {
-      accumulator.indexOf(series) === -1 ? accumulator.push(series) : console.log("This item already exists: " + series);
+    if (accumulator && accumulator.indexOf(series) === -1) {
+      accumulator.push(series);
     }
   }
 
