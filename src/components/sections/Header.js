@@ -57,69 +57,11 @@ const Header = () => {
 }
 
 
-const ArtBackground = styled.div`
-  @keyframes animatebgs {
-    0% { transform: skewY(-13deg) translate3d(0, 20%, 0); opacity: 0%;}
-    100% { transform: skewY(-13deg) translate3d(0, 0, 0); opacity: 90%;}
-  }
-
-  transform: skewY(-13deg);
-  animation: animatebgs 2s;
-  animation: float 8s ease-in-out infinite;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-
-  background: linear-gradient(128deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.55) 50%, rgba(252,176,69) 100%);
-  box-shadow: -19px -17px 20px 0px rgb(30 33 78 / 33%);
-  backdrop-filter: hue-rotate(10deg) blur(4px);
-  -webkit-backdrop-filter: blur( 7.5px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.45 );
-  position: absolute;
-  z-index: 0;
-
-  height: 488px;
-  width: 70vw;
-  bottom: 285px;
-  overflow: hidden;
-
-  @media (min-width: ${props => props.theme.screen.xs}) {
-    max-width: 540px;
-    width: 80vw;
-  }
-
-  @media (min-width: ${props => props.theme.screen.sm}) {
-    max-width: 720px;
-    width: 60vw;
-  }
-
-  @media (min-width: ${props => props.theme.screen.md}) {
-    max-width: 960px;
-    width: 600px;
-  }
-
-  @media (min-width: ${props => props.theme.screen.lg}) {
-    max-width: 1200px;
-    width: 730px;
-  }
-
-  .fake-code {
-    padding: 20px;
-  }
-
-  .fake-code > p {
-    font-family: ${props => props.theme.font.monospace};
-    color: #ffffff30;
-    line-height: 30px;
-    overflow: hidden;
-  }
-`
-
 const HeaderWrapper = styled.header`
   position: absolute;
   max-width: 100vw;
   width: 100%;
-  top: 5%;
+  top: 54%;
   padding-top: 96px;
   height: 60em;
   display: block;
@@ -215,13 +157,6 @@ const Grid = styled.div`
   }
 `;
 
-// const Text = styled.div`
-//   justify-self: center;
-//   @media (max-width: ${props => props.theme.screen.md}) {
-//     justify-self: start;
-//   }
-// `;
-
 const HeaderText = styled.div`
   background-color: #0d1bdcd6;
   border-radius: 20px;
@@ -232,7 +167,7 @@ const HeaderText = styled.div`
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 255, 255, 255, 0.48 );
   transform: skewY(6deg);
 `;
 
