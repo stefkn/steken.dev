@@ -234,6 +234,22 @@ const GlobalStyles = createGlobalStyle`
       }
     }
 
+    .cover-image:before {
+      background: rgb(0 0 0 / 0%) !important;
+
+      animation: radialgradient 2s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+
+      @keyframes radialgradient {
+        0% { 
+          opacity: 0;
+        }
+        100% { 
+          opacity: 1;
+        }
+      }
+    }
   }
 
 
