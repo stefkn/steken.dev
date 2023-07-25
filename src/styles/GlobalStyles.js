@@ -212,6 +212,32 @@ const GlobalStyles = createGlobalStyle`
     right: 5%;
     height: 38px;
   }
+
+  .onscreen {
+    overflow: hidden;
+
+    .cover-image {
+      -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+      animation: radialgradient 1s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+      mix-blend-mode: normal !important;
+
+      @keyframes radialgradient {
+        0% { 
+          opacity: 0;
+        }
+        100% { 
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+
+
+  }
 `;
 
 export default GlobalStyles;
