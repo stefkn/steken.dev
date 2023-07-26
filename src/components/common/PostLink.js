@@ -45,14 +45,13 @@ const PostLink = ({ post, coverImage }) => {
       <p className="read-more"><Link to={post.frontmatter.slug}>Read more... ({post.frontmatter.reading_time} min read)</Link></p>
     </div>
   </PostEntry>
-)
+)}
 
 export default PostLink
 
 const PostEntry = styled.div`
-  margin-top: 1em;
-  margin-bottom: 1em;
-
+  transition-duration: 2s;
+    
   .cover-image {
     border-radius: 6px;
     margin: 4px;
