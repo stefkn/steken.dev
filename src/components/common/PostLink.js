@@ -124,22 +124,15 @@ const PostEntry = styled.div`
 
   @media (max-width: 920px) {
     width: 100%;
+    margin-bottom: 22px;
   }
 
-  width: 49.6%;
+  width: 48%;
   min-height: 510px;
 
-  margin: 0.2%;
+  margin: 1% 0.2%;
   padding: 22px;
 
-  animation-delay: 0s;
-  animation: animatetext 1s;
-  animation-fill-mode: forwards;
-
-  @keyframes animatetext {
-    0% { transform: translate3d(0, 10%, 0); opacity: 0%;}
-    100% { transform: translate3d(0, 0, 0); opacity: 100%;}
-  }
 
   background: rgb(49 49 49);
   background: linear-gradient(180deg, rgb(18 20 49), rgb(60 62 80));
