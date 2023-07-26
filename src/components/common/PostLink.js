@@ -154,4 +154,4 @@ const PostEntry = styled.div`
       background: linear-gradient(4deg,rgb(4 3 111) 1%,rgb(0 0 0 / 0%));
     }
   }
-  `;
+`;
