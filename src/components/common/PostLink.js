@@ -1,10 +1,34 @@
-import React from "react"
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from "gatsby"
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-const PostLink = ({ post, coverImage }) => (
-  <PostEntry>
+function useOnScreen(ref) {
+  const [isIntersecting, setIntersecting] = useState(false)
+
+  const observer = useMemo(() => new IntersectionObserver(
+    ([entry]) => setIntersecting(entry.isIntersecting),
+    {
+      rootMargin: "10%",
+      threshold: 1,
+    }
+    ), [ref])
+
+
+  useEffect(() => {
+    observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  return isIntersecting
+}
+
+const PostLink = ({ post, coverImage }) => {
+  const ref = useRef(null)
+  const isVisible = useOnScreen(ref)
+  
+  return (
+  <PostEntry ref={ref} className={isVisible ? 'onscreen' : ''}>
     {(coverImage) &&
       <Link to={post.frontmatter.slug}>
         <Img className="cover-image" fluid={coverImage.childImageSharp.fluid} />
