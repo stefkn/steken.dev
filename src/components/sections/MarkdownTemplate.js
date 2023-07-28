@@ -101,7 +101,7 @@ export default function Template({
               <div className="tag-pills">
                 {frontmatter.tags.split(' ').map(tag => {
                   return (
-                    <div className="tag-pill">
+                    <div className="tag-pill" key={tag}>
                       <p>{tag}</p>
                     </div>
                   );
