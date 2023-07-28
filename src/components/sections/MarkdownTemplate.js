@@ -172,6 +172,22 @@ const HeroImageWrapper = styled.div`
   width: 100%;
   top: 0px;
   left: 0px;
+
+  .gatsby-image-wrapper {
+    filter: blur(1px);
+    width: 140%;
+    align-self: center;
+
+    @media (max-width: ${props => props.theme.screen.md}) {
+      width: calc(100vw*1.5);
+    }
+    @media (max-width: ${props => props.theme.screen.sm}) {
+      width: calc(100vw*2);
+    }
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      width: calc(100vw*4);
+    }
+  }
 `;
 
 const Article = styled.div`
