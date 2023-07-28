@@ -361,16 +361,16 @@ const Article = styled.div`
     padding: 2em 2em;
     border-radius: 12px;
     margin-top: 1em;
-    box-shadow: 0 12px 34px 0 rgb(0 0 0 / 60%);
+    box-shadow: 0px -9px 20px 0px #19191991;
 
     @media (max-width: ${props => props.theme.screen.xs}) {
-      border-radius: 0px;
+      border-radius: 6px;
       border: 0px;
     }
 
     @media (max-width: ${props => props.theme.screen.md}) {
       padding: 1em 1em;
-      margin-top: 1em;
+      margin-top: 6em;
     }
 
     animation-delay: 1s;
