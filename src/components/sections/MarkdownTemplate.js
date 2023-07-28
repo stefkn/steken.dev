@@ -239,15 +239,13 @@ const Article = styled.div`
 
     justify-content: center;
 
-    background-image: linear-gradient(
-      153deg,rgb(34 67 255),
-      rgb(250 38 255 / 53%)
-    );
+    background-image: linear-gradient( 153deg,rgb(86 112 255 / 21%),rgb(250 38 255 / 20%) );
+    backdrop-filter: blur(8px);
     border-radius: 11px;
     margin-top: 12px;
     padding: 10px 10px;
 
-    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+
 
     @media (max-width: ${props => props.theme.screen.xs}) {
       border-radius: 0px;
@@ -255,9 +253,6 @@ const Article = styled.div`
     }
 
     @media (min-width: ${props => props.theme.screen.md}) {
-      background-image: linear-gradient(
-        153deg, rgb(88 113 255 / 60%), rgb(174 0 244 / 64%)
-      );
       justify-content: space-between;
     }
 
