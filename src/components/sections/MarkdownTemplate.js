@@ -191,8 +191,7 @@ const Article = styled.div`
     position: relative;
 
     @media (max-width: ${props => props.theme.screen.xs}) {
-      border-radius: 0px;
-      border: 0px;
+      margin: 20px;
     }
 
     animation-delay: 0s;
