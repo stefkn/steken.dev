@@ -379,16 +379,9 @@ const Article = styled.div`
 
     h1 {
       line-height: normal;
-
-      background-image: linear-gradient(
-        321deg,
-        rgb(31 48 255) 0,
-        rgb(238 141 255) 30%,
-        rgb(199 168 255) 50%,
-        rgb(101 111 255) 70%,
-        rgb(255 32 209 / 68%) 90%,
-        rgb(255 0 0 / 83%) 100%
-      );
+      background-image: linear-gradient(288deg, #292929, rgb(47 47 47));
+      margin-top: 32px;
+      letter-spacing: -1.6px;
     }
   }
 
@@ -396,7 +389,7 @@ const Article = styled.div`
     max-width: 100%;
     font-weight: 600;
     overflow: hidden;
-    font-size: clamp(2.6rem, 12vw - 4.5rem, 4rem);
+    font-size: clamp(2.6rem, 12vw - 4.5rem, 3rem);
 
     background-image: linear-gradient(
       321deg,
