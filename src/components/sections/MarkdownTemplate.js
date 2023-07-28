@@ -286,7 +286,7 @@ const Article = styled.div`
 
       p {
         margin: 0px 26px;
-        font-weight: 600;
+        font-weight: 500;
         color: white;
 
         background-color: rgb(37 37 37);
