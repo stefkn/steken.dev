@@ -416,10 +416,11 @@ const Article = styled.div`
   }
 
   h2 {
-    margin-top: 1.6em;
+    margin-top: 2.2em;
     -webkit-font-smoothing: antialiased;
     font-family: ${props => props.theme.font.primary};
-    font-weight: 400;
+    font-weight: 600;
+    line-height: 33px;
     font-style: normal;
     letter-spacing: -.04em;
     font-size: clamp(1.4rem, 12vw - 4.5rem, 2rem);
