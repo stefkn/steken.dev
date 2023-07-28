@@ -80,7 +80,7 @@ export default function Template({
             </h1>
             <h2 className="subtitle-main">{frontmatter.subtitle}</h2>
             <h2 className="subtitle-date">{frontmatter.date}</h2>
-            <Link to="/articles" class="articles-link">
+            <Link to="/articles" className="articles-link">
               ⏎ Back to all articles
             </Link>
           </div>
@@ -96,7 +96,7 @@ export default function Template({
                     ).node.childImageSharp.fluid
                   }
                 />
-                <p>Stefan Nowak</p>
+                <p>by Stefan Nowak</p>
               </div>
               <div className="tag-pills">
                 {frontmatter.tags.split(' ').map(tag => {
