@@ -115,12 +115,10 @@ const RecentPostsDiv = styled.div`
   font-style: normal;
   text-transform: none;
   line-height: 1.3328;
-  margin: 1rem 0;
   color: rgb(2 0 98);
-  margin-top: 0;
-  margin-bottom: 0;
   white-space: pre-wrap;
-  margin-top: 3em;
+
+  margin: 6em 0em;
 
   font-size: clamp(1.8rem, 12vw - 1.5rem, 2.3rem);
 
