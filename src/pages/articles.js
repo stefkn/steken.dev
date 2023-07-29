@@ -415,13 +415,7 @@ const HeroOverlay = styled.div`
   position: absolute;
 
   z-index: 1;
-  background: black;
-  background: linear-gradient(
-    11deg,
-    rgb(247 247 247) 23%,
-    #dd99ff69 76%,
-    #ff006685 96%
-  );
+  background: linear-gradient( 11deg,rgb(242 242 246) 12%,#0030ff69 76%,#4554ffe3 100% );
 `
 
 const HeroImage = styled.div`
