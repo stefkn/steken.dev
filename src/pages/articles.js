@@ -326,7 +326,7 @@ const ShowTagSelectorButton = styled.div`
   max-width: 8em;
   background-color: rgb(233 30 99);
   margin: 0em 0em 0em 2em;
-  padding: 1.2em;
+  padding: 0px 22px;
   border-radius: 27px;
   text-align: center;
   cursor: pointer;
@@ -565,6 +565,7 @@ const MainMatter = styled.div`
     animation-delay: 0s;
     animation: animatetext 1s;
     animation-fill-mode: forwards;
+    color: white;
   }
 
   h3 {
