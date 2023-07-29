@@ -124,10 +124,6 @@ const RecentPostsDiv = styled.div`
 
   padding: 0px
   z-index: 2;
-  // box-shadow: 0 8px 32px 0 rgb(0 0 0 / 19%);
-  // -webkit-backdrop-filter: blur( 4px );
-  // backdrop-filter: blur( 4px );
-  // -webkit-backdrop-filter: blur( 4px );
   border-radius: 0px;
   border: 0px;
 
