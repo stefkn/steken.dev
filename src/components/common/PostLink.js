@@ -6,7 +6,9 @@ import Img from 'gatsby-image';
 function useOnScreen(ref) {
   const [isIntersecting, setIntersecting] = useState(false)
 
-  const observer = useMemo(() => new IntersectionObserver(
+  let observer = null
+
+  observer = useMemo(() => new IntersectionObserver(
     ([entry]) => setIntersecting(entry.isIntersecting),
     {
       rootMargin: "10%",
