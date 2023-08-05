@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from "gatsby"
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -6,27 +6,22 @@ import Img from 'gatsby-image';
 function useOnScreen(ref) {
   const [isIntersecting, setIntersecting] = useState(false)
 
-  let observer = null
-
-  observer = useMemo(() => new IntersectionObserver(
-    ([entry]) => setIntersecting(entry.isIntersecting),
-    {
-      rootMargin: "10%",
-      threshold: 1,
-    }
-    ), [ref])
-
-
   useEffect(() => {
+    let observer = new IntersectionObserver(
+      ([entry]) => setIntersecting(entry.isIntersecting),
+      {
+        rootMargin: "10%",
+        threshold: 1,
+      }
+    )
     observer.observe(ref.current)
-    return () => observer.disconnect()
   }, [])
 
   return isIntersecting
 }
 
 const PostLink = ({ post, coverImage }) => {
-  const ref = useRef(null)
+  const ref = useRef()
   const isVisible = useOnScreen(ref)
   
   return (
