@@ -15,6 +15,10 @@ function useOnScreen(ref) {
       }
     )
     observer.observe(ref.current)
+    return () => {
+      // cleanup function
+      observer.disconnect();
+    }
   }, [])
 
   return isIntersecting
