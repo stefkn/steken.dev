@@ -137,8 +137,6 @@ const PostEntry = styled.div`
 
   margin: 1% 0.2%;
   padding: 22px;
-
-
   background: rgb(49 49 49);
   background: linear-gradient(180deg, rgb(18 20 49), rgb(60 62 80));
 
@@ -149,14 +147,8 @@ const PostEntry = styled.div`
   border: 1px solid rgb(232 234 255);
 
   :hover {
-    background: linear-gradient(4deg,rgb(0 1 113) 27%,rgb(62 62 62));
-
-    .cover-image {
-      mix-blend-mode: normal;
-    }
-
-    .cover-image:before {
-      background: linear-gradient(4deg,rgb(4 3 111) 1%,rgb(0 0 0 / 0%));
-    }
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background: radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #2000FFFF 1%, #FF000000 99%),radial-gradient(108% 113% at 83% 7%, #0AFF9AFC 7%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #7580FFFF 1%, #F600FFFF 100%);
   }
 `;
