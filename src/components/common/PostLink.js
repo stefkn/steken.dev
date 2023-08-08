@@ -125,13 +125,18 @@ const PostEntry = styled.div`
     z-index: 2;
   }
 
+  .text-content-wrapper {
+    position: absolute;
+    bottom: 0px;
+  }
+
   @media (max-width: 920px) {
     width: 100%;
     margin-bottom: 22px;
   }
 
   width: 48%;
-  min-height: 510px;
+  min-height: 640px;
 
   margin: 1% 0.2%;
   padding: 22px;
