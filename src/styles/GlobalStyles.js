@@ -252,22 +252,10 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .onscreen:before {
-
-    background-size: 100% 100%;
+  div.onscreen {
     background-size: 100% 100%;
     background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
     background-image: radial-gradient(49% 81% at 45% 47%, #8B03FF45 0%, #0024FF00 100%),radial-gradient(113% 91% at 17% -2%, #0003FFFF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #89FF0AFF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #FF3469FF 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #FF862AFF 0%, #FF0000FF 52%);
-
-    border-radius: 8px;
-    content: "";
-    inset: -30px;
-    opacity: 1;
-    position: absolute;
-    z-index: -1;
-    display: block;
-
-    animation: radialgradient 1s;
 
     @keyframes radialgradient {
       0% { 
