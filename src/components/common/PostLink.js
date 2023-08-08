@@ -87,7 +87,7 @@ const PostEntry = styled.div`
   p.excerpt {
     font-size: clamp(1.2rem, 2.5vw, 1.3rem);
     line-height: 1.3328;
-    color: #cccccc;
+    color: #ededed;
     font-weight: 400;
   }
 
@@ -115,11 +115,8 @@ const PostEntry = styled.div`
   }
 
   .text-content {
-    position: absolute;
-    border-radius: 30px;
+    position: relative;
     padding: 30px 5px;
-    border: 1pxsolidrgba(198,203,255,39%);
-    box-shadow: 7px 13px 20px 0pxrgba(255,183,213,62%);
     bottom: 0px;
     max-width: 85%;
     z-index: 2;
