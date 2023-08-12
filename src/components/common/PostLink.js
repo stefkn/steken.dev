@@ -10,7 +10,7 @@ function useOnScreen(ref) {
     let observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
       {
-        rootMargin: "10%",
+        rootMargin: "6%",
         threshold: 1,
       }
     )
