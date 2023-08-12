@@ -116,12 +116,11 @@ const PostEntry = styled.div`
 
   .text-content {
     position: relative;
-    padding: 30px 5px;
-    bottom: 0px;
-    max-width: 85%;
+    padding: 22px 5px;
+    max-width: 28rem;
     z-index: 2;
   }
-
+  
   .text-content-wrapper {
     position: absolute;
     bottom: 0px;
@@ -134,6 +133,8 @@ const PostEntry = styled.div`
 
   width: 48%;
   min-height: 640px;
+
+  position: relative; 
 
   margin: 1% 0.2%;
   padding: 22px;
